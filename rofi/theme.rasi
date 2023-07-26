@@ -1,0 +1,84 @@
+* {
+    font:   "IBM Plex Mono 12";
+
+    bg:        #282a33;
+    gray:     #404754;
+    blue:      #8ac6f2;
+    white:     #eceff4;
+    yellow:    #ebcb8b;
+
+    background-color:   transparent;
+    text-color:         @white;
+    accent-color:       @blue;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    background-color:   @bg;
+    border-color:       @gray;
+
+    location:   center;
+    width:      480px;
+    border:     1px;
+}
+
+inputbar {
+    padding:    8px 12px;
+    spacing:    12px;
+    children:   [ prompt, entry ];
+}
+
+prompt, entry, element-text, element-icon {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+listview {
+    lines:      8;
+    columns:    1;
+
+    fixed-height:   false;
+}
+
+element {
+    padding:    4px;
+    spacing:    2px;
+}
+
+element normal urgent {
+    text-color: @accent-color;
+}
+
+element normal active {
+    text-color: @accent-color;
+}
+
+element selected {
+    text-color: @bg;
+}
+
+element selected normal {
+    background-color:   @accent-color;
+}
+
+element selected urgent {
+    background-color:   @yellow;
+}
+
+element selected active {
+    background-color:   @accent-color;
+}
+
+element-icon {
+    size:   0.75em;
+}
+
+element-text {
+    text-color: inherit;
+}

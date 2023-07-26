@@ -1,0 +1,56 @@
+!! Colorscheme
+
+! special
+*.foreground: #f1f1f1
+*.background: #282a33
+*.cursorColor: #f1f1f1
+
+! black
+*.color0: #000
+*.color8: #000
+
+! red
+*.color1: #cc817f
+*.color9: #cc817f
+
+! green
+*.color2: #7ccfaf
+*.color10: #7ccfaf
+
+! yellow
+*.color3: #b08500
+*.color11: #d9a400
+
+! blue
+*.color4: #8ac6f2
+*.color12: #8ac6f2
+
+! magenta
+*.color5: #99c
+*.color13: #99c
+
+! cyan
+*.color6: #8abeb7
+*.color14: #8abeb7
+
+! white
+*.color7: #f1f1f1
+*.color15: #f1f1f1
+
+!! URxvt Appearance
+URxvt.font: xft:Source Code Pro,Source Code Pro Semibold:style=Semibold,Regular
+URxvt.letterSpace: -2
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 2
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt.scrollstyle: plain
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+URxvt.perl-lib: .config/urxvt/ext
+URxvt.perl-ext-common: ibeamcursor
