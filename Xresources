@@ -18,8 +18,8 @@
 *.color10: #7ccfaf
 
 ! yellow
-*.color3: #b08500
-*.color11: #d9a400
+*.color3: #ffcc99
+*.color11: #ffcc99
 
 ! blue
 *.color4: #8ac6f2
@@ -38,10 +38,10 @@
 *.color15: #f1f1f1
 
 !! URxvt Appearance
-URxvt.font: xft:Source Code Pro,Source Code Pro Semibold:style=Semibold,Regular
-URxvt.letterSpace: -2
+URxvt.font: xft:Hack NFM:style=Regular:size=11
+URxvt.letterSpace: 0
 URxvt.lineSpace: 0
-URxvt.geometry: 92x24
+URxvt.geometry: 400x400
 URxvt.internalBorder: 2
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
