@@ -196,6 +196,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+default_border normal 1
+hide_edge_borders vertical
+
 # COLORS
 
 client.background       $color_bg
