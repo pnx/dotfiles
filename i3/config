@@ -44,7 +44,9 @@ set $second_monitor eDP-1
 ## Startup programs
 exec --no-startup-id ~/.config/i3/xrandr.sh
 exec --no-startup-id dex-autostart --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c $color_bg --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c $color_bg --nofork
+exec --no-startup-id xautolock -time 1 -locker ~/.config/i3/blurlock.sh
+exec --no-startup-id xset dpms 300 # Turn of monitors after 5 min
 #exec --no-startup-id nm-applet
 
 ## Config
