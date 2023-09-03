@@ -28,9 +28,9 @@ set_from_resource $color_win_urgent_bg i3wm.color1 #cc817f
 set $mod    Mod4
 set $super  Shift
 
-set $ws1 "1:main"
-set $ws2 "2:www"
-set $ws3 "3:code"
+set $ws1 "1:main "
+set $ws2 "2:www "
+set $ws3 "3:code "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6:chat"
@@ -51,7 +51,7 @@ exec --no-startup-id xset dpms 300 # Turn of monitors after 5 min
 
 ## Config
 
-font pango:DejaVu Sans Mono 11
+font pango:FontAwesome, DejaVu Sans Mono 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -214,7 +214,7 @@ bar {
     status_command i3status
     separator_symbol " | ​"
 
-    font pango:DejaVu Sans Mono 14
+    font pango:DejaVu Sans Mono, FontAwesome 14
     strip_workspace_numbers no
     strip_workspace_name no
     workspace_min_width 50
