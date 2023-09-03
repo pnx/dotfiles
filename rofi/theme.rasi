@@ -2,7 +2,7 @@
     font:   "IBM Plex Mono 12";
 
     bg:        #282a33;
-    gray:     #404754;
+    gray:      #404754;
     blue:      #8ac6f2;
     white:     #eceff4;
     yellow:    #ebcb8b;
