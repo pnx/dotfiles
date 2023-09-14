@@ -38,8 +38,13 @@
 *.color15: #f1f1f1
 
 !! URxvt Appearance
-URxvt.font: xft:Hack NFM:style=Regular:size=11
-URxvt.letterSpace: 0
+Xft.dpi: 96
+Xft.rbga: rgb
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=12
+URxvt*letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 400x400
 URxvt.internalBorder: 2
