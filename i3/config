@@ -39,14 +39,13 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-set $second_monitor eDP-1
+#set $second_monitor eDP-1
 
 ## Startup programs
-exec --no-startup-id ~/.config/i3/xrandr.sh
 exec --no-startup-id dex-autostart --autostart --environment i3
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c $color_bg --nofork
-exec --no-startup-id xautolock -time 1 -locker ~/.config/i3/blurlock.sh
-exec --no-startup-id xset dpms 300 # Turn of monitors after 5 min
+#exec --no-startup-id xautolock -time 1 -locker ~/.config/i3/blurlock.sh
+#exec --no-startup-id xset dpms 300 # Turn of monitors after 5 min
 #exec --no-startup-id nm-applet
 
 ## Config
@@ -64,7 +63,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec urxvt -e fish
 
 # kill focused window
-bindsym $mod+$super+q kill
+bindsym $mod+x kill
 
 # start rofi
 bindsym $mod+d exec "rofi -show drun"
@@ -129,7 +128,9 @@ workspace $ws2 output primary
 workspace $ws3 output primary
 workspace $ws4 output primary
 workspace $ws5 output primary
-workspace $ws6 output $second_monitor gaps inner 0
+#for second screen
+#workspace $ws6 output $second_monitor gaps inner 0
+workspace $ws6 output primary
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -177,16 +178,21 @@ mode "resize" {
     # Pressing right will grow the window’s width.
     # Pressing up will shrink the window’s height.
     # Pressing down will grow the window’s height.
-    bindsym j resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize shrink height 10 px or 10 ppt
-    bindsym odiaeresis resize grow width 10 px or 10 ppt
+    bindsym j resize shrink width 10 px
+    bindsym k resize grow height 10 px
+    bindsym l resize shrink height 10 px
+    bindsym odiaeresis resize grow width 10 px
+
+    bindsym Shift+j resize shrink width 25 px
+    bindsym Shift+k resize grow height 25 px
+    bindsym Shift+l resize shrink height 25 px
+    bindsym Shift+odiaeresis resize grow width 25 px
 
     # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px
+    bindsym Down resize grow height 10 px
+    bindsym Up resize shrink height 10 px
+    bindsym Right resize grow width 10 px
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
