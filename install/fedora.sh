@@ -5,6 +5,7 @@ sudo dnf install -y \
     i3 \
     lxappearance \
     rxvt-unicode \
+    kitty \
     fish \
     ImageMagick \
     xautolock \
