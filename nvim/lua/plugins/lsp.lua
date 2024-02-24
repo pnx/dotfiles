@@ -9,11 +9,11 @@ return {
 		-- Setup Mason to automatically install LSP servers
 		require('mason').setup()
 		require('mason-lspconfig').setup({ automatic_installation = true })
-
+		local lspconfig = require('lspconfig')
 		-- local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 		-- PHP
-		require('lspconfig').intelephense.setup({
+		lspconfig.intelephense.setup({
 			commands = {
 				IntelephenseIndex = {
 					function() vim.lsp.buf.execute_command({ command = 'intelephense.index.workspace' }) end,
@@ -26,6 +26,8 @@ return {
 			-- capabilities = capabilities
 		})
 
+		-- GO
+		lspconfig.gopls.setup({})
 		-- Tailwind CSS
 		--require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 

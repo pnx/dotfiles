@@ -38,7 +38,7 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-				['<CR>'] = cmp.mapping.confirm({ select = false }),
+				['<CR>'] = cmp.mapping.confirm({ select = true }),
 			},
 			formatting = {
 				format = function(entry, vim_item)

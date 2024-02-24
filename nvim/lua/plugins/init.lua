@@ -14,28 +14,29 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	-- Highlight
-	--{ import = "plugins.kodex" },
 	{ import = "plugins.colortheme-kanagawa" },
+
+	{ import = "plugins.indent" },
+	{ import = "plugins.nvim-autopairs" },
+	-- Filetree
+	{ import = "plugins.neo-tree" },
 
 	-- Status line
 	{ import = "plugins.lualine" },
 
 	-- Fuzzy finder
- 	{ import = "plugins.telescope" },
+	{ import = "plugins.telescope" },
 
 	-- Keybind helper
-	-- { import = "plugins.which-key" },
-
+	{ import = "plugins.which-key" },
+	
 	-- Treesitter
 	{ import = "plugins.treesitter" },
-
-	-- Complete
-	-- { import = "plugins.cmp" },
 
 	-- LSP
 	{ import = "plugins.lsp" },
 
 	-- Git changes in gutter
-	--{ import = "plugins.gitsigns" },
+	{ import = "plugins.gitsigns" },
 })
 

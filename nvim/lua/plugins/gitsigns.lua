@@ -3,9 +3,9 @@ return {
 	lazy = false,
 	opts = {
 		signs = {
-			add = { text = '+' },
-			delete = { text = '-' },
-			change = { text = '~' },
+			add = { text = '│' },
+			delete = { text = '' },
+			change = { text = '│' },
 			untracked = { text = '+'}
 		},
 	},

@@ -37,3 +37,5 @@ vim.keymap.set("v", "<Right>", "", { noremap=true })
 -- Make Shift-Tab undo indent.
 vim.keymap.set("i", "<S-Tab>", "<C-d>")
 
+-- NvimTree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { noremap=true })
