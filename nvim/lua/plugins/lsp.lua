@@ -30,7 +30,17 @@ return {
 		lspconfig.gopls.setup({})
 		-- Tailwind CSS
 		--require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
+		
+		-- Format on save.
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = '*.go',
+			callback = function()
+				vim.lsp.buf.format { async = false }
+			end
+		})
 
+		-- Typescript
+		lspconfig.tsserver.setup({})
 		
 		-- Config
 		-- Sign configuration

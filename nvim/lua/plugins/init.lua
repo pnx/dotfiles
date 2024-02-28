@@ -14,10 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
 	-- Highlight
-	{ import = "plugins.colortheme-kanagawa" },
+	{ import = "plugins.colorscheme" },
 
 	{ import = "plugins.indent" },
 	{ import = "plugins.nvim-autopairs" },
+
 	-- Filetree
 	{ import = "plugins.neo-tree" },
 

@@ -16,28 +16,34 @@ return {
 			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 		end
 
+		local moveDown = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif has_words_before() then
+				cmp.complete()
+			else
+				fallback()
+			end
+		end, { "i", "s" })
+
+		local moveUp = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			else
+				fallback()
+			end
+		end, { "i", "s" })
+
 		cmp.setup({
 			preselect = false,
 			view = {
 				entries = { name = 'custom', selection_order = 'near_cursor' },
 			},
 			mapping = {
-				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif has_words_before() then
-						cmp.complete()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
+				["<Tab>"] = moveDown,
+				["<Down>"] = moveDown,
+				["<S-Tab>"] = moveUp,
+				["<Up>"] = moveUp,
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
 			},
 			formatting = {
