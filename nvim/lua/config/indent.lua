@@ -2,6 +2,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local set = vim.opt
 
+-- Default softtab (4)
 set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4

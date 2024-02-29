@@ -20,3 +20,4 @@ vim.opt.numberwidth = 6
 
 -- indent
 vim.opt.smartindent = true
+
