@@ -21,3 +21,10 @@ vim.opt.numberwidth = 6
 -- indent
 vim.opt.smartindent = true
 
+-- Filetypes
+vim.filetype.add({
+	pattern = {
+		['.*%.blade%.php'] = 'blade',
+	},
+})
+

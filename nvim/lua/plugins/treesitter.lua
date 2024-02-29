@@ -18,7 +18,8 @@ return {
 			"vim", 
 			"vimdoc",
 			"query", 
-			"php", 
+			"php",
+			"blade",
 			"go", 
 			"javascript", 
 			"typescript",
@@ -27,6 +28,7 @@ return {
 			"html",
 			"vue",
 			"json",
+			"jsonc",
 			"yaml",
 			"toml",
 			"xml",
@@ -57,6 +59,19 @@ return {
 		}
 	},
 	config = function(_, opts)
+		local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+
+		parser_config.blade = {
+			install_info = {
+				url = 'https://github.com/EmranMR/tree-sitter-blade',
+				branch = "main",
+				files = { 'src/parser.c' },
+				generate_requires_npm = true,
+				requires_generate_from_grammar = true,
+			},
+			filetype = 'blade',
+		}
+
 		require("nvim-treesitter.configs").setup(opts)
 	end,
 }
