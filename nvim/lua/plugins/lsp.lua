@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
-		require('plugins.cmp')
 	},
 	config = function()
 		-- Setup Mason to automatically install LSP servers
@@ -12,25 +11,19 @@ return {
 		local lspconfig = require('lspconfig')
 		-- local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-		-- PHP
-		lspconfig.intelephense.setup({
-			commands = {
-				IntelephenseIndex = {
-					function() vim.lsp.buf.execute_command({ command = 'intelephense.index.workspace' }) end,
-				},
-			},
-			on_attach = function(client, bufnr)
-				client.server_capabilities.documentFormattingProvider = false
-				client.server_capabilities.documentRangeFormattingProvider = false
-			end,
-			-- capabilities = capabilities
+		-- php - phpactor
+		lspconfig.phpactor.setup({
+			init_options = {
+				["language_server_phpstan.enabled"] = true,
+				["language_server_psalm.enabled"] = false,
+			}
 		})
 
 		-- GO
 		lspconfig.gopls.setup({})
 		-- Tailwind CSS
 		--require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
-		
+
 		-- Format on save.
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = '*.go',
@@ -41,7 +34,30 @@ return {
 
 		-- Typescript
 		lspconfig.tsserver.setup({})
-		
+
+		-- lua
+		lspconfig.lua_ls.setup({
+			on_init = function(client)
+				local path = client.workspace_folders[1].name
+				if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+					client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+						Lua = {
+							runtime = {
+								version = 'LuaJIT'
+							},
+							workspace = {
+								checkThirdParty = false,
+								library = {
+									vim.env.VIMRUNTIME
+								}
+							}
+						}
+					})
+				end
+				return true
+			end
+		})
+
 		-- Config
 		-- Sign configuration
 		vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })

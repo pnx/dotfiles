@@ -13,11 +13,14 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
+	{ import = "plugins.dashboard" },
+
 	-- Highlight
 	{ import = "plugins.colorscheme" },
 
 	{ import = "plugins.indent" },
 	{ import = "plugins.nvim-autopairs" },
+	{ import = "plugins.mini-comment" },
 
 	-- Filetree
 	{ import = "plugins.neo-tree" },
@@ -30,12 +33,17 @@ require("lazy").setup({
 
 	-- Keybind helper
 	{ import = "plugins.which-key" },
-	
+
 	-- Treesitter
 	{ import = "plugins.treesitter" },
 
 	-- LSP
 	{ import = "plugins.lsp" },
+	{ import = "plugins.nvim-cmp" },
+
+	{ import = "plugins.go" },
+
+	{ import = "plugins.nvim-test" },
 
 	-- Git changes in gutter
 	{ import = "plugins.gitsigns" },

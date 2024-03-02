@@ -10,18 +10,19 @@ return {
 		-- A list of parser names
 		ensure_installed = {
 			"bash",
-			"c", 
+			"c",
 			"cpp",
 			"ninja",
 			"cmake",
-			"lua", 
-			"vim", 
+			"make",
+			"lua",
+			"vim",
 			"vimdoc",
-			"query", 
+			"query",
 			"php",
 			"blade",
-			"go", 
-			"javascript", 
+			"go",
+			"javascript",
 			"typescript",
 			"css",
 			"scss",
@@ -33,7 +34,7 @@ return {
 			"toml",
 			"xml",
 			"glsl",
-			"hlsl", 
+			"hlsl",
 			"markdown"
 		},
 
@@ -54,9 +55,9 @@ return {
 			additional_vim_regex_highlighting = false,
 		},
 
-		indent = {
-			enable = true
-		}
+		-- indent = {
+		--	enable = true
+			--}
 	},
 	config = function(_, opts)
 		local parser_config = require('nvim-treesitter.parsers').get_parser_configs()

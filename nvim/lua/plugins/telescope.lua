@@ -5,10 +5,7 @@ return {
 		'nvim-lua/plenary.nvim',
 		'kyazdani42/nvim-web-devicons'
 	},
-	keys = {
-		{ '<leader>f', function() require('telescope.builtin').find_files() end },	
-		{ '<leader>F', function() require('telescope.builtin').git_files() end },
-	},
+	keys = require('config.telescope'),
 	config = function()
 		require('telescope').setup({
 			defaults = {
