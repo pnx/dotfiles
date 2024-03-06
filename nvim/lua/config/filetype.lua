@@ -1,12 +1,8 @@
+--
+-- Filetype settings
+--
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
-local set = vim.opt
-
--- Default softtab (4)
-set.tabstop = 4
-set.softtabstop = 4
-set.shiftwidth = 4
-set.autoindent = true
 
 augroup('indent', { clear = true })
 
@@ -29,4 +25,10 @@ autocmd('Filetype', {
 	group = 'indent',
 	pattern = { 'c', 'cpp' },
 	command = 'setlocal ts=8 sts=0 sw=8 noexpandtab'
+})
+
+-- Fix autocomment plugins to use line comments for php.
+autocmd('Filetype', {
+	pattern = 'php',
+	command = 'setlocal commentstring=//\\%s'
 })

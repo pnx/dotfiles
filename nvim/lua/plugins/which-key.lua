@@ -10,12 +10,11 @@ return {
 		local wk = require("which-key")
 
 		wk.register({
-			f = {
-				name = "file", -- optional group name
-				f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-				n = { "New File" }, -- just a label. don't create any mapping
-				e = "Edit File" -- same as above
-			},
+			f = 'file',
+			b = 'buffers',
+			t = 'test',
+			g = 'git',
+			s = 'search'
 		}, { prefix = "<leader>" })
 	end
 }

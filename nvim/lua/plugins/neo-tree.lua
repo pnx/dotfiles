@@ -1,8 +1,10 @@
+local icons = require('config.icons')
+
 return {
 	'nvim-neo-tree/neo-tree.nvim',
 	cmd = 'Neotree',
 	keys = {
-		{ '<leader>n', ':Neotree reveal toggle<CR>' },
+		{ '<leader>fe', ':Neotree reveal toggle<CR>', desc = 'Toggle File Explorer'},
 	},
 	dependencies = {
 		"MunifTanjim/nui.nvim",
@@ -21,29 +23,23 @@ return {
 				indent_marker = "│",
 				last_indent_marker = "└",
 			},
-			icon = {
-				folder_closed = "",
-				folder_open = "",
-				folder_empty = "󰜌",
-			},
+			icon = icons.filetree.basic,
 			name = {
-				use_git_status_colors = true,
+				use_git_status_colors = false,
 			},
 			git_status = {
-				symbols = {
-					-- Change type
-					added     = "",
-					modified  = "", 
-					deleted   = "✖",
-					renamed   = "󰁕",
-					-- Status type
-					untracked = "",
-					ignored   = "",
-					unstaged  = "",
-					staged    = "",
-					conflict  = "",
-				}
+				symbols = icons.filetree.git
 			},
+		},
+		event_handlers = {
+			{
+				event = "neo_tree_buffer_enter",
+				handler = function()
+					if vim.bo.filetype == "neo-tree" then
+						vim.cmd("setlocal statuscolumn=")
+					end
+				end,
+			}
 		},
 		filesystem = {
 			filtered_items = {
@@ -55,6 +51,9 @@ return {
 					"node_modules",
 					"vendor",
 				},
+			},
+			follow_current_file = {
+				enable = true
 			},
 		},
 	}

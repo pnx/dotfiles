@@ -4,6 +4,7 @@ return {
 		require('nvim-treesitter.install').update({ with_sync = true })
 	end,
 	dependencies = {
+		'nvim-treesitter/nvim-treesitter-textobjects',
 		'nvim-treesitter/playground'
 	},
 	opts = {
@@ -55,9 +56,9 @@ return {
 			additional_vim_regex_highlighting = false,
 		},
 
-		-- indent = {
-		--	enable = true
-			--}
+		indent = {
+			enable = true
+		}
 	},
 	config = function(_, opts)
 		local parser_config = require('nvim-treesitter.parsers').get_parser_configs()

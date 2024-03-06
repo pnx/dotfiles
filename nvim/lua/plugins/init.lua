@@ -21,6 +21,7 @@ require("lazy").setup({
 	{ import = "plugins.indent" },
 	{ import = "plugins.nvim-autopairs" },
 	{ import = "plugins.mini-comment" },
+	{ import = "plugins.barbar" },
 
 	-- Filetree
 	{ import = "plugins.neo-tree" },
@@ -36,6 +37,8 @@ require("lazy").setup({
 
 	-- Treesitter
 	{ import = "plugins.treesitter" },
+
+	{ import = "plugins.neotest" },
 
 	-- LSP
 	{ import = "plugins.lsp" },

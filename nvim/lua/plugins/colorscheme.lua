@@ -52,5 +52,10 @@ return {
 		local c = require('onedark')
 		c.setup(opts)
 		c.load()
+
+		vim.cmd(string.format("highlight GitSignsAdd guifg='%s'", opts.colors.green))
+		vim.cmd(string.format("highlight GitSignsChange guifg='%s'", opts.colors.yellow))
+		vim.cmd(string.format("highlight GitSignsDelete guifg='%s'", opts.colors.red))
+		-- vim.api.nvim_command("highlight GitSign"
 	end
 }

@@ -1,3 +1,5 @@
+local icons = require('config.icons').diff_gutter
+
 return {
 	'lewis6991/gitsigns.nvim',
 	lazy = false,
@@ -7,10 +9,12 @@ return {
 	},
 	opts = {
 		signs = {
-			add = { text = '▌' },
-			delete = { text = '' },
-			change = { text = '▌' },
-			untracked = { text = '+'}
+			add			 = { text = icons.add },
+			delete		 = { text = icons.delete },
+			change		 = { text = icons.change },
+			untracked    = { text = icons.untracked },
+			topdelete    = { text = icons.delete },
+			changedelete = { text = icons.change },
 		},
 	},
 }

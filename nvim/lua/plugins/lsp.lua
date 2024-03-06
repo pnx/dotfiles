@@ -3,16 +3,25 @@ return {
 	dependencies = {
 		'williamboman/mason.nvim',
 		'williamboman/mason-lspconfig.nvim',
+		'hrsh7th/cmp-nvim-lsp',
 	},
 	config = function()
 		-- Setup Mason to automatically install LSP servers
 		require('mason').setup()
 		require('mason-lspconfig').setup({ automatic_installation = true })
 		local lspconfig = require('lspconfig')
-		-- local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = false
+
+
+		local on_attach = function(ev)
+			vim.keymap.set('n', '<leader>rs', vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename symbol" })
+		end
 
 		-- php - phpactor
 		lspconfig.phpactor.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
 			init_options = {
 				["language_server_phpstan.enabled"] = true,
 				["language_server_psalm.enabled"] = false,
@@ -20,7 +29,10 @@ return {
 		})
 
 		-- GO
-		lspconfig.gopls.setup({})
+		lspconfig.gopls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities
+		})
 		-- Tailwind CSS
 		--require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
 
@@ -33,7 +45,9 @@ return {
 		})
 
 		-- Typescript
-		lspconfig.tsserver.setup({})
+		lspconfig.tsserver.setup({
+			capabilities = capabilities
+		})
 
 		-- lua
 		lspconfig.lua_ls.setup({
@@ -55,14 +69,16 @@ return {
 					})
 				end
 				return true
-			end
+			end,
+			capabilities = capabilities
 		})
 
 		-- Config
 		-- Sign configuration
-		vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
-		vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
-		vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
-		vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+		local icons = require('config.icons').diagnostics
+		vim.fn.sign_define('DiagnosticSignError', { text = icons.error, texthl = 'DiagnosticSignError' })
+		vim.fn.sign_define('DiagnosticSignWarn', { text = icons.warn, texthl = 'DiagnosticSignWarn' })
+		vim.fn.sign_define('DiagnosticSignInfo', { text = icons.info, texthl = 'DiagnosticSignInfo' })
+		vim.fn.sign_define('DiagnosticSignHint', { text = icons.hint, texthl = 'DiagnosticSignHint' })
 	end
 }

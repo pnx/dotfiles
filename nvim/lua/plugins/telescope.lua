@@ -1,27 +1,37 @@
+local icons = require('config.icons')
+
 return {
-    'nvim-telescope/telescope.nvim', 
+    'nvim-telescope/telescope.nvim',
 	tag = '0.1.4',
-    dependencies = { 
+	main = 'telescope',
+    dependencies = {
 		'nvim-lua/plenary.nvim',
-		'kyazdani42/nvim-web-devicons'
+		'nvim-tree/nvim-web-devicons'
 	},
 	keys = require('config.telescope'),
-	config = function()
-		require('telescope').setup({
+	opts = function()
+		local actions = require("telescope.actions")
+		return {
 			defaults = {
 				path_display = { truncate = 1 },
-				prompt_prefix = ' ',
-				selection_caret = '  ',
-				file_ignore_patterns = { 
+				prompt_prefix = ' ' .. icons.prompt .. ' ',
+				selection_caret = icons.current .. ' ',
+				multi_icon = icons.selected .. ' ',
+				file_ignore_patterns = {
 					".git/",
-					"node_modules/" 
+					"node_modules/"
 				},
+				mappings = {
+					i = {
+						["<esc>"] = actions.close
+					}
+				}
 			},
 			pickers = {
 				find_files = {
 					hidden = true
-				},
-			},
-		})
-	end
+				}
+			}
+		}
+	end,
 }
