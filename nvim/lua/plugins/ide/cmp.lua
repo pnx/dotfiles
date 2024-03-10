@@ -88,41 +88,7 @@ return {
 	config = function(_, opts)
 		local cmp = require('cmp')
 
-		-- local has_words_before = function()
-		-- 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-		-- 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-		-- end
-
-		-- local moveDown = cmp.mapping(function(fallback)
-		-- 	if cmp.visible() then
-		-- 		cmp.select_next_item()
-		-- 	elseif has_words_before() then
-		-- 		cmp.complete()
-		-- 	else
-		-- 		fallback()
-		-- 	end
-		-- end, { "i", "s" })
-		--
-		-- local moveUp = cmp.mapping(function(fallback)
-		-- 	if cmp.visible() then
-		-- 		cmp.select_prev_item()
-		-- 	else
-		-- 		fallback()
-		-- 	end
-		-- end, { "i", "s" })
-
 		cmp.setup(opts)
-
-		vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-			vim.lsp.handlers.hover,
-			{border = 'single'}
-		)
-
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-			focusable = true,
-			style = "minimal",
-			border = "single",
-		})
 
 		-- insert () on function completion using autopairs
 		cmp.event:on(

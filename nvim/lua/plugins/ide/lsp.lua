@@ -7,16 +7,34 @@ return {
 	},
 	opts = {
 		mappings = {
-			["<leader>rs"] = { vim.lsp.buf.rename, { desc = "Rename symbol" }}
+			["<leader>rs"] = { vim.lsp.buf.rename, { desc = "Rename symbol" }},
+			gd = { vim.lsp.buf.definition, { desc = "Goto definition" }}
 		},
 		servers = {
 			phpactor = {
-				init_options = {
-					["language_server_phpstan.enabled"] = true,
-					["language_server_psalm.enabled"] = false,
+				settings = {
+					init_options = {
+						["language_server_phpstan.enabled"] = true,
+						["language_server_psalm.enabled"] = false,
+					}
 				}
 			},
-			gopls = {}
+			gopls = {},
+			lua_ls = {
+				settings = {
+					Lua = {
+						runtime = {
+							version = 'LuaJIT'
+						},
+						workspace = {
+							checkThirdParty = false,
+							library = {
+								vim.env.VIMRUNTIME
+							}
+						}
+					},
+				},
+			},
 		},
 	},
 	config = function (_, opts)
@@ -27,17 +45,26 @@ return {
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = false
 
+		vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+			vim.lsp.handlers.hover,
+			{border = 'single'}
+		)
+
+		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+			focusable = true,
+			style = "minimal",
+			border = "single",
+		})
+
 		local on_attach = function(ev)
 			for bind, settings in pairs(opts.mappings) do
-				vim.keymap.set('n', bind, settings[0], vim.tbl_deep_extend("force", settings[1], { buffer = ev.buf }))
+				vim.keymap.set('n', bind, settings[1], vim.tbl_deep_extend("force", settings[2], { buffer = ev.buf }))
 			end
-
-			-- vim.keymap.set('n', '<leader>rs', vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename symbol" })
 		end
 
-		for name, settings in pairs(opts.servers) do
+		for name, server_opt in pairs(opts.servers) do
 
-			settings = vim.tbl_deep_extend("force", settings, {
+			local settings = vim.tbl_deep_extend("force", server_opt.settings or {}, {
 				capabilities = capabilities,
 				on_attach = on_attach
 			})
