@@ -10,7 +10,7 @@ set.showmode = false -- disable mode in the command line, because i use lualine
 --
 -- Editor settings
 --
-
+set.pumheight = 20
 set.hlsearch = false
 set.incsearch = true
 set.laststatus = 3
@@ -37,4 +37,11 @@ vim.filetype.add({
 		['.*%.blade%.php'] = 'blade',
 	},
 })
+
+-- Sign configuration
+local icons = require('config.icons').diagnostics
+vim.fn.sign_define('DiagnosticSignError', { text = icons.error, texthl = 'DiagnosticSignError' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = icons.warn, texthl = 'DiagnosticSignWarn' })
+vim.fn.sign_define('DiagnosticSignInfo', { text = icons.info, texthl = 'DiagnosticSignInfo' })
+vim.fn.sign_define('DiagnosticSignHint', { text = icons.hint, texthl = 'DiagnosticSignHint' })
 

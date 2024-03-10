@@ -11,44 +11,43 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local opts = {
+	dev = {
+		path = "~/code/nvim_plugins",
+	}
+}
+
 require("lazy").setup({
 
-	{ import = "plugins.dashboard" },
+	-- Editor
+	--------------------
+	{ import = "plugins.editor.indent" },
+	{ import = "plugins.editor.autopairs" },
+	{ import = "plugins.editor.mini-comment" },
+	{ import = "plugins.editor.telescope" },
 
-	-- Highlight
-	{ import = "plugins.colorscheme" },
+	-- UI
+	--------------------
+	{ import = "plugins.ui.dressing" },
+	{ import = "plugins.ui.noice" },
+	{ import = "plugins.ui.dashboard" },
+	{ import = "plugins.ui.colorscheme" },
+	{ import = "plugins.ui.neo-tree" },
+	{ import = "plugins.ui.barbar" },
+	{ import = "plugins.ui.lualine" },
+	{ import = "plugins.ui.gitsigns" },
+	{ import = "plugins.ui.which-key" },
 
-	{ import = "plugins.indent" },
-	{ import = "plugins.nvim-autopairs" },
-	{ import = "plugins.mini-comment" },
-	{ import = "plugins.barbar" },
+	-- IDE
+	--------------------
+	{ import = "plugins.ide.treesitter" },
+	{ import = "plugins.ide.cmp" },
+	{ import = "plugins.ide.lsp" },
+	{ import = "plugins.ide.dap" },
+	{ import = "plugins.ide.neotest" },
+	{ import = "plugins.ide.laravel" }
+	-- { import = "plugins.nvim-test" },
 
-	-- Filetree
-	{ import = "plugins.neo-tree" },
-
-	-- Status line
-	{ import = "plugins.lualine" },
-
-	-- Fuzzy finder
-	{ import = "plugins.telescope" },
-
-	-- Keybind helper
-	{ import = "plugins.which-key" },
-
-	-- Treesitter
-	{ import = "plugins.treesitter" },
-
-	{ import = "plugins.neotest" },
-
-	-- LSP
-	{ import = "plugins.lsp" },
-	{ import = "plugins.nvim-cmp" },
-
-	{ import = "plugins.go" },
-
-	{ import = "plugins.nvim-test" },
-
-	-- Git changes in gutter
-	{ import = "plugins.gitsigns" },
-})
+	-- { import = "plugins.go" },
+}, opts)
 

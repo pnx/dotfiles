@@ -5,14 +5,24 @@ return {
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-neotest/neotest-go",
-		"olimorris/neotest-phpunit"
+		"olimorris/neotest-phpunit",
+		{
+			"folke/which-key.nvim",
+			optional = true,
+			opts = {
+				defaults = {
+					["<leader>t"] = { name = "+test" },
+				},
+			},
+		},
 	},
 	keys = {
-		{"<leader>tn", ":lua require('neotest').run.run()<cr>", desc = "test nearest"},
+		{"<leader>tn", ":lua require('neotest').run.run()<cr>", desc = "test nearest", silent = true},
 		{"<leader>tf", ":lua require('neotest').run.run(vim.fn.expand('%'))<cr>", desc = "test file"},
 		{"<leader>ta", ":lua require('neotest').output_panel.open()<cr>:lua require('neotest').run.run({suite = true})<cr>", desc = "test all"},
 		{"<leader>ts", ":lua require('neotest').run.stop()<cr>", desc = "stop test"},
 		{"<leader>tq", ":lua require('neotest').output_panel.close()<cr>", desc = "close output window"},
+		{"<leader>te", ":lua require('neotest').summary()<cr>"}
 	},
 	opts = function()
 		local icons = require('config.icons').test
@@ -28,10 +38,10 @@ return {
 				child_indent = "│",
 				child_prefix = "├",
 				collapsed = "─",
-				expanded = "╮",
+				expanded = "┐",
 				failed = icons.failed,
 				final_child_indent = " ",
-				final_child_prefix = "╰",
+				final_child_prefix = "└",
 				non_collapsible = "─",
 				passed = icons.ok,
 				running = icons.running,

@@ -37,9 +37,12 @@ map("n", "<leader>bb", cmd.bp, { silent = true, desc = "Move to previous buffer"
 map("n", "<leader>bd", cmd.bd, { silent = true, desc = "Close current buffer"})
 
 -- Indent
-map('n', "<Tab>", "v=")
+map('n', "<Tab>", "^=$")
 map('x', "<Tab>", "=", { desc = "auto indent selection" })
 map("i", "<S-Tab>", "<C-d>", { desc = "delete indent" })
+
+-- fix paste
+map('n', "p", "p=$")
 
 -- Crazy search+replace
 map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {

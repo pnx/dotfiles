@@ -21,6 +21,7 @@ return {
 			"vimdoc",
 			"query",
 			"php",
+			"phpdoc",
 			"blade",
 			"go",
 			"javascript",
