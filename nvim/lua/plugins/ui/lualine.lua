@@ -9,6 +9,7 @@ return {
 	},
 	opts = {
 		options = {
+			theme = "catppuccin-mocha",
 			component_separators = '',
 			globalstatus = true,
 			disabled_filetypes = {

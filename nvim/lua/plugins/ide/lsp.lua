@@ -8,7 +8,10 @@ return {
 	opts = {
 		mappings = {
 			["<leader>rs"] = { vim.lsp.buf.rename, { desc = "Rename symbol" }},
-			gd = { vim.lsp.buf.definition, { desc = "Goto definition" }}
+			["<leader>ca"] = { vim.lsp.buf.code_action, { desc = "Code action" }},
+			gd = { vim.lsp.buf.definition, { desc = "Goto definition" }},
+			gi = { vim.lsp.buf.implementation, { desc = "Goto implementation"}},
+			gr = { vim.lsp.buf.references, { desc = "Goto references"}},
 		},
 		servers = {
 			phpactor = {
@@ -19,7 +22,19 @@ return {
 					}
 				}
 			},
-			gopls = {},
+			gopls = {
+				format_on_save = true,
+				settings = {
+					gopls = {
+						analyses = {
+							unusedvariable = true,
+							unusedwrite = true,
+							useany = true
+						},
+						gofumpt = true,
+					},
+				},
+			},
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -41,6 +56,7 @@ return {
 		-- Setup Mason to automatically install LSP servers
 		require('mason').setup()
 		require('mason-lspconfig').setup({ automatic_installation = true })
+		local augroup = vim.api.nvim_create_augroup("Lsp", {})
 		local lspconfig = require('lspconfig')
 		local capabilities = require('cmp_nvim_lsp').default_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = false
@@ -56,19 +72,49 @@ return {
 			border = "single",
 		})
 
-		local on_attach = function(ev)
-			for bind, settings in pairs(opts.mappings) do
-				vim.keymap.set('n', bind, settings[1], vim.tbl_deep_extend("force", settings[2], { buffer = ev.buf }))
-			end
-		end
-
 		for name, server_opt in pairs(opts.servers) do
+			local on_attach = function(client, bufnr)
+				for bind, settings in pairs(opts.mappings) do
+					vim.keymap.set('n', bind, settings[1], vim.tbl_deep_extend("force", settings[2], { buffer = bufnr }))
+				end
 
-			local settings = vim.tbl_deep_extend("force", server_opt.settings or {}, {
+				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+
+				-- Add format on save if configured and client supports it.
+				if server_opt.format_on_save and client.supports_method("textDocument/formatting") then
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							vim.lsp.buf.format()
+						end,
+					})
+				end
+
+				vim.api.nvim_create_autocmd("CursorHold", {
+					group = augroup,
+					buffer = bufnr,
+					callback = function() vim.lsp.buf.document_highlight() end
+				})
+
+				vim.api.nvim_create_autocmd("CursorHoldI", {
+					group = augroup,
+					buffer = bufnr,
+					callback = function() vim.lsp.buf.document_highlight() end
+				})
+
+				vim.api.nvim_create_autocmd("CursorMoved", {
+					group = augroup,
+					buffer = bufnr,
+					callback = function() vim.lsp.buf.clear_references() end
+				})
+			end
+
+			lspconfig[name].setup({
+				settings = server_opt.settings or {},
 				capabilities = capabilities,
 				on_attach = on_attach
 			})
-			lspconfig[name].setup(settings)
 		end
 	end
 }

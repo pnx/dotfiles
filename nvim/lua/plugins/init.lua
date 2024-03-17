@@ -31,9 +31,10 @@ require("lazy").setup({
 	{ import = "plugins.ui.dressing" },
 	{ import = "plugins.ui.noice" },
 	{ import = "plugins.ui.dashboard" },
-	{ import = "plugins.ui.colorscheme" },
+	{ import = "plugins.ui.catppuccin" },
 	{ import = "plugins.ui.neo-tree" },
 	{ import = "plugins.ui.barbar" },
+	{ import = "plugins.ui.barbecue" },
 	{ import = "plugins.ui.lualine" },
 	{ import = "plugins.ui.gitsigns" },
 	{ import = "plugins.ui.which-key" },
@@ -45,9 +46,9 @@ require("lazy").setup({
 	{ import = "plugins.ide.lsp" },
 	{ import = "plugins.ide.dap" },
 	{ import = "plugins.ide.neotest" },
-	{ import = "plugins.ide.laravel" }
+	{ import = "plugins.ide.laravel" },
 	-- { import = "plugins.nvim-test" },
 
-	-- { import = "plugins.go" },
+	--{ import = "plugins.go" },
 }, opts)
 

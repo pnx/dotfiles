@@ -22,7 +22,12 @@ set.cursorline = true
 set.number = true
 set.relativenumber = true
 set.numberwidth = 5
-set.statuscolumn = '%=%{v:relnum?v:relnum:v:lnum} %s '
+
+-- sign column to the right.
+--set.statuscolumn = '%=%{v:relnum?v:relnum:v:lnum} %s '
+
+-- sign column to the left
+set.statuscolumn = '%s %=%{v:relnum?v:relnum:v:lnum} '
 
 -- indent
 set.tabstop = 4
@@ -38,10 +43,20 @@ vim.filetype.add({
 	},
 })
 
--- Sign configuration
+--
+-- Diagnostics
+--
 local icons = require('config.icons').diagnostics
 vim.fn.sign_define('DiagnosticSignError', { text = icons.error, texthl = 'DiagnosticSignError' })
 vim.fn.sign_define('DiagnosticSignWarn', { text = icons.warn, texthl = 'DiagnosticSignWarn' })
 vim.fn.sign_define('DiagnosticSignInfo', { text = icons.info, texthl = 'DiagnosticSignInfo' })
 vim.fn.sign_define('DiagnosticSignHint', { text = icons.hint, texthl = 'DiagnosticSignHint' })
 
+vim.diagnostic.config({
+	virtual_text = true,
+	severity_sort = true,
+	float = {
+		border = 'single',
+		source = 'always',
+	},
+})

@@ -12,30 +12,27 @@ return {
 			variables = 'none'
 		},
 		colors = {
-			fg = '#ffffff',
-			bg0 = '#282a33',
+			fg = '#b3b1b1',
+			bg0 = '#171b26',
 			bg1 = '#30323b',
 			bg2 = '#24262f',
 			bg3 = '#383a43',
 			bg_d = "#1f2129",
 			bg_blue = "#ff00ff",
 			bg_yellow = "#f0d197",
-			red = '#cc817f',
-			green = '#7ccfaf',
-			yellow = '#ffcc99',
-			orange = '#ffcc99',
-			blue = '#8ac6f2',
-			cyan = '#8abeb7',
-			purple = '#9999cc',
+			red = '#cc4a33',
+			green = '#51cc7f',
+			yellow = '#ccaf33',
+			orange = '#ccab1f',
+			blue = '#3390cc',
+			cyan = '#33ccb7',
+			purple = '#9233cc',
 			dark_cyan = "#8abeb7",
 			dark_red = "#cc817f",
 			dark_yellow = "#ffcc99",
 			dark_purple = "#9999cc",
 		},
 		highlights = {
-			-- ColorColumn = { bg = "$bg2"},
-			-- SignColumn = { bg = "$bg2"},
-			-- LineNr = { fg = "$light_grey", bg = "$bg2" }
 			LineNr = { fg = "$light_grey" },
 			CursorLineNr = { fg = "$blue" },
 
@@ -55,7 +52,7 @@ return {
 			["@constant"] = { fg = "$green" },
 			["@tag"] = { fg = "$yellow" },
 			["@tag.delimiter"] = { fg = "$yellow" },
-			["@tag.attribute"] = { fg = "$cyan" },
+			["@tag.attribute"] = { fg = "$yellow" },
 			["@type"] = { fg = "$blue" },
 			["@type.qualifier"] = { fg = "$yellow" },
 			["@type.definition"] = { fg = "$blue" },
@@ -91,6 +88,5 @@ return {
 		vim.cmd(string.format("highlight GitSignsAdd guifg='%s'", opts.colors.green))
 		vim.cmd(string.format("highlight GitSignsChange guifg='%s'", opts.colors.yellow))
 		vim.cmd(string.format("highlight GitSignsDelete guifg='%s'", opts.colors.red))
-
 	end
 }

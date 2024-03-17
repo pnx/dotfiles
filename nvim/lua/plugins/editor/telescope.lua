@@ -2,11 +2,11 @@ local icons = require('config.icons')
 
 return {
     'nvim-telescope/telescope.nvim',
-	tag = '0.1.4',
 	main = 'telescope',
     dependencies = {
 		'nvim-lua/plenary.nvim',
 		'nvim-tree/nvim-web-devicons',
+		'sharkdp/fd',
 		{
 			"folke/which-key.nvim",
 			-- optional = true,

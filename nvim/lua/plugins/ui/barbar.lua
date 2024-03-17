@@ -16,7 +16,7 @@ return {
 		icons = {
 			separator = {left = '', right = ''},
 			separator_at_end = false,
-			inactive = { button = '' },
+			inactive = { button = '', separator = { left = '', right = ''} },
 			modified = {button = icons.filetree.git.modified },
 			pinned = {button = '', filename = true},
 		},

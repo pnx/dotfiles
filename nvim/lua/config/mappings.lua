@@ -27,6 +27,7 @@ map("v", "<S-d>", ":m '>+1<CR>gv=gv", { silent = true, desc = "move current sele
 -- copy/paste
 map("x", "<leader>p", [["_dP]], { silent = true, desc = "Paste over selected text without losing content in \"-register" })
 map({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank to system clipboard register" })
+map("n", "<leader>p", [["+p]], { desc = "Paste from system clipboard register" })
 
 -- File operations
 map("n", "<leader>fx", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Set execute flag on current file" })
@@ -50,3 +51,8 @@ map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 })
 
 map("n", "Q", "<nop>")
+
+-- diagnostics
+map("n", "<leader>DD", vim.diagnostic.open_float, { desc = "Open"})
+map("n", "<leader>Dn", vim.diagnostic.get_next, { desc = "Open"})
+map("n", "<leader>Dp", vim.diagnostic.get_prev, { desc = "Open"})

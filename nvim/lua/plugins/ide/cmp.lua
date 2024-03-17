@@ -45,8 +45,7 @@ return {
 				["<S-Tab>"] = selectPrev,
 				["<Down>"] = selectNext,
 				["<Tab>"] = selectNext,
-				-- ["<esc>"] = close without removeing typed text,
-				["<S-space>"] = cmp.mapping.complete(),
+				["<esc>"] = cmp.mapping.abort(),
 				['<CR>'] = cmp.mapping.confirm({ select = true }),
 			},
 			snippet = {
@@ -54,24 +53,24 @@ return {
 					require('luasnip').lsp_expand(args.body)
 				end,
 			},
-			-- formatting = {
-			-- 	fields = { "abbr", "menu", "kind" },
-			-- 	format = function(entry, vim_item)
-			-- 		if vim.tbl_contains({ 'path' }, entry.source.name) then
-			-- 			local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
-			-- 			if icon then
-			-- 				vim_item.kind = icon
-			-- 				vim_item.kind_hl_group = hl_group
-			-- 				return vim_item
-			-- 			end
-			-- 		end
-			--
-			-- 		local opts = {
-			-- 			mode = 'symbol',
-			-- 		}
-			-- 		return require('lspkind').cmp_format(opts)(entry, vim_item)
-			-- 	end
-			-- },
+			formatting = {
+				fields = { "abbr", "menu", "kind" },
+				format = function(entry, vim_item)
+					if vim.tbl_contains({ 'path' }, entry.source.name) then
+						local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+						if icon then
+							vim_item.kind = icon
+							vim_item.kind_hl_group = hl_group
+							return vim_item
+						end
+					end
+
+					local opts = {
+						mode = 'symbol',
+					}
+					return require('lspkind').cmp_format(opts)(entry, vim_item)
+				end
+			},
 			sources = {
 				{ name = 'nvim_lsp' },
 				{ name = 'buffer' },
