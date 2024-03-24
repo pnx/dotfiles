@@ -4,36 +4,34 @@ return {
 	selected = '',
 	close = '✖',
 	pinned = '',
+	folder = {
+		closed = "",
+		open = "",
+		empty = "󰜌",
+	},
 	diff = {
 		added = '',
 		modified = '',
 		removed = '',
 	},
-	filetree = {
-		basic = {
-			folder_closed = "",
-			folder_open = "",
-			folder_empty = "󰜌",
-		},
-		git = {
-			-- Change type
-			added     = "",
-			modified  = "",
-			deleted   = "✖",
-			renamed   = "󰁕",
-			-- Status type
-			untracked = "",
-			ignored   = "",
-			unstaged  = "",
-			staged    = "",
-			conflict  = "",
-		},
-	},
 	diff_gutter = {
-		add = '▌',
-		change = '▌',
+		add = '▍',
+		change = '▍',
 		delete = '',
 		untracked = '+'
+	},
+	gitsigns = {
+		-- Change type
+		added     = "",
+		modified  = "",
+		deleted   = "✖",
+		renamed   = "󰁕",
+		-- Status type
+		untracked = "",
+		ignored   = "",
+		unstaged  = "",
+		staged    = "",
+		conflict  = "",
 	},
 	diagnostics = {
 		error = '',

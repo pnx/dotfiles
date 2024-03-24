@@ -6,7 +6,7 @@ return {
 			-- optional = true,
 			opts = {
 				defaults = {
-					["<leader>d"] = { name = "+debug" },
+					["<leader>D"] = { name = "+debug" },
 				},
 			},
 		},
@@ -14,8 +14,8 @@ return {
 			"rcarriga/nvim-dap-ui",
 			-- stylua: ignore
 			keys = {
-				{ "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
-				{ "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
+				{ "<leader>Du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+				{ "<leader>De", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
 			},
 			opts = {},
 			config = function(_, opts)
@@ -37,7 +37,7 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+		{ "<leader>Dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
 	},
 	config = function()
 		-- local Config = require("lazyvim.config")

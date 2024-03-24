@@ -32,3 +32,4 @@ autocmd('Filetype', {
 	pattern = 'php',
 	command = 'setlocal commentstring=//\\%s'
 })
+

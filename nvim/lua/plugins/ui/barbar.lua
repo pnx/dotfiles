@@ -17,8 +17,13 @@ return {
 			separator = {left = '', right = ''},
 			separator_at_end = false,
 			inactive = { button = '', separator = { left = '', right = ''} },
-			modified = {button = icons.filetree.git.modified },
-			pinned = {button = '', filename = true},
+			modified = {button = icons.gitsigns.modified },
+			pinned = {button = icons.pinned, filename = true},
+			gitsigns = {
+				added = { enabled = false },
+				changed = { enabled = false },
+				deleted = { enabled = false },
+			}
 		},
 		maximum_padding = 2,
 		minimum_padding = 1,

@@ -1,4 +1,4 @@
-local icons = require('config.icons')
+local config = require('config.plugins.telescope')
 
 return {
     'nvim-telescope/telescope.nvim',
@@ -9,49 +9,30 @@ return {
 		'sharkdp/fd',
 		{
 			"folke/which-key.nvim",
-			-- optional = true,
+			optional = true,
 			opts = {
-				defaults = {
-					["<leader>s"] = { name = "+search" },
-				},
+				defaults = config.key_groups or {},
 			},
 		},
 	},
-	keys = require('config.telescope'),
-	opts = function()
-		local actions = require("telescope.actions")
-		return {
-			defaults = {
-				path_display = { truncate = 1 },
-				-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				border = {
-					prompt = { 1, 1, 1, 1 },
-					results = { 1, 1, 1, 1 },
-					preview = { 1, 1, 1, 1 },
-				},
-				borderchars = {
-					prompt = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
-					results = { "─", "│", " ", "│", "┌", "┬", "│", "│" },
-					preview = { "─", "│", "─", " ", "─", "┐", "┘", "─" },
-				},
-				prompt_prefix = ' ' .. icons.prompt .. ' ',
-				selection_caret = icons.current .. ' ',
-				multi_icon = icons.selected .. ' ',
-				file_ignore_patterns = {
-					".git/",
-					"node_modules/"
-				},
-				mappings = {
-					i = {
-						["<esc>"] = actions.close
-					}
-				}
+	keys = config.keys or {},
+	opts = config.opts or {},
+	config = function (_, opts)
+		local override = {
+			border = {
+				prompt = { 1, 1, 1, 1 },
+				results = { 1, 1, 1, 1 },
+				preview = { 1, 1, 1, 1 },
 			},
-			pickers = {
-				find_files = {
-					hidden = true
-				}
-			}
+			borderchars = {
+				prompt = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
+				results = { "─", "│", " ", "│", "┌", "┬", "│", "│" },
+				preview = { "─", "│", "─", " ", "─", "┐", "┘", "─" },
+			},
 		}
-	end,
+
+		opts.defaults = vim.tbl_deep_extend("force", opts.defaults, override)
+
+		require('telescope').setup(opts)
+	end
 }

@@ -53,6 +53,6 @@ map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 map("n", "Q", "<nop>")
 
 -- diagnostics
-map("n", "<leader>DD", vim.diagnostic.open_float, { desc = "Open"})
-map("n", "<leader>Dn", vim.diagnostic.get_next, { desc = "Open"})
-map("n", "<leader>Dp", vim.diagnostic.get_prev, { desc = "Open"})
+map("n", "<leader>do", vim.diagnostic.open_float, { desc = "Open diagnostics"})
+map("n", "<leader>dn", vim.diagnostic.get_next, { desc = "Goto next"})
+map("n", "<leader>dp", vim.diagnostic.get_prev, { desc = "Goto previous"})

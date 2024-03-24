@@ -20,14 +20,14 @@ local opts = {
 require("lazy").setup({
 
 	-- Editor
-	--------------------
+	-----------------------------
 	{ import = "plugins.editor.indent" },
 	{ import = "plugins.editor.autopairs" },
 	{ import = "plugins.editor.mini-comment" },
 	{ import = "plugins.editor.telescope" },
 
 	-- UI
-	--------------------
+	-----------------------------
 	{ import = "plugins.ui.dressing" },
 	{ import = "plugins.ui.noice" },
 	{ import = "plugins.ui.dashboard" },
@@ -40,15 +40,18 @@ require("lazy").setup({
 	{ import = "plugins.ui.which-key" },
 
 	-- IDE
-	--------------------
+	-----------------------------
 	{ import = "plugins.ide.treesitter" },
+	{ import = "plugins.ide.conform" },
 	{ import = "plugins.ide.cmp" },
 	{ import = "plugins.ide.lsp" },
 	{ import = "plugins.ide.dap" },
 	{ import = "plugins.ide.neotest" },
-	{ import = "plugins.ide.laravel" },
-	-- { import = "plugins.nvim-test" },
 
-	--{ import = "plugins.go" },
+	-- Language specific
+	-----------------------------
+	{ import = "plugins.lang.laravel" },
+	--{ import = "plugins.lang.go" },
+
 }, opts)
 

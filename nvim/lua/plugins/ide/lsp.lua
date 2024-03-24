@@ -9,6 +9,7 @@ return {
 		mappings = {
 			["<leader>rs"] = { vim.lsp.buf.rename, { desc = "Rename symbol" }},
 			["<leader>ca"] = { vim.lsp.buf.code_action, { desc = "Code action" }},
+			["<leader>ff"] = { vim.lsp.buf.format, { desc = "Format file" }},
 			gd = { vim.lsp.buf.definition, { desc = "Goto definition" }},
 			gi = { vim.lsp.buf.implementation, { desc = "Goto implementation"}},
 			gr = { vim.lsp.buf.references, { desc = "Goto references"}},

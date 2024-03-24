@@ -23,12 +23,16 @@ return {
 				indent_marker = "│",
 				last_indent_marker = "└",
 			},
-			icon = icons.filetree.basic,
+			icon = {
+				folder_open = icons.folder.open,
+				folder_close = icons.folder.close,
+				folder_empty = icons.folder.empty,
+			},
 			name = {
 				use_git_status_colors = false,
 			},
 			git_status = {
-				symbols = icons.filetree.git
+				symbols = icons.gitsigns
 			},
 		},
 		event_handlers = {
