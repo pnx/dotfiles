@@ -1,10 +1,10 @@
 * {
-    font:   "IBM Plex Mono 12";
+    font:   "JetBrainsMono NF Medium 12";
 
-    bg:        #282a33;
-    gray:      #404754;
-    blue:      #8ac6f2;
-    white:     #eceff4;
+    bg:        #0E1019;
+    gray:      #131521;
+    blue:      #89b4fa;
+    white:     #eceef4;
     yellow:    #ebcb8b;
 
     background-color:   transparent;

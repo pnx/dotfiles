@@ -1,61 +1,38 @@
 !! Colorscheme
 
-! special
-*.foreground: #f1f1f1
-*.background: #282a33
-*.cursorColor: #f1f1f1
+
+*background: #0E1019
+*foreground: #CDD6F4
 
 ! black
-*.color0: #000
-*.color8: #000
+*color0: #45475A
+*color8: #585B70
 
 ! red
-*.color1: #cc817f
-*.color9: #cc817f
+*color1: #F38BA8
+*color9: #F38BA8
 
 ! green
-*.color2: #7ccfaf
-*.color10: #7ccfaf
+*color2: #A6E3A1
+*color10: #A6E3A1
 
 ! yellow
-*.color3: #ffcc99
-*.color11: #ffcc99
+*color3: #F9E2AF
+*color11: #F9E2AF
 
 ! blue
-*.color4: #8ac6f2
-*.color12: #8ac6f2
+*color4: #89B4FA
+*color12: #89B4FA
 
 ! magenta
-*.color5: #9999cc
-*.color13: #9999cc
+*color5: #F5C2E7
+*color13: #F5C2E7
 
 ! cyan
-*.color6: #8abeb7
-*.color14: #8abeb7
+*color6: #94E2D5
+*color14: #94E2D5
 
 ! white
-*.color7: #f1f1f1
-*.color15: #f1f1f1
+*color7: #BAC2DE
+*color15: #A6ADC8
 
-!! URxvt Appearance
-Xft.dpi: 96
-Xft.rbga: rgb
-Xft.antialias: true
-Xft.hinting: true
-Xft.hintstyle: hintslight
-URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=12
-URxvt*letterSpace: 0
-URxvt.lineSpace: 0
-URxvt.geometry: 400x400
-URxvt.internalBorder: 2
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
-URxvt.saveline: 2048
-URxvt.scrollBar: true
-URxvt.scrollBar_right: true
-URxvt.scrollstyle: plain
-URxvt.urgentOnBell: true
-URxvt.depth: 24
-URxvt.iso14755: false
-URxvt.perl-lib: .config/urxvt/ext
-URxvt.perl-ext-common: ibeamcursor
