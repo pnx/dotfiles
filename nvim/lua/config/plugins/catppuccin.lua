@@ -3,7 +3,14 @@ return {
 	color_overrides = {
 		mocha = {
 			base = '#0e1019',
-			mantle = '#131521',
+			mantle = '#0D0F17',
+			crust = '#0C0D14',
+			surface0 = '#131521',
+			surface1 = '#343959',
+			surface2 = '#41476F',
+			overlay0 = '#3F4256',
+			overlay1 = '#5B5F7C',
+			overlay2 = '#767BA0',
 			text = '#eceef4',
 		}
 	},
@@ -12,21 +19,29 @@ return {
 	highlight_overrides = {
 		mocha = function(colors)
 			return {
-				CursorLine = { bg = colors.mantle },
+				NormalFloat = { bg = colors.crust },
+				FloatBorder = { fg = colors.crust, bg = colors.crust },
+				WinSeparator = { fg = colors.surface0 },
+
+				NoiceMini = { bg = colors.crust },
 
 				-- indent lines
-				IblScope = { fg = colors.overlay2 },
+				IblScope = { fg = colors.overlay1 },
 
-				BufferCurrent = { fg = colors.text, bg = colors.base },
-				BufferCurrentMod = { fg = colors.yellow, bg = colors.base },
-				BufferCurrentADDED = { fg = colors.green, bg = colors.base },
-				BufferCurrentCHANGED = { fg = colors.yellow, bg = colors.base },
-				BufferCurrentDELETED = { fg = colors.red, bg = colors.base },
 
 				-- LSP
-				LspReferenceText = { bg = colors.surface0 },
-				LspReferenceRead = { link = "LspReferenceText" },
-				LspReferenceWrite = { link = "LspReferenceText" },
+				-- LspReferenceText = { bg = colors.surface0 },
+				-- LspReferenceRead = { link = "LspReferenceText" },
+				-- LspReferenceWrite = { link = "LspReferenceText" },
+				--
+				-- -- telescope
+				TelescopeNormal = { bg = colors.crust },
+				TelescopeBorder = { fg = colors.crust, bg = colors.crust },
+				TelescopePromptNormal = { bg = colors.mantle },
+				TelescopePromptPrefix = { fg = colors.mauve },
+				TelescopePromptBorder = { fg = colors.mantle, bg = colors.mantle },
+				TelescopePromptTitle = { fg = colors.crust, bg = colors.blue },
+				TelescopePreviewTitle = { fg = colors.crust, bg = colors.mauve },
 
 				-- Syntax
 				PreProc = { link = "Include" },

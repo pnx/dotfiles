@@ -19,29 +19,33 @@ local opts = {
 
 require("lazy").setup({
 
+	-- Core
+	-----------------------------
+	{ import = "plugins.core.treesitter" },
+	{ import = "plugins.core.autopairs" },
+	{ import = "plugins.core.autotag" },
+	{ import = "plugins.core.indent-blankline" },
+
 	-- Editor
 	-----------------------------
-	{ import = "plugins.editor.indent" },
-	{ import = "plugins.editor.autopairs" },
 	{ import = "plugins.editor.mini-comment" },
 	{ import = "plugins.editor.telescope" },
 
 	-- UI
 	-----------------------------
 	{ import = "plugins.ui.dressing" },
+	{ import = "plugins.ui.edgy" },
 	{ import = "plugins.ui.noice" },
 	{ import = "plugins.ui.dashboard" },
 	{ import = "plugins.ui.catppuccin" },
 	{ import = "plugins.ui.neo-tree" },
-	{ import = "plugins.ui.barbar" },
-	{ import = "plugins.ui.barbecue" },
+	{ import = "plugins.ui.bufferline" },
 	{ import = "plugins.ui.lualine" },
 	{ import = "plugins.ui.gitsigns" },
 	{ import = "plugins.ui.which-key" },
 
 	-- IDE
 	-----------------------------
-	{ import = "plugins.ide.treesitter" },
 	{ import = "plugins.ide.conform" },
 	{ import = "plugins.ide.cmp" },
 	{ import = "plugins.ide.lsp" },
@@ -51,7 +55,7 @@ require("lazy").setup({
 	-- Language specific
 	-----------------------------
 	{ import = "plugins.lang.laravel" },
-	--{ import = "plugins.lang.go" },
+	{ import = "plugins.lang.go" },
 
 }, opts)
 

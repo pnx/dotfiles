@@ -50,6 +50,11 @@ map("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {
 	desc = "search+replace word under cursor"
 })
 
+map({"x"}, "<leader>hx", [[:s/\(\x\{2\}\)/0x\1,/g<cr>]], { desc = "Format hex"})
+map({"x"}, "<leader>ha", [[:s/0x\(\x\{1\}\X\)/0x0\1/g<cr>]], { desc = "Format hex more"})
+map({"x"}, "<leader>hn", [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g<cr>]], { desc = "Format hex with 8 bytes per row"})
+
+
 map("n", "Q", "<nop>")
 
 -- diagnostics

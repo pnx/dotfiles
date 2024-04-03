@@ -6,6 +6,7 @@ local set = vim.opt
 set.termguicolors = true
 set.updatetime = 50
 set.showmode = false -- disable mode in the command line, because i use lualine
+set.mousemoveevent = true
 
 --
 -- Editor settings
@@ -14,6 +15,7 @@ set.pumheight = 20
 set.hlsearch = false
 set.incsearch = true
 set.laststatus = 3
+set.splitkeep = "screen"
 set.scrolloff=20
 --vim.opt.sidescrolloff = 8
 set.cursorline = true
@@ -59,4 +61,14 @@ vim.diagnostic.config({
 		border = 'single',
 		source = 'always',
 	},
+})
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd('TextYankPost', {
+	group = vim.api.nvim_create_augroup('highlight_yank', {}),
+	desc = 'Hightlight selection on yank',
+	pattern = '*',
+	callback = function()
+		vim.highlight.on_yank { higroup = 'IncSearch', timeout = 200 }
+	end,
 })

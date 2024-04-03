@@ -2,12 +2,23 @@ return {
 	prompt = '',
 	current = ' ',
 	selected = '',
-	close = '✖',
+	close = '󰅖',
 	pinned = '',
+	tree = {
+		node = '│',
+		nodelast = '└',
+	},
+	files = {
+		text = "",
+		symlink = "",
+	},
 	folder = {
 		closed = "",
 		open = "",
-		empty = "󰜌",
+		empty = "",
+		empty_open = "",
+		symlink = "",
+		symlink_open = "",
 	},
 	diff = {
 		added = '',
@@ -15,8 +26,8 @@ return {
 		removed = '',
 	},
 	diff_gutter = {
-		add = '▍',
-		change = '▍',
+		add = '▏',
+		change = '▏',
 		delete = '',
 		untracked = '+'
 	},
@@ -24,14 +35,14 @@ return {
 		-- Change type
 		added     = "",
 		modified  = "",
-		deleted   = "✖",
-		renamed   = "󰁕",
+		deleted   = "",
+		renamed   = "➜",
 		-- Status type
-		untracked = "",
-		ignored   = "",
+		untracked = "★",
+		ignored   = "◌",
 		unstaged  = "",
-		staged    = "",
-		conflict  = "",
+		staged    = "✓",
+		conflict  = "",
 	},
 	diagnostics = {
 		error = '',

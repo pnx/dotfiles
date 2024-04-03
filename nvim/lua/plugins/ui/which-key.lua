@@ -5,19 +5,11 @@ return {
 		vim.o.timeout = true
 		vim.o.timeoutlen = 300
 	end,
-	opts = {
-		defaults = {
-			mode = { "n", "v" },
-			["<leader>r"] = { name = "+rename" },
-			["<leader>b"] = { name = "+buffers" },
-			["<leader>f"] = { name = "+files" },
-			["<leader>d"] = { name = "+diagnostics" }
-		}
-	},
+	opts = require('config.plugins.which-key'),
 	config = function(_, opts)
 		local wk = require("which-key")
 		wk.setup(opts)
-		wk.register(opts.defaults)
+		wk.register(opts.defaults or {})
 	end
 }
 

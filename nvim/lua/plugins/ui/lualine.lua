@@ -12,6 +12,7 @@ return {
 			theme = "catppuccin-mocha",
 			component_separators = '',
 			globalstatus = true,
+			section_separators = { left = '', right = '' },
 			disabled_filetypes = {
 				statusline = {
 					'dashboard',
@@ -22,6 +23,17 @@ return {
 		sections = {
 			lualine_a = { "mode" },
 			lualine_b = { "branch" },
+			lualine_c = {
+				{
+					"diagnostics",
+					symbols = {
+						error = icons.diagnostics.error .. ' ',
+						warn = icons.diagnostics.warn .. ' ',
+						info = icons.diagnostics.info .. ' ',
+						hint = icons.diagnostics.hint .. ' ',
+					},
+				}
+			},
 			lualine_x = {
 				{
 					require("lazy.status").updates,
@@ -36,15 +48,7 @@ return {
 				-- 		removed = icons.diff.removed .. ' '
 				-- 	}
 				-- },
-				{
-					"diagnostics",
-					symbols = {
-						error = icons.diagnostics.error .. ' ',
-						warn = icons.diagnostics.warn .. ' ',
-						info = icons.diagnostics.info .. ' ',
-						hint = icons.diagnostics.hint .. ' ',
-					},
-				},
+				'filename'
 			},
 			lualine_y = {
 				'encoding',

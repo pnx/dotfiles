@@ -17,8 +17,8 @@ return {
 		local selectNext = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })
 
 		local border = cmp.config.window.bordered({
-			border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
-			winhighlight = 'Normal:None,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None'
+			-- border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+			winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None'
 		})
 
 		return {

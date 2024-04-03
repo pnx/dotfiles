@@ -1,6 +1,7 @@
 return {
 	"nvim-neotest/neotest",
 	dependencies = {
+		"nvim-neotest/nvim-nio",
 		"nvim-lua/plenary.nvim",
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
@@ -22,7 +23,7 @@ return {
 		{"<leader>ta", ":lua require('neotest').output_panel.open()<cr>:lua require('neotest').run.run({suite = true})<cr>", desc = "test all"},
 		{"<leader>ts", ":lua require('neotest').run.stop()<cr>", desc = "stop test"},
 		{"<leader>tq", ":lua require('neotest').output_panel.close()<cr>", desc = "close output window"},
-		{"<leader>te", ":lua require('neotest').summary()<cr>"}
+		{"<leader>te", ":Neotest summary<cr>", desc = "Open test explorer"}
 	},
 	opts = function()
 		local icons = require('config.icons').test
@@ -48,6 +49,9 @@ return {
 				skipped = icons.skipped,
 				unknown = icons.unknown,
 				watching = icons.watch
+			},
+			summery = {
+				open = "botleft vsplit"
 			}
 		}
 	end

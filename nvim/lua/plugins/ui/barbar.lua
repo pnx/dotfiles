@@ -28,7 +28,7 @@ return {
 		maximum_padding = 2,
 		minimum_padding = 1,
 		sidebar_filetypes = {
-			['neo-tree'] = {event = 'BufWipeout'},
+			--['neo-tree'] = {event = 'BufWipeout'},
 		}
 	},
 }

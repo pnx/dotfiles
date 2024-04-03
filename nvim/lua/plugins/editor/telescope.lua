@@ -24,11 +24,11 @@ return {
 				results = { 1, 1, 1, 1 },
 				preview = { 1, 1, 1, 1 },
 			},
-			borderchars = {
-				prompt = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
-				results = { "─", "│", " ", "│", "┌", "┬", "│", "│" },
-				preview = { "─", "│", "─", " ", "─", "┐", "┘", "─" },
-			},
+			-- borderchars = {
+			-- 	prompt = { "─", "│", "─", "│", "├", "┤", "┴", "└" },
+			-- 	results = { "─", "│", " ", "│", "┌", "┬", "│", "│" },
+			-- 	preview = { "─", "│", "─", " ", "─", "┐", "┘", "─" },
+			-- },
 		}
 
 		opts.defaults = vim.tbl_deep_extend("force", opts.defaults, override)
