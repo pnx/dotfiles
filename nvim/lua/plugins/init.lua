@@ -51,6 +51,7 @@ require("lazy").setup({
 	{ import = "plugins.ide.lsp" },
 	{ import = "plugins.ide.dap" },
 	{ import = "plugins.ide.neotest" },
+	{ import = "plugins.ide.copilot" },
 
 	-- Language specific
 	-----------------------------
