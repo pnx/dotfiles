@@ -1,3 +1,5 @@
+local icons = require('config.icons')
+
 return {
 	'hrsh7th/nvim-cmp',
 	version = false,
@@ -10,16 +12,24 @@ return {
 		'onsails/lspkind-nvim',
 	},
 	opts = function()
+		local lspkind_config = {
+			mode = 'symbol',
+			preset = 'codicons',
+			symbol_map = icons.symbols,
+			maxwidth = 40,
+			ellipsis_char = "...",
+		}
+
 		local cmp = require('cmp')
 		vim.api.nvim_set_hl(0, "CmpGhostText", { link = "NonText", default = true })
 
 		local selectPrev = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
 		local selectNext = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })
 
-		local border = cmp.config.window.bordered({
-			-- border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
-			winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None'
-		})
+		local borderstyle = {
+			border = "none",
+			winhighlight = 'Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+		}
 
 		return {
 			completion = {
@@ -37,8 +47,8 @@ return {
 				entries = { name = 'custom', selection_order = 'near_cursor' },
 			},
 			window = {
-				documentation = border,
-				completion = border
+				documentation = borderstyle,
+				completion = borderstyle
 			},
 			mapping = {
 				["<Up>"] = selectPrev,
@@ -54,7 +64,7 @@ return {
 				end,
 			},
 			formatting = {
-				fields = { "abbr", "menu", "kind" },
+				fields = { "abbr", "kind", "menu" },
 				format = function(entry, vim_item)
 					if vim.tbl_contains({ 'path' }, entry.source.name) then
 						local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
@@ -65,13 +75,11 @@ return {
 						end
 					end
 
-					local opts = {
-						mode = 'symbol',
-					}
-					return require('lspkind').cmp_format(opts)(entry, vim_item)
+					return require('lspkind').cmp_format(lspkind_config)(entry, vim_item)
 				end
 			},
 			sources = {
+				{ name = "copilot" },
 				{ name = 'nvim_lsp' },
 				{ name = 'buffer' },
 				{ name = 'path' },
