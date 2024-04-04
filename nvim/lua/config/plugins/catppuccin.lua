@@ -19,15 +19,22 @@ return {
 	highlight_overrides = {
 		mocha = function(colors)
 			return {
-				NormalFloat = { bg = colors.crust },
-				FloatBorder = { fg = colors.crust, bg = colors.crust },
+				-- Floating windows
+				NormalFloat = { fg = colors.text, bg = colors.base },
+				FloatTitle = { fg = colors.base, bg = colors.blue },
+				FloatBorder = { fg = colors.blue, bg = colors.base },
+
+				-- Window separator
 				WinSeparator = { fg = colors.surface0 },
 
-				NoiceMini = { bg = colors.crust },
+				-- Menus
+				Pmenu = { fg = colors.text, bg = colors.mantle },
+
+				-- NoiceMini = { link = "NormalFloat" },
+				WhichKeyFloat = { link = "Pmenu" },
 
 				-- indent lines
 				IblScope = { fg = colors.overlay1 },
-
 
 				-- LSP
 				-- LspReferenceText = { bg = colors.surface0 },
