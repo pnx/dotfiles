@@ -2,7 +2,7 @@ return {
 	flavour = "mocha",
 	color_overrides = {
 		mocha = {
-			base = '#0e1019',
+			base = '#0E1019',
 			mantle = '#0D0F17',
 			crust = '#0C0D14',
 			surface0 = '#131521',
@@ -19,13 +19,17 @@ return {
 	highlight_overrides = {
 		mocha = function(colors)
 			return {
+                -- Normal = { fg = colors.text },
+                -- NormalNC = { fg = colors.text },
+
 				-- Floating windows
-				NormalFloat = { fg = colors.text, bg = colors.base },
+				NormalFloat = { fg = colors.text, bg = colors.mantle },
 				FloatTitle = { fg = colors.base, bg = colors.blue },
-				FloatBorder = { fg = colors.blue, bg = colors.base },
+				FloatBorder = { fg = colors.blue, bg = colors.mantle },
 
 				-- Window separator
 				WinSeparator = { fg = colors.surface0 },
+				NeoTreeWinSeparator = { link = "WinSeparator" },
 
 				-- Menus
 				Pmenu = { fg = colors.text, bg = colors.mantle },
@@ -49,6 +53,16 @@ return {
 				TelescopePromptBorder = { fg = colors.mantle, bg = colors.mantle },
 				TelescopePromptTitle = { fg = colors.crust, bg = colors.blue },
 				TelescopePreviewTitle = { fg = colors.crust, bg = colors.mauve },
+				TelescopeSelection = { fg = colors.text, bg = colors.surface0 },
+
+				-- Statusline
+                StatusLine = { fg = colors.text, bg = colors.mantle },
+                StatusLineNormal = { fg = colors.text, bg = colors.mantle },
+                StatusLineSeparator = { fg = colors.surface0, bg = colors.mantle },
+				StatusLineInsert = { fg = colors.base, bg = colors.blue },
+				StatusLineVisual = { fg = colors.base, bg = colors.mauve },
+				StatusLineCommand = { fg = colors.base, bg = colors.yellow },
+                StatusLineReplace = { fg = colors.base, bg = colors.maroon },
 
 				-- Syntax
 				PreProc = { link = "Include" },

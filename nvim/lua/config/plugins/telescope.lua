@@ -10,10 +10,15 @@ return {
 		{ '<leader>sg', '<cmd>Telescope git_files<cr>', desc = 'Search Git files' },
 		{ '<leader>so', '<cmd>Telescope oldfiles<cr>', desc = 'Search Old files' },
 		{ '<leader>sw', '<cmd>Telescope grep_string<cr>', desc = 'Search for word under cursor' },
+		{ '<leader>sd', '<cmd>Telescope diagnostics<cr>', desc = 'Search Diagnostics' },
+		{ '<leader>sq', '<cmd>Telescope quickfix<cr>', desc = 'Search Quickfix' },
+		{ '<leader>sh', '<cmd>Telescope help<cr>', desc = 'Search Neovim help' },
 		-- LSP
 		{ '<leader>sr', '<cmd>Telescope lsp_references<cr>', desc = 'Search Reference' },
 		{ '<leader>ss', '<cmd>Telescope lsp_document_symbols<cr>', desc = 'Search document symbols' },
 		{ '<leader>sr', '<cmd>Telescope lsp_references<cr>', desc = 'Search Reference' },
+		{ '<leader>si', '<cmd>Telescope lsp_implementations<cr>', desc = 'Search Inplementations' },
+		{ '<leader>sp', '<cmd>Telescope lsp_workspace_symbols<cr>', desc = 'Search Workspace symbols' },
 		{ 'gd', '<cmd>Telescope lsp_definitions<cr>', desc = 'Goto definition' },
 	},
 	opts = function()

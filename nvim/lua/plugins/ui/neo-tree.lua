@@ -2,7 +2,7 @@ return {
 	'nvim-neo-tree/neo-tree.nvim',
 	cmd = 'Neotree',
 	keys = {
-		{ '<leader>fe', ':Neotree reveal toggle<CR>', desc = 'Toggle File Explorer'},
+		{ '<leader>Fe', ':Neotree reveal toggle<CR>', desc = 'Toggle File Explorer'},
 	},
 	dependencies = {
 		"MunifTanjim/nui.nvim",
