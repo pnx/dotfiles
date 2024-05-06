@@ -6,11 +6,6 @@ return {
     modified = '',
     pinned = '',
     separator = '│',
-    fold = {
-        open = '',
-        close = '',
-        sep = ' ',
-    },
     tree = {
         node = '│',
         nodelast = '└',

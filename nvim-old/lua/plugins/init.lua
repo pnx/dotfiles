@@ -54,6 +54,7 @@ require("lazy").setup({
     { import = "plugins.ide.neotest" },
     { import = "plugins.ide.neodev" },
     { import = "plugins.ide.copilot" },
+    { import = "plugins.ide.glow" },
 
     -- Language specific
     -----------------------------

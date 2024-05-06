@@ -14,6 +14,7 @@ return {
 			"rcarriga/nvim-dap-ui",
 			-- stylua: ignore
 			keys = {
+                { "<leader>Dr", function() require("dap").continue({ }) end, desc = "Dap Run/Continue" },
 				{ "<leader>Du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
 				{ "<leader>De", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
 			},
