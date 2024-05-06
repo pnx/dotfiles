@@ -5,7 +5,7 @@ BASE_PATH=$(dirname $(readlink -f $BASH_SOURCE))
 DIRECTORIES=(
 	nvim
 	fish
-	kitty
+	alacritty
 	i3
 	i3status
 	rofi
