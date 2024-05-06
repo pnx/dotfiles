@@ -3,8 +3,7 @@ if status is-interactive
     set -g GPG_TTY (tty)
 end
 
-set PATH $HOME/bin $PATH (go env GOPATH)/bin
-
+set PATH $HOME/bin $HOME/.local/bin (go env GOPATH)/bin $PATH
 set -g fish_greeting
 
 # Colors
