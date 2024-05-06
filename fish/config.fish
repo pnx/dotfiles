@@ -1,5 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    set -g GPG_TTY (tty)
 end
 
 set PATH $HOME/bin $PATH (go env GOPATH)/bin
