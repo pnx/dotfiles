@@ -1,0 +1,28 @@
+gui:
+  border: single
+  nerdFontsVersion: 3
+  timeFormat: Jan 2 15:04:05 2006 MST
+  shortTimeFormat: 15:04:05
+  theme:
+    activeBorderColor:
+      - blue
+      - bold
+    inactiveBorderColor:
+      - grey
+    searchingActiveBorderColor:
+      - cyan
+      - bold
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - blue
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default
+git:
+  branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --pretty=medium {{branchName}} --'

@@ -10,6 +10,7 @@ DIRECTORIES=(
 	i3status
 	rofi
 	smartgit
+    lazygit
 )
 
 for target in ${DIRECTORIES[@]}; do
