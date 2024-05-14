@@ -25,7 +25,7 @@ return {
 				-- Floating windows
 				NormalFloat = { fg = colors.text, bg = colors.mantle },
 				FloatTitle = { fg = colors.base, bg = colors.blue },
-				FloatBorder = { fg = colors.blue, bg = colors.mantle },
+				FloatBorder = { fg = colors.surface1, bg = colors.mantle },
 
 				-- Window separator
 				WinSeparator = { fg = colors.surface0 },
@@ -39,6 +39,8 @@ return {
 
 				-- indent lines
 				IblScope = { fg = colors.overlay1 },
+
+                IncSearch = { bg = colors.yellow },
 
 				-- LSP
 				-- LspReferenceText = { bg = colors.surface0 },

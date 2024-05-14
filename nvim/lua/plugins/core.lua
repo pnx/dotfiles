@@ -64,24 +64,7 @@ return {
         dependencies = {
             'nvim-treesitter/nvim-treesitter'
         },
-        opts = {
-            filetypes = {
-                'html',
-                'javascript',
-                'typescript',
-                'javascriptreact',
-                'typescriptreact',
-                'svelte',
-                'vue',
-                'tsx',
-                'jsx',
-                'rescript',
-                'xml',
-                'php',
-                'blade',
-                'markdown',
-            }
-        }
+        opts = require('config.autotag')
     },
     {
         "lukas-reineke/indent-blankline.nvim",

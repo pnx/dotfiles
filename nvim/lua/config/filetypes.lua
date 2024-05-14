@@ -12,10 +12,20 @@ vim.filetype.add({
     },
 })
 
--- Fix autocomment plugins to use line comments for php.
+-- PHP
 autocmd('Filetype', {
     pattern = 'php',
-    command = 'setlocal commentstring=//\\%s'
+    callback = function()
+        -- Fix autocomment plugins to use line comments
+        vim.cmd('setlocal commentstring=//\\%s')
+
+        -- Goto file for blade files in laravel projects
+        vim.cmd([[
+            set path=.,resources/views
+            set suffixesadd=.blade.php
+            set includeexpr=substitute(v:fname,'\\.','/','g')
+        ]])
+    end
 })
 
 

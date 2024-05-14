@@ -8,6 +8,8 @@ return {
     --
     global = {
 
+        { "n",          "<leader>W",    "<cmd>lua vim.opt.list = not vim.opt.list._value<cr>",          { silent = true, desc = "Toggle show whitespace" } },
+
         --
         -- Navigation
         --
@@ -19,10 +21,10 @@ return {
         { "n",          "<S-PageDown>", "<C-d>zz",          { silent = true, desc = "jump half a page down" } },
 
         -- Split windows
-        { "n",          "<C-h>",        "<C-w>h",          { silent = true, desc = "Goto left split" } },
-        { "n",          "<C-j>",        "<C-w>j",          { silent = true, desc = "Goto down split" } },
-        { "n",          "<C-k>",        "<C-w>k",          { silent = true, desc = "Goto up split" } },
-        { "n",          "<C-l>",        "<C-w>l",          { silent = true, desc = "Goto right split" } },
+        { "n",          "<C-h>",        "<C-w>h",          { silent = true, desc = "Focus left split" } },
+        { "n",          "<C-j>",        "<C-w>j",          { silent = true, desc = "Focus down split" } },
+        { "n",          "<C-k>",        "<C-w>k",          { silent = true, desc = "Focus up split" } },
+        { "n",          "<C-l>",        "<C-w>l",          { silent = true, desc = "Focus right split" } },
 
         -- Make jump to next search item stay in the center of screen.
         { "n",          "n",            "nzzzv",            { silent = true, desc = "jump to next search match" } },
@@ -44,7 +46,7 @@ return {
         { { "n", "v" }, "<leader>p",  [["+p]],                          { desc = "Paste from system clipboard register" } },
 
         -- File operations
-        { "n",          "<leader>Fe", "<cmd>Ex<CR>",                    { silent = true, desc = "Open Netrw" } },
+        -- { "n",          "<leader>Fe", "<cmd>Ex<CR>",                    { silent = true, desc = "Open Netrw" } },
         { "n",          "<leader>Fc", ":CreateFile ",                   { silent = true, desc = "Create new file" } },
         { "n",          "<leader>Fx", "<cmd>!chmod +x %<CR>",           { silent = true, desc = "Set execute flag on current file" } },
 

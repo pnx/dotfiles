@@ -2,12 +2,29 @@ local set = vim.opt
 local icons = require('config.icons')
 
 --
+-- Variables
+--
+
+
+-- Custom
+vim.g.float_border = 'single'
+
+
+--
 -- General Settings
 --
 
 set.termguicolors = true
+
+-- Decrease update time
 set.updatetime = 50
-set.showmode = false -- disable mode in the command line, because i use lualine
+
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+set.timeoutlen = 50
+
+-- disable mode in the command line, because i use lualine
+set.showmode = false
 
 
 --
@@ -19,6 +36,16 @@ set.pumheight = 20
 set.laststatus = 3
 set.splitkeep = "screen"
 set.scrolloff = 20
+
+-- Configure how new splits should be opened
+set.splitright = true
+set.splitbelow = true
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+set.list = false
+set.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 set.fillchars = {
     foldopen = icons.fold.open,
@@ -36,6 +63,7 @@ set.mousemoveevent = true
 -- search
 set.hlsearch = false
 set.incsearch = true
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 set.ignorecase = true
 set.smartcase = true
 
@@ -69,28 +97,20 @@ set.foldcolumn = "auto"
 -- Diagnostics
 --
 
-
-
-vim.fn.sign_define('DiagnosticSignError', { text = icons.diagnostics.error, texthl = 'DiagnosticSignError' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = icons.diagnostics.warn, texthl = 'DiagnosticSignWarn' })
-vim.fn.sign_define('DiagnosticSignInfo', { text = icons.diagnostics.info, texthl = 'DiagnosticSignInfo' })
-vim.fn.sign_define('DiagnosticSignHint', { text = icons.diagnostics.hint, texthl = 'DiagnosticSignHint' })
-
 vim.diagnostic.config({
     virtual_text = false,
     severity_sort = true,
     underline = false,
-    float = {
-        -- border = 'single',
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
+            [vim.diagnostic.severity.WARN] = icons.diagnostics.warn,
+            [vim.diagnostic.severity.INFO] = icons.diagnostics.info,
+            [vim.diagnostic.severity.HINT] = icons.diagnostics.hint
+        },
     },
+    float = {
+        border = vim.g.float_border,
+    }
 })
 
--- Highlight on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
-    group = vim.api.nvim_create_augroup('highlight_yank', {}),
-    desc = 'Hightlight selection on yank',
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank { higroup = 'IncSearch', timeout = 400 }
-    end,
-})

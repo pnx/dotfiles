@@ -7,7 +7,7 @@ return function()
     local selectNext = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })
 
     local windowstyle = {
-        border = "none",
+        border = vim.g.float_border or 'none',
         winhighlight = 'Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
     }
 

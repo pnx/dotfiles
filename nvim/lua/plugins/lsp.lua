@@ -57,7 +57,7 @@ return {
             end
 
             server_opt = vim.tbl_deep_extend("force", {on_attach = on_attach}, server_opt or {})
-                
+
             lsp_config[name].setup(server_opt)
         end
     end,
