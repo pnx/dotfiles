@@ -2,7 +2,7 @@
 
 if [ $# -lt 1 ]; then
     SELECTED=(core i3)
-else 
+else
     SELECTED=$@
 fi
 
@@ -10,13 +10,12 @@ for sel in "${SELECTED[@]}"; do
     case $sel in
         "core")
             sudo dnf install -y \
-                xsel \
                 fish \
-                kitty \
+                alacritty \
                 tmux \
+                xdg-utils \
                 xsel \
-                fzf \
-                fswatch
+                fzf
             ;;
         "nvim")
             sudo dnf install -y \
