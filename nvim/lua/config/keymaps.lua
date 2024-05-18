@@ -46,7 +46,7 @@ return {
         { { "n", "v" }, "<leader>p",  [["+p]],                          { desc = "Paste from system clipboard register" } },
 
         -- File operations
-        -- { "n",          "<leader>Fe", "<cmd>Ex<CR>",                    { silent = true, desc = "Open Netrw" } },
+        { "n",          "gf", "<cmd>e <cfile><CR>",                     { silent = true, desc = "Open (or create) file under cursor" } },
         { "n",          "<leader>Fc", ":CreateFile ",                   { silent = true, desc = "Create new file" } },
         { "n",          "<leader>Fx", "<cmd>!chmod +x %<CR>",           { silent = true, desc = "Set execute flag on current file" } },
 
@@ -71,10 +71,14 @@ return {
         { "n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
             { desc = "search+replace word under cursor" } },
 
-        { { "x" }, "<leader>fhx", [[:s/\(\x\{2\}\)/0x\1, /g]],              { desc = "Format hex" } },
-        { { "x" }, "<leader>fha", [[:s/0x\(\x\{1\}\X\)/0x0\1/g]],           { desc = "Format each hex number to be 2 characters long" } },
-        { { "x" }, "<leader>fhn", [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]], { desc = "Format hex with 8 bytes per row" } },
+        -- Hex formatting
+        { "x", "<leader>fhx", [[:s/\(\x\{2\}\)/0x\1, /g]],              { desc = "Format hex" } },
+        { "x", "<leader>fha", [[:s/0x\(\x\{1\}\X\)/0x0\1/g]],           { desc = "Format each hex number to be 2 characters long" } },
+        { "x", "<leader>fhn", [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]], { desc = "Format hex with 8 bytes per row" } },
         -- {{"x"}, "<leader>hb", [[:'<,'>s/\(\x\{2\}\)/0x\1, /g<cr>]], { desc = "Format a hex string to byte array"}},
+
+        -- Case formatting
+        { "x", "<leader>fcsc", [[:s/\%V\([a-z]\+\)_\?/\u\1/g]],              { desc = "Convert text from snake_case to CamelCase" } },
 
         -- diagnostics
         { "n",     "<leader>do",  vim.diagnostic.open_float,                { desc = "Open diagnostics" } },
@@ -85,14 +89,17 @@ return {
         { "n",     "<leader>m",   ":terminal tmuxs<cr>i",                   { desc = "Open tmux manager" } },
 
 
-        { "n",     "Q",           "<nop>" },
+        { "n",     "Q",           "<nop>" }, -- NOPE
 
     },
     whichkey = {
-        mode = { "n", "v" },
+        mode = { "n", "v", "x" },
         ["<leader>r"] = { name = "+Rename" },
         ["<leader>b"] = { name = "+Buffers" },
         ["<leader>f"] = { name = "+Format" },
+        ["<leader>fc"] = { name = "+Case" },
+        ["<leader>fcs"] = { name = "+snake_case" },
+        ["<leader>fh"] = { name = "+Hex" },
         ["<leader>F"] = { name = "+Files" },
         ["<leader>d"] = { name = "+Diagnostics" },
         ["<leader>s"] = { name = "+Search" },

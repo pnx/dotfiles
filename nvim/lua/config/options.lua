@@ -35,7 +35,7 @@ set.wrap = false -- Disable line wrap
 set.pumheight = 20
 set.laststatus = 3
 set.splitkeep = "screen"
-set.scrolloff = 20
+set.scrolloff = 10
 
 -- Configure how new splits should be opened
 set.splitright = true
@@ -66,6 +66,10 @@ set.incsearch = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 set.ignorecase = true
 set.smartcase = true
+
+-- Spell stuff, because i cant english
+set.spell = true
+set.spelllang = { 'en_us' }
 
 -- line numbers
 set.number = true

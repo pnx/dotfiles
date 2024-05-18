@@ -166,5 +166,18 @@ return {
         keys = keys.oil or {},
         opts = require('config.oil'),
         dependencies = { "nvim-tree/nvim-web-devicons" },
-    }
+    },
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {},
+    },
+    {
+        'L3MON4D3/LuaSnip',
+        opts = {},
+        config = function (_, opts)
+            require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets"})
+            require("luasnip").setup(opts)
+        end
+    },
 }

@@ -51,6 +51,14 @@ return {
         staged    = "✓",
         conflict  = "",
     },
+    todo = {
+        default = '',
+        warn = '',
+        perf = '',
+        bug =  '',
+        hack = '',
+        test = '󰄉',
+    },
     diagnostics = {
         error = '',
         warn = '',
@@ -66,7 +74,7 @@ return {
         unknown = '',
     },
     symbols = {
-        Text = "",
+        Text = "TXT",
         Method = "",
         Function = "󰊕",
         Constructor = "",
