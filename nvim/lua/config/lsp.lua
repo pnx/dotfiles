@@ -3,6 +3,8 @@ vim.g.lsp_zero_ui_float_border = vim.g.float_border or 'none'
 return {
     document_highlight = true,
     servers = {
+        -- Bash
+        bashls = {},
         -- PHP
         phpactor = {
             settings = {
