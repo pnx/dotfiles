@@ -1,0 +1,5 @@
+show=drun
+prompt=
+width=30%
+term=alacritty
+matching=fuzzy
