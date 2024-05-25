@@ -1,0 +1,59 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 18px;
+}
+
+window#waybar {
+    background-color: #0e1019;
+    border-top: 1px solid #191B2B;
+    color: #eceef4;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    padding: 0 24px;
+}
+
+button {
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    border: none;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #eceef4;
+}
+
+#workspaces button:hover {
+    border: none;
+    background: #0c0d14;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
