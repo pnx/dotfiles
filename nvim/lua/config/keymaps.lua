@@ -1,4 +1,5 @@
 local cmd = vim.cmd
+local buffers = require('utils.buffers')
 
 return {
     leader = " ",
@@ -46,7 +47,7 @@ return {
         { { "n", "v" }, "<leader>p",  [["+p]],                          { desc = "Paste from system clipboard register" } },
 
         -- File operations
-        { "n",          "gf", "<cmd>e <cfile><CR>",                     { silent = true, desc = "Open (or create) file under cursor" } },
+        --{ "n",          "gf", "<cmd>e <cfile><CR>",                     { silent = true, desc = "Open (or create) file under cursor" } },
         { "n",          "<leader>Fc", ":CreateFile ",                   { silent = true, desc = "Create new file" } },
         { "n",          "<leader>Fx", "<cmd>!chmod +x %<CR>",           { silent = true, desc = "Set execute flag on current file" } },
 
@@ -54,8 +55,8 @@ return {
         { "n",          "<leader>bn", cmd.bn,                           { silent = true, desc = "Move to next buffer" } },
         { "n",          "<leader>bb", cmd.bp,                           { silent = true, desc = "Move to previous buffer" } },
         { "n",          "<leader>bd", cmd.bd,                           { silent = true, desc = "Close current buffer" } },
-        { "n",          "<leader>bc", "<cmd>BufferLineCloseOthers<cr>", { silent = true, desc = "Close all other buffers" } },
-        { "n",          "<leader>bD", "<cmd>%bd<cr>",                   { silent = true, desc = "Close all buffers" } },
+        { "n",          "<leader>bc", buffers.CloseOthers,              { silent = true, desc = "Close all other buffers" } },
+        { "n",          "<leader>bD", buffers.CloseAll,                 { silent = true, desc = "Close all buffers" } },
 
         -- Indent
         { 'n',          "<Tab>",      "^=$" },
@@ -133,6 +134,7 @@ return {
         { '<leader>sf', '<cmd>Telescope find_files<cr>',            desc = 'Search files' },
         { '<leader>sF', '<cmd>lua require("telescope.builtin").find_files({no_ignore=true})<cr>',            desc = 'Search all files' },
         { '<leader>sb', '<cmd>Telescope buffers<cr>',               desc = 'Search buffers' },
+        --{ '<leader>sb', '<cmd>lua require("utils.telescope").buffers()<cr>',               desc = 'Search buffers' },
         { '<leader>sa', '<cmd>Telescope live_grep<cr>',             desc = 'Search in files' },
         { '<leader>sg', '<cmd>Telescope git_files<cr>',             desc = 'Search Git files' },
         { '<leader>so', '<cmd>Telescope oldfiles<cr>',              desc = 'Search Old files' },

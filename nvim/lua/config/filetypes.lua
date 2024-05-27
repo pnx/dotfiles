@@ -50,6 +50,13 @@ autocmd('Filetype', {
     command = 'setlocal ts=2 sts=2 sw=2 expandtab'
 })
 
+-- Softtab (4) for CSS types
+autocmd('Filetype', {
+    group = 'indent',
+    pattern = { 'css', 'scss', 'less' },
+    command = 'setlocal ts=4 sts=4 sw=4 expandtab'
+})
+
 -- Hardtabs for c/cpp
 autocmd('Filetype', {
     group = 'indent',

@@ -2,10 +2,20 @@ vim.g.lsp_zero_ui_float_border = vim.g.float_border or 'none'
 
 return {
     document_highlight = true,
+    nonels = function()
+        local null_ls = require("null-ls")
+        return {
+            --null_ls.builtins.completion.luasnip,
+            null_ls.builtins.code_actions.impl,
+            null_ls.builtins.code_actions.gitsigns,
+            null_ls.builtins.diagnostics.phpstan,
+        }
+    end,
     servers = {
         -- Bash
         bashls = {},
         -- PHP
+        -- intelephense = {},
         phpactor = {
             settings = {
                 init_options = {

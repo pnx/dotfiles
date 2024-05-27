@@ -4,7 +4,13 @@ return {
 	dependencies = {
 		"neovim/nvim-lspconfig",
 		"hrsh7th/cmp-nvim-lsp",
-
+        {
+            "nvimtools/none-ls.nvim",
+            opts = require("config.lsp").nonels,
+            config = function(_, opts)
+                require("null-ls").setup({sources = opts})
+            end,
+        },
 		-- completion
 		{
 			"hrsh7th/nvim-cmp",

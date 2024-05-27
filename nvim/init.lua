@@ -23,5 +23,13 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup('plugins', {
     dev = {
         path = "~/code/nvim_plugins",
+    },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "netrwPlugin",
+                -- "tutor"
+            }
+        }
     }
 })

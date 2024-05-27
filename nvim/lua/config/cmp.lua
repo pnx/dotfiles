@@ -11,7 +11,8 @@ return function()
 	local windowstyle = {
 		border = vim.g.float_border or "none",
 		winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-	}
+
+    }
 
 	return {
 		preselect = false,
@@ -20,10 +21,12 @@ return function()
 		},
 		view = {
 			entries = { name = "custom", selection_order = "near_cursor" },
-		},
+        },
 		window = {
 			documentation = windowstyle,
-			completion = windowstyle,
+			completion = vim.tbl_deep_extend("force", windowstyle, {
+                scrolloff = 4,
+            }),
 		},
 		mapping = {
 			["<Up>"] = selectPrev,
@@ -49,8 +52,8 @@ return function()
 			}),
 		},
 		sources = {
-			{ name = "nvim_lsp" },
-			{ name = "luasnip" },
+		    { name = "nvim_lsp" },
+            { name = "luasnip" },
 			{ name = "buffer" },
 			{ name = "path" },
 			{
