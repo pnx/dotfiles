@@ -20,6 +20,7 @@ done
 ln -sfr $BASE_PATH/tmux.conf $HOME/.tmux.conf
 ln -sfr $BASE_PATH/Xresources $HOME/.Xresources
 
+mkdir -p $HOME/bin
 for script in $(find $BASE_PATH/scripts -type f); do
 	ln -sfr $script $HOME/bin/$(basename $script)
 done
