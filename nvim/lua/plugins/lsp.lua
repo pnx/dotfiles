@@ -5,7 +5,7 @@ return {
 		"neovim/nvim-lspconfig",
 		"hrsh7th/cmp-nvim-lsp",
         {
-            "nvimtools/none-ls.nvim",
+           "nvimtools/none-ls.nvim",
             opts = require("config.lsp").nonels,
             config = function(_, opts)
                 require("null-ls").setup({sources = opts})
@@ -20,8 +20,8 @@ return {
 				"hrsh7th/cmp-buffer", -- autocomplete from buffer
 				"hrsh7th/cmp-path", -- autocomplete from filesystem
 				"hrsh7th/cmp-nvim-lsp", -- autocomplete from lsp
-                "saadparwaiz1/cmp_luasnip", -- autocomplete from snippet engine
-				"L3MON4D3/LuaSnip", -- snippet engine
+                -- "saadparwaiz1/cmp_luasnip", -- autocomplete from snippet engine
+				-- "L3MON4D3/LuaSnip", -- snippet engine
 				"onsails/lspkind-nvim", -- icons for kind
 			},
 			opts = require("config.cmp"),
@@ -48,6 +48,7 @@ return {
 		end)
 
 		for name, server_opt in pairs(opts.servers) do
+
 			local on_attach = function(client, bufnr)
 				vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 
@@ -59,7 +60,7 @@ return {
 					})
 				end
 
-				if (opts.document_highlight or false) and client.supports_method('textDocument/documentHighlight')then
+				if (opts.document_hightlight or server_opt.document_highlight or false) and client.supports_method('textDocument/documentHighlight')then
 					require("utils.lsp").document_highlight(bufnr)
 				end
 			end

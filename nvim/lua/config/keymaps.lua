@@ -113,9 +113,18 @@ return {
         { '<leader>ff', "<cmd>Format<cr>", desc = 'Format file' },
 		{ '<leader>ff', "<cmd>Format<cr>", mode = 'x', desc = 'Format selection' },
     },
+    fugitive = {
+        { '<leader>gB', '<cmd>Git blame<cr>',   desc = 'Git blame' },
+        { '<leader>gs', '<cmd>Git status<cr>',   desc = 'Git status' },
+        { '<leader>gl', '<cmd>Git log<cr>',   desc = 'Git log' },
+        { '<leader>gL', '<cmd>Git log %<cr>',   desc = 'Git log current file' },
+    },
     gitsigns = {
         { '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Git preview diff' },
-        { '<leader>gb', '<cmd>Gitsigns blame_line<cr>',   desc = 'Git blame' }
+        { '<leader>gb', '<cmd>Gitsigns blame_line<cr>',   desc = 'Git blame line' }
+    },
+    trouble = {
+        { '<leader>dt', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Trouble diagnostics' },
     },
     -- Keybinds for buffers with an LSP client attached
     lsp = {

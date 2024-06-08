@@ -15,3 +15,4 @@ autocmd('TextYankPost', {
 autocmd('BufWritePre', {
     command = [[:exe 'norm m`' | %s/\s\+$//eg | norm ``]]
 })
+
