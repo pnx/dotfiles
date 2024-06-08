@@ -161,6 +161,7 @@ return {
 					local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
 					range = {
 						start = { args.line1, 0 },
+                        ---@diagnostic disable-next-line: undefined-field
 						["end"] = { args.line2, end_line:len() },
 					}
 				end

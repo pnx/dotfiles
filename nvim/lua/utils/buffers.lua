@@ -1,5 +1,7 @@
+-- Helper functions for dealing with buffers
 local M = {}
 
+-- Close all but current buffer
 function M.CloseOthers()
 	for _, i in ipairs(vim.api.nvim_list_bufs()) do
 		if i ~= vim.api.nvim_get_current_buf() then
@@ -8,6 +10,7 @@ function M.CloseOthers()
 	end
 end
 
+-- Close all open buffers
 function M.CloseAll()
     for _, i in ipairs(vim.api.nvim_list_bufs()) do
         vim.api.nvim_buf_delete(i, {})

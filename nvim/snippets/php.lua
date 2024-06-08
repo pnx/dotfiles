@@ -10,13 +10,13 @@ local f = ls.function_node
 local c = ls.choice_node
 -- local d = ls.dynamic_node
 -- local r = ls.restore_node
-local events = require('luasnip.util.events')
-local ai = require('luasnip.nodes.absolute_indexer')
+-- local events = require('luasnip.util.events')
+-- local ai = require('luasnip.nodes.absolute_indexer')
 local fmt = require('luasnip.extras.fmt').fmt
-local m = require('luasnip.extras').m
-local lambda = require('luasnip.extras').l
+-- local m = require('luasnip.extras').m
+-- local lambda = require('luasnip.extras').l
 local rep = require('luasnip.extras').rep
-local postfix = require('luasnip.extras.postfix').postfix
+-- local postfix = require('luasnip.extras.postfix').postfix
 
 local visibility_modifiers = {
     t('public'),
@@ -65,11 +65,13 @@ return {
             {
                 i(1, 'Class description'),
                 i(2, 'Classname'),
+                ---@diagnostic disable-next-line: unused-local
                 f(function(args, snip, user_arg)
                     -- TODO: generate namespace using parent directories
                     return 'namespace ' .. args[1][1] .. ';'
                 end, { 2 }),
                 rep(2),
+                ---@diagnostic disable-next-line: unused-local
                 f(function(args, snip, user_arg)
                     local parser = vim.treesitter.get_parser(0, 'php')
                     local syntax_tree = parser:parse()
@@ -92,7 +94,6 @@ return {
                 c(3, visibility_modifiers),
                 i(4, '/* Constructor parameters */'),
                 f(function()
-                    local fields = { '' }
                     local parser = vim.treesitter.get_parser(0, 'php')
                     local syntax_tree = parser:parse()
                     local root = syntax_tree[1]:root()
