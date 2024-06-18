@@ -9,6 +9,9 @@ italic = { style = "Italic" }
 bold_italic = { style = "Bold Italic" }
 size = 12.0
 
+[window]
+padding = { x = 2, y = 2 }
+
 [colors]
 cursor = { text = "#0E1019", cursor = "#BAC2DE" }
 
