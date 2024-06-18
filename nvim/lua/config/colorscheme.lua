@@ -5,7 +5,7 @@ return {
 			base = '#0E1019',
 			mantle = '#0D0F17',
 			crust = '#0C0D14',
-			surface0 = '#131521',
+			surface0 = '#1a1c2d',
 			surface1 = '#343959',
 			surface2 = '#41476F',
 			overlay0 = '#3F4256',
@@ -19,8 +19,7 @@ return {
 	highlight_overrides = {
 		mocha = function(colors)
 			return {
-                -- Normal = { fg = colors.text },
-                -- NormalNC = { fg = colors.text },
+                Visual = { bg = colors.overlay1 },
 
 				-- Floating windows
 				NormalFloat = { fg = colors.text, bg = colors.mantle },
@@ -38,7 +37,7 @@ return {
 				WhichKeyFloat = { link = "Pmenu" },
 
 				-- indent lines
-				IblScope = { fg = colors.overlay1 },
+				IblScope = { fg = colors.surface0 },
 
                 IncSearch = { bg = colors.yellow },
 
