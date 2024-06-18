@@ -6,9 +6,12 @@ DIRECTORIES=(
     nvim
     fish
     alacritty
-    i3
-    i3status
-    rofi
+    hypr
+    waybar
+    wofi
+    #i3
+    #i3status
+    #rofi
     smartgit
     lazygit
 )
