@@ -1,0 +1,4 @@
+#!/bin/bash
+
+head -c$1 </dev/urandom|xxd -ps | sed 's/.\{32\}/&\n/g' | sed 's/.\{2\}/0x&, /g'
+
