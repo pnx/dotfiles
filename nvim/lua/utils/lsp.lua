@@ -19,4 +19,14 @@ function M.document_highlight(bufnr)
     })
 end
 
+function M.signature_help_on_hover(bufnr)
+    local group = vim.api.nvim_create_augroup('lsp_hover', { clear = false })
+
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+        group = group,
+        buffer = bufnr,
+        callback = vim.lsp.buf.hover,
+    })
+end
+
 return M

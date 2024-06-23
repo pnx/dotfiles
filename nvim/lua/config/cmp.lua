@@ -33,7 +33,7 @@ return function()
 			["<Down>"] = selectNext,
 			["<Tab>"] = selectNext,
 			["<C-c>"] = cmp.mapping.abort(),
-			["<CR>"] = utils.confirm({ select = true }),
+			["<CR>"] = utils.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 		},
 		snippet = {
 			expand = function(args)
@@ -52,7 +52,7 @@ return function()
 		},
 		sources = {
 			{ name = "nvim_lsp" },
-			-- { name = "luasnip" },
+			{ name = "luasnip" },
 			{ name = "buffer" },
 			{ name = "path" },
 			{
@@ -66,10 +66,10 @@ return function()
 				},
 			},
 		},
-		experimental = {
-			ghost_text = {
-				hl_group = "NonText",
-			},
-		},
+		-- experimental = {
+		-- 	ghost_text = {
+		-- 		hl_group = "NonText",
+		-- 	},
+		-- },
 	}
 end

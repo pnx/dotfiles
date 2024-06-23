@@ -20,8 +20,8 @@ return {
 				"hrsh7th/cmp-buffer", -- autocomplete from buffer
 				"hrsh7th/cmp-path", -- autocomplete from filesystem
 				"hrsh7th/cmp-nvim-lsp", -- autocomplete from lsp
-                -- "saadparwaiz1/cmp_luasnip", -- autocomplete from snippet engine
-				-- "L3MON4D3/LuaSnip", -- snippet engine
+                "saadparwaiz1/cmp_luasnip", -- autocomplete from snippet engine
+				"L3MON4D3/LuaSnip", -- snippet engine
 				"onsails/lspkind-nvim", -- icons for kind
 			},
 			opts = require("config.cmp"),
@@ -39,6 +39,7 @@ return {
 		local lsp_zero = require("lsp-zero")
 		local lsp_config = require("lspconfig")
 		local augroup = vim.api.nvim_create_augroup("Lsp", {})
+        local utils = require("utils.lsp")
 		local map = require("utils.keys")
 
 		lsp_zero.on_attach(function(_, bufnr)
@@ -60,8 +61,12 @@ return {
 					})
 				end
 
-				if (opts.document_hightlight or server_opt.document_highlight or false) and client.supports_method('textDocument/documentHighlight')then
-					require("utils.lsp").document_highlight(bufnr)
+                if client.supports_method('textDocument/hover') then
+                    --utils.signature_help_on_hover(bufnr)
+                end
+
+				if (opts.document_hightlight or server_opt.document_highlight or false) and client.supports_method('textDocument/documentHighlight') then
+					utils.document_highlight(bufnr)
 				end
 			end
 

@@ -161,7 +161,7 @@ return {
 					local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
 					range = {
 						start = { args.line1, 0 },
-                        ---@diagnostic disable-next-line: undefined-field
+						---@diagnostic disable-next-line: undefined-field
 						["end"] = { args.line2, end_line:len() },
 					}
 				end
@@ -177,20 +177,28 @@ return {
 		opts = require("config.oil"),
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function(_, opts)
-            require('oil').setup(opts)
+			require("oil").setup(opts)
 
-            -- Don't touch my CWD!
-            require('utils.oil').RegisterCWDHackHook()
+			-- Don't touch my CWD!
+			require("utils.oil").RegisterCWDHackHook()
 		end,
 	},
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = keys.trouble or {},
-        opts = {},
+		opts = {},
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		dependencies = {
+			{
+				"rafamadriz/friendly-snippets",
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+				end,
+			},
+		},
 		opts = {},
 		config = function(_, opts)
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })

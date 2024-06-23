@@ -16,6 +16,7 @@ return {
 		"phpdoc",
 		"blade",
 		"go",
+        "gotmpl",
 		"gomod",
 		"gosum",
 		"javascript",

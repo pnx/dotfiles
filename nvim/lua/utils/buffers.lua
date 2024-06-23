@@ -17,4 +17,14 @@ function M.CloseAll()
     end
 end
 
+function M.GetLoaded()
+    local loaded = {}
+    for i, hnd in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_is_loaded(hnd) then
+            loaded[i] = hnd
+        end
+    end
+    return loaded
+end
+
 return M

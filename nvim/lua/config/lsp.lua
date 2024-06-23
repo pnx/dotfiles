@@ -14,6 +14,8 @@ return {
 	servers = {
 		-- Bash
 		bashls = {},
+        -- C/C++
+        ccls = {},
 		-- PHP
 		-- intelephense = {},
 		phpactor = {
