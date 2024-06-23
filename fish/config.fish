@@ -3,8 +3,15 @@ if status is-interactive
     set -x GPG_TTY (tty)
 end
 
-set PATH $HOME/bin $HOME/.local/bin (go env GOPATH)/bin $PATH
 set -g fish_greeting
+
+# Path stuff
+if command -q go
+    fish_add_path (go env GOPATH)/bin
+end
+
+fish_add_path $HOME/bin
+fish_add_path $HOME/.local/bin
 
 # Colors
 set fish_color_user normal
