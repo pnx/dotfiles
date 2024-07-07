@@ -1,3 +1,4 @@
+
 [env]
 TERM = "xterm-256color"
 
@@ -11,6 +12,7 @@ size = 12.0
 
 [window]
 padding = { x = 2, y = 2 }
+opacity = 0.99
 
 [colors]
 cursor = { text = "#0E1019", cursor = "#BAC2DE" }
