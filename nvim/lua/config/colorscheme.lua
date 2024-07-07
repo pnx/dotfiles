@@ -1,25 +1,26 @@
 return {
 	flavour = "mocha",
+	transparent_background = true,
 	color_overrides = {
 		mocha = {
-			base = '#0E1019',
-			mantle = '#0D0F17',
-			crust = '#0C0D14',
-			surface0 = '#1a1c2d',
-			surface1 = '#343959',
-			surface2 = '#41476F',
-			overlay0 = '#3F4256',
-			overlay1 = '#5B5F7C',
-			overlay2 = '#767BA0',
-			text = '#eceef4',
-		}
+			base = "#0E1019",
+			mantle = "#0D0F17",
+			crust = "#0C0D14",
+			surface0 = "#1a1c2d",
+			surface1 = "#343959",
+			surface2 = "#41476F",
+			overlay0 = "#3F4256",
+			overlay1 = "#5B5F7C",
+			overlay2 = "#767BA0",
+			text = "#eceef4",
+		},
 	},
 	no_italic = true,
 	no_bold = true,
 	highlight_overrides = {
 		mocha = function(colors)
 			return {
-                Visual = { bg = colors.overlay1 },
+				Visual = { bg = colors.overlay1 },
 
 				-- Floating windows
 				NormalFloat = { fg = colors.text, bg = colors.mantle },
@@ -39,7 +40,7 @@ return {
 				-- indent lines
 				IblScope = { fg = colors.surface0 },
 
-                IncSearch = { bg = colors.yellow },
+				IncSearch = { bg = colors.yellow },
 
 				-- LSP
 				-- LspReferenceText = { bg = colors.surface0 },
@@ -57,13 +58,13 @@ return {
 				TelescopeSelection = { fg = colors.text, bg = colors.surface0 },
 
 				-- Statusline
-                StatusLine = { fg = colors.text, bg = colors.mantle },
-                StatusLineNormal = { fg = colors.text, bg = colors.mantle },
-                StatusLineSeparator = { fg = colors.surface0, bg = colors.mantle },
+				StatusLine = { fg = colors.text, bg = colors.mantle },
+				StatusLineNormal = { fg = colors.text, bg = colors.mantle },
+				StatusLineSeparator = { fg = colors.surface0, bg = colors.mantle },
 				StatusLineInsert = { fg = colors.base, bg = colors.blue },
 				StatusLineVisual = { fg = colors.base, bg = colors.mauve },
 				StatusLineCommand = { fg = colors.base, bg = colors.yellow },
-                StatusLineReplace = { fg = colors.base, bg = colors.maroon },
+				StatusLineReplace = { fg = colors.base, bg = colors.maroon },
 
 				-- Syntax
 				PreProc = { link = "Include" },
@@ -101,7 +102,7 @@ return {
 				["@namespace_name.php"] = { link = "@text" },
 				["@namespace_alias.php"] = { link = "@text" },
 			}
-		end
+		end,
 	},
 	integrations = {
 		cmp = true,
@@ -111,6 +112,6 @@ return {
 		noice = true,
 		telescope = {
 			enabled = true,
-		}
-	}
+		},
+	},
 }

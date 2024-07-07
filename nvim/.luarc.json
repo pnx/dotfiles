@@ -1,13 +1,15 @@
 {
   "runtime.version": "LuaJIT",
   "runtime.path": ["lua/?.lua", "lua/?/init.lua"],
-  "diagnostics.globals": ["vim",
-        "ipairs",
-        "require",
-        "pairs",
-        "type",
-        "unpack",
-        "table"],
+  "diagnostics.globals": [
+    "vim",
+    "ipairs",
+    "require",
+    "pairs",
+    "type",
+    "unpack",
+    "table"
+  ],
   "workspace.checkThirdParty": false,
   "workspace.library": ["$VIMRUNTIME", "./lua"]
 }

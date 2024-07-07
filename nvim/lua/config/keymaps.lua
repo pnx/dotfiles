@@ -1,5 +1,6 @@
 local cmd = vim.cmd
 local buffers = require('utils.buffers')
+local telescope = require('utils.telescope')
 
 return {
     leader = " ",
@@ -62,8 +63,7 @@ return {
         { 'n',          "<Tab>",      "^=$" },
         { 'x',          "<Tab>",      "=",                              { desc = "auto indent selection" } },
         { "i",          "<S-Tab>",    "<C-d>",                          { desc = "delete indent" } },
-
-        { 'n', "<leader>fs", [[:%s/\s\+$//g<CR>`']], desc = "Remove trailing spaces" },
+        { 'n',          "<leader>fs", [[:%s/\s\+$//g<CR>`']],           { desc = "Remove trailing spaces" } },
 
         -- fix paste
         -- {'n', "p", "p=$"},
@@ -95,16 +95,17 @@ return {
     },
     whichkey = {
         mode = { "n", "v", "x" },
-        ["<leader>r"] = { name = "+Rename" },
-        ["<leader>b"] = { name = "+Buffers" },
-        ["<leader>f"] = { name = "+Format" },
-        ["<leader>fc"] = { name = "+Case" },
+        ["<leader>r"]   = { name = "+Rename" },
+        ["<leader>b"]   = { name = "+Buffers" },
+        ["<leader>f"]   = { name = "+Format" },
+        ["<leader>fc"]  = { name = "+Case" },
         ["<leader>fcs"] = { name = "+snake_case" },
-        ["<leader>fh"] = { name = "+Hex" },
-        ["<leader>F"] = { name = "+Files" },
-        ["<leader>d"] = { name = "+Diagnostics" },
-        ["<leader>s"] = { name = "+Search" },
-        ["<leader>g"] = { name = "+Git" },
+        ["<leader>fh"]  = { name = "+Hex" },
+        ["<leader>F"]   = { name = "+Files" },
+        ["<leader>d"]   = { name = "+Diagnostics" },
+        ["<leader>s"]   = { name = "+Search" },
+        ["<leader>c"]   = { name = "+Code" },
+        ["<leader>g"]   = { name = "+Git" },
     },
     oil = {
         { '<leader>.', function() require('oil').open_float() end, { desc = "Open parent directory" } }
@@ -129,23 +130,22 @@ return {
     -- Keybinds for buffers with an LSP client attached
     lsp = {
         { 'K',          function() vim.lsp.buf.hover() end,           desc = '' },
-        { '<leader>ca', function() vim.lsp.buf.code_action() end,     desc = 'Code action' },
+        { '<leader>ca', function() vim.lsp.buf.code_action() end,     mode={'n', 'x'}, desc = 'Code action' },
         { '<leader>rs', function() vim.lsp.buf.rename() end,          desc = 'Rename symbol' },
-        { '<leader>sr', '<cmd>Telescope lsp_references<cr>',        desc = 'Search Reference' },
-        { '<leader>ss', '<cmd>Telescope lsp_document_symbols<cr>',  desc = 'Search document symbols' },
-        { '<leader>sr', '<cmd>Telescope lsp_references<cr>',        desc = 'Search Reference' },
-        { '<leader>si', '<cmd>Telescope lsp_implementations<cr>',   desc = 'Search Inplementations' },
-        { '<leader>sp', '<cmd>Telescope lsp_workspace_symbols<cr>', desc = 'Search Workspace symbols' },
-        { 'go',         '<cmd>Telescope lsp_type_definitions<cr>',       desc = "Goto type definition" },
-        { 'gd',         '<cmd>Telescope lsp_definitions<cr>',       desc = 'Goto definition' },
+        { '<leader>sr', '<cmd>Telescope lsp_references<cr>',          desc = 'Search Reference' },
+        { '<leader>ss', '<cmd>Telescope lsp_document_symbols<cr>',    desc = 'Search document symbols' },
+        { '<leader>si', '<cmd>Telescope lsp_implementations<cr>',     desc = 'Search Inplementations' },
+        { '<leader>sp', '<cmd>Telescope lsp_workspace_symbols<cr>',   desc = 'Search Workspace symbols' },
+        { 'go',         '<cmd>Telescope lsp_type_definitions<cr>',    desc = "Goto type definition" },
+        { 'gd',         '<cmd>Telescope lsp_definitions<cr>',         desc = 'Goto definition' },
     },
     telescope = {
         { '<leader>sf', '<cmd>Telescope find_files<cr>',            desc = 'Search files' },
-        { '<leader>sF', '<cmd>lua require("telescope.builtin").find_files({no_ignore=true})<cr>',            desc = 'Search all files' },
+        { '<leader>sF', telescope.all_files,                        desc = 'Search all files' },
         { '<leader>sb', '<cmd>Telescope buffers<cr>',               desc = 'Search buffers' },
-        --{ '<leader>sb', '<cmd>lua require("utils.telescope").buffers()<cr>',               desc = 'Search buffers' },
         { '<leader>sa', '<cmd>Telescope live_grep<cr>',             desc = 'Search in files' },
         { '<leader>sg', '<cmd>Telescope git_files<cr>',             desc = 'Search Git files' },
+        { '<leader>sG', '<cmd>Telescope git_status<cr>',            desc = 'Search Git status' },
         { '<leader>so', '<cmd>Telescope oldfiles<cr>',              desc = 'Search Old files' },
         { '<leader>sw', '<cmd>Telescope grep_string<cr>',           desc = 'Search for word under cursor' },
         { '<leader>sd', '<cmd>Telescope diagnostics<cr>',           desc = 'Search Diagnostics' },
