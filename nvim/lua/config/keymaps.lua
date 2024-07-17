@@ -1,4 +1,5 @@
 local cmd = vim.cmd
+local icons = require('config.icons')
 local buffers = require('utils.buffers')
 local telescope = require('utils.telescope')
 
@@ -95,17 +96,17 @@ return {
     },
     whichkey = {
         mode = { "n", "v", "x" },
-        ["<leader>r"]   = { name = "+Rename" },
-        ["<leader>b"]   = { name = "+Buffers" },
-        ["<leader>f"]   = { name = "+Format" },
-        ["<leader>fc"]  = { name = "+Case" },
-        ["<leader>fcs"] = { name = "+snake_case" },
-        ["<leader>fh"]  = { name = "+Hex" },
-        ["<leader>F"]   = { name = "+Files" },
-        ["<leader>d"]   = { name = "+Diagnostics" },
-        ["<leader>s"]   = { name = "+Search" },
-        ["<leader>c"]   = { name = "+Code" },
-        ["<leader>g"]   = { name = "+Git" },
+        { "<leader>F", group = "Files" },
+        { "<leader>b", group = "Buffers", icon = icons.buffer },
+        { "<leader>c", group = "Code" },
+        { "<leader>d", group = "Diagnostics" },
+        { "<leader>f", group = "Format" },
+        { "<leader>fc", group = "Case" },
+        { "<leader>fcs", group = "snake_case" },
+        { "<leader>fh", group = "Hex", icon = icons.symbols.NumberHex },
+        { "<leader>g", group = "git" },
+        { "<leader>r", group = "Rename", icon = icons.edit },
+        { "<leader>s", group = "Search" },
     },
     oil = {
         { '<leader>.', function() require('oil').open_float() end, { desc = "Open parent directory" } }

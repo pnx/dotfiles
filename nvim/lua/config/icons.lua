@@ -6,6 +6,8 @@ return {
     modified = '',
     pinned = '',
     separator = '│',
+    edit = '',
+    buffer = '',
     fold = {
         open = '',
         close = '',
@@ -86,6 +88,8 @@ return {
         Property = "",
         Unit = "󰑭",
         Value = "",
+        Number = "",
+        NumberHex = "󱊧",
         Enum = "",
         Keyword = "",
         Snippet = "󰘦",
