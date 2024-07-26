@@ -33,7 +33,8 @@ return {
 		"glsl",
 		"hlsl",
 		"markdown",
-		"markdown_inline"
+		"markdown_inline",
+        "kdl"
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
