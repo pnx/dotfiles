@@ -1,0 +1,10 @@
+-m
+--color "bg+:-1,fg+:4,gutter:-1,spinner:2,hl:3,hl+:3,prompt:4,pointer:0,header:4"
+--pointer=">"
+--info="inline-right"
+--separator=''
+--preview-window="border-sharp"
+--header-first
+--marker="*"
+--margin 1
+--preview='bat --color=always --style=changes,numbers {}'
