@@ -1,8 +1,9 @@
 // -*- mode: jsonc -*-
 {
+    "output": "DP-1",
     "position": "bottom",
     "height": 34,
-    "spacing": 0, // Gaps between modules (4px)
+    "spacing": 0,
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
