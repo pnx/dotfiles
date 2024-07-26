@@ -28,6 +28,13 @@ autocmd('Filetype', {
     end
 })
 
+autocmd('Filetype', {
+    pattern = 'kdl',
+    callback = function()
+        vim.cmd('setlocal commentstring=//\\%s')
+    end
+})
+
 
 --
 -- Indent
