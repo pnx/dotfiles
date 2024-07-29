@@ -1,40 +1,44 @@
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 18px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 18px;
 }
 
 window#waybar {
-    background-color: #0e1019;
-    border-top: 1px solid #191B2B;
-    color: #eceef4;
-    transition-property: background-color;
-    transition-duration: 0.3s;
-    padding: 0 24px;
+  background-color: #0e1019;
+  border-top: 1px solid #191b2b;
+  color: #eceef4;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  padding: 0 24px;
+  opacity: 0.95;
 }
 
 button {
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
 }
 
 button:hover {
-    border: none;
+  border: none;
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #eceef4;
+  color: #eceef4;
+  padding: 0 5px;
 }
 
 #workspaces button:hover {
-    border: none;
-    background: #0c0d14;
+  border: none;
 }
 
 #workspaces button.active {
-    color: #89b4fa;
+  color: #89b4fa;
+  background: #191b2b;
 }
 
 #clock,
@@ -54,6 +58,6 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
-    color: #ffffff;
+  padding: 0 10px;
+  color: #eceef4;
 }
