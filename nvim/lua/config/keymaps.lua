@@ -120,6 +120,7 @@ return {
         { '<leader>gs', '<cmd>Git status<cr>',   desc = 'Git status' },
         { '<leader>gl', '<cmd>Git log<cr>',   desc = 'Git log' },
         { '<leader>gL', '<cmd>Git log %<cr>',   desc = 'Git log current file' },
+        { '<leader>gr', '<cmd>Git reset_hunk %<cr>',   desc = 'Reset section where the cursor is' },
     },
     gitsigns = {
         { '<leader>gp', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Git preview diff' },
