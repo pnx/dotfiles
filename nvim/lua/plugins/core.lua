@@ -28,6 +28,9 @@ return {
 			wk.setup(opts)
 		end,
 	},
+    {
+        "echasnovski/mini.bufremove",
+    },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = function()
