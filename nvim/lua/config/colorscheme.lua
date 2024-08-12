@@ -95,6 +95,11 @@ return {
 				["@punctuation.bracket"] = { link = "@punctuation" },
 				["@lsp.type.property"] = { link = "@variable" },
 
+                -- Markup
+                ["@markup.raw"] = { link = "@text" },
+                ["@markup.strong"] = { fg = colors.blue },
+                ["@markup.italic"] = { fg = colors.green },
+
 				-- PHP specific
 				["@class_name.php"] = { link = "@text" },
 				["@extend_name.php"] = { link = "@text" },
