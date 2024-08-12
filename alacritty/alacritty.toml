@@ -1,21 +1,33 @@
+ipc_socket = false
 
 [env]
 TERM = "xterm-256color"
 
 [font]
-#normal = { family = "JetBrains Mono NF", style = "Regular" }
-normal = { family = "JetBrains Mono NF", style = "SemiBold" }
-bold = { style = "Bold" }
+# normal = { family = "JetBrains Mono NF", style = "Regular" }
+normal = {  family = "JetBrains Mono NF", style = "SemiBold" }
+# bold = { style = "Bold" }
 italic = { style = "Italic" }
-bold_italic = { style = "Bold Italic" }
+# bold_italic = { style = "Bold Italic" }
 size = 12.0
 
+
 [window]
-padding = { x = 2, y = 2 }
+decorations_theme_variant = "Dark"
+padding = { x = 2, y = 0 }
+dynamic_padding = true
 opacity = 0.99
 
+[mouse]
+hide_when_typing = true
+
 [colors]
-cursor = { text = "#0E1019", cursor = "#BAC2DE" }
+transparent_background_colors = true
+cursor = { text = "#eceef4", cursor = "#767BA0" }
+selection = { text = "CellForeground", background = "#5B5F7C" }
+footer_bar = { foreground = "#eceef4", background = "#0C0D14" }
+line_indicator = { foreground = "#eceef4", background = "#0E1019" }
+
 
 [colors.primary]
 foreground = "#eceef4"
@@ -40,3 +52,9 @@ blue = "#89B4FA"
 magenta = "#F5C2E7"
 cyan = "#94E2D5"
 white = "#A6ADC8"
+
+[colors.search]
+matches = { foreground = "#0E1019", background = "#767BA0" }
+focused_match = { foreground = "#0E1019", background = "#F9E2AF" }
+
+
