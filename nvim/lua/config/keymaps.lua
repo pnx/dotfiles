@@ -131,7 +131,6 @@ return {
     },
     -- Keybinds for buffers with an LSP client attached
     lsp = {
-        { 'K',          function() vim.lsp.buf.hover() end,           desc = '' },
         { '<leader>ca', function() vim.lsp.buf.code_action() end,     mode={'n', 'x'}, desc = 'Code action' },
         { '<leader>rs', function() vim.lsp.buf.rename() end,          desc = 'Rename symbol' },
         { '<leader>sr', '<cmd>Telescope lsp_references<cr>',          desc = 'Search Reference' },
