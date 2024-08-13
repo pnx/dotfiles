@@ -23,16 +23,17 @@ return {
 				Visual = { bg = colors.overlay1 },
 
 				-- Floating windows
-				NormalFloat = { fg = colors.text, bg = colors.mantle },
+				NormalFloat = { fg = colors.text, bg = colors.crust },
 				FloatTitle = { fg = colors.base, bg = colors.blue },
-				FloatBorder = { fg = colors.surface1, bg = colors.mantle },
+				FloatBorder = { fg = colors.surface1, bg = colors.crust },
 
 				-- Window separator
 				WinSeparator = { fg = colors.surface0 },
 				NeoTreeWinSeparator = { link = "WinSeparator" },
 
 				-- Menus
-				Pmenu = { fg = colors.text, bg = colors.mantle },
+				Pmenu = { link = "NormalFloat" },
+				PmenuSel = { bg = colors.surface0 },
 
 				-- NoiceMini = { link = "NormalFloat" },
 				WhichKeyFloat = { link = "Pmenu" },
@@ -42,25 +43,31 @@ return {
 
 				IncSearch = { bg = colors.yellow },
 
+				-- Autocomplete window
+				CmpItemAbbr = { fg = colors.overlay2 },
+				CmpItemKindText = { fg = colors.text },
+
 				-- LSP
 				-- LspReferenceText = { bg = colors.surface0 },
 				-- LspReferenceRead = { link = "LspReferenceText" },
 				-- LspReferenceWrite = { link = "LspReferenceText" },
 				--
 				-- -- telescope
-				TelescopeNormal = { bg = colors.crust },
-				TelescopeBorder = { fg = colors.crust, bg = colors.crust },
+				TelescopeNormal = { link = "NormalFloat" },
+				TelescopeBorder = { link = "FloatBorder" },
+				TelescopeTitle = { link = "FloatTitle" },
 				TelescopePromptNormal = { bg = colors.mantle },
 				TelescopePromptPrefix = { fg = colors.mauve },
 				TelescopePromptBorder = { fg = colors.mantle, bg = colors.mantle },
-				TelescopePromptTitle = { fg = colors.crust, bg = colors.blue },
 				TelescopePreviewTitle = { fg = colors.crust, bg = colors.mauve },
-				TelescopeSelection = { fg = colors.text, bg = colors.surface0 },
+				TelescopeResultsNormal = { fg = colors.overlay2, bg = colors.crust },
+				TelescopeMatching = { link = "CmpItemAbbrMatch" },
+				TelescopeSelection = { link = "PmenuSel" },
 
 				-- Statusline
-				StatusLine = { fg = colors.text, bg = colors.mantle },
-				StatusLineNormal = { fg = colors.text, bg = colors.mantle },
-				StatusLineSeparator = { fg = colors.surface0, bg = colors.mantle },
+				StatusLine = { fg = colors.text, bg = colors.crust },
+				StatusLineNormal = { link = "StatusLine" },
+				StatusLineSeparator = { fg = colors.surface0, bg = colors.crust },
 				StatusLineInsert = { fg = colors.base, bg = colors.blue },
 				StatusLineVisual = { fg = colors.base, bg = colors.mauve },
 				StatusLineCommand = { fg = colors.base, bg = colors.yellow },
@@ -95,10 +102,10 @@ return {
 				["@punctuation.bracket"] = { link = "@punctuation" },
 				["@lsp.type.property"] = { link = "@variable" },
 
-                -- Markup
-                ["@markup.raw"] = { link = "@text" },
-                ["@markup.strong"] = { fg = colors.blue },
-                ["@markup.italic"] = { fg = colors.green },
+				-- Markup
+				["@markup.raw"] = { link = "@text" },
+				["@markup.strong"] = { fg = colors.blue },
+				["@markup.italic"] = { fg = colors.green },
 
 				-- PHP specific
 				["@class_name.php"] = { link = "@text" },
@@ -112,9 +119,9 @@ return {
 	integrations = {
 		cmp = true,
 		treesitter = true,
-		barbar = true,
-		neotree = true,
-		noice = true,
+		-- barbar = true,
+		-- neotree = true,
+		-- noice = true,
 		telescope = {
 			enabled = true,
 		},
