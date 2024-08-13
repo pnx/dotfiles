@@ -23,16 +23,23 @@ set.updatetime = 50
 -- Displays which-key popup sooner
 set.timeoutlen = 50
 
+
+--
+-- UI
+--
+
 -- disable mode in the command line, because i use lualine
 set.showmode = false
 
+set.winblend = 5 -- how much floating windows should blend with background.
+set.pumblend = 5 -- popup blend
+set.pumheight = 15 -- popup height
 
 --
 -- Editor settings
 --
 
 set.wrap = false -- Disable line wrap
-set.pumheight = 20
 set.laststatus = 3
 set.splitkeep = "screen"
 set.scrolloff = 10
