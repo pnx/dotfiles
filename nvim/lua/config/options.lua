@@ -7,7 +7,7 @@ local icons = require('config.icons')
 
 
 -- Custom
-vim.g.float_border = 'single'
+-- vim.g.float_border = 'single'
 
 
 --
