@@ -16,7 +16,7 @@ return {
 		"phpdoc",
 		"blade",
 		"go",
-        "gotmpl",
+		"gotmpl",
 		"gomod",
 		"gosum",
 		"javascript",
@@ -34,7 +34,7 @@ return {
 		"hlsl",
 		"markdown",
 		"markdown_inline",
-        "kdl"
+		"kdl",
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
@@ -55,6 +55,6 @@ return {
 	},
 
 	indent = {
-		enable = true
-	}
+		enable = true,
+	},
 }

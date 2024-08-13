@@ -20,8 +20,8 @@ return {
 	servers = {
 		-- Bash
 		bashls = {},
-        -- C/C++
-        ccls = {},
+		-- C/C++
+		ccls = {},
 		-- PHP
 		intelephense = {},
 		-- phpactor = {
@@ -34,7 +34,7 @@ return {
 		-- },
 		-- JS,TS,VUE
 		tsserver = {
-            document_highlight = false,
+			document_highlight = false,
 			settings = {
 				tsserver_plugins = {
 					"@vue/typescript-plugin",
@@ -84,17 +84,17 @@ return {
 			cmd = { "/opt/luals/bin/lua-language-server", "--logpath=~/.local/luals/logs" },
 			settings = {
 				Lua = {
-                    runtime = {
-                        version = 'LuaJIT'
-                    },
-                    workspace = {
-                        checkThirdParty = false,
-                        library = {
-                            vim.env.VIMRUNTIME
-                        }
-                    }
-                }
-			}
+					runtime = {
+						version = "LuaJIT",
+					},
+					workspace = {
+						checkThirdParty = false,
+						library = {
+							vim.env.VIMRUNTIME,
+						},
+					},
+				},
+			},
 		},
 	},
 }
