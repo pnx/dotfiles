@@ -6,9 +6,15 @@ return {
 		local null_ls = require("null-ls")
 		return {
 			--null_ls.builtins.completion.luasnip,
+			null_ls.builtins.code_actions.gomodifytags,
 			null_ls.builtins.code_actions.impl,
 			null_ls.builtins.code_actions.gitsigns,
 			null_ls.builtins.diagnostics.phpstan,
+			null_ls.builtins.diagnostics.phpcs,
+			null_ls.builtins.diagnostics.checkmake,
+			null_ls.builtins.diagnostics.actionlint,
+			null_ls.builtins.diagnostics.cppcheck,
+			null_ls.builtins.diagnostics.dotenv_linter,
 		}
 	end,
 	servers = {
