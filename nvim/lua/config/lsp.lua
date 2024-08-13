@@ -17,15 +17,15 @@ return {
         -- C/C++
         ccls = {},
 		-- PHP
-		-- intelephense = {},
-		phpactor = {
-			settings = {
-				init_options = {
-					["language_server_phpstan.enabled"] = true,
-					["language_server_psalm.enabled"] = false,
-				},
-			},
-		},
+		intelephense = {},
+		-- phpactor = {
+		-- 	settings = {
+		-- 		init_options = {
+		-- 			["language_server_phpstan.enabled"] = true,
+		-- 			["language_server_psalm.enabled"] = false,
+		-- 		},
+		-- 	},
+		-- },
 		-- JS,TS,VUE
 		tsserver = {
             document_highlight = false,
