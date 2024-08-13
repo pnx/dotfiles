@@ -1,7 +1,13 @@
 return function()
 	local icons = require("config.icons")
 	local actions = require("telescope.actions")
-    local path_delim = require("utils.path").delimiter()
+	local path_delim = require("utils.path").delimiter()
+
+	local border = {
+		prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+		results = { " ", " ", " ", " ", " ", " ", " ", " " },
+		preview = { " ", " ", " ", " ", " ", " ", " ", " " },
+	}
 
 	local dropdown_opts = {
 		previewer = false,
@@ -10,6 +16,7 @@ return function()
 		layout_config = {
 			prompt_position = "top",
 		},
+        borderchars = border,
 	}
 	return {
 		defaults = {
@@ -26,6 +33,7 @@ return function()
 					["<esc>"] = actions.close,
 				},
 			},
+			borderchars = border
 		},
 		pickers = {
 			find_files = {
