@@ -4,9 +4,9 @@ return function()
 	local path_delim = require("utils.path").delimiter()
 
 	local border = {
-		prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
-		results = { " ", " ", " ", " ", " ", " ", " ", " " },
-		preview = { " ", " ", " ", " ", " ", " ", " ", " " },
+		prompt = { " " },
+		results = { " " },
+		preview = { " " },
 	}
 
 	local dropdown_opts = {

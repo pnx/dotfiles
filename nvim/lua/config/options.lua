@@ -121,7 +121,7 @@ vim.diagnostic.config({
         },
     },
     float = {
-        border = vim.g.float_border,
+        border = { " " },
         header = false,
         source = true,
     }
