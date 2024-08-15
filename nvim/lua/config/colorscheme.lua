@@ -33,7 +33,9 @@ return {
 
 				-- Menus
 				Pmenu = { link = "NormalFloat" },
-				PmenuSel = { bg = colors.surface0 },
+				PmenuSel = { bg = colors.surface1 },
+                PmenuSbar = { link = "Pmenu" },
+                PmenuThumb = { link = "PmenuSel" },
 
 				-- NoiceMini = { link = "NormalFloat" },
 				WhichKeyFloat = { link = "Pmenu" },
