@@ -9,8 +9,8 @@ return {
 			null_ls.builtins.code_actions.gomodifytags,
 			null_ls.builtins.code_actions.impl,
 			null_ls.builtins.code_actions.gitsigns,
-			null_ls.builtins.diagnostics.phpstan,
-			null_ls.builtins.diagnostics.phpcs,
+			-- null_ls.builtins.diagnostics.phpstan,
+			-- null_ls.builtins.diagnostics.phpcs,
 			null_ls.builtins.diagnostics.checkmake,
 			null_ls.builtins.diagnostics.actionlint,
 			null_ls.builtins.diagnostics.cppcheck,
@@ -23,15 +23,15 @@ return {
 		-- C/C++
 		ccls = {},
 		-- PHP
-		intelephense = {},
-		-- phpactor = {
-		-- 	settings = {
-		-- 		init_options = {
-		-- 			["language_server_phpstan.enabled"] = true,
-		-- 			["language_server_psalm.enabled"] = false,
-		-- 		},
-		-- 	},
-		-- },
+	    -- intelephense = {},
+		phpactor = {
+			settings = {
+				init_options = {
+					["language_server_phpstan.enabled"] = true,
+					["language_server_psalm.enabled"] = false,
+				},
+			},
+		},
 		-- JS,TS,VUE
 		tsserver = {
 			document_highlight = false,
