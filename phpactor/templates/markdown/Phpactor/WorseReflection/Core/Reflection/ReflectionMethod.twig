@@ -1,0 +1,9 @@
+{% if object.deprecation.isDefined %}{{ render(object.deprecation) }}    {% endif %}
+{%- if object.declaringClass.isClass and object.class.isClass -%}
+    {%- if object.deprecation.isDefined %}/* Deprecated */ {% endif -%}
+{%- endif -%}
+{% if object.isAbstract -%}abstract {% endif -%}
+{{- object.visibility ~ ' ' -}}
+{%- if object.isStatic %}static {% endif %}
+function {{ object.name }}({{ render(object.parameters) }})
+{%- if typeDefined(object.inferredType) %}: {{ render(object.inferredType) }}{% endif %}{{ ';' -}}

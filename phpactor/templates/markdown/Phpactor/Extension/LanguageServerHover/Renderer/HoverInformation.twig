@@ -1,0 +1,7 @@
+{% if object.docs %}
+{{ object.docs }}
+{% endif %}
+
+```php
+<?php {{ render(object.object) }}
+{{ '```' -}}
