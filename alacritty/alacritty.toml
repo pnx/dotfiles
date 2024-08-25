@@ -4,18 +4,18 @@ ipc_socket = false
 TERM = "xterm-256color"
 
 [font]
-# normal = { family = "JetBrains Mono NF", style = "Regular" }
-normal = {  family = "JetBrains Mono NF", style = "SemiBold" }
-# bold = { style = "Bold" }
-italic = { style = "Italic" }
-# bold_italic = { style = "Bold Italic" }
-size = 12.0
+normal = { family = "JetBrains Mono NF", style = "Regular" }
+bold = { style = "SemiBold" }
+size = 13.0
+
+offset = { x = 0, y = -1 }
+glyph_offset = { x = 0, y = 0 }
 
 
 [window]
 decorations_theme_variant = "Dark"
-padding = { x = 2, y = 0 }
-dynamic_padding = true
+padding = { x = 0, y = 0 }
+# dynamic_padding = true
 opacity = 0.99
 
 [mouse]
@@ -27,7 +27,6 @@ cursor = { text = "#eceef4", cursor = "#767BA0" }
 selection = { text = "CellForeground", background = "#5B5F7C" }
 footer_bar = { foreground = "#eceef4", background = "#0C0D14" }
 line_indicator = { foreground = "#eceef4", background = "#0E1019" }
-
 
 [colors.primary]
 foreground = "#eceef4"
