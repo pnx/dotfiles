@@ -62,7 +62,7 @@ exec --no-startup-id firefox
 
 ## Config
 
-font pango:JetBrainsMono NF Bold 11
+font pango:JetBrainsMono NF Regular 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -242,12 +242,11 @@ client.placeholder      $color_bg               $color_bg                $color_
 bar {
     output primary
     status_command i3status
-    separator_symbol " | "
-    padding 0 8 0 0
-    tray_padding 6
+    separator_symbol " │ "
+    padding 2 8 2 0
+    tray_padding 4
 
-    # font pango:DejaVu Sans Mono, FontAwesome 12
-    font pango:JetBrainsMono NF SemiBold 14
+    font pango:JetBrainsMono NF Regular 12
     strip_workspace_numbers no
     strip_workspace_name no
     workspace_min_width 32
@@ -255,7 +254,7 @@ bar {
     colors {
         background $color_bg
         statusline $color_fg
-        separator  $color_fg
+        separator  $color_border
 
         focused_workspace  $color_blue      $color_blue     $color_bg
         active_workspace   $color_yellow    $color_yellow   $color_bg
