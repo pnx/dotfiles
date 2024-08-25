@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+LAYOUT=code
+
+if [[ $# -eq 1 ]]; then
+    selected=$(realpath $1)
+else
+	DIRECTORIES=$(cat ~/.tmuxs | sed "s&^\~&${HOME}&g")
+	selected=$(find ${DIRECTORIES} -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+
+zellij --layout "$LAYOUT" \
+    attach -c "$selected_name" \
+    options --default-cwd "$selected"
