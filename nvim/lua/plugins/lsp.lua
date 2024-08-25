@@ -61,9 +61,9 @@ return {
 					})
 				end
 
-                if client.supports_method('textDocument/hover') then
-                    --utils.signature_help_on_hover(bufnr)
-                end
+                -- if client.supports_method('textDocument/hover') then
+                --     utils.signature_help_on_hover(bufnr)
+                -- end
 
 				if (opts.document_hightlight or server_opt.document_highlight or false) and client.supports_method('textDocument/documentHighlight') then
 					utils.document_highlight(bufnr)

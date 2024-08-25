@@ -8,24 +8,21 @@ return function()
 	local selectPrev = utils.selectPrev({ behavior = cmp.SelectBehavior.Insert })
 	local selectNext = utils.selectNext({ behavior = cmp.SelectBehavior.Insert })
 
-	local windowstyle = {
-		border = vim.g.float_border or "none",
-		winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-	}
-
 	return {
 		preselect = false,
 		completion = {
-			completeopt = "menuone,longest,noinsert,preview",
+			completeopt = "menu,menuone,longest,popup",
 		},
 		view = {
 			entries = { name = "custom", selection_order = "near_cursor" },
 		},
 		window = {
-			documentation = windowstyle,
-			completion = vim.tbl_deep_extend("force", windowstyle, {
+			documentation = {
+                border = { "", "", "", "", "", "", "", " " },
+            },
+			completion = {
 				scrolloff = 4,
-			}),
+			},
 		},
 		mapping = {
 			["<Up>"] = selectPrev,
@@ -51,6 +48,7 @@ return function()
 			}),
 		},
 		sources = {
+            { name = 'nvim_lsp_signature_help' },
 			{ name = "nvim_lsp" },
 			{ name = "luasnip" },
 			{ name = "buffer" },

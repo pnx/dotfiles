@@ -110,9 +110,10 @@ return {
 				["@markup.italic"] = { fg = colors.green },
 
 				-- PHP specific
+                ["@keyword.import.php"] = { link = "@keyword" },
 				["@class_name.php"] = { link = "@text" },
 				["@extend_name.php"] = { link = "@text" },
-				["@implements_name.php"] = { link = "@text" },
+				["@implement_name.php"] = { link = "@text" },
 				["@namespace_name.php"] = { link = "@text" },
 				["@namespace_alias.php"] = { link = "@text" },
 			}

@@ -52,7 +52,7 @@ set.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 set.list = false
-set.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+set.listchars = { tab = '  »', space = '·', nbsp = '␣' }
 
 set.fillchars = {
     foldopen = icons.fold.open,

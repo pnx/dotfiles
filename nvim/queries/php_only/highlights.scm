@@ -10,6 +10,8 @@
 	(class_interface_clause (name) @implement_name)
 ])
 
+(interface_declaration (name) @class_name)
+
 ; tag "use" traits as text
 (use_declaration (name) @text)
 
@@ -17,7 +19,6 @@
 (namespace_use_declaration (namespace_use_clause [
 	(qualified_name [
 		(name) @namespace_name
-		(namespace_name_as_prefix (namespace_name (name) @namespace_name))
 	])
-	(namespace_aliasing_clause (name) @namespace_alias)
+    alias: (name) @namespace_name
 ]))
