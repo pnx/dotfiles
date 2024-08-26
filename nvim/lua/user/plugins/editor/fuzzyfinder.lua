@@ -1,5 +1,4 @@
 local icons = require("user.icons")
-local path_delim = require("user.utils.path").delimiter()
 
 local border = {
     prompt = { " " },
