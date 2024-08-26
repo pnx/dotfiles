@@ -108,6 +108,7 @@ vim.diagnostic.config({
 
 user = {} ---@diagnostic disable-line: lowercase-global
 
+---@type HighlightYankConfig
 user.highlight_yank = {
     enable = true,
     timeout = 400,
