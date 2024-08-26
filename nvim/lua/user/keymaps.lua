@@ -68,11 +68,12 @@ vim.keymap.set('n', '<leader>bD', buffers.CloseAll,       { silent = true, desc 
 
 --
 -- Diagnostics
---:bp | bd #
+--
 
-vim.keymap.set('n', "<leader>do",  vim.diagnostic.open_float,                {desc = "Open diagnostics" })
+vim.keymap.set('n', "<leader>dk",  vim.diagnostic.open_float,                {desc = "Show diagnostic message under cursor" })
 vim.keymap.set('n', "<leader>dn",  vim.diagnostic.get_next,                  {desc = "Goto next" })
 vim.keymap.set('n', "<leader>dp",  vim.diagnostic.get_prev,                  {desc = "Goto previous" })
+vim.keymap.set('n', "<leader>dd",  "<cmd>Telescope diagnostics<cr>",  {desc = "Open workspace diagnostics" })
 
 --
 -- File explorer
