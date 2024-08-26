@@ -7,7 +7,7 @@ local function indent_settings()
 end
 
 local function lsp_info()
-    local num_clients = tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))
+    local num_clients = tostring(#vim.tbl_keys(vim.lsp.get_clients()))
     return " " .. num_clients
 end
 
