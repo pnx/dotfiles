@@ -2,10 +2,6 @@
 local M = {}
 
 function M.setHardtabs()
-    -- vim.bo.expandtab = false
-    -- vim.bo.tabstop = 8
-    -- vim.bo.shiftwidth = 0
-    -- vim.bo.softtabstop = 0
     vim.cmd([[setlocal noet ts=8 sts=0 sw=0]])
 end
 

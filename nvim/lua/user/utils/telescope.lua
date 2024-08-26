@@ -1,4 +1,4 @@
-   
+
 local M = {}
 
 function M.all_files() require("telescope.builtin").find_files({no_ignore=true, prompt_title = "Find All Files"}) end
