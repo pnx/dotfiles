@@ -95,8 +95,9 @@ vim.diagnostic.config({
         },
     },
     float = {
+        ---@diagnostic disable-next-line: assign-type-mismatch
         border = { " " },
-        header = false,
+        header = "",
         source = true,
     }
 })
@@ -105,7 +106,7 @@ vim.diagnostic.config({
 -- Extras
 -------------------------------------------------------
 
-user = {}
+user = {} ---@diagnostic disable-line: lowercase-global
 
 user.highlight_yank = {
     enable = true,
