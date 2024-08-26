@@ -5,6 +5,7 @@
         "vim",
         "ipairs",
         "require",
+        "pcall",
         "pairs",
         "type",
         "unpack",
