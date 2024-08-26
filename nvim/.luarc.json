@@ -9,7 +9,10 @@
         "pairs",
         "type",
         "unpack",
-        "table"
+        "table",
+        "string",
+        "os",
+        "tostring",
     ],
     "workspace.checkThirdParty": false,
     "workspace.library": ["$VIMRUNTIME", "./lua"]
