@@ -82,7 +82,7 @@ function M.buffer_view(opts)
                     highlight = opts.indicators.modified.higroup
                 },
                 readonly = {
-                    icon = vim.api.nvim_buf_get_option(entry.bufnr, "readonly") and opts.indicators.readonly.icon or " ",
+                    icon = vim.api.nvim_get_option_value("readonly", {buf = entry.bufnr}) and opts.indicators.readonly.icon or " ",
                     highlight = opts.indicators.readonly.higroup
                 }
             },
