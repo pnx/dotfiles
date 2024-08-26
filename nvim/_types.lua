@@ -1,6 +1,6 @@
 
---- LuaLS is weird and does not recognize builtin types.
---- even tho it should. So define them as alias
+--- LuaLS is weird and does not recognize builtin types
+--- even tho it should. So define them as aliases
 ---@alias nil nil
 ---@alias any any
 ---@alias boolean boolean
