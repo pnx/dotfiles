@@ -1,6 +1,24 @@
 local icons = require("user.icons")
 
 return {
+    -- Nicer notifications
+    {
+        "j-hui/fidget.nvim",
+        opts = {
+            notification = {
+                window = {
+                    normal_hl = "Pmenu",
+                    winblend = 5,
+                    border = { " " }
+                }
+            },
+            progress = {
+                display = {
+                    done_ttl = 2,
+                }
+            }
+        }
+    },
     -- File explorer
     {
         "nvim-neo-tree/neo-tree.nvim",
