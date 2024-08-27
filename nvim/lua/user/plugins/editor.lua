@@ -31,6 +31,52 @@ return {
 			hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
 		end,
 	},
+    -- Better folds
+    {
+        'kevinhwang91/nvim-ufo',
+        dependencies = {
+            'kevinhwang91/promise-async',
+        },
+        opts = {
+            fold_virt_text_handler = require("user.utils.ufo").foldtext
+        }
+    },
+    -- Better status column
+    {
+        "luukvbaal/statuscol.nvim",
+        opts = function()
+            local builtin = require("statuscol.builtin")
+            return {
+                -- Align current relative number to the right.
+                relculright = true,
+                segments = {
+                    {
+                        click = "v:lua.ScSa",
+                        sign = {
+                            namespace = { "gitsigns" },
+                            maxwidth = 1,
+                            colwidth = 1,
+                        }
+                    },
+                    {
+                        click = "v:lua.ScSa",
+                        sign = {
+                            namespace = { "diagnostic/signs" },
+                            maxwidth = 1,
+                            colwidth = 3,
+                            -- auto = true,
+                        }
+                    },
+                    {
+                        text = { builtin.lnumfunc, " " },
+                        click = "v:lua.ScLa",
+                    },
+                    { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
+                    { text = { "│ " } },
+                }
+            }
+        end,
+    },
     -- Snippets
     {
         "L3MON4D3/LuaSnip",
