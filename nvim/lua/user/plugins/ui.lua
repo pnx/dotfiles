@@ -154,6 +154,7 @@ return {
                     event = "neo_tree_buffer_enter",
                     handler = function ()
                         vim.opt_local.statuscolumn = ''
+                        vim.opt_local.foldcolumn = "0"
                     end
                 },
             },
