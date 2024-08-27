@@ -82,6 +82,10 @@ local options = {
                 NeoTreeModified = { fg = colors.yellow },
                 NeoTreeWinSeparator = { link = "WinSeparator" },
 
+                -- Markdown rendering
+                RenderMarkdownCode = { bg = colors.crust },
+                RenderMarkdownCodeInline = { fg = colors.rosewater, bg = colors.crust },
+
                 -- Syntax
                 PreProc = { link = "Include" },
                 Operator = { fg = colors.rosewater },
