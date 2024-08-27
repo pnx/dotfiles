@@ -2,7 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
-            ensure_installed = { "blade", "html" }
+            ensure_installed = { "dockerfile" }
         }
     },
 }

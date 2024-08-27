@@ -27,12 +27,16 @@ require("lazy").setup({
         { import = "user.plugins.lang.lua" },
         { import = "user.plugins.lang.bash" },
         { import = "user.plugins.lang.clangd" },
+        { import = "user.plugins.lang.cmake" },
+        { import = "user.plugins.lang.ninja" },
+        { import = "user.plugins.lang.docker" },
         { import = "user.plugins.lang.go" },
         { import = "user.plugins.lang.rust" },
         { import = "user.plugins.lang.php" },
         { import = "user.plugins.lang.css" },
         { import = "user.plugins.lang.typescript" },
         { import = "user.plugins.lang.vue" },
+        { import = "user.plugins.lang.markdown" },
     },
     pkg = {
         sources = {
