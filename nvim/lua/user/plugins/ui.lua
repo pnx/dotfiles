@@ -19,6 +19,50 @@ return {
             }
         }
     },
+    {
+        'kevinhwang91/nvim-ufo',
+        dependencies = {
+            'kevinhwang91/promise-async',
+        },
+        opts = {
+            fold_virt_text_handler = require("user.utils.ufo").foldtext
+        }
+    },
+    {
+        "luukvbaal/statuscol.nvim",
+        opts = function()
+            local builtin = require("statuscol.builtin")
+            return {
+                -- Align current relative number to the right.
+                relculright = true,
+                segments = {
+                    {
+                        click = "v:lua.ScSa",
+                        sign = {
+                            namespace = { "gitsigns" },
+                            maxwidth = 1,
+                            colwidth = 1,
+                        }
+                    },
+                    {
+                        click = "v:lua.ScSa",
+                        sign = {
+                            namespace = { "diagnostic/signs" },
+                            maxwidth = 1,
+                            colwidth = 3,
+                            -- auto = true,
+                        }
+                    },
+                    {
+                        text = { builtin.lnumfunc, " " },
+                        click = "v:lua.ScLa",
+                    },
+                    { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
+                    { text = { "│ " } },
+                }
+            }
+        end,
+    },
     -- File explorer
     {
         "nvim-neo-tree/neo-tree.nvim",
