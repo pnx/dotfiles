@@ -10,8 +10,8 @@ return {
     edit = "",
     buffer = "",
     fold = {
-        open = "",
-        close = "",
+        open = "",
+        close = "",
         sep = " ",
     },
     tree = {
