@@ -10,6 +10,30 @@ return {
                 "hrsh7th/cmp-nvim-lsp-signature-help"
             },
         },
+        -- LSP often return markdown that neovim parses.
+        -- make sure we have a plugin that can render markdown to nicer text
+        {
+            'MeanderingProgrammer/render-markdown.nvim',
+            dependencies = {
+                'nvim-tree/nvim-web-devicons',
+                {
+                    "nvim-treesitter/nvim-treesitter",
+                    opts = {
+                        ensure_installed = { "markdown", "markdown_inline" }
+                    }
+                }
+            },
+            opts = {
+                overrides = {
+                    buftype = {
+                        -- LSP Hover = "nofile"
+                        nofile = {
+                            code = { left_pad = 0, right_pad = 0 },
+                        },
+                    },
+                },
+            }
+        }
     },
     opts = {
         document_highlight = {
