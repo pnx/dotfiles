@@ -21,6 +21,7 @@ local options = {
         mocha = function(colors)
             return {
                 Visual = { bg = colors.overlay1 },
+                FoldColumn = { fg = colors.surface2 },
 
                 -- Floating windows
                 NormalFloat = { fg = colors.text, bg = colors.crust },
