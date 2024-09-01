@@ -9,6 +9,11 @@ return {
     separator = "│",
     edit = "",
     buffer = "",
+    whitespace = {
+        tab = "»",
+        space = "·",
+        eol = ""
+    },
     fold = {
         open = "",
         close = "",
