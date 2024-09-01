@@ -53,7 +53,6 @@ return {
         local augroup = vim.api.nvim_create_augroup("Lsp", {})
 
         for name, server_opts in pairs(opts.servers) do
-
             local on_attach = function(_, bufnr)
                 vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 

@@ -1,4 +1,3 @@
-
 return {
     prompt = "",
     current = " ",

@@ -121,7 +121,7 @@ local options = {
                 ["@lsp.type.property"] = { link = "@variable" },
 
                 -- Bash
-                ["@variable.parameter.bash"] = { fg=colors.rosewater },
+                ["@variable.parameter.bash"] = { fg = colors.rosewater },
 
                 -- Makefile
                 ["@function.make"] = { link = "Keyword" },

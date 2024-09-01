@@ -1,4 +1,3 @@
-
 -------------------------------------------------------
 -- Helper imports
 -------------------------------------------------------
@@ -17,15 +16,15 @@ vim.o.updatetime = 50
 -- Displays which-key popup sooner
 vim.o.timeoutlen = 50
 
-vim.o.mouse="a"
+vim.o.mouse = "a"
 vim.o.confirm = true
 
 -------------------------------------------------------
 -- User interface
 -------------------------------------------------------
 
-vim.o.winblend = 5 -- how much floating windows should blend with background.
-vim.o.pumblend = 5 -- popup blend
+vim.o.winblend = 5   -- how much floating windows should blend with background.
+vim.o.pumblend = 5   -- popup blend
 vim.o.pumheight = 15 -- popup height
 
 -- Configure how new splits should be opened
@@ -77,7 +76,8 @@ vim.o.foldcolumn = "auto"
 vim.o.list = false
 vim.o.listchars = 'tab:  »,space:·,eol:,nbsp:␣'
 
-vim.o.fillchars = string.format([[eob: ,fold: ,foldopen:%s,foldsep:%s,foldclose:%s]], icons.fold.open, icons.fold.sep, icons.fold.close)
+vim.o.fillchars = string.format([[eob: ,fold: ,foldopen:%s,foldsep:%s,foldclose:%s]],
+    icons.fold.open, icons.fold.sep, icons.fold.close)
 
 -- Spell stuff, because i cant English
 vim.o.spell = true
