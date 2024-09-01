@@ -49,20 +49,20 @@ return {
             show_scrolled_off_parent_node = false,                    -- boolean
             sources = {                                               -- table
                 {
-                    source = "filesystem",                                -- string
-                    display_name = " 󰉓 Files "                            -- string | nil
+                    source = "filesystem",
+                    display_name = " 󰉓 Files "
                 },
                 {
-                    source = "buffers",                                   -- string
-                    display_name = " 󰈚 Buffers "                          -- string | nil
+                    source = "buffers",
+                    display_name =  "  Buffers "
                 },
                 {
-                    source = "git_status",                                -- string
-                    display_name = " 󰊢 Git "                              -- string | nil
+                    source = "git_status",
+                    display_name = " 󰊢 Git "
                 },
                 {
-                    source = "document_symbols",                                -- string
-                    display_name = " 󰊢 Docments "                              -- string | nil
+                    source = "document_symbols",
+                    display_name = "  Document Symbols "
                 },
             },
             content_layout = "center",
