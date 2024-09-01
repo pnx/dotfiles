@@ -23,6 +23,7 @@ vim.keymap.set('i', '<S-Tab', '<C-d>', { desc = 'delete indent' })
 --
 
 vim.keymap.set('n', '<leader>fs', [[:%s/\s\+$//g<CR>`']], { desc = 'Remove trailing spaces' })
+vim.keymap.set('n', '<leader>ff', [[:Format<CR>]], { desc = 'Format file', silent = true, })
 
 -- Hex Formatting
 vim.keymap.set('x', '<leader>fhx', [[:s/\(\x\{2\}\)/0x\1, /g]], { desc = "Format hex" })
