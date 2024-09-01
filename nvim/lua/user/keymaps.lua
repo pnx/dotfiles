@@ -1,6 +1,7 @@
 local buffers = require('user.utils.buffers')
 local telescope = require('user.utils.telescope')
 
+---@diagnostic disable-next-line: inject-field
 vim.g.mapleader = ' '
 
 -- NOPE
