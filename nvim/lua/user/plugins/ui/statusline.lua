@@ -6,17 +6,13 @@ local function indent_settings()
         .. (vim.bo.shiftwidth == 0 and vim.bo.tabstop or vim.bo.shiftwidth)
 end
 
-local function lsp_info()
-    local num_clients = tostring(#vim.tbl_keys(vim.lsp.get_clients()))
-    return " " .. num_clients
-end
-
 return {
 	"nvim-lualine/lualine.nvim",
 	event = "VeryLazy",
 	dependencies = {
+        "nvim-tree/nvim-web-devicons",
 		"arkav/lualine-lsp-progress",
-		"nvim-tree/nvim-web-devicons",
+        "pnx/lualine-lsp-status",
 	},
 	opts = {
 		options = {
@@ -32,6 +28,7 @@ return {
                     "neo-tree",
                 }
 			},
+            -- theme = "catppuccin"
 			theme = {
 				normal = {
 					a = "StatusLineNormal",
@@ -67,9 +64,18 @@ return {
                 },
 			},
 			lualine_b = {
-				"branch",
-				-- '" " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
-                lsp_info,
+				{"branch"},
+                {
+                    "lsp-status",
+                    colors = {},
+                    on_click = function (_, btn, _)
+                        if btn == "l" then
+                            vim.cmd(":LspInfo")
+                        elseif btn == "r" then
+                            vim.cmd(":LspRestart")
+                        end
+                    end
+                },
 				{
 					"diagnostics",
 					symbols = {
