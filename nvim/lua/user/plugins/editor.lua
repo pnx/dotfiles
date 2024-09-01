@@ -77,6 +77,19 @@ return {
             }
         end,
     },
+    -- Formatting
+    {
+        'stevearc/conform.nvim',
+        opts = {
+            default_format_opts = {
+                lsp_format = "fallback"
+            }
+        },
+        init = function()
+            vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+            user.formatter = ":lua require'conform'.format({ async = true })<CR>:<DEL>"
+        end
+    },
     -- Snippets
     {
         "L3MON4D3/LuaSnip",
