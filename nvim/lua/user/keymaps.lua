@@ -24,6 +24,7 @@ vim.keymap.set('i', '<S-Tab', '<C-d>', { desc = 'delete indent' })
 -- Editing - formatting
 --
 
+vim.keymap.set('n', '<leader>f', "noop", { desc = 'Formatting' })
 vim.keymap.set('n', '<leader>fs', [[:%s/\s\+$//g<CR>`']], { desc = 'Remove trailing spaces' })
 vim.keymap.set('n', '<leader>ff', [[:Format<CR>]], { desc = 'Format file', silent = true, })
 
@@ -74,6 +75,7 @@ vim.keymap.set('n', '<S-PageDown>', '<C-d>zz', { silent = true, desc = 'jump hal
 -- vim.keymap.set('n', '<leader>bb', vim.cmd.bp,             { silent = true, desc = 'Move to previous buffer' })
 -- vim.keymap.set('n', '<leader>bd', vim.cmd.bd,             { silent = true, desc = 'Close current buffer' })
 -- vim.keymap.set('n', '<leader>bd', '<cmd>bp | bd #<cr>',             { silent = true, desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>b', "noop", { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>bd', buffers.CloseCurrent, { silent = true, desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>bc', buffers.CloseOthers, { silent = true, desc = 'Close all other buffers' })
 vim.keymap.set('n', '<leader>bD', buffers.CloseAll, { silent = true, desc = 'Close all buffers' })
@@ -82,6 +84,7 @@ vim.keymap.set('n', '<leader>bD', buffers.CloseAll, { silent = true, desc = 'Clo
 -- Diagnostics
 --
 
+vim.keymap.set('n', '<leader>d', "noop", { desc = 'Diagnostics' })
 vim.keymap.set('n', "<leader>dk", vim.diagnostic.open_float, { desc = "Show diagnostic message under cursor" })
 vim.keymap.set('n', "<leader>dn", vim.diagnostic.get_next, { desc = "Goto next" })
 vim.keymap.set('n', "<leader>dp", vim.diagnostic.get_prev, { desc = "Goto previous" })
@@ -95,6 +98,7 @@ vim.keymap.set('n', "<leader>.", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neo
 --
 -- Git
 --
+vim.keymap.set('n', '<leader>g', "noop", { desc = 'Git' })
 vim.keymap.set('n', "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Preview section at cursor" })
 vim.keymap.set('n', "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", { desc = "Reset section at cursor" })
 vim.keymap.set('n', "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", { desc = "Reset buffer" })
@@ -106,13 +110,16 @@ vim.keymap.set('n', "<leader>gv", "<cmd>Gitsigns select_hunk<cr>", { desc = "Sel
 
 vim.keymap.set('n', 'go', '<cmd>Telescope lsp_type_definitions<cr>', { desc = 'Goto type definition' })
 vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', { desc = 'Goto definition' })
+vim.keymap.set({ 'n', 'x' }, '<leader>c', 'noop', { desc = 'Code action' })
 vim.keymap.set({ 'n', 'x' }, '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code action' })
+vim.keymap.set('n', '<leader>r', "noop", { desc = 'Rename' })
 vim.keymap.set('n', '<leader>rs', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename symbol' })
 
 --
 -- Search
 --
 
+vim.keymap.set('n', '<leader>s', "noop", { desc = 'Search' })
 vim.keymap.set('n', '<leader>sf', '<cmd>Telescope find_files<cr>', { desc = 'Search files' })
 vim.keymap.set('n', '<leader>sF', telescope.all_files, { desc = 'Search all files' })
 vim.keymap.set('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', { desc = 'Search for word under cursor' })
