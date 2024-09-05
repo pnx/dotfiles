@@ -36,8 +36,16 @@ vim.keymap.set('x', '<leader>fhn', [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]], { d
 vim.keymap.set("x", "<leader>fcsc", [[:s/\%V\([a-z]\+\)_\?/\u\1/g]],
     { desc = "Convert text from snake_case to CamelCase" })
 
+--
+-- Editing - Copy / Paste
+--
 
--- copy/paste
+-- Maintain the cursor position when yanking a visual selection.
+vim.keymap.set('v', 'y', 'myy`y')
+vim.keymap.set('v', 'Y', 'myY`y')
+
+-- Indent and move to the end when pasting.
+vim.keymap.set('n', 'p', 'p`[v`]=`>')
 
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], {})
 vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], {})
