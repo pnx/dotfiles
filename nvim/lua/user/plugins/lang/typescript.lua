@@ -1,11 +1,5 @@
 local lspservers = {
-    tsserver = {
-        settings = {
-            -- tsserver_plugins = {
-            --     "@vue/typescript-plugin",
-            -- },
-        },
-    },
+    ts_ls = {},
 }
 
 return {
