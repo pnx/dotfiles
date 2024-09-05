@@ -5,14 +5,7 @@ local lspservers = {
                 hybridMode = true,
             },
         },
-    },
-    tsserver = {
-        settings = {
-            tsserver_plugins = {
-                "@vue/typescript-plugin",
-            },
-        },
-    },
+    }
 }
 
 
