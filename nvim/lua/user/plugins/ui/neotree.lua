@@ -24,8 +24,6 @@ return {
                 folder_open = icons.folder.open,
                 folder_empty = icons.folder.empty,
                 folder_empty_open = icons.folder.empty_open,
-                -- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
-                -- then these will never be used.
                 default = icons.files.default,
             },
             modified = {

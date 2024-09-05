@@ -21,13 +21,8 @@ return {
                     icon = "󰙨",
                     color = "#0d6efd",
                     name = "PhpUnit"
-                },
-                -- ["composer.json"] = {
-                --     icon = "",
-                --     color = "#9e9e9e",
-                --     name = "Composer"
-                -- }
-            };
+                }
+            }
         }
-    },
+    }
 }
