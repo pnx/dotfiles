@@ -33,15 +33,7 @@ return {
         end,
     },
     -- Better folds
-    {
-        'kevinhwang91/nvim-ufo',
-        dependencies = {
-            'kevinhwang91/promise-async',
-        },
-        opts = {
-            fold_virt_text_handler = require("user.utils.ufo").foldtext
-        }
-    },
+    { import = "user.plugins.editor.ufo" },
     -- Better status column
     {
         "luukvbaal/statuscol.nvim",
