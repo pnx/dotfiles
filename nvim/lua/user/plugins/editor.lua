@@ -1,4 +1,5 @@
 return {
+    { import = "user.plugins.editor.treesitter" },
     "echasnovski/mini.bufremove",
     {
         "windwp/nvim-autopairs",
@@ -77,6 +78,7 @@ return {
             }
         end,
     },
+    { import = "user.plugins.editor.gitsigns" },
     -- Formatting
     {
         'stevearc/conform.nvim',
@@ -90,6 +92,8 @@ return {
             user.formatter = ":lua require'conform'.format({ async = true })<CR>:<DEL>"
         end
     },
+    { import = "user.plugins.editor.fuzzyfinder" },
+    { import = "user.plugins.editor.autocomplete" },
     -- Snippets
     {
         "L3MON4D3/LuaSnip",

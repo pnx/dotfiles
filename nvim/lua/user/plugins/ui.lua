@@ -1,4 +1,7 @@
 return {
+    { import = "user.plugins.ui.statusline" },
+    -- File explorer
+    { import = "user.plugins.ui.neotree" },
     -- Nicer notifications
     {
         "j-hui/fidget.nvim",
@@ -17,8 +20,6 @@ return {
             }
         }
     },
-    -- File explorer
-    { import = "user.plugins.ui.neotree" },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
