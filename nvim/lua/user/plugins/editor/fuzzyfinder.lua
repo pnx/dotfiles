@@ -24,6 +24,7 @@ return {
         "nvim-telescope/telescope-ui-select.nvim",
         "sharkdp/fd",
     },
+    cmd = "Telescope",
     opts = function()
         local utils = require("user.utils.telescope")
         local actions = require("telescope.actions")

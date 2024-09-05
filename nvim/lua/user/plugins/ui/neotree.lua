@@ -8,6 +8,7 @@ return {
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
     },
+    cmd = "Neotree",
     opts = {
         -- hide_root_node = true,
         popup_border_style = 'solid',
