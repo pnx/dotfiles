@@ -29,6 +29,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        ft = { "vue" },
         opts = {
             servers = lspservers
         },

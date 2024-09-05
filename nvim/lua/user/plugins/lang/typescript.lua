@@ -17,6 +17,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        ft = { "ts" },
         opts = {
             servers = lspservers
         },

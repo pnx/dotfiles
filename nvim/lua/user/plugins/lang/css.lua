@@ -7,6 +7,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        ft = { "css", "scss" },
         opts = {
             servers = {
                 tailwindcss = {},
