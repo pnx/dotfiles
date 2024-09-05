@@ -46,6 +46,11 @@ return {
                 borderchars = border,
                 preview = {
                     filesize_limit = 0.1
+                },
+                layout_config = {
+                    horizontal = {
+                        preview_cutoff = 200,
+                    }
                 }
             },
             pickers = {
