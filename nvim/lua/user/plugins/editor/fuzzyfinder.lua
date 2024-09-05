@@ -43,6 +43,9 @@ return {
                     },
                 },
                 borderchars = border,
+                preview = {
+                    filesize_limit = 0.1
+                }
             },
             pickers = {
                 find_files = {
