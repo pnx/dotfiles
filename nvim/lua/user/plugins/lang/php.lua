@@ -13,7 +13,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
-            ensure_installed = { "php", "phpdoc" }
+            ensure_installed = { "php", "php_only", "phpdoc", "blade" }
         }
     },
     {
