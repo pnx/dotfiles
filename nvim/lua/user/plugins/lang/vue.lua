@@ -21,6 +21,15 @@ return {
         }
     },
     {
+        "windwp/nvim-ts-autotag",
+        optional = true,
+        opts = {
+            filetypes = {
+                'vue',
+            },
+        },
+    },
+    {
         "neovim/nvim-lspconfig",
         ft = { "vue" },
         opts = {

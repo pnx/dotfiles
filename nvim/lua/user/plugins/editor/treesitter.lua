@@ -7,25 +7,7 @@ return {
         -- "nvim-treesitter/nvim-treesitter-textobjects",
         {
             "windwp/nvim-ts-autotag",
-            opts = {
-                -- Filetypes to enable autotag for
-                filetypes = {
-                    'html',
-                    'javascript',
-                    'typescript',
-                    'javascriptreact',
-                    'typescriptreact',
-                    'svelte',
-                    'vue',
-                    'tsx',
-                    'jsx',
-                    'rescript',
-                    'xml',
-                    'php',
-                    'blade',
-                    'markdown',
-                },
-            },
+            opts = {}
         },
     },
     opts_extend = { "ensure_installed" },

@@ -8,7 +8,16 @@ return {
             opts = {
                 ensure_installed = { "markdown" }
             }
-        }
+        },
+        {
+            "windwp/nvim-ts-autotag",
+            optional = true,
+            opts = {
+                filetypes = {
+                    'markdown',
+                },
+            },
+        },
     },
     opts = {
         code = {

@@ -17,10 +17,35 @@ return {
         }
     },
     {
+        "windwp/nvim-ts-autotag",
+        optional = true,
+        opts = {
+            filetypes = {
+                'php',
+                'blade',
+            }
+        }
+    },
+    {
         "neovim/nvim-lspconfig",
         ft = { "php" },
         opts = {
             servers = lspservers
+        },
+    },
+    {
+        "nvim-neotest/neotest",
+        optional = true,
+        ft = { "php" },
+        dependencies = {
+            "olimorris/neotest-phpunit",
+            'V13Axel/neotest-pest',
+        },
+        opts = {
+            adapters = {
+                "neotest-phpunit",
+                "neotest-pest",
+            }
         },
     },
     {
