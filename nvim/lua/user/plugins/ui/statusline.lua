@@ -66,7 +66,9 @@ return {
 				{"branch"},
                 {
                     "lsp-status",
-                    colors = {},
+                    disabled_filetypes = {
+                        "TelescopePrompt",
+                    },
                     on_click = function (_, btn, _)
                         if btn == "l" then
                             vim.cmd(":LspInfo")
