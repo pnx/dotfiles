@@ -11,7 +11,6 @@ return {
 	event = "VeryLazy",
 	dependencies = {
         "nvim-tree/nvim-web-devicons",
-		"arkav/lualine-lsp-progress",
         "pnx/lualine-lsp-status",
 	},
 	opts = {
