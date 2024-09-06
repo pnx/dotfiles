@@ -83,6 +83,19 @@ return {
                 enabled = true,
             },
             use_libuv_file_watcher = true,
+            window = {
+                mappings = {
+                    ["."] = "", -- unbind set_root. I never use it but always hit the key :P
+                    ["~"] = "toggle_hidden",
+                }
+            },
+        },
+        buffers = {
+            window = {
+                mappings = {
+                    ["."] = "",
+                }
+            }
         },
         event_handlers = {
             {
