@@ -28,6 +28,7 @@ return {
             },
         },
     },
+    opts_extend = { "ensure_installed" },
     opts = {
         -- Default parsers.
         ensure_installed = {
