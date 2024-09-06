@@ -44,8 +44,6 @@ return {
                 url = "https://github.com/EmranMR/tree-sitter-blade",
                 branch = "main",
                 files = { "src/parser.c" },
-                generate_requires_npm = true,
-                requires_generate_from_grammar = true,
             },
             filetype = "blade",
         }
