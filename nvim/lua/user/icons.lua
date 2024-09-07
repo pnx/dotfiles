@@ -11,7 +11,8 @@ return {
     whitespace = {
         tab = "»",
         space = "·",
-        eol = ""
+        eol = "",
+        nbsp = "␣",
     },
     fold = {
         open = "",
