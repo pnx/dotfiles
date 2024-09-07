@@ -43,26 +43,24 @@ return {
                 -- Align current relative number to the right.
                 relculright = true,
                 segments = {
+                    { text = { " " } },
+                    {
+                        click = "v:lua.ScSa",
+                        sign = {
+                            namespace = { ".*" },
+                            maxwidth = 1,
+                        },
+                    },
+                    {
+                        text = { builtin.lnumfunc, " " },
+                        click = "v:lua.ScLa",
+                    },
                     {
                         click = "v:lua.ScSa",
                         sign = {
                             namespace = { "gitsigns" },
                             maxwidth = 1,
-                            colwidth = 1,
                         }
-                    },
-                    {
-                        click = "v:lua.ScSa",
-                        sign = {
-                            namespace = { "diagnostic/signs" },
-                            maxwidth = 1,
-                            colwidth = 3,
-                            -- auto = true,
-                        }
-                    },
-                    {
-                        text = { builtin.lnumfunc, " " },
-                        click = "v:lua.ScLa",
                     },
                     -- { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
                     { text = { "│ " } },
