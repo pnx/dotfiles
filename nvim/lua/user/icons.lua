@@ -20,6 +20,9 @@ return {
         sep = " ",
     },
     tree = {
+        horizontal = "─",
+        vertical = "│",
+        expanded = "┐",
         node = "├",
         nodelast = "└",
     },
