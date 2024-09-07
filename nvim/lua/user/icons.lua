@@ -79,12 +79,12 @@ return {
         hint = "",
     },
     test = {
-        ok = "",
-        failed = "",
+        ok = "",
+        failed = "",
         running = "",
         skipped = "",
         watch = "",
-        unknown = "",
+        unknown = "",
     },
     symbols = {
         Text = "󱀍",
