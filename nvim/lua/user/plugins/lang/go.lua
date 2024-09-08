@@ -6,8 +6,25 @@ local lspservers = {
                     unusedvariable = true,
                     unusedwrite = true,
                     useany = true,
+                    fieldalignment = true
                 },
                 gofumpt = true,
+                hoverKind = 'SynopsisDocumentation',
+                codelenses = {
+                    gc_details = false,
+                    generate = true,
+                    regenerate_cgo = true,
+                    run_govulncheck = true,
+                    test = true,
+                    tidy = true,
+                    upgrade_dependency = true,
+                    vendor = true,
+                },
+                hints = {
+                    parameterNames = true
+                },
+                completeUnimported = true,
+                semanticTokens = true
             },
         },
         on_save = function()
