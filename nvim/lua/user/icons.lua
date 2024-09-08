@@ -50,8 +50,8 @@ return {
         removed = "",
     },
     diff_gutter = {
-        add = "▍",
-        change = "▍",
+        add = "▎",
+        change = "▎",
         delete = "",
         untracked = "+",
     },
