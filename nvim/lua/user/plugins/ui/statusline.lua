@@ -6,6 +6,14 @@ local function indent_settings()
         .. (vim.bo.shiftwidth == 0 and vim.bo.tabstop or vim.bo.shiftwidth)
 end
 
+local function is_not_popup()
+    local types = {
+        "TelescopePrompt"
+    }
+
+    return not vim.tbl_contains(types, vim.bo.filetype)
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	event = "VeryLazy",
@@ -57,10 +65,7 @@ return {
 		},
 		sections = {
 			lualine_a = {
-			    {
-                    "mode",
-                    separator = "|"
-                },
+                "mode",
 			},
 			lualine_b = {
 				{"branch"},
@@ -98,6 +103,7 @@ return {
 			lualine_c = {
 				{
 					"filename",
+                    cond = is_not_popup,
 					path = 1,
 					symbols = vim.tbl_deep_extend("force", icons.file_status, {
                         unnamed = "",
@@ -105,14 +111,16 @@ return {
 				},
 			},
 			lualine_x = {
-				"filetype",
+				{
+                    "filetype",
+                    cond = is_not_popup
+                },
 				"fileformat",
-				-- '(vim.bo.expandtab and "SPC" or "TAB") .. " " .. (vim.bo.shiftwidth == 0 and vim.bo.tabstop or vim.bo.shiftwidth)',
                 indent_settings,
 			},
 			lualine_y = {
-				"location",
-				"progress",
+                "location",
+                "progress",
 			},
 			lualine_z = {},
 		},
