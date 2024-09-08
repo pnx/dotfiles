@@ -47,6 +47,7 @@ return {
                     {
                         click = "v:lua.ScSa",
                         sign = {
+                            name = { ".*" },
                             namespace = { ".*" },
                             maxwidth = 1,
                         },
@@ -60,6 +61,7 @@ return {
                         sign = {
                             namespace = { "gitsigns" },
                             maxwidth = 1,
+                            colwidth = 1,
                         }
                     },
                     -- { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
