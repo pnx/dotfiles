@@ -57,5 +57,18 @@ return {
         opts = {
             servers = lspservers
         },
-    }
+    },
+    {
+        "nvim-neotest/neotest",
+        optional = true,
+        ft = { "go" },
+        dependencies = {
+            "nvim-neotest/neotest-go",
+        },
+        opts = {
+            adapters = {
+                ["neotest-go"] = {}
+            }
+        }
+    },
 }
