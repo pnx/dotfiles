@@ -1,5 +1,15 @@
 return {
     { import = "user.plugins.editor.treesitter" },
+    -- color highlight in documents
+    {
+        'brenoprata10/nvim-highlight-colors',
+        opts = {
+            render = 'virtual',
+            virtual_symbol_position = 'eol',
+            virtual_symbol_prefix = '',
+            virtual_symbol_suffix = '',
+        }
+    },
     "echasnovski/mini.bufremove",
     {
         "windwp/nvim-autopairs",
