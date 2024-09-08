@@ -92,6 +92,14 @@ vim.keymap.set('n', "<leader>dp", vim.diagnostic.get_prev, { desc = "Goto previo
 vim.keymap.set('n', "<leader>dd", "<cmd>Telescope diagnostics<cr>", { desc = "Open workspace diagnostics" })
 
 --
+-- Testing
+--
+vim.keymap.set('n', '<leader>t', "noop", { desc = 'Testing' })
+vim.keymap.set('n', "<leader>tc", "<cmd>Neotest run<cr>", { desc = "Test current (test near cursor)" })
+vim.keymap.set('n', "<leader>tf", "<cmd>Neotest run file<cr>", { desc = "Test current (file)" })
+vim.keymap.set('n', "<leader>ts", "<cmd>Neotest summary<cr>", { desc = "Toggle test summary" })
+
+--
 -- File explorer
 --
 vim.keymap.set('n', "<leader>.", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neotree" })
