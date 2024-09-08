@@ -84,7 +84,7 @@ return {
     },
     test = {
         ok = "",
-        failed = "",
+        failed = "",
         running = "",
         skipped = "",
         watch = "",
