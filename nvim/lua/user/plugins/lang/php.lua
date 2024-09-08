@@ -43,8 +43,8 @@ return {
         },
         opts = {
             adapters = {
-                "neotest-phpunit",
-                "neotest-pest",
+                ["neotest-phpunit"] = {},
+                ["neotest-pest"] = {},
             }
         },
     },
