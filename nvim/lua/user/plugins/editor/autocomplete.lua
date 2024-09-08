@@ -47,7 +47,7 @@ return {
             -- 	end,
             -- },
             formatting = {
-                fields = { "abbr", "kind", "menu" },
+                fields = { "kind", "abbr", "menu" },
                 format = format({
                     symbol_map = icons.symbols,
                     widths = {
