@@ -83,6 +83,22 @@ local options = {
                 NeoTreeModified = { fg = colors.yellow },
                 NeoTreeWinSeparator = { link = "WinSeparator" },
 
+                -- Neotest
+                NeoTestWinSelect = { fg = colors.mauve },
+                NeoTestIndent = { fg = colors.surface1 },
+                NeoTestExpandMarker = { link = "NeoTestIndent" },
+                NeoTestAdapterName = { fg = colors.mauve },
+                NeoTestFile = { fg = colors.lavender },
+                NeoTestDir = { fg = colors.blue },
+                NeoTestTarget = { fg = colors.blue },
+                NeoTestNamespace = { fg = colors.mauve },
+                NeoTestPassed = { fg = colors.green },
+                NeoTestFailed = { fg = colors.red },
+                NeoTestSkipped = { fg = colors.blue },
+                NeoTestRunning = { fg = colors.yellow },
+                NeoTestWatching = { fg = colors.yellow },
+                NeoTestMarked = { fg = colors.orange },
+
                 -- Markdown rendering
                 RenderMarkdownCode = { bg = colors.crust },
                 RenderMarkdownCodeInline = { fg = colors.rosewater, bg = colors.crust },
