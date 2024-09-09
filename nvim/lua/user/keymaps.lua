@@ -54,9 +54,9 @@ vim.keymap.set('v', 'Y', 'myY`y')
 -- Indent and move to the end when pasting.
 vim.keymap.set('n', 'p', 'p`[v`]=`>')
 
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], {})
-vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], {})
-vim.keymap.set('x', '<leader>p', [["_dP]], { silent = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], {desc = "Yank into system register"})
+vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], {desc = "Paste system register"})
+vim.keymap.set('x', '<leader>p', [["_dP]], { silent = true, desc = "Paste without storing deleted content in register" })
 
 --
 -- Navigation
@@ -72,10 +72,6 @@ vim.keymap.set('n', '<S-PageDown>', '<C-d>zz', { silent = true, desc = 'jump hal
 --
 -- Buffers
 --
--- vim.keymap.set('n', '<leader>bn', vim.cmd.bn,             { silent = true, desc = 'Move to next buffer' })
--- vim.keymap.set('n', '<leader>bb', vim.cmd.bp,             { silent = true, desc = 'Move to previous buffer' })
--- vim.keymap.set('n', '<leader>bd', vim.cmd.bd,             { silent = true, desc = 'Close current buffer' })
--- vim.keymap.set('n', '<leader>bd', '<cmd>bp | bd #<cr>',             { silent = true, desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>b', "noop", { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>bd', buffers.CloseCurrent, { silent = true, desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>bc', buffers.CloseOthers, { silent = true, desc = 'Close all other buffers' })
