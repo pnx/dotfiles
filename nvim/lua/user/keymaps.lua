@@ -35,11 +35,13 @@ vim.keymap.set('n', '<leader>fs', [[:%s/\s\+$//g<CR>`']], { desc = 'Remove trail
 vim.keymap.set('n', '<leader>ff', [[:Format<CR>]], { desc = 'Format file', silent = true, })
 
 -- Hex Formatting
-vim.keymap.set('x', '<leader>fhx', [[:s/\(\x\{2\}\)/0x\1, /g]], { desc = "Format hex" })
-vim.keymap.set('x', '<leader>fha', [[:s/0x\(\x\{1\}\X\)/0x0\1/g]], { desc = "Format hex" })
-vim.keymap.set('x', '<leader>fhn', [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]], { desc = "Format hex" })
+vim.keymap.set('x', '<leader>fh', "noop", { desc = "Format hex" })
+vim.keymap.set('x', '<leader>fhx', [[:s/\(\x\{2\}\)/0x\1, /g]], { desc = "Format a hex string into a comma separated list with 0x prefix." })
+vim.keymap.set('x', '<leader>fha', [[:s/0x\(\x\{1\}\X\)/0x0\1/g]], { desc = "Align a hex string so that all numbers are 2 characters long (0x2 -> 0x02) " })
+vim.keymap.set('x', '<leader>fhn', [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]], { desc = "Format a comma separated hex list into 8 bytes per line." })
 
 -- Case formatting
+vim.keymap.set('x', '<leader>fc', "noop", { desc = "Case" })
 vim.keymap.set("x", "<leader>fcsc", [[:s/\%V\([a-z]\+\)_\?/\u\1/g]],
     { desc = "Convert text from snake_case to CamelCase" })
 
