@@ -7,6 +7,8 @@ local lspservers = {
 }
 
 return {
+    -- Include HTML because you prob always write some html with php :)
+    { import = "user.plugins.lang.html" },
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
