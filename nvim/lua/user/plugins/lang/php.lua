@@ -1,5 +1,9 @@
 local lspservers = {
-    phpactor = {},
+    phpactor = {
+        inlay_hints = {
+            enabled = false
+        }
+    },
 }
 
 return {

@@ -60,20 +60,27 @@ return {
             has_cmp and cmp_lsp.default_capabilities() or {})
 
         for name, server_opts in pairs(opts.servers) do
+
+            local features = vim.tbl_deep_extend("force", {
+                codelens = opts.codelens,
+                inlay_hints = opts.inlay_hints,
+                document_highlight = opts.document_highlight
+            }, server_opts)
+
             ---@param client vim.lsp.Client
             ---@param bufnr number
             local on_attach = function(client, bufnr)
                 vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 
-                if (opts.inlay_hints.enabled or false) and client.server_capabilities.inlayHintProvider then
+                if features.inlay_hints.enabled and client.server_capabilities.inlayHintProvider then
                     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
                 end
 
-                if opts.codelens.enabled and client.server_capabilities.codeLensProvider then
+                if features.codelens.enabled and client.server_capabilities.codeLensProvider then
                     utils.codelens(augroup, bufnr)
                 end
 
-                if opts.document_highlight.enabled and client.server_capabilities.documentHighlightProvider then
+                if features.document_highlight.enabled and client.server_capabilities.documentHighlightProvider then
                     utils.document_highlight(bufnr)
                 end
 
