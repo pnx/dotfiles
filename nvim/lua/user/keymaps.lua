@@ -108,6 +108,8 @@ vim.keymap.set('n', "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", { desc = "Pr
 vim.keymap.set('n', "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", { desc = "Reset section at cursor" })
 vim.keymap.set('n', "<leader>gR", "<cmd>Gitsigns reset_buffer<cr>", { desc = "Reset buffer" })
 vim.keymap.set('n', "<leader>gv", "<cmd>Gitsigns select_hunk<cr>", { desc = "Select section under cursor" })
+vim.keymap.set('n', "<leader>gb", "<cmd>Gitsigns blame_line<cr>", { desc = "Blame (current line)" })
+vim.keymap.set('n', "<leader>gB", "<cmd>Gitsigns blame<cr>", { desc = "Blame" })
 
 --
 -- LSP
