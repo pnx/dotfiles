@@ -131,6 +131,7 @@ vim.keymap.set('n', '<leader>rs', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 
 vim.keymap.set('n', '<leader>s', "noop", { desc = 'Search' })
 vim.keymap.set('n', '<leader>sf', '<cmd>Telescope find_files<cr>', { desc = 'Search files' })
 vim.keymap.set('n', '<leader>sF', telescope.all_files, { desc = 'Search all files' })
+vim.keymap.set('n', '<leader>s.',  telescope.find_in_current_dir, { desc = 'Find files in current directory' })
 vim.keymap.set('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', { desc = 'Search for word under cursor' })
 vim.keymap.set('n', '<leader>sa', '<cmd>Telescope live_grep<cr>', { desc = 'Search in files' })
 vim.keymap.set('n', '<leader>sb', '<cmd>Telescope buffers<cr>', { desc = 'Search Buffers' })
