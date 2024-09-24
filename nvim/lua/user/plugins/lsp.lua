@@ -42,7 +42,7 @@ return {
             enabled = true,
         },
         codelens = {
-            enabled = true,
+            enabled = false,
         },
         inlay_hints = {
             enabled = true,
