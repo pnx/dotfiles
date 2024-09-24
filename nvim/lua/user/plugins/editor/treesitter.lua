@@ -14,9 +14,12 @@ return {
     opts = {
         -- Default parsers.
         ensure_installed = {
+            -- VIM stuff
             "vim",
             "vimdoc",
             "query",
+
+            -- Common config languages
             "json",
             "jsonc",
             "yaml",
