@@ -65,6 +65,7 @@ return {
                         },
                     },
                     sort_mru = true, -- sort by most recent used.
+                    ignore_current_buffer = true, -- Don't show current buffer in results.
                     entry_maker = utils.buffer_view({
                         indicators = {
                             modified = {
