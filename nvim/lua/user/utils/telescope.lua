@@ -2,6 +2,7 @@
 local M = {}
 
 function M.all_files() require("telescope.builtin").find_files({no_ignore=true, prompt_title = "Find All Files"}) end
+function M.find_in_current_dir() require("telescope.builtin").find_files({ cwd = vim.fn.expand('%:p:h') }) end
 
 function M.buffer_view(opts)
     local devicons = require("nvim-web-devicons")
