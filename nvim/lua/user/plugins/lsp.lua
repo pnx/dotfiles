@@ -72,15 +72,15 @@ return {
             local on_attach = function(client, bufnr)
                 vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 
-                if features.inlay_hints.enabled and client.server_capabilities.inlayHintProvider then
+                if features.inlay_hints.enabled and client.supports_method("textDocument/inlayHint") then
                     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
                 end
 
-                if features.codelens.enabled and client.server_capabilities.codeLensProvider then
+                if features.codelens.enabled and client.supports_method("textDocument/codeLens") then
                     utils.codelens(augroup, bufnr)
                 end
 
-                if features.document_highlight.enabled and client.server_capabilities.documentHighlightProvider then
+                if features.document_highlight.enabled and client.supports_method("textDocument/documentHighlight") then
                     utils.document_highlight(bufnr)
                 end
 
