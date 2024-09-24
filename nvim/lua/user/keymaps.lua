@@ -31,7 +31,7 @@ vim.keymap.set('v', '<S-d>', [[:m '>+1<CR>gv=gv]], { silent = true, desc = 'move
 --
 
 vim.keymap.set('n', '<leader>f', "noop", { desc = 'Formatting' })
-vim.keymap.set('n', '<leader>fs', [[:%s/\s\+$//g<CR>`']], { desc = 'Remove trailing spaces' })
+vim.keymap.set('n', '<leader>fs', [[ma<CR>:%s/\s\+$//ge<CR>`a]], { desc = 'Remove trailing spaces' })
 vim.keymap.set('n', '<leader>ff', [[:Format<CR>]], { desc = 'Format file', silent = true, })
 
 -- Hex Formatting
