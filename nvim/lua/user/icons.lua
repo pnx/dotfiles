@@ -5,9 +5,9 @@ return {
     close = "󰅖",
     modified = "",
     pinned = "",
-    separator = "│",
     edit = "",
     buffer = "",
+    search = "",
     whitespace = {
         tab = "»",
         space = "·",
