@@ -4,6 +4,13 @@ return {
     lazy = true,
     dependencies = {
         {
+            "williamboman/mason.nvim",
+            optional = true,
+            dependencies = {
+                { "williamboman/mason-lspconfig.nvim", config = function () end }
+            }
+        },
+        {
             -- Autocomplete source
             "hrsh7th/nvim-cmp",
             optional = true,
@@ -59,7 +66,12 @@ return {
             vim.lsp.protocol.make_client_capabilities() or {},
             has_cmp and cmp_lsp.default_capabilities() or {})
 
-        for name, server_opts in pairs(opts.servers) do
+        local function setup(server)
+            local server_opts = opts.servers[server]
+
+            if type(server_opts) == "function" then
+                server_opts = server_opts()
+            end
 
             local features = vim.tbl_deep_extend("force", {
                 codelens = opts.codelens,
@@ -99,7 +111,30 @@ return {
                 capabilities = capabilities
             }, server_opts or {})
 
-            lspconfig[name].setup(server_opts)
+            lspconfig[server].setup(server_opts)
+        end
+
+        local have_mason, mlsp = pcall(require, "mason-lspconfig")
+
+        local all_mslp_servers = {}
+        if have_mason then
+            all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+        end
+
+        local ensure_installed = {} ---@type string[]
+        for name, server_opts in pairs(opts.servers) do
+            if server_opts.mason == false or not vim.tbl_contains(all_mslp_servers, name) then
+                setup(name)
+            else
+                ensure_installed[#ensure_installed + 1] = name
+            end
+        end
+
+        if have_mason then
+            mlsp.setup({
+                ensure_installed = ensure_installed,
+                handlers = { setup },
+            })
         end
     end,
 }

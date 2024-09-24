@@ -1,5 +1,15 @@
 return {
     { import = "user.plugins.core.colorscheme" },
+    {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+        cmd = "Mason",
+        opts_extend = { "ensure_installed" },
+        opts = {},
+        config = function(_, opts)
+            require("mason").setup(opts)
+        end
+    },
     -- Icons
     {
         'nvim-tree/nvim-web-devicons',
