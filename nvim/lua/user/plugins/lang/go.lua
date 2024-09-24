@@ -1,5 +1,8 @@
 local lspservers = {
     gopls = {
+        codelens = {
+            enabled = true,
+        },
         settings = {
             gopls = {
                 analyses = {
