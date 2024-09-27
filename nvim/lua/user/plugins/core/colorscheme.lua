@@ -60,7 +60,7 @@ local options = {
                 TelescopePreviewTitle = { fg = colors.crust, bg = colors.mauve },
                 TelescopeResultsNormal = { fg = colors.overlay2, bg = colors.crust },
                 TelescopeMatching = { link = "CmpItemAbbrMatch" },
-                TelescopeSelection = { link = "PmenuSel" },
+                TelescopeSelection = { fg = colors.text, bg = colors.surface1 },
                 TelescopeIndicatorModified = { fg = colors.yellow },
                 TelescopeIndicatorReadonly = { fg = colors.red },
                 TelescopeIndicatorHidden = { link = "TelescopeResultsComment" },
