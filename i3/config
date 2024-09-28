@@ -6,26 +6,26 @@
 
 # Variables
 
-set_from_resource $color_bg         i3wm.background #0E1019
-set_from_resource $color_fg         i3wm.foreground #eceef4
+set_from_resource $color_bg             i3wm.background     #0E1019
+set_from_resource $color_fg             i3wm.foreground     #eceef4
 
-set_from_resource $color_red        i3wm.color1 #F38BA8
-set_from_resource $color_green      i3wm.color2 #A6E3A1
-set_from_resource $color_yellow     i3wm.color3 #F9E2AF
-set_from_resource $color_blue       i3wm.color4 #89B4FA
-set_from_resource $color_magenta    i3wm.color5 #F5C2E7
+set_from_resource $color_red            i3wm.color1         #F38BA8
+set_from_resource $color_green          i3wm.color2         #A6E3A1
+set_from_resource $color_yellow         i3wm.color3         #F9E2AF
+set_from_resource $color_blue           i3wm.color4         #89B4FA
+set_from_resource $color_magenta        i3wm.color5         #F5C2E7
 
-set_from_resource $color_gray0   i3wm.colorGray0  #383a43
-set_from_resource $color_gray1   i3wm.colorGray1  #404754
+set_from_resource $color_gray0          i3wm.colorGray0     #383a43
+set_from_resource $color_gray1          i3wm.colorGray1     #404754
 
-set_from_resource $color_win_focus_fg   i3wm.foreground #eceef4
-set_from_resource $color_win_focus_bg   i3wm.colorGray1 #1a1c2d
-set_from_resource $color_win_unfocus_fg i3wm.foreground #eceef4
-set_from_resource $color_win_unfocus_bg i3wm.colorGray0 #1a1c2d
-set_from_resource $color_win_urgent_fg i3wm.foreground #eceef4
-set_from_resource $color_win_urgent_bg i3wm.color1 #cc817f
+set_from_resource $color_win_focus_fg   i3wm.foreground     #eceef4
+set_from_resource $color_win_focus_bg   i3wm.colorGray1     #1a1c2d
+set_from_resource $color_win_unfocus_fg i3wm.foreground     #eceef4
+set_from_resource $color_win_unfocus_bg i3wm.colorGray0     #1a1c2d
+set_from_resource $color_win_urgent_fg  i3wm.foreground     #eceef4
+set_from_resource $color_win_urgent_bg  i3wm.color1         #cc817f
 
-set_from_resource $color_border i3wm.colorOverlay0 #1a1c2d
+set_from_resource $color_border         i3wm.colorOverlay0  #1a1c2d
 
 set $background_image /usr/share/backgrounds/majestic-mountain-peak-reflected-flowing-blue-water-generative-ai.jpg
 
@@ -68,8 +68,8 @@ font pango:JetBrainsMono NF Regular 12
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec urxvt -e fish
 bindsym $mod+Return exec alacritty
+
 # kill focused window
 bindsym $mod+x kill
 
