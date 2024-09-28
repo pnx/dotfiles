@@ -46,10 +46,12 @@ set $second_monitor HDMI-0
 
 ## Startup programs
 
+# bar
+exec --no-startup-id polybar
+
 # Needed for gnome-keyring to start.
 exec --no-startup-id dbus-update-activation-environment --all
 #exec --no-startup-id gnome-keyring-daemon --start --components=secrets
-
 
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id feh --bg-scale $background_image
@@ -239,27 +241,27 @@ client.placeholder      $color_bg               $color_bg                $color_
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    output primary
-    status_command i3status
-    separator_symbol " │ "
-    padding 2 8 2 0
-    tray_padding 4
-
-    font pango:JetBrainsMono NF Regular 12
-    strip_workspace_numbers no
-    strip_workspace_name no
-    workspace_min_width 32
-
-    colors {
-        background $color_bg
-        statusline $color_fg
-        separator  $color_border
-
-        focused_workspace  $color_blue      $color_blue     $color_bg
-        active_workspace   $color_yellow    $color_yellow   $color_bg
-        inactive_workspace $color_bg        $color_bg       $color_fg
-        urgent_workspace   $color_red       $color_red      $color_bg
-        binding_mode       $color_magenta   $color_magenta  $color_bg
-    }
-}
+# bar {
+#     output primary
+#     status_command i3status
+#     separator_symbol " │ "
+#     padding 2 8 2 0
+#     tray_padding 4
+#
+#     font pango:JetBrainsMono NF Regular 12
+#     strip_workspace_numbers no
+#     strip_workspace_name no
+#     workspace_min_width 32
+#
+#     colors {
+#         background $color_bg
+#         statusline $color_fg
+#         separator  $color_border
+#
+#         focused_workspace  $color_blue      $color_blue     $color_bg
+#         active_workspace   $color_yellow    $color_yellow   $color_bg
+#         inactive_workspace $color_bg        $color_bg       $color_fg
+#         urgent_workspace   $color_red       $color_red      $color_bg
+#         binding_mode       $color_magenta   $color_magenta  $color_bg
+#     }
+# }
