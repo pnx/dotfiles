@@ -49,6 +49,9 @@ set $second_monitor HDMI-0
 # bar
 exec --no-startup-id polybar
 
+# Notifications
+exec --no-startup-id dunst
+
 # Needed for gnome-keyring to start.
 exec --no-startup-id dbus-update-activation-environment --all
 #exec --no-startup-id gnome-keyring-daemon --start --components=secrets
