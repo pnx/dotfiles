@@ -30,9 +30,11 @@ return {
 			disabled_filetypes = {
 				statusline = {
 					"dashboard",
+                    "alpha",
 				},
                 winbar = {
                     "neo-tree",
+                    "alpha"
                 }
 			},
             -- theme = "catppuccin"

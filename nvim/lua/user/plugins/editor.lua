@@ -52,6 +52,10 @@ return {
             return {
                 -- Align current relative number to the right.
                 relculright = true,
+                ft_ignore = {
+                    'help',
+                    'alpha'
+                },
                 segments = {
                     { text = { " " } },
                     {
