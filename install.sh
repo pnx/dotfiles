@@ -6,12 +6,14 @@ DIRECTORIES=(
     nvim
     fish
     alacritty
-    hypr
-    waybar
-    wofi
-    #i3
+    #hypr
+    #waybar
+    #wofi
+    i3
+    polybar
     #i3status
-    #rofi
+    rofi
+    dunst
     smartgit
     lazygit
     tmux-plugins
@@ -24,6 +26,7 @@ done
 ln -sfr $BASE_PATH/bashrc $HOME/.bashrc
 ln -sfr $BASE_PATH/tmux.conf $HOME/.tmux.conf
 ln -sfr $BASE_PATH/Xresources $HOME/.Xresources
+ln -sfr $BASE_PATH/picom.conf $HOME/.config/picom.conf
 ln -sfr $BASE_PATH/fzfrc $HOME/.config/fzfrc
 
 mkdir -p $HOME/bin
