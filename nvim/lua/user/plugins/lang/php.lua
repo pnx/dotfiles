@@ -25,6 +25,17 @@ return {
             }
         }
     },
+    -- Formatting
+    {
+        'stevearc/conform.nvim',
+        optional = true,
+        opts = {
+            formatters_by_ft = {
+                blade = { 'blade-formatter' },
+            }
+        }
+    },
+    -- LSP
     {
         "neovim/nvim-lspconfig",
         ft = { "php" },
@@ -32,6 +43,7 @@ return {
             servers = lspservers
         },
     },
+    -- Testing
     {
         "nvim-neotest/neotest",
         optional = true,
