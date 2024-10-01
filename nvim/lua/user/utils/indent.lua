@@ -1,8 +1,9 @@
 
 local M = {}
 
-function M.setHardtabs()
-    vim.cmd([[setlocal noet ts=8 sts=0 sw=0]])
+function M.setHardtabs(width)
+    width = width or 8
+    vim.cmd(string.format("setlocal noet ts=%s sts=0 sw=0", width))
 end
 
 ---@param width number
