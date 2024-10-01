@@ -10,12 +10,12 @@ return {
     },
     cmd = "Neotree",
     opts = {
-        -- hide_root_node = true,
+        hide_root_node = true,
         popup_border_style = 'solid',
         default_component_configs = {
             indent = {
-                with_markers = false,
-                indent_marker = icons.tree.node,
+                with_markers = true,
+                indent_marker = icons.tree.vertical,
                 last_indent_marker = icons.tree.nodelast,
                 indent_size = 2,
             },
@@ -66,7 +66,6 @@ return {
             },
             content_layout = "center",
             separator = { left = "", right= "", override = "active" },
-            -- show_separator_on_edge = true,
         },
         window = {
             popup = {
