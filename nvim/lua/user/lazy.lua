@@ -19,6 +19,9 @@ require("lazy").setup({
     spec = {
         { import = "user.plugins" },
 
+        -- Misc
+        { import = "user.plugins.misc.obsidian" },
+
         -- Language specific
         { import = "user.plugins.lang.lua" },
         { import = "user.plugins.lang.bash" },
