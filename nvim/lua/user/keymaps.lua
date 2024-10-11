@@ -59,8 +59,8 @@ vim.keymap.set('v', 'Y', 'myY`y')
 -- Indent and move to the end when pasting.
 vim.keymap.set({ 'n', 'x' }, 'p', 'p`[v`]=`>')
 
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], {desc = "Yank into system register"})
-vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], {desc = "Paste system register"})
+vim.keymap.set({ 'n', 'x' }, '<leader>y', [["+y]], {desc = "Yank into system register"})
+vim.keymap.set({ 'n', 'x' }, '<leader>p', [["+p]], {desc = "Paste system register"})
 vim.keymap.set('x', '<leader>p', [["_dP]], { silent = true, desc = "Paste without storing deleted content in register" })
 
 --
