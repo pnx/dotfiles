@@ -1,5 +1,6 @@
 return {
     { import = "user.plugins.editor.treesitter" },
+    "mbbill/undotree",
     -- color highlight in documents
     {
         'brenoprata10/nvim-highlight-colors',
