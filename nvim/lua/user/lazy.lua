@@ -37,6 +37,9 @@ require("lazy").setup({
         { import = "user.plugins.lang.vue" },
         { import = "user.plugins.lang.markdown" },
     },
+    install = {
+        colorscheme = { "catppuccin", "habamax" },
+    },
     pkg = {
         sources = {
             "lazy",
