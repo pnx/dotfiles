@@ -113,6 +113,7 @@ local options = {
                 Repeat = { link = "Keyword" },
                 Conditional = { link = "Keyword" },
                 Type = { fg = colors.blue },
+                Label = { link = "String" },
                 String = { fg = colors.lavender },
                 Exception = { link = "Keyword" },
 
