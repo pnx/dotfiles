@@ -156,6 +156,7 @@ local options = {
                 ["@implement_name.php"] = { link = "@text" },
                 ["@namespace_name.php"] = { link = "@text" },
                 ["@namespace_alias.php"] = { link = "@text" },
+                ["@function.builtin.php"] = { fg = colors.blue },
 
                 -- Blade
                 ["@tag.blade"] = { fg = colors.mauve },
