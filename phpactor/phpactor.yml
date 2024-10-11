@@ -3,3 +3,7 @@ language_server_phpstan.enabled: true
 # language_server_phpstan.mem_limit: 100000
 language_server_psalm.enabled: false
 # phpunit.enabled: true
+
+code_transform.class_new.variants:
+  laravel-test: laravel-feature-test
+  livewire: livewire

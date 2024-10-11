@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ prototype.namespace }};
+
+use Livewire\Component;
+
+{% for class in prototype.classes %}
+class {{ class.name }} extends Component
+{
+    public function mount() : void
+    {
+    }
+}
+{% endfor %}
+
