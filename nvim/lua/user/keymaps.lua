@@ -26,6 +26,9 @@ vim.keymap.set('n', '<S-d>', [[:m +1<CR>v=]], { silent = true, desc = 'move curr
 vim.keymap.set('v', '<S-a>', [[:m '<-2<CR>gv=gv]], { silent = true, desc = 'move current selection one line up' })
 vim.keymap.set('v', '<S-d>', [[:m '>+1<CR>gv=gv]], { silent = true, desc = 'move current selection one line down' })
 
+-- Selection
+vim.keymap.set('n', 'Vf', [[ggVg]], { silent = true, desc = 'select buffer' })
+
 --
 -- Editing - formatting
 --
