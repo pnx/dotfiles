@@ -67,6 +67,11 @@ vim.keymap.set('x', '<leader>p', [["_dP]], { silent = true, desc = "Paste withou
 -- Navigation
 --
 
+vim.keymap.set('n', '<S-Up>', 'v<Up>')
+vim.keymap.set('n', '<S-Down>', 'v<Down>')
+vim.keymap.set('v', '<S-Up>', '<Up>')
+vim.keymap.set('v', '<S-Down>', '<Down>')
+
 
 -- Make half page jumps stay in the center of screen
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { silent = true, desc = 'jump half a page up' })
