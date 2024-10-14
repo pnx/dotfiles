@@ -105,6 +105,12 @@ vim.diagnostic.config({
     }
 })
 
+
+-- LSP
+
+-- Provide a custom hover implementation
+vim.lsp.buf.hover = require("user.utils.lsp").hover
+
 -------------------------------------------------------
 -- Extras
 -------------------------------------------------------
