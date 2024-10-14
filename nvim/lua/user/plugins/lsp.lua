@@ -67,7 +67,7 @@ return {
             has_cmp and cmp_lsp.default_capabilities() or {})
 
         local function setup(server)
-            local server_opts = opts.servers[server]
+            local server_opts = opts.servers[server] or {}
 
             if type(server_opts) == "function" then
                 server_opts = server_opts()
