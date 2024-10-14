@@ -9,7 +9,6 @@ local lspservers = {
                     unusedvariable = true,
                     unusedwrite = true,
                     useany = true,
-                    fieldalignment = true
                 },
                 gofumpt = true,
                 hoverKind = 'SynopsisDocumentation',
