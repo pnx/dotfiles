@@ -26,7 +26,6 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        ft = { "lua" },
         opts = {
             servers = lspservers
         }

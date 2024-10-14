@@ -38,7 +38,6 @@ return {
     -- LSP
     {
         "neovim/nvim-lspconfig",
-        ft = { "php" },
         opts = {
             servers = lspservers
         },

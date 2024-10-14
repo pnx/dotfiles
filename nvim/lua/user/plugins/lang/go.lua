@@ -56,7 +56,6 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        ft = { "go" },
         opts = {
             servers = lspservers
         },

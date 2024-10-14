@@ -7,7 +7,6 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        ft = { "sh" }, -- not all shell scripts is bash, but.
         opts = {
             servers = {
                 bashls = {}
