@@ -1,6 +1,9 @@
 return {
     { import = "user.plugins.editor.treesitter" },
-    "mbbill/undotree",
+    {
+        "mbbill/undotree",
+        event = { "BufReadPre", "BufNewFile" },
+    },
     -- color highlight in documents
     {
         'brenoprata10/nvim-highlight-colors',
@@ -48,6 +51,7 @@ return {
     -- Better status column
     {
         "luukvbaal/statuscol.nvim",
+        event = { "BufReadPre", "BufNewFile", "BufAdd" },
         opts = function()
             local builtin = require("statuscol.builtin")
             return {

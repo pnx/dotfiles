@@ -2,6 +2,7 @@ local icons = require('user.icons').diff_gutter
 
 return {
     "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         {
             "folke/which-key.nvim",
@@ -13,7 +14,6 @@ return {
             },
         },
     },
-    lazy = false,
     opts = {
         signs = {
             add          = { text = icons.add },
