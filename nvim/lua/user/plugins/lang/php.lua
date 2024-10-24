@@ -60,6 +60,7 @@ return {
     },
     {
         "adalessa/laravel.nvim",
+        version = "v2.2.2",
         dependencies = {
             "tpope/vim-dotenv",
             "MunifTanjim/nui.nvim",
@@ -81,6 +82,5 @@ return {
                 },
             },
         },
-        config = true,
     }
 }
