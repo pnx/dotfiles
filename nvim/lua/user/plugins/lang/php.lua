@@ -1,9 +1,10 @@
 local lspservers = {
-    phpactor = {
-        inlay_hints = {
-            enabled = false
-        }
-    },
+    -- phpactor = {
+    --     inlay_hints = {
+    --         enabled = false
+    --     }
+    -- },
+    intelephense = {}
 }
 
 return {
@@ -34,6 +35,21 @@ return {
                 blade = { 'blade-formatter' },
             }
         }
+    },
+    {
+        'phpactor/phpactor',
+        build = 'composer install --no-dev --optimize-autoloader',
+        ft = 'php',
+    },
+    -- Linting
+    {
+        'mfussenegger/nvim-lint',
+        optional = true,
+        opts = {
+            linters_by_ft = {
+                php = { 'phpstan' },
+            },
+        },
     },
     -- LSP
     {
