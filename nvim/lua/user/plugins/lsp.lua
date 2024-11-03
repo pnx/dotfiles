@@ -54,19 +54,31 @@ return {
             }
         }
     },
+    --- @class LSPServerOptions : LSPFeatures
+    --- @field on_save function | nil
+
+    --- @class LSPOptions
     opts = {
-        document_highlight = {
-            enabled = true,
+        --- @class LSPFeatures
+        features = {
+            document_highlight = {
+                enabled = true,
+            },
+            codelens = {
+                enabled = false,
+            },
+            inlay_hints = {
+                enabled = true,
+                exclude = {},
+            },
+            diagnostics = true,
+            hover = true,
+            definition = true,
         },
-        codelens = {
-            enabled = false,
-        },
-        inlay_hints = {
-            enabled = true,
-            exclude = {},
-        },
+        --- @type { string: LSPServerOptions }
         servers = {},
     },
+    --- @param opts LSPOptions
     config = function(_, opts)
         local lspconfig = require("lspconfig")
         local utils = require("user.utils.lsp")
@@ -76,33 +88,47 @@ return {
             vim.lsp.protocol.make_client_capabilities() or {},
             has_cmp and cmp_lsp.default_capabilities() or {})
 
+        --- @param server string
         local function setup(server)
+
             local server_opts = opts.servers[server] or {}
 
             if type(server_opts) == "function" then
                 server_opts = server_opts()
             end
 
-            local features = vim.tbl_deep_extend("force", {
-                codelens = opts.codelens,
-                inlay_hints = opts.inlay_hints,
-                document_highlight = opts.document_highlight
-            }, server_opts)
+            -- Set missing features to default ones in server options.
+            server_opts = vim.tbl_deep_extend("keep", server_opts, opts.features)
 
             ---@param client vim.lsp.Client
             ---@param bufnr number
             local on_attach = function(client, bufnr)
                 vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 
-                if features.inlay_hints.enabled and client.supports_method("textDocument/inlayHint") then
+                -- disable diagnostics
+                if server_opts.diagnostics == false then
+                    client.server_capabilities.diagnosticProvider = false
+                    vim.print(client.server_capabilities.diagnosticProvider)
+                end
+
+                -- disable hover
+                if server_opts.hover == false then
+                    client.server_capabilities.hoverProvider = false
+                end
+
+                if server_opts.definition == false then
+                    client.server_capabilities.definitionProvider = false
+                end
+
+                if server_opts.inlay_hints.enabled and client.supports_method("textDocument/inlayHint") then
                     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
                 end
 
-                if features.codelens.enabled and client.supports_method("textDocument/codeLens") then
+                if server_opts.codelens.enabled and client.supports_method("textDocument/codeLens") then
                     utils.codelens(augroup, bufnr)
                 end
 
-                if features.document_highlight.enabled and client.supports_method("textDocument/documentHighlight") then
+                if server_opts.document_highlight.enabled and client.supports_method("textDocument/documentHighlight") then
                     utils.document_highlight(bufnr)
                 end
 
