@@ -14,7 +14,12 @@ return {
             virtual_symbol_suffix = '',
         }
     },
-    "echasnovski/mini.bufremove",
+    {
+        "pnx/mini.bufremove",
+        opts = {
+            empty_buf = "Alpha"
+        },
+    },
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
