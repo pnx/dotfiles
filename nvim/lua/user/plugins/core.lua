@@ -10,6 +10,7 @@ return {
             require("mason").setup(opts)
         end
     },
+    -- Dashboard
     {
         "goolord/alpha-nvim",
         config = function()
