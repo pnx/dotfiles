@@ -30,6 +30,7 @@ ln -sfr $BASE_PATH/picom.conf $HOME/.config/picom.conf
 ln -sfr $BASE_PATH/fzfrc $HOME/.config/fzfrc
 
 mkdir -p $HOME/bin
-for script in $(find $BASE_PATH/scripts -type f); do
+ln -sfr $BASE_PATH/scripts/tmuxs/main.sh $HOME/bin/tmuxs
+for script in $(find $BASE_PATH/scripts -maxdepth 1 -type f); do
     ln -sfr $script $HOME/bin/$(basename $script)
 done

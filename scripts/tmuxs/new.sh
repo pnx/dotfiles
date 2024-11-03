@@ -1,20 +1,15 @@
 #!/usr/bin/env bash
-
-FZF="fzf --preview="
+BASE_PATH=$(dirname $(readlink -f $BASH_SOURCE))
+source ${BASE_PATH}/.env
 
 if [[ $# -eq 1 ]]; then
-    if [[ "$1" -eq "-a" ]]; then
-        selected=$(tmux list-sessions | $FZF | sed 's/: .*//g')
-    else
-        selected=$(realpath $1)
+    selected=$1
+else 
+    DIRECTORIES=$(cat ~/.tmuxs | sed "s&^\~&${HOME}&g")
+    selected=$(find ${DIRECTORIES} -mindepth 1 -maxdepth 1 -type d | $FZF --border-label="New Session")
+    if [[ -z $selected ]]; then
+        exit 0
     fi
-else
-	DIRECTORIES=$(cat ~/.tmuxs | sed "s&^\~&${HOME}&g")
-	selected=$(find ${DIRECTORIES} -mindepth 1 -maxdepth 1 -type d | $FZF)
-fi
-
-if [[ -z $selected ]]; then
-    exit 0
 fi
 
 selected_name=$(basename "$selected" | tr . _)
@@ -30,3 +25,4 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
 fi
 
 tmux switch-client -t $selected_name
+
