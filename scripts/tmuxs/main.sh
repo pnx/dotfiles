@@ -10,7 +10,9 @@ KILL_SCRIPT=${BASE_PATH}/kill.sh
 if [[ $# -eq 1 ]]; then
     if [[ "$1" == "-a" ]]; then
         selected=$($LIST_SESSIONS_SCRIPT | $FZF --bind "ctrl-d:execute(${KILL_SCRIPT} {})+reload(${LIST_SESSIONS_SCRIPT})" --border-label=Session | sed 's/: .*//g')
-        ${BASE_PATH}/new.sh $selected
+        if [ ! -z "$selected" ]; then
+            ${BASE_PATH}/new.sh $selected
+        fi
     else
         ${BASE_PATH}/new.sh $(realpath $1)
     fi
