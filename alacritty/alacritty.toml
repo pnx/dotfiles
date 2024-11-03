@@ -4,19 +4,18 @@ ipc_socket = false
 TERM = "xterm-256color"
 
 [font]
-normal = { family = "JetBrains Mono NF", style = "Regular" }
+normal = { family = "Iosevka NF", style = "Regular" }
 bold = { style = "SemiBold" }
-size = 13.0
+size = 14.0
 
-offset = { x = 0, y = -1 }
-glyph_offset = { x = 0, y = 0 }
-
+offset = { x = 1, y = 4 }
+glyph_offset = { x = 1, y = 2 }
 
 [window]
 decorations_theme_variant = "Dark"
 padding = { x = 0, y = 0 }
 # dynamic_padding = true
-opacity = 0.99
+opacity = 0.98
 
 [mouse]
 hide_when_typing = true
@@ -55,5 +54,4 @@ white = "#A6ADC8"
 [colors.search]
 matches = { foreground = "#0E1019", background = "#767BA0" }
 focused_match = { foreground = "#0E1019", background = "#F9E2AF" }
-
 
