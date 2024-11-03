@@ -36,6 +36,7 @@ vim.keymap.set('n', 'Vf', [[ggVg]], { silent = true, desc = 'select buffer' })
 vim.keymap.set('n', '<leader>f', "noop", { desc = 'Formatting' })
 vim.keymap.set('n', '<leader>fs', [[ma<CR>:%s/\s\+$//ge<CR>`a]], { desc = 'Remove trailing spaces' })
 vim.keymap.set('n', '<leader>ff', [[:Format<CR>]], { desc = 'Format file', silent = true, })
+vim.keymap.set('x', '<leader>ff', [[:Format<CR>]], { desc = 'Format section', silent = true, })
 
 -- Hex Formatting
 vim.keymap.set('x', '<leader>fh', "noop", { desc = "Format hex" })
