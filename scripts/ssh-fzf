@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+FZF="fzf --tmux=center --border=sharp --separator=─ --margin=0 --layout=reverse --preview="
+
+ssh $(cat ~/.ssh/config | sed -n 's/^Host\s//p' | $FZF) $@
