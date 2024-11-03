@@ -10,13 +10,13 @@ if user.formatter == nil then
     user.formatter = [[mfgggqG`f=zz]]
 end
 
-vim.api.nvim_create_user_command('Format', function()
+vim.api.nvim_create_user_command('Format', function(args)
     if type(user.formatter) == "string" then
         local cmd = vim.api.nvim_replace_termcodes(user.formatter, true, false, true)
         vim.api.nvim_feedkeys(cmd, 'n', false)
     elseif type(user.formatter) == "function" then
-        user.formatter()
+        user.formatter(args)
     else
         vim.api.nvim_err_writeln("No formatter found")
     end
-end, {})
+end, { range = true })
