@@ -52,7 +52,7 @@ return {
         end,
     },
     -- Better folds
-    -- { import = "user.plugins.editor.ufo" },
+    { import = "user.plugins.editor.ufo" },
     -- Better status column
     {
         "luukvbaal/statuscol.nvim",
