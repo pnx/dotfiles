@@ -1,4 +1,3 @@
-ipc_socket = false
 
 [env]
 TERM = "xterm-256color"
@@ -54,4 +53,7 @@ white = "#A6ADC8"
 [colors.search]
 matches = { foreground = "#0E1019", background = "#767BA0" }
 focused_match = { foreground = "#0E1019", background = "#F9E2AF" }
+
+[general]
+ipc_socket = false
 
