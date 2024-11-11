@@ -67,7 +67,14 @@ return {
                     'alpha'
                 },
                 segments = {
-                    { text = { " " } },
+                    {
+                        click = "v:lua.ScSa",
+                        sign = {
+                            namespace = { "gitsigns" },
+                            maxwidth = 1,
+                            colwidth = 1,
+                        }
+                    },
                     {
                         click = "v:lua.ScSa",
                         sign = {
@@ -80,15 +87,7 @@ return {
                         text = { builtin.lnumfunc, " " },
                         click = "v:lua.ScLa",
                     },
-                    {
-                        click = "v:lua.ScSa",
-                        sign = {
-                            namespace = { "gitsigns" },
-                            maxwidth = 1,
-                            colwidth = 1,
-                        }
-                    },
-                    -- { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
+                    { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
                     { text = { "│ " } },
                 }
             }
