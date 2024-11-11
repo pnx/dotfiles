@@ -1,6 +1,5 @@
 local lspservers = {
     lua_ls = {
-        cmd = { "/opt/luals/bin/lua-language-server", "--logpath=~/.local/luals/logs" },
         settings = {
             Lua = {
                 runtime = {
