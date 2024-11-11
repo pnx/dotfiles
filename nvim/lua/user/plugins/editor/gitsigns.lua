@@ -32,6 +32,9 @@ return {
         },
         diff_opts = {
             internal = true
+        },
+        preview_config = {
+            border = { " " },
         }
     },
 }
