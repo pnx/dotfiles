@@ -19,15 +19,11 @@ vim.keymap.set('n', '<Tab>', '^=$')
 vim.keymap.set('x', '<Tab>', '=', { desc = 'auto indent selection' })
 vim.keymap.set('i', '<S-Tab', '<C-d>', { desc = 'delete indent' })
 
-
 -- Move text
 vim.keymap.set('n', '<S-a>', [[:m -2<CR>v=]], { silent = true, desc = 'move current line one line up' })
 vim.keymap.set('n', '<S-d>', [[:m +1<CR>v=]], { silent = true, desc = 'move current line one line down' })
 vim.keymap.set('v', '<S-a>', [[:m '<-2<CR>gv=gv]], { silent = true, desc = 'move current selection one line up' })
 vim.keymap.set('v', '<S-d>', [[:m '>+1<CR>gv=gv]], { silent = true, desc = 'move current selection one line down' })
-
--- Selection
-vim.keymap.set('n', 'Vf', [[ggVg]], { silent = true, desc = 'select buffer' })
 
 --
 -- Editing - formatting
