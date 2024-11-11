@@ -103,6 +103,22 @@ return {
             servers = lspservers
         },
     },
+    {
+        "nvimtools/none-ls.nvim",
+        opts = function ()
+            local null_ls = require("null-ls")
+            local methods = require("null-ls.methods")
+            return {
+                sources = {
+                    null_ls.builtins.diagnostics.phpstan.with({
+                        command = "./vendor/bin/phpstan",
+                        method = methods.internal.DIAGNOSTICS_ON_SAVE,
+                        to_temp_file = false
+                    })
+                }
+            }
+        end,
+    },
     -- Testing
     {
         "nvim-neotest/neotest",
