@@ -15,6 +15,19 @@ return {
         }
     },
     {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            signs = false,
+            keywords = {
+                TODO = { color = "warning" },
+            },
+            highlight = {
+                keyword = 'fg',
+            }
+        }
+    },
+    {
         "pnx/mini.bufremove",
         opts = {
             empty_buf = "Alpha"
@@ -104,7 +117,7 @@ return {
         },
         init = function()
             vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-            user.formatter = function (args)
+            user.formatter = function(args)
                 local range = nil
                 if args.count ~= -1 then
                     local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
@@ -123,6 +136,7 @@ return {
     {
         "L3MON4D3/LuaSnip",
         lazy = true,
+        build = "make install_jsregexp",
         dependencies = {
             {
                 "rafamadriz/friendly-snippets",
@@ -151,4 +165,9 @@ return {
             require("luasnip").setup(opts)
         end,
     },
+    -- {
+    --     "m4xshen/hardtime.nvim",
+    --     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    --     opts = {}
+    -- },
 }
