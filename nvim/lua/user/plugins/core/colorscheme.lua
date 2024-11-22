@@ -50,6 +50,9 @@ local options = {
                 CmpItemAbbr = { fg = colors.overlay2 },
                 CmpItemKindText = { fg = colors.text },
 
+                -- CmpKind
+                CmpItemKindBladeNav = { fg = "#f55247" },
+
                 -- telescope
                 TelescopeNormal = { link = "NormalFloat" },
                 TelescopeBorder = { link = "FloatBorder" },
