@@ -119,6 +119,21 @@ return {
             }
         end,
     },
+    -- Laravel stuff
+    {
+        'ricardoramirezr/blade-nav.nvim',
+        dependencies = { -- totally optional
+            'hrsh7th/nvim-cmp', -- if using nvim-cmp
+        },
+        ft = {'blade', 'php'}, -- optional, improves startup time
+        opts = {
+            close_tag_on_complete = true, -- default: true
+        },
+        config = function(_, opts)
+            require('blade-nav').setup(opts)
+            vim.api.nvim_set_hl(0, "CmpItemKindBladeNav", { fg = "#f55247" })
+        end
+    },
     -- Testing
     {
         "nvim-neotest/neotest",
