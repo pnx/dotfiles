@@ -20,6 +20,7 @@ return {
         },
     },
     opts = {
+        latex = { enabled = false },
         code = {
             style = 'normal',
             min_width = 45,
