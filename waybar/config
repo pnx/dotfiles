@@ -35,6 +35,6 @@
         "tooltip": false
     },
     "memory": {
-        "format": "  {}%"
+        "format": " {}%"
     }
 }
