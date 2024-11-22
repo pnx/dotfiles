@@ -1,3 +1,5 @@
+local icons = require('user.icons')
+
 return {
     { import = "user.plugins.core.colorscheme" },
     {
@@ -43,19 +45,19 @@ return {
         opts = {
             override = {
                 php = {
-                    icon = "󰌟",
+                    icon = icons.filetypes.php,
                     color = "#4F5B93",
                     name = "Php"
                 }
             },
             override_by_filename = {
                 ["artisan"] = {
-                    icon = "",
+                    icon = icons.filetypes.laravel,
                     color = "#f05340",
                     name = "LaravelArtisan"
                 },
                 ["phpunit.xml"] = {
-                    icon = "󰙨",
+                    icon = icons.filetypes.phpunit,
                     color = "#0d6efd",
                     name = "PhpUnit"
                 }
