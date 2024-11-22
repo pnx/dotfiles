@@ -12,7 +12,6 @@ return {
         local utils = require("user.utils.cmp")
         local format = require("user.utils.cmp_format")
         -- local lspkind = require("user.utils.lspkind")
-        local icons = require("user.icons")
 
         local selectPrev = utils.selectPrev({ behavior = cmp.SelectBehavior.Insert })
         local selectNext = utils.selectNext({ behavior = cmp.SelectBehavior.Insert })
@@ -49,7 +48,7 @@ return {
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = format({
-                    symbol_map = icons.symbols,
+                    symbol_map = require('user.utils.cmp_symbols'),
                     widths = {
                         menu = 0,
                     }
