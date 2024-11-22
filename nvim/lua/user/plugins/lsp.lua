@@ -108,7 +108,6 @@ return {
                 -- disable diagnostics
                 if server_opts.diagnostics == false then
                     client.server_capabilities.diagnosticProvider = false
-                    vim.print(client.server_capabilities.diagnosticProvider)
                 end
 
                 -- disable hover
