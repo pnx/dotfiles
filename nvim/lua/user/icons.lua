@@ -120,4 +120,9 @@ return {
         TypeParameter = "",
         Spell = "",
     },
+    filetypes = {
+        php = "󰌟",
+        phpunit = "󰙨",
+        laravel = ""
+    }
 }
