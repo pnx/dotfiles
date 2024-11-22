@@ -13,7 +13,7 @@ end
 fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 
-set -x EDITOR /usr/local/bin/nvim
+set -x EDITOR nvim
 
 # Colors
 set fish_color_user normal
