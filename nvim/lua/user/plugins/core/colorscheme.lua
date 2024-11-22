@@ -68,6 +68,9 @@ local options = {
                 TelescopeIndicatorReadonly = { fg = colors.red },
                 TelescopeIndicatorHidden = { link = "TelescopeResultsComment" },
 
+                -- Ufo
+                UfoFoldedEllipsis = { link = "Comment" },
+
                 -- Statusline
                 StatusLine = { fg = colors.text, bg = colors.crust },
                 StatusLineNormal = { link = "StatusLine" },
