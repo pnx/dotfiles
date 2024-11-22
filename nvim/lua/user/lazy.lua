@@ -40,6 +40,10 @@ require("lazy").setup({
     install = {
         colorscheme = { "catppuccin", "habamax" },
     },
+    rocks = {
+        enabled = false,
+        hererocks = false,
+    },
     pkg = {
         sources = {
             "lazy",
