@@ -53,7 +53,7 @@ return {
         add = "▊",
         change = "▊",
         delete = "",
-        untracked = "+",
+        untracked = "▊",
     },
     gitsigns = {
         -- Change type
