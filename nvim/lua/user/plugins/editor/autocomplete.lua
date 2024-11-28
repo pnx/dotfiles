@@ -13,8 +13,8 @@ return {
         local format = require("user.utils.cmp_format")
         -- local lspkind = require("user.utils.lspkind")
 
-        local selectPrev = utils.selectPrev({ behavior = cmp.SelectBehavior.Insert })
-        local selectNext = utils.selectNext({ behavior = cmp.SelectBehavior.Insert })
+        local selectPrev = utils.selectPrev({ behavior = cmp.SelectBehavior.Select })
+        local selectNext = utils.selectNext({ behavior = cmp.SelectBehavior.Select })
 
         return {
             preselect = false,
@@ -72,11 +72,11 @@ return {
                     },
                 },
             },
-            -- experimental = {
-            -- 	ghost_text = {
-            -- 		hl_group = "NonText",
-            -- 	},
-            -- },
+            experimental = {
+            	ghost_text = {
+            		hl_group = "NonText",
+            	},
+            },
         }
     end,
     config = function(_, opts)
