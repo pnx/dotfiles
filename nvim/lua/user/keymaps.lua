@@ -76,6 +76,8 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', { silent = true, desc = 'jump half a pag
 vim.keymap.set('n', '<S-PageUp>', '<C-u>zz', { silent = true, desc = 'jump half a page up' })
 vim.keymap.set('n', '<S-PageDown>', '<C-d>zz', { silent = true, desc = 'jump half a page down' })
 
+vim.keymap.set('n', '<leader><leader>', '<cmd>edit #<cr>', { silent = true, desc = "Goto alternative file" })
+
 --
 -- Buffers
 --
