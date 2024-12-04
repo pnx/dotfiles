@@ -35,8 +35,8 @@ return {
                 selection_caret = icons.current .. " ",
                 multi_icon = icons.selected .. " ",
                 file_ignore_patterns = {
-                    ".git",
-                    "node_modules",
+                    ".git/",
+                    "node_modules/",
                 },
                 mappings = {
                     i = {

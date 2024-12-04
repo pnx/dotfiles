@@ -51,7 +51,7 @@ return {
                 watching = icons.test.watch,
             },
         },
-        config = function (_, opts)
+        config = function(_, opts)
             local adapters = {}
             for name, adapter_opts in pairs(opts.adapters or {}) do
                 table.insert(adapters, require(name)(adapter_opts))

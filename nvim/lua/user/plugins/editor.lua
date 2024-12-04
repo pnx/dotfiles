@@ -130,7 +130,7 @@ return {
             end
         end
     },
-    { import = "user.plugins.editor.fuzzyfinder" },
+    { import = "user.plugins.editor.finder" },
     { import = "user.plugins.editor.autocomplete" },
     -- Snippets
     {
