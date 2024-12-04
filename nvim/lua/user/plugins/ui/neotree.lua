@@ -76,6 +76,9 @@ return {
                 position = "50%",
                 relative = "editor",
             },
+            mappings = {
+                ["<space>"] = "noop",
+            }
         },
         filesystem = {
             follow_current_file = {
@@ -84,7 +87,7 @@ return {
             use_libuv_file_watcher = true,
             window = {
                 mappings = {
-                    ["."] = "", -- unbind set_root. I never use it but always hit the key :P
+                    ["."] = "noop", -- unbind set_root. I never use it but always hit the key :P
                     ["~"] = "toggle_hidden",
                 }
             },
@@ -92,7 +95,7 @@ return {
         buffers = {
             window = {
                 mappings = {
-                    ["."] = "",
+                    ["."] = "noop",
                 }
             }
         },
