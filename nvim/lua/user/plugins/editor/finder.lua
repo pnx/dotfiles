@@ -50,6 +50,8 @@ return {
                 },
                 layout_config = {
                     horizontal = {
+                        width = 0.95,
+                        height = 0.95,
                         preview_cutoff = 200,
                     }
                 }
