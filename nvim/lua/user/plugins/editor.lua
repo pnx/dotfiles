@@ -101,7 +101,26 @@ return {
                         click = "v:lua.ScLa",
                     },
                     { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
-                    { text = { "│ " } },
+                    { text = { "│" } },
+                    {
+                        text = { " " },
+                        condition = {
+                            function(args)
+                                local pos = vim.api.nvim_win_get_cursor(0)
+                                return args.lnum ~= pos[1]
+                            end
+                        }
+                    },
+                    {
+                        text = { " " },
+                        hl = "CursorLine",
+                        condition = {
+                            function(args)
+                                local pos = vim.api.nvim_win_get_cursor(0)
+                                return args.lnum == pos[1]
+                            end
+                        }
+                    }
                 }
             }
         end,
