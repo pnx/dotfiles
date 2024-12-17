@@ -177,6 +177,7 @@ local options = {
 
                 -- LSP
                 ["@lsp.type.property"] = { link = "@variable" },
+                ["@lsp.type.namespace.go"] = { fg = colors.rosewater },
 
                 -- Bash
                 ["@variable.parameter.bash"] = { fg = colors.rosewater },
