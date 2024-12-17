@@ -60,6 +60,13 @@ vim.keymap.set({ 'n', 'x' }, '<leader>y', [["+y]], {desc = "Yank into system reg
 vim.keymap.set({ 'n', 'x' }, '<leader>p', [["+p]], {desc = "Paste system register"})
 vim.keymap.set('x', '<leader>p', [["_dP]], { silent = true, desc = "Paste without storing deleted content in register" })
 
+
+--
+-- Splits
+--
+
+vim.keymap.set('n', '<S-f>', '<cmd>vs<cr>', { desc = "Vertical split"})
+
 --
 -- Navigation
 --
