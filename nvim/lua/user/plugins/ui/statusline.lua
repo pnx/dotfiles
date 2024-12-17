@@ -14,6 +14,18 @@ local function is_not_popup()
     return not vim.tbl_contains(types, vim.bo.filetype)
 end
 
+local function linter()
+    local ok, lint = pcall(require, "lint")
+    if ok then
+        local linters = lint.get_running()
+        if #linters == 0 then
+            return "󰦕"
+        end
+        return "󱉶 " .. table.concat(linters, ", ")
+    end
+    return "no linter"
+end
+
 return {
 	"nvim-lualine/lualine.nvim",
 	event = "VeryLazy",
@@ -37,7 +49,6 @@ return {
                     "alpha"
                 }
 			},
-            -- theme = "catppuccin"
 			theme = {
 				normal = {
 					a = "StatusLineNormal",
@@ -71,19 +82,6 @@ return {
 			},
 			lualine_b = {
 				{"branch"},
-                {
-                    "lsp-status",
-                    disabled_filetypes = {
-                        "TelescopePrompt",
-                    },
-                    on_click = function (_, btn, _)
-                        if btn == "l" then
-                            vim.cmd(":LspInfo")
-                        elseif btn == "r" then
-                            vim.cmd(":LspRestart")
-                        end
-                    end
-                },
 				{
 					"diagnostics",
 					symbols = {
@@ -103,14 +101,20 @@ return {
 				},
 			},
 			lualine_c = {
-				{
-					"filename",
-                    cond = is_not_popup,
-					path = 1,
-					symbols = vim.tbl_deep_extend("force", icons.file_status, {
-                        unnamed = "",
-                    })
-				},
+                {
+                    "lsp-status",
+                    disabled_filetypes = {
+                        "TelescopePrompt",
+                    },
+                    on_click = function (_, btn, _)
+                        if btn == "l" then
+                            vim.cmd(":LspInfo")
+                        elseif btn == "r" then
+                            vim.cmd(":LspRestart")
+                        end
+                    end
+                },
+                linter,
 			},
 			lualine_x = {
 				{
@@ -129,14 +133,28 @@ return {
 		winbar = {
 			lualine_c = {
 				{ "filetype", icon_only = true },
-				"filename",
+                {
+                	"filename",
+                    cond = is_not_popup,
+                	path = 1,
+                	symbols = vim.tbl_deep_extend("force", icons.file_status, {
+                        unnamed = "",
+                    })
+                },
 			},
 		},
 		inactive_winbar = {
 			lualine_c = {
 				{ "filetype", icon_only = true },
-				"filename",
-			},
+                {
+                    "filename",
+                    cond = is_not_popup,
+                    path = 1,
+                    symbols = vim.tbl_deep_extend("force", icons.file_status, {
+                        unnamed = "",
+                    })
+                },
+            },
 		},
 		extensions = {
 			"lazy",
