@@ -1,4 +1,7 @@
-function cat --wraps='bat -pn' --wraps='bat -pn --pager=never' --description 'alias cat bat -pn --pager=never'
-  bat -pn --pager=never $argv
-        
+function cat
+    if test -f /usr/bin/bat
+        /usr/bin/bat -p --pager=never $argv
+    else
+        /bin/cat $argv
+    end
 end

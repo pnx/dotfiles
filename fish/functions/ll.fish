@@ -1,3 +1,7 @@
-function ll --wraps=ls --wraps='eza -l --git' --wraps='eza --icons=always -l --git' --description 'alias ll eza --icons=always -l --git'
-    eza --icons=always -l --git $argv
+function ll
+    if test -f /usr/bin/eza
+        /usr/bin/eza --icons=always -l --git $argv
+    else
+        /bin/ls -l $argv
+    end
 end
