@@ -142,6 +142,12 @@ local options = {
                 NeoTestWatching = { fg = colors.yellow },
                 NeoTestMarked = { fg = colors.orange },
 
+                -- Diagnostics
+                DiagnosticUnderlineInfo = { style = {"undercurl"} },
+                DiagnosticUnderlineHint = { style = {"undercurl"} },
+                DiagnosticUnderlineWarn = { style = {"undercurl"} },
+                DiagnosticUnderlineError = { style = {"undercurl"} },
+
                 -- Markdown rendering
                 RenderMarkdownCode = { bg = colors.crust },
                 RenderMarkdownCodeInline = { fg = colors.rosewater, bg = colors.crust },
