@@ -18,17 +18,18 @@ return {
                 "hrsh7th/cmp-nvim-lsp-signature-help"
             },
         },
-        {
-            "ray-x/lsp_signature.nvim",
-            event = "VeryLazy",
-            opts = {
-                hint_enable = false,
-                fix_pos = true,
-                handler_opts = {
-                    border = "none"
-                }
-            },
-        },
+        -- Using blink.nvim atm.
+        -- {
+        --     "ray-x/lsp_signature.nvim",
+        --     event = "VeryLazy",
+        --     opts = {
+        --         hint_enable = false,
+        --         fix_pos = true,
+        --         handler_opts = {
+        --             border = "none"
+        --         }
+        --     },
+        -- },
         -- LSP often return markdown that neovim parses.
         -- make sure we have a plugin that can render markdown to nicer text
         {
