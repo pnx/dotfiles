@@ -87,7 +87,7 @@ vim.o.spelllang = 'en_us'
 vim.diagnostic.config({
     virtual_text = false,
     severity_sort = true,
-    underline = false,
+    underline = true,
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = icons.diagnostics.error,
