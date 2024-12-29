@@ -52,7 +52,7 @@ local lspservers = {
             ["code_transform.refactor.generate_mutator.fluent"] = true,
         }
     },
-    -- Use intelephense for as main server.
+    -- Use intelephense as main server.
     intelephense = {}
 }
 
