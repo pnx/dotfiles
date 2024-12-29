@@ -89,12 +89,32 @@ return {
     -- Linting
     {
         'mfussenegger/nvim-lint',
-        optional = true,
+        -- optional = true,
         opts = {
+            linters = {
+                phpstan = {
+                    args = {
+                        "analyze",
+                        '--error-format=json',
+                        '--no-progress',
+                    }
+                }
+            },
             linters_by_ft = {
                 php = { 'phpstan' },
             },
         },
+        config = function (_, opts)
+            local lint = require('lint')
+            lint.linters_by_ft = opts.linters_by_ft or {}
+            lint.linters.phpstan.args = opts.linters.phpstan.args
+
+            vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+                callback = function()
+                    require('lint').try_lint()
+                end,
+            })
+        end
     },
     -- LSP
     {
@@ -104,35 +124,12 @@ return {
         },
     },
     {
-        "nvimtools/none-ls.nvim",
-        opts = function ()
-            local null_ls = require("null-ls")
-            local methods = require("null-ls.methods")
-            return {
-                sources = {
-                    null_ls.builtins.diagnostics.phpstan.with({
-                        command = "./vendor/bin/phpstan",
-                        method = methods.internal.DIAGNOSTICS_ON_SAVE,
-                        to_temp_file = false
-                    })
-                }
-            }
-        end,
-    },
-    -- Laravel stuff
-    {
-        'ricardoramirezr/blade-nav.nvim',
-        dependencies = { -- totally optional
-            'hrsh7th/nvim-cmp', -- if using nvim-cmp
-        },
-        ft = {'blade', 'php'}, -- optional, improves startup time
+        'ccaglak/phptools.nvim',
         opts = {
-            close_tag_on_complete = true, -- default: true
-        },
-        config = function(_, opts)
-            require('blade-nav').setup(opts)
-            vim.api.nvim_set_hl(0, "CmpItemKindBladeNav", { fg = "#f55247" })
-        end
+            ui = {
+                fzf = true
+            },
+        }
     },
     -- Testing
     {
