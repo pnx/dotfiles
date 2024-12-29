@@ -20,7 +20,9 @@ local options = {
     highlight_overrides = {
         mocha = function(colors)
             return {
-                Visual = { bg = colors.overlay1 },
+                CursorLine = { bg = colors.surface0 },
+
+                Visual = { bg = colors.surface1 },
                 FoldColumn = { fg = colors.surface2 },
 
                 -- Floating windows
@@ -33,7 +35,7 @@ local options = {
 
                 -- Menus
                 Pmenu = { link = "NormalFloat" },
-                PmenuSel = { bg = colors.surface1 },
+                PmenuSel = { bg = colors.surface2 },
                 PmenuSbar = { link = "Pmenu" },
                 PmenuThumb = { link = "PmenuSel" },
 
