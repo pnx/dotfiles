@@ -21,7 +21,7 @@ opacity = 0.95
 hide_when_typing = true
 
 [colors]
-transparent_background_colors = true
+transparent_background_colors = false
 cursor = { text = "#eceef4", cursor = "#767BA0" }
 selection = { text = "CellForeground", background = "#5B5F7C" }
 footer_bar = { foreground = "#eceef4", background = "#0C0D14" }
