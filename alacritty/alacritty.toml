@@ -2,7 +2,7 @@
 ipc_socket = false
 
 [env]
-TERM = "xterm-256color"
+TERM = "xterm-kitty"
 
 [font]
 normal = { family = "JetbrainsMono Nerd Font", style = "light" }
