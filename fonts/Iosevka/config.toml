@@ -1,0 +1,94 @@
+[buildPlans.IosevkaCustom]
+family = "IosevkaCustom"
+spacing = "normal"
+serifs = "sans"
+noCvSs = true
+exportGlyphNames = false
+
+[buildPlans.IosevkaCustom.variants]
+inherits = "ss12"
+
+[buildPlans.IosevkaCustom.variants.design]
+one = "base"
+two = "straight-neck-serifless"
+four = "semi-open-serifless"
+five = "upright-arched-serifless"
+six = "closed-contour"
+seven = "bend-serifless"
+eight = "crossing"
+nine = "straight-bar"
+zero = "slashed"
+capital-d = "standard-serifless"
+capital-g = "toothless-corner-serifless-hooked"
+capital-m = "flat-bottom-serifless"
+capital-q = "crossing"
+capital-r = "straight-serifless"
+capital-w = "straight-flat-top-serifless"
+a = "single-storey-earless-corner-serifless"
+f = "flat-hook-serifless-crossbar-at-x-height"
+g = "single-storey-flat-hook-earless-corner"
+i = "serifed"
+j = "flat-hook-serifless"
+l = "serifed"
+m = "earless-corner-double-arch-serifless"
+t = "flat-hook"
+w = "straight-flat-top-serifless"
+y = "straight-serifless"
+lower-eth = "straight-bar"
+tittle = "square"
+diacritic-dot = "square"
+punctuation-dot = "square"
+braille-dot = "square"
+asterisk = "turn-hex-low"
+underscore = "high"
+brace = "curly"
+number-sign = "upright"
+question = "corner-flat-hooked"
+pilcrow = "high"
+lig-ltgteq = "slanted"
+lig-equal-chain = "without-notch"
+lig-hyphen-chain = "without-notch"
+
+[buildPlans.IosevkaCustom.weights.Regular]
+shape = 400
+menu = 400
+css = 400
+
+[buildPlans.IosevkaCustom.weights.SemiBold]
+shape = 600
+menu = 600
+css = 600
+
+[buildPlans.IosevkaCustom.widths.Normal]
+shape = 500
+menu = 5
+css = "normal"
+
+[buildPlans.IosevkaCustom.slopes.Upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.IosevkaCustom.ligations]
+disables = [
+    "slash-asterisk",
+    "trig"
+]
+# enables = [ 
+#     "arrow-l",
+#     "arrow-r",
+#     "eqeq",
+#     "eqeqeq",
+#     "exeq",
+#     "exeqeq",
+#     "exeqeqeq",
+#     "lteq",
+#     "gteq",
+#     "ltgt-ne",
+#     "llgg",
+#     "llggeq",
+#     # "kern-dotty",
+#     # "kern-bars",
+#     "html-comment"
+# ]
