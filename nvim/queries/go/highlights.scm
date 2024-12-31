@@ -1,0 +1,3 @@
+; inherits: go
+
+"package" @namespace
