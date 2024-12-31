@@ -153,12 +153,12 @@ local options = {
                 RenderMarkdownCodeInline = { fg = colors.rosewater, bg = colors.crust },
 
                 -- Syntax
-                PreProc = { link = "Include" },
-                Operator = { fg = colors.rosewater },
+                PreProc = { fg = colors.mauve },
+                Operator = { fg = colors.flamingo },
                 Function = { link = "@text" },
-                Delimiter = { link = "@text" },
-                Include = { fg = colors.mauve },
+                Delimiter = { link = "Operator" },
                 Keyword = { fg = colors.yellow },
+                Include = { link = "Keyword" },
                 Repeat = { link = "Keyword" },
                 Conditional = { link = "Keyword" },
                 Type = { fg = colors.blue },
@@ -179,8 +179,8 @@ local options = {
                 ["@property"] = { link = "@variable" },
                 ["@tag"] = { link = "Keyword" },
                 ["@tag.delimiter"] = { link = "@text" },
-                ["@punctuation"] = { link = "@text" },
                 ["@module"] = { link = "@text" },
+                ["@namespace"] = { link = "@keyword" },
                 ["@punctuation.bracket"] = { link = "@punctuation" },
 
                 -- LSP
