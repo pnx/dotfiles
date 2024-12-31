@@ -201,12 +201,14 @@ local options = {
 
                 -- PHP
                 ["@keyword.import.php"] = { link = "@keyword" },
-                ["@class_name.php"] = { link = "@text" },
-                ["@extend_name.php"] = { link = "@text" },
-                ["@implement_name.php"] = { link = "@text" },
-                ["@namespace_name.php"] = { link = "@text" },
-                ["@namespace_alias.php"] = { link = "@text" },
                 ["@function.builtin.php"] = { fg = colors.blue },
+                ["@class.name.php"] = { link = "@text" },
+                ["@class.inherit.name.php"] = { link = "@text" },
+                ["@class.implements.name.php"] = { link = "@text" },
+                ["@interface.name.php"] = { link = "@text" },
+                ["@namespace.name.php"] = { link = "@text" },
+                ["@namespace.alias.name.php"] = { link = "@text" },
+                ["@use.trait.name.php"] = { link = "@text" },
 
                 -- Blade
                 ["@tag.blade"] = { fg = colors.mauve },
