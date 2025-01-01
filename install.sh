@@ -6,6 +6,7 @@ DIRECTORIES=(
     nvim
     fish
     alacritty
+    ghostty
     #hypr
     #waybar
     #wofi
