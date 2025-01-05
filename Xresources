@@ -46,4 +46,5 @@ Xft.rgba: rgb
 Xft.dpi: 96
 
 !! Cursor
+Xcursor.theme: Qogir
 Xcursor.size: 24
