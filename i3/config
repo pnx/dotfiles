@@ -57,8 +57,7 @@ exec --no-startup-id picom
 
 # Needed for gnome-keyring to start.
 exec --no-startup-id dbus-update-activation-environment --all
-#exec --no-startup-id gnome-keyring-daemon --start --components=secrets
-
+exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id dex-autostart --autostart --environment i3
 exec --no-startup-id feh --bg-scale $background_image
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c $color_bg --nofork
