@@ -1,1 +1,1 @@
-require("user.utils.indent").setHardtabs()
+require("user.utils.indent").setHardtabs(4)
