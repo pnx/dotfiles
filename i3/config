@@ -52,6 +52,9 @@ exec --no-startup-id polybar
 # Notifications
 exec --no-startup-id dunst
 
+# compositor
+exec --no-startup-id picom
+
 # Needed for gnome-keyring to start.
 exec --no-startup-id dbus-update-activation-environment --all
 #exec --no-startup-id gnome-keyring-daemon --start --components=secrets
