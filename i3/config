@@ -28,6 +28,7 @@ set_from_resource $color_win_urgent_bg  i3wm.color1         #cc817f
 set_from_resource $color_border         i3wm.colorOverlay0  #1a1c2d
 
 set $background_image /usr/share/backgrounds/majestic-mountain-peak-reflected-flowing-blue-water-generative-ai.jpg
+set $terminal ghostty
 
 set $mod    Mod4
 set $super  Shift
@@ -77,7 +78,7 @@ font pango:JetBrainsMono NF Regular 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec $terminal
 
 # kill focused window
 bindsym $mod+x kill
