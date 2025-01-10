@@ -6,6 +6,7 @@ return {
     version = "*",
     build = 'cargo build --release',
     dependencies = {
+        { "xzbdmw/colorful-menu.nvim" },
         { 'L3MON4D3/LuaSnip', version = 'v2.*' },
     },
     opts = {
@@ -70,7 +71,17 @@ return {
                 draw = {
                     columns = {
                         { "kind_icon" },
-                        { "label",    "label_description", "source_name", gap = 1 },
+                        { "label", "source_name", gap = 1 },
+                    },
+                    components = {
+                        label = {
+                            text = function(ctx)
+                                return require("colorful-menu").blink_components_text(ctx)
+                            end,
+                            highlight = function(ctx)
+                                return require("colorful-menu").blink_components_highlight(ctx)
+                            end,
+                        },
                     },
                 }
             },
