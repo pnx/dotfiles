@@ -1,9 +1,10 @@
 [buildPlans.IosevkaCustom]
 family = "IosevkaCustom"
-spacing = "normal"
+spacing = "term"
 serifs = "sans"
 noCvSs = true
 exportGlyphNames = false
+noLigation = true
 
 [buildPlans.IosevkaCustom.variants]
 inherits = "ss12"
@@ -11,10 +12,8 @@ inherits = "ss12"
 [buildPlans.IosevkaCustom.variants.design]
 one = "base"
 two = "straight-neck-serifless"
-four = "semi-open-serifless"
 five = "upright-arched-serifless"
 six = "closed-contour"
-seven = "bend-serifless"
 eight = "crossing"
 nine = "straight-bar"
 zero = "slashed"
@@ -40,9 +39,10 @@ diacritic-dot = "square"
 punctuation-dot = "square"
 braille-dot = "square"
 asterisk = "turn-hex-low"
-underscore = "high"
+underscore = "above-baseline"
 brace = "curly"
 number-sign = "upright"
+dollar = "interrupted"
 question = "corner-flat-hooked"
 pilcrow = "high"
 lig-ltgteq = "slanted"
