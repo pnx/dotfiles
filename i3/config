@@ -85,6 +85,7 @@ bindsym $mod+x kill
 
 # start rofi
 bindsym $mod+d exec "rofi -show drun"
+bindsym $mod+p exec "rofi -show run"
 
 # lock screen
 bindsym $mod+$super+f exec "xautolock -locknow"
