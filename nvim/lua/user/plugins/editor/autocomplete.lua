@@ -3,6 +3,7 @@ local icons = require('user.icons')
 return {
     'saghen/blink.cmp',
     lazy = false,
+    version = "*",
     build = 'cargo build --release',
     dependencies = {
         { 'L3MON4D3/LuaSnip', version = 'v2.*' },
