@@ -21,6 +21,7 @@ local options = {
         mocha = function(colors)
             return {
                 CursorLine = { bg = colors.surface0 },
+                SignColumnSep = { bg = colors.surface0, fg = colors.lavender },
 
                 Visual = { bg = colors.surface1 },
                 FoldColumn = { fg = colors.surface2 },
