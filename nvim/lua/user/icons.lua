@@ -82,6 +82,8 @@ local iconset = {
     box = {
         horizontal_line = "─",
         vertical_line = "│",
+        vertical_line_left = "▏",
+        vertical_line_right = "▕",
         vertical_line_thick = "▊",
         top_right_corner = "┐",
         middel_left = "├",
@@ -137,6 +139,10 @@ return {
     edit = iconset.pen,
     buffer = "",
     search = iconset.magnifying_glass,
+    indent = iconset.box.vertical_line_left,
+    signcolum = {
+        separator = iconset.box.vertical_line_left
+    },
     whitespace = {
         tab = "»",
         space = iconset.middle_dot,
