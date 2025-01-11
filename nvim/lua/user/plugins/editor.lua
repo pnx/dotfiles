@@ -1,3 +1,5 @@
+local icons = require('user.icons')
+
 return {
     { import = "user.plugins.editor.treesitter" },
     {
@@ -44,7 +46,7 @@ return {
         opts = {
             debounce = 10,
             indent = {
-                char = "▏",
+                char = icons.indent,
             },
             scope = {
                 enabled = false,
@@ -101,9 +103,8 @@ return {
                         click = "v:lua.ScLa",
                     },
                     { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
-                    { text = { "│" } },
                     {
-                        text = { " " },
+                        text = { icons.signcolum.separator },
                         condition = {
                             function(args)
                                 local pos = vim.api.nvim_win_get_cursor(0)
@@ -112,8 +113,8 @@ return {
                         }
                     },
                     {
-                        text = { " " },
-                        hl = "CursorLine",
+                        text = { icons.signcolum.separator },
+                        hl = "SignColumnSep",
                         condition = {
                             function(args)
                                 local pos = vim.api.nvim_win_get_cursor(0)
