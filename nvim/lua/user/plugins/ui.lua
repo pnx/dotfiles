@@ -1,4 +1,32 @@
+local ui = require("user.ui.telescope")
+
 return {
+    {
+        'stevearc/dressing.nvim',
+        opts = {
+            input = {
+                border = { " " },
+                relative = "editor",
+                title_pos = "center",
+                mappings = {
+                    n = {
+                        ["<Esc>"] = "Close",
+                        ["<CR>"] = "Confirm",
+                    },
+                    i = {
+                        ["<Esc>"] = "Close",
+                        ["<CR>"] = "Confirm",
+                        ["<Up>"] = "HistoryPrev",
+                        ["<Down>"] = "HistoryNext",
+                    },
+                },
+            },
+            select = {
+                backend = { "telescope" },
+                telescope = require("telescope.themes").get_dropdown(ui.dropdown),
+            }
+        },
+    },
     { import = "user.plugins.ui.statusline" },
     -- File explorer
     { import = "user.plugins.ui.neotree" },

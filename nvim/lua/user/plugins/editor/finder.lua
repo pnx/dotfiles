@@ -1,20 +1,5 @@
 local icons = require("user.icons")
-
-local border = {
-    prompt = { " " },
-    results = { " " },
-    preview = { " " },
-}
-
-local dropdown_opts = {
-    previewer = false,
-    prompt_title = false,
-    layout_strategy = "horizontal",
-    layout_config = {
-        prompt_position = "top",
-    },
-    borderchars = border,
-}
+local ui = require("user.ui.telescope")
 
 return {
     "nvim-telescope/telescope.nvim",
@@ -22,7 +7,6 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons",
-        "nvim-telescope/telescope-ui-select.nvim",
         "sharkdp/fd",
     },
     cmd = "Telescope",
@@ -44,7 +28,7 @@ return {
                         ["<esc>"] = actions.close,
                     },
                 },
-                borderchars = border,
+                borderchars = ui.border,
                 preview = {
                     filesize_limit = 0.1
                 },
@@ -60,7 +44,7 @@ return {
                 find_files = {
                     hidden = true,
                 },
-                buffers = vim.tbl_deep_extend("force", dropdown_opts, {
+                buffers = vim.tbl_deep_extend("force", ui.dropdown, {
                     theme = "dropdown",
                     mappings = {
                         i = {
@@ -84,11 +68,6 @@ return {
                     })
                 }),
             },
-            extensions = {
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown(dropdown_opts),
-                },
-            }
         }
     end,
     config = function(_, opts)
