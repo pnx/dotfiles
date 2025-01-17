@@ -76,6 +76,8 @@ vim.keymap.set('n', '<S-Down>', 'v<Down>')
 vim.keymap.set('v', '<S-Up>', '<Up>')
 vim.keymap.set('v', '<S-Down>', '<Down>')
 
+vim.keymap.set('n', '}', '}zz', { silent = true, desc = 'jump to next paragraph' })
+vim.keymap.set('n', '{', '{zz', { silent = true, desc = 'jump to previous paragraph' })
 
 -- Make half page jumps stay in the center of screen
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { silent = true, desc = 'jump half a page up' })
