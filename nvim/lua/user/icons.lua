@@ -15,6 +15,7 @@ local iconset = {
 --     hint = "",
 -- },
     --
+    question_mark = "",
     info_circle_outline = "",
     exclamation_circle = "",
     exclamation_triangle = "",
@@ -72,7 +73,7 @@ local iconset = {
 
     -- Shapes
     circle = "",
-    circle_dot = "", 
+    circle_dot = "",
     circle_dotted = "◌",
     plus = "",
     minus = "",
@@ -251,6 +252,7 @@ return {
         Operator = iconset.math.plus_minus,
         TypeParameter = iconset.code.type_parameter,
         Spell = iconset.wand,
+        Unknown = iconset.question_mark
     },
     filetypes = {
         php = "󰌟",
