@@ -5,21 +5,18 @@ return {
 
     -- Fonts
     --
-    font_size = 13,
-    line_height = 1.4,
+    font_size = 16,
+    line_height = 1.3,
     font = wezterm.font {
-        family = 'JetBrainsMono Nerd Font',
-        harfbuzz_features = { 'zero' },
+        family = 'IosevkaCustom',
+        harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
     },
 
     -- Window
     --
-    window_background_opacity = 0.97,
+    window_background_opacity = 0.98,
     window_padding = {
-        left = 0,
-        right = 0,
         top = 0,
-        bottom = 0,
     },
 
     -- Tabs
