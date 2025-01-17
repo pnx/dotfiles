@@ -3,6 +3,65 @@ local M = {}
 
 function M.all_files() require("telescope.builtin").find_files({no_ignore=true, prompt_title = "Find All Files"}) end
 function M.find_in_current_dir() require("telescope.builtin").find_files({ cwd = vim.fn.expand('%:p:h') }) end
+function M.find_workspace_symbols() require("telescope.builtin").lsp_dynamic_workspace_symbols({
+    entry_maker = M.lsp_symbol_entry_maker()
+}) end
+function M.find_classes() require("telescope.builtin").lsp_dynamic_workspace_symbols({
+    symbols = "class",
+    prompt_title = "Search Classes",
+    entry_maker = M.lsp_symbol_entry_maker()
+}) end
+function M.find_functions() require("telescope.builtin").lsp_dynamic_workspace_symbols({
+    query = "",
+    symbols = "function",
+    prompt_title = "Search Functions",
+    entry_maker = M.lsp_symbol_entry_maker(),
+}) end
+
+function M.lsp_symbol_entry_maker(opts)
+    local symbol_icons = require("user.icons").symbols
+    local entry_display = require("telescope.pickers.entry_display")
+    local make_entry = require("telescope.make_entry")
+
+    local displayer = entry_display.create {
+        separator = " ",
+        items = {
+            { width = 1 },
+            { remaining = true },
+            { remaining = true },
+        },
+    }
+
+    local make_display = function (entry)
+        return displayer {
+            { entry.icon or "?", "TelescopeResults" .. entry.symbol_type },
+            entry.symbol_name,
+            { entry.filename, "TelescopeResultsComment" },
+        }
+    end
+
+    return function(entry)
+        local filename = vim.fn.fnamemodify(entry.filename, ":.")
+        local symbol_msg = entry.text
+        local symbol_type, symbol_name = symbol_msg:match "%[(.+)%]%s+(.*)"
+        local ordinal = symbol_name .. filename
+        local icon = symbol_icons[symbol_type] or symbol_icons["Unknown"]
+        return make_entry.set_default_entry_mt({
+            value = entry,
+            ordinal = ordinal,
+            display = make_display,
+            filename = filename,
+            lnum = entry.lnum,
+            col = entry.col,
+            symbol_name = symbol_name,
+            symbol_type = symbol_type,
+            icon = icon,
+            icon_hl = 'DiffDelete',
+            start = entry.start,
+            finish = entry.finish,
+        }, opts)
+    end
+end
 
 function M.buffer_view(opts)
     local devicons = require("nvim-web-devicons")
