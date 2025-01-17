@@ -15,7 +15,7 @@ return {
         local actions = require("telescope.actions")
         return {
             defaults = {
-                path_display = { truncate = 1 },
+                path_display = { "filename_first", truncate = 1 },
                 prompt_prefix = " ",
                 selection_caret = icons.current .. " ",
                 multi_icon = icons.selected .. " ",
@@ -25,6 +25,7 @@ return {
                 },
                 mappings = {
                     i = {
+                        ['<C-p>'] = require('telescope.actions.layout').cycle_layout_next,
                         ["<esc>"] = actions.close,
                     },
                 },
@@ -32,10 +33,17 @@ return {
                 preview = {
                     filesize_limit = 0.1
                 },
+                layout_strategy = "vertical",
+                cycle_layout_list = { "horizontal", "vertical" },
                 layout_config = {
+                    vertical = {
+                        width = 0.5,
+                        height = 0.6,
+                    },
                     horizontal = {
                         width = 0.95,
                         height = 0.95,
+                        preview_width = 0.5,
                         preview_cutoff = 200,
                     }
                 }
