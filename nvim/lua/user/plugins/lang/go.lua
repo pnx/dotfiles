@@ -7,11 +7,10 @@ local lspservers = {
             gopls = {
                 analyses = {
                     unusedvariable = true,
-                    unusedwrite = true,
                     useany = true,
                 },
                 gofumpt = true,
-                hoverKind = 'SynopsisDocumentation',
+                staticcheck = true,
                 codelenses = {
                     gc_details = false,
                     generate = true,
@@ -22,11 +21,11 @@ local lspservers = {
                     upgrade_dependency = true,
                     vendor = true,
                 },
-                hints = {
-                    parameterNames = true
-                },
+                -- hints = {
+                --     parameterNames = true
+                -- },
                 completeUnimported = true,
-                semanticTokens = true
+                -- semanticTokens = true
             },
         },
         on_save = function()
