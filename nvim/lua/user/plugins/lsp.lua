@@ -56,11 +56,17 @@ return {
         }
     },
     --- @class LSPServerOptions : LSPFeatures
+    --- @field server_capabilities? lsp.ServerCapabilities
     --- @field on_save function | nil
+
+    --- @class LSPFeatures
+    --- @field document_highlight? { enabled: boolean }
+    --- @field codelens? { enabled: boolean }
+    --- @field inlay_hints? { enabled: boolean, exclude?: table }
 
     --- @class LSPOptions
     opts = {
-        --- @class LSPFeatures
+        --- @type LSPFeatures
         features = {
             document_highlight = {
                 enabled = true,
@@ -72,9 +78,6 @@ return {
                 enabled = true,
                 exclude = {},
             },
-            diagnostics = true,
-            hover = true,
-            definition = true,
         },
         --- @type { string: LSPServerOptions }
         servers = {},
@@ -106,19 +109,10 @@ return {
             local on_attach = function(client, bufnr)
                 vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 
-                -- disable diagnostics
-                if server_opts.diagnostics == false then
-                    client.server_capabilities.diagnosticProvider = false
-                end
-
-                -- disable hover
-                if server_opts.hover == false then
-                    client.server_capabilities.hoverProvider = false
-                end
-
-                if server_opts.definition == false then
-                    client.server_capabilities.definitionProvider = false
-                end
+                -- Override any server capabilities.
+                client.server_capabilities = vim.tbl_extend("force",
+                    client.server_capabilities,
+                    server_opts.server_capabilities or {})
 
                 if server_opts.inlay_hints.enabled and client.supports_method("textDocument/inlayHint") then
                     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
