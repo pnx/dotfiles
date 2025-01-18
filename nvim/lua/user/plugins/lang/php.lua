@@ -1,6 +1,19 @@
 local lspservers = {
     --- @type LSPServerOptions
     phpactor = {
+        server_capabilities = {
+            definitionProvider = false,
+            declarationProvider = false,
+            renameProvider = false,
+            referencesProvider = false,
+            implementationProvider = false,
+            documentSymbolProvider = false,
+            workspaceSymbolProvider = false,
+            diagnosticProvider = nil,
+            hoverProvider = false,
+            --- @diagnostic disable-next-line: assign-type-mismatch
+            completionProvider = false,
+        },
         inlay_hints = {
             enabled = false
         },
@@ -10,9 +23,6 @@ local lspservers = {
         document_highlight = {
             enabled = false
         },
-        diagnostics = false,
-        hover = false,
-        definition = false,
         init_options = {
             -- Only interested in code actions. Disable everything else!
             ["completion_worse.completor.doctrine_annotation.enabled"] = false,
@@ -37,6 +47,7 @@ local lspservers = {
             ["completion_worse.completor.constant.enabled"] = false,
             ["completion_worse.snippets"] = false,
             ["completion.limit"] = 0,
+            -- Disable push diagnostics
             ["language_server.diagnostics_on_open"] = false,
             ["language_server.diagnostics_on_save"] = false,
             ["language_server.diagnostics_on_update"] = false,
