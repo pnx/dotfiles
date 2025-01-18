@@ -154,4 +154,54 @@ function M.buffer_view(opts)
     end
 end
 
+---@param value integer
+---@param screen integer
+---@param min integer
+---@param max integer
+---@param padding integer
+---@return integer
+local function calculate_size(value, screen, min, max, padding)
+    if (min > 0) then
+        if (screen < (min + padding)) then
+            return math.max(screen - padding, 0)
+        end
+        value = math.max(value, min)
+    end
+    if (max > 0) then value = math.min(value, max) end
+    return value
+end
+
+---@class size_opts
+---@field max integer?
+---@field min integer?
+---@field padding integer?
+
+---@param percentage number
+---@param opts size_opts
+---@return function
+function M.width(percentage, opts)
+    return function(_, screen_width)
+        local padding = opts.padding or 0
+        local max = opts.max or -1
+        local min = opts.min or -1
+        local width = math.floor(percentage * screen_width)
+
+        return calculate_size(width, screen_width, min, max, padding)
+    end
+end
+
+---@param percentage number
+---@param opts size_opts
+---@return function
+function M.height(percentage, opts)
+    return function(_, _, screen_height)
+        local padding = opts.padding or 0
+        local max = opts.max or -1
+        local min = opts.min or -1
+        local height = math.floor(percentage * screen_height)
+
+        return calculate_size(height, screen_height, min, max, padding)
+    end
+end
+
 return M

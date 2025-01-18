@@ -37,14 +37,13 @@ return {
                 cycle_layout_list = { "horizontal", "vertical" },
                 layout_config = {
                     vertical = {
-                        width = 0.5,
-                        height = 0.6,
+                        width = utils.width(0.5, { min = 80, max = 100, padding = 10}),
+                        height = utils.height(0.6, { min = 15, max = 50, padding = 2}),
                     },
                     horizontal = {
-                        width = 0.95,
-                        height = 0.95,
+                        width = utils.width(0.95, { min = 80, max = 180, padding = 10 }),
+                        height = utils.height(0.95, { min = 15, max = 34, padding = 2 }),
                         preview_width = 0.5,
-                        preview_cutoff = 200,
                     }
                 }
             },
