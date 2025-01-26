@@ -1,6 +1,6 @@
 local options = {
     flavour = "mocha",
-    transparent_background = true,
+    transparent_background = not vim.g.neovide,
     color_overrides = {
         mocha = {
             base = "#0E1019",
