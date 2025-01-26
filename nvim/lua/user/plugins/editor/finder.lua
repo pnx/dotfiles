@@ -31,6 +31,7 @@ return {
                 },
                 borderchars = ui.border,
                 preview = {
+                    enabled = false,
                     filesize_limit = 0.1
                 },
                 layout_strategy = "vertical",
@@ -39,6 +40,7 @@ return {
                     vertical = {
                         width = utils.width(0.5, { min = 80, max = 100, padding = 10}),
                         height = utils.height(0.6, { min = 15, max = 50, padding = 2}),
+                        preview_height = 0.0
                     },
                     horizontal = {
                         width = utils.width(0.95, { min = 80, max = 180, padding = 10 }),
