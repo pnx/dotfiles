@@ -2,6 +2,9 @@ local icons = require('user.icons')
 
 return {
     { import = "user.plugins.editor.treesitter" },
+    { 'echasnovski/mini.pairs', version = '*', opts = {}},
+    { 'echasnovski/mini.ai', version = '*', opts = {}},
+    { 'echasnovski/mini.surround', version = '*', opts ={}},
     {
         "mbbill/undotree",
         event = { "BufReadPre", "BufNewFile" },
@@ -34,11 +37,6 @@ return {
         opts = {
             empty_buf = "Alpha"
         },
-    },
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = true,
     },
     {
         "lukas-reineke/indent-blankline.nvim",
