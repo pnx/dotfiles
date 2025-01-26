@@ -2,7 +2,7 @@ local icons = require("user.icons")
 
 local function indent_settings()
     return (vim.bo.expandtab and "SPC" or "TAB")
-        .. " "
+        .. ":"
         .. (vim.bo.shiftwidth == 0 and vim.bo.tabstop or vim.bo.shiftwidth)
 end
 
@@ -37,7 +37,6 @@ return {
 		options = {
 			globalstatus = true,
 			component_separators = "",
-			-- section_separators = { "'" .. icons.separator .. "'", color = "StatusLineSeparator" },
 			section_separators = "",
 			disabled_filetypes = {
 				statusline = {
@@ -46,6 +45,7 @@ return {
 				},
                 winbar = {
                     "neo-tree",
+                    "NvimTree",
                     "alpha"
                 }
 			},
@@ -99,8 +99,6 @@ return {
 						removed = icons.diff.removed .. " ",
 					},
 				},
-			},
-			lualine_c = {
                 {
                     "lsp-status",
                     disabled_filetypes = {
@@ -116,12 +114,20 @@ return {
                 },
                 linter,
 			},
+            lualine_c = {},
 			lualine_x = {
 				{
                     "filetype",
                     cond = is_not_popup
                 },
-				"fileformat",
+				{
+                    "fileformat",
+                    symbols = {
+                        unix = "NL",
+                        dos = "NLCR",
+                        mac = 'NL'
+                    }
+                },
                 indent_settings,
 			},
 			lualine_y = {
