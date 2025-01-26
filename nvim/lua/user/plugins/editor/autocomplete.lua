@@ -50,11 +50,12 @@ return {
                 if success and node and vim.tbl_contains({ 'comment', 'line_comment', 'block_comment' }, node:type()) then
                     return { 'buffer' }
                 else
-                    return { 'lsp', 'path', 'luasnip', 'buffer' }
+                    return { 'lsp', 'path', 'snippets', 'buffer' }
                 end
             end
         },
         snippets = {
+            preset = 'luasnip',
             expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
             active = function(filter)
                 if filter and filter.direction then
