@@ -10,7 +10,8 @@ return {
     },
     cmd = "Neotree",
     opts = {
-        hide_root_node = true,
+        -- weird bug
+        -- hide_root_node = true,
         popup_border_style = 'solid',
         default_component_configs = {
             indent = {
@@ -65,7 +66,7 @@ return {
                 },
             },
             content_layout = "center",
-            separator = { left = "", right= "", override = "active" },
+            separator = { left = "", right= "" },
         },
         window = {
             popup = {
