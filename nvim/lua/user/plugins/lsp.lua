@@ -9,27 +9,6 @@ return {
                 { "williamboman/mason-lspconfig.nvim", config = function () end }
             }
         },
-        {
-            -- Autocomplete source
-            "hrsh7th/nvim-cmp",
-            optional = true,
-            dependencies = {
-                "hrsh7th/cmp-nvim-lsp",
-                "hrsh7th/cmp-nvim-lsp-signature-help"
-            },
-        },
-        -- Using blink.nvim atm.
-        -- {
-        --     "ray-x/lsp_signature.nvim",
-        --     event = "VeryLazy",
-        --     opts = {
-        --         hint_enable = false,
-        --         fix_pos = true,
-        --         handler_opts = {
-        --             border = "none"
-        --         }
-        --     },
-        -- },
         -- LSP often return markdown that neovim parses.
         -- make sure we have a plugin that can render markdown to nicer text
         {
@@ -87,10 +66,8 @@ return {
         local lspconfig = require("lspconfig")
         local utils = require("user.utils.lsp")
         local augroup = vim.api.nvim_create_augroup("Lsp", {})
-        local has_cmp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend('force',
-            vim.lsp.protocol.make_client_capabilities() or {},
-            has_cmp and cmp_lsp.default_capabilities() or {})
+            vim.lsp.protocol.make_client_capabilities() or {})
 
         --- @param server string
         local function setup(server)
