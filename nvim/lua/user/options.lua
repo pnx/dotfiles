@@ -110,9 +110,14 @@ vim.diagnostic.config({
 -- Provide a custom hover implementation
 vim.lsp.buf.hover = require("user.utils.lsp").hover
 
+
 -------------------------------------------------------
 -- Extras
 -------------------------------------------------------
+
+if vim.g.neovide then
+    require('user.neovide')
+end
 
 user = {} ---@diagnostic disable-line: lowercase-global
 
