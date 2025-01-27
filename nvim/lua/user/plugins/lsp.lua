@@ -66,8 +66,7 @@ return {
         local lspconfig = require("lspconfig")
         local utils = require("user.utils.lsp")
         local augroup = vim.api.nvim_create_augroup("Lsp", {})
-        local capabilities = vim.tbl_deep_extend('force',
-            vim.lsp.protocol.make_client_capabilities() or {})
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
 
         --- @param server string
         local function setup(server)
