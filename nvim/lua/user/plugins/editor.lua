@@ -102,24 +102,13 @@ return {
                     },
                     { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
                     {
-                        text = { icons.signcolum.separator },
-                        condition = {
+                        text = {
                             function(args)
-                                local pos = vim.api.nvim_win_get_cursor(0)
-                                return args.lnum ~= pos[1]
-                            end
-                        }
+                                local pos = vim.api.nvim_win_get_cursor(args.win)
+                                return (args.lnum == pos[1] and "%#SignColumnSep#%=" or "")..icons.signcolum.separator
+                            end,
+                        },
                     },
-                    {
-                        text = { icons.signcolum.separator },
-                        hl = "SignColumnSep",
-                        condition = {
-                            function(args)
-                                local pos = vim.api.nvim_win_get_cursor(0)
-                                return args.lnum == pos[1]
-                            end
-                        }
-                    }
                 }
             }
         end,
