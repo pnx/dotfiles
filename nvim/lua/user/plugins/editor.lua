@@ -86,6 +86,7 @@ return {
                             namespace = { "gitsigns" },
                             maxwidth = 1,
                             colwidth = 1,
+                            foldclosed = true,
                         }
                     },
                     {
@@ -94,18 +95,23 @@ return {
                             name = { ".*" },
                             namespace = { ".*" },
                             maxwidth = 1,
+                            foldclosed = true,
                         },
                     },
                     {
-                        text = { builtin.lnumfunc, " " },
+                        text = { " ", builtin.lnumfunc, " " },
                         click = "v:lua.ScLa",
                     },
-                    { text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
+                    {
+                        text = { builtin.foldfunc, " " },
+                        condition = { true, function (args) return args.fold.width > 0 end },
+                        click = "v:lua.ScFa"
+                    },
                     {
                         text = {
                             function(args)
                                 local pos = vim.api.nvim_win_get_cursor(args.win)
-                                return (args.lnum == pos[1] and "%#SignColumnSep#%=" or "")..icons.signcolum.separator
+                                return (args.lnum == pos[1] and "%#SignColumnSep#" or "")..icons.signcolum.separator
                             end,
                         },
                     },
