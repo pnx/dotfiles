@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -lt 1 ]; then
-    SELECTED=(core i3)
+    SELECTED=(core)
 else
     SELECTED=$@
 fi

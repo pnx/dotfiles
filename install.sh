@@ -5,8 +5,9 @@ BASE_PATH=$(dirname $(readlink -f $BASH_SOURCE))
 DIRECTORIES=(
     nvim
     fish
-    alacritty
-    ghostty
+    #alacritty
+    #ghostty
+    kitty
     #hypr
     #waybar
     #wofi
