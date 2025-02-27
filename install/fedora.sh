@@ -29,6 +29,7 @@ for sel in "${SELECTED[@]}"; do
             sudo dnf install -y \
                 xorg-x11-xinit \
                 i3 \
+                feh \
                 lxappearance \
                 ImageMagick \
                 xautolock \
