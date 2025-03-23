@@ -1,0 +1,12 @@
+<?php
+
+namespace {{ prototype.namespace }};
+
+use Illuminate\Database\Eloquent\Model;
+
+{% for class in prototype.classes %}
+class {{ class.name }} extends Model
+{
+
+}
+{% endfor %}

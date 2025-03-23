@@ -1,0 +1,26 @@
+<?php
+
+namespace {{ prototype.namespace }};
+
+use Illuminate\Support\ServiceProvider;
+
+{% for class in prototype.classes %}
+class {{ class.name }} extends ServiceProvider
+{
+    /**
+     * Register services.
+     */
+    public function register(): void
+    {
+        //
+    }
+
+    /**
+     * Bootstrap services.
+     */
+    public function boot(): void
+    {
+        //
+    }
+}
+{% endfor %}
