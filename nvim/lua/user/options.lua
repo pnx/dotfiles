@@ -52,7 +52,7 @@ vim.o.smartindent = true
 -- line numbers
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.numberwidth = 5
+vim.o.numberwidth = 1
 
 -- Gutter format
 vim.o.statuscolumn = '%s %=%{v:relnum?v:relnum:v:lnum} %C│ '
