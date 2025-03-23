@@ -60,6 +60,13 @@ return {
         },
     },
     {
+        "williamboman/mason.nvim",
+        opttional = true,
+        opts = {
+            ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl" }
+        },
+    },
+    {
         "nvim-neotest/neotest",
         optional = true,
         ft = { "go" },
