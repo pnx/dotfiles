@@ -56,6 +56,21 @@ return {
                 filetype = "blade",
             }
 
+            parser_config.dotenv = {
+                install_info = {
+                    url = "https://github.com/pnx/tree-sitter-dotenv",
+                    branch = "main",
+                    files = { "src/parser.c", "src/scanner.c" },
+                },
+                filetype = "dotenv",
+            }
+
+            vim.filetype.add({
+                pattern = {
+                    ['.env.*'] = 'dotenv',
+                },
+            })
+
             require("nvim-treesitter.configs").setup(opts)
         end,
     },
