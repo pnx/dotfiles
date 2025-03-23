@@ -2,7 +2,7 @@ local M = {}
 
 -- Hover that supports responses from multiple language servers.
 function M.hover()
-    local params = vim.lsp.util.make_position_params()
+    local params = vim.lsp.util.make_position_params(0, 'utf-8')
 
     vim.lsp.buf_request_all(0, 'textDocument/hover', params, function(responses)
         local sections = {}
