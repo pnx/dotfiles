@@ -135,7 +135,7 @@ vim.keymap.set('n', "<leader>gB", "<cmd>Gitsigns blame<cr>", { desc = "Blame" })
 
 vim.keymap.set('n', 'go', '<cmd>Telescope lsp_type_definitions<cr>', { desc = 'Goto type definition' })
 vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', { desc = 'Goto definition' })
-vim.keymap.set({ 'n', 'x' }, '<leader>c', 'noop', { desc = 'Code action' })
+vim.keymap.set({ 'n', 'x' }, '<leader>c', 'noop', { desc = 'Code' })
 vim.keymap.set({ 'n', 'x' }, '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'Code action' })
 vim.keymap.set('n', '<leader>r', "noop", { desc = 'Rename' })
 vim.keymap.set('n', '<leader>rs', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename symbol' })
