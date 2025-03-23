@@ -36,9 +36,12 @@ vim.keymap.set('x', '<leader>ff', [[:Format<CR>]], { desc = 'Format section', si
 
 -- Hex Formatting
 vim.keymap.set('x', '<leader>fh', "noop", { desc = "Format hex" })
-vim.keymap.set('x', '<leader>fhx', [[:s/\(\x\{2\}\)/0x\1, /g]], { desc = "Format a hex string into a comma separated list with 0x prefix." })
-vim.keymap.set('x', '<leader>fha', [[:s/0x\(\x\{1\}\X\)/0x0\1/g]], { desc = "Align a hex string so that all numbers are 2 characters long (0x2 -> 0x02) " })
-vim.keymap.set('x', '<leader>fhn', [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]], { desc = "Format a comma separated hex list into 8 bytes per line." })
+vim.keymap.set('x', '<leader>fhx', [[:s/\(\x\{2\}\)/0x\1, /g]],
+    { desc = "Format a hex string into a comma separated list with 0x prefix." })
+vim.keymap.set('x', '<leader>fha', [[:s/0x\(\x\{1\}\X\)/0x0\1/g]],
+    { desc = "Align a hex string so that all numbers are 2 characters long (0x2 -> 0x02) " })
+vim.keymap.set('x', '<leader>fhn', [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]],
+    { desc = "Format a comma separated hex list into 8 bytes per line." })
 
 -- Case formatting
 vim.keymap.set('x', '<leader>fc', "noop", { desc = "Case" })
@@ -148,7 +151,7 @@ vim.keymap.set('n', '<leader>rs', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 
 vim.keymap.set('n', '<leader>s', "noop", { desc = 'Search' })
 vim.keymap.set('n', '<leader>sf', '<cmd>Telescope find_files<cr>', { desc = 'Search files' })
 vim.keymap.set('n', '<leader>sF', telescope.all_files, { desc = 'Search all files' })
-vim.keymap.set('n', '<leader>s.',  telescope.find_in_current_dir, { desc = 'Find files in current directory' })
+vim.keymap.set('n', '<leader>s.', telescope.find_in_current_dir, { desc = 'Find files in current directory' })
 vim.keymap.set('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', { desc = 'Search for word under cursor' })
 vim.keymap.set('n', '<leader>sa', '<cmd>Telescope live_grep<cr>', { desc = 'Search in files' })
 vim.keymap.set('n', '<leader>sb', '<cmd>Telescope buffers<cr>', { desc = 'Search Buffers' })
