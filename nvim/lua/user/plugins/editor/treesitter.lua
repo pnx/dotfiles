@@ -20,6 +20,17 @@ return {
                 "toml",
                 "xml",
                 "kdl",
+
+                -- misc
+                "comment",
+                "regex",
+                "re2c",
+                "xresources",
+                "sql",
+                "csv",
+                "ssh_config",
+                "printf",
+                "nginx",
             },
 
             auto_install = true,
