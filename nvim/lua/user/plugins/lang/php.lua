@@ -73,7 +73,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
-            ensure_installed = { "php", "php_only", "phpdoc" }
+            ensure_installed = { "php", "php_only", "phpdoc", "sql", "csv" }
         }
     },
     {
