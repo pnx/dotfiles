@@ -9,3 +9,5 @@ code_transform.class_new.variants:
   laravel-provider: laravel-provider
   laravel-test: laravel-feature-test
   livewire: livewire
+
+indexer.enabled_watchers: [ 'inotify' ];
