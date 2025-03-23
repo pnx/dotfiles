@@ -25,6 +25,7 @@ local lspservers = {
                 --     parameterNames = true
                 -- },
                 completeUnimported = true,
+                usePlaceholders = true,
                 -- semanticTokens = true
             },
         },
