@@ -164,3 +164,5 @@ vim.keymap.set('n', '<leader>sp', telescope.find_workspace_symbols, { desc = 'Se
 vim.keymap.set('n', '<leader>sj', telescope.find_classes, { desc = 'Search Classes' })
 vim.keymap.set('n', '<leader>sk', telescope.find_functions, { desc = 'Search Functions' })
 vim.keymap.set('n', '<leader>sh', '<cmd>Telescope help<cr>', { desc = 'Search Neovim help' })
+
+vim.keymap.set('n', '<leader>jj', require('user.utils.misc').toggle_gutter)
