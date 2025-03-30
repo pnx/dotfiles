@@ -87,8 +87,12 @@ local options = {
             UfoFoldedEllipsis = { link = "Comment" },
 
             -- Statusline
-            StatusLine = { fg = colors.text, bg = colors.crust },
-            StatusLineNormal = { link = "StatusLine" },
+
+            -- Something resets StatusLine highlight background, so use another one for now :)
+            -- StatusLine = { fg = colors.text, bg = colors.crust },
+            StatusLineLualine = { fg = colors.text, bg = colors.crust },
+
+            StatusLineNormal = { link = "StatusLineLualine" },
             StatusLineSeparator = { fg = colors.rosewater, bg = colors.crust },
             StatusLineInsert = { fg = colors.base, bg = colors.blue },
             StatusLineVisual = { fg = colors.base, bg = colors.mauve },

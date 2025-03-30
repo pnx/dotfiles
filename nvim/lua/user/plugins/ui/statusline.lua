@@ -41,38 +41,34 @@ return {
 			disabled_filetypes = {
 				statusline = {
 					"dashboard",
-                    "alpha",
+	                   "alpha",
 				},
-                winbar = {
-                    "neo-tree",
-                    "NvimTree",
-                    "alpha"
-                }
+	               winbar = {
+	                   "neo-tree",
+	                   "NvimTree",
+	                   "alpha"
+	               }
 			},
 			theme = {
 				normal = {
 					a = "StatusLineNormal",
-					b = "StatusLine",
-					c = "StatusLine",
-					x = "StatusLine",
-					y = "StatusLine",
-					z = "StatusLine",
+					b = "StatusLineLualine",
+					c = "StatusLineLualine",
+					x = "StatusLineLualine",
+					y = "StatusLineLualine",
+					z = "StatusLineLualine",
 				},
 				command = {
 					a = "StatusLineCommand",
-					z = "StatusLine",
 				},
 				insert = {
 					a = "StatusLineInsert",
-					z = "StatusLine",
 				},
 				visual = {
 					a = "StatusLineVisual",
-					z = "StatusLine",
 				},
 				replace = {
 					a = "StatusLineReplace",
-					z = "StatusLine",
 				},
 			},
 		},
@@ -115,12 +111,12 @@ return {
                 linter,
 			},
             lualine_c = {},
-			lualine_x = {
-				{
+            lualine_x = {
+                {
                     "filetype",
                     cond = is_not_popup
                 },
-				{
+                {
                     "fileformat",
                     symbols = {
                         unix = "NL",
@@ -129,29 +125,16 @@ return {
                     }
                 },
                 indent_settings,
-			},
-			lualine_y = {
+            },
+            lualine_y = {
                 "location",
                 "progress",
-			},
+            },
 			lualine_z = {},
 		},
 		winbar = {
-			lualine_c = {
-				{ "filetype", icon_only = true },
-                {
-                	"filename",
-                    cond = is_not_popup,
-                	path = 1,
-                	symbols = vim.tbl_deep_extend("force", icons.file_status, {
-                        unnamed = "",
-                    })
-                },
-			},
-		},
-		inactive_winbar = {
-			lualine_c = {
-				{ "filetype", icon_only = true },
+            lualine_c = {
+                { "filetype", icon_only = true },
                 {
                     "filename",
                     cond = is_not_popup,
@@ -162,6 +145,19 @@ return {
                 },
             },
 		},
+        inactive_winbar = {
+            lualine_c = {
+                { "filetype", icon_only = true },
+                {
+                    "filename",
+                    cond = is_not_popup,
+                    path = 1,
+                    symbols = vim.tbl_deep_extend("force", icons.file_status, {
+                        unnamed = "",
+                    })
+                },
+            },
+        },
 		extensions = {
 			"lazy",
 			"neo-tree",
