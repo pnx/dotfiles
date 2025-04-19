@@ -1,85 +1,75 @@
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = function()
-            require("nvim-treesitter.install").update({ with_sync = true })
-        end,
-        opts_extend = { "ensure_installed" },
-        opts = {
-            -- Default parsers.
-            ensure_installed = {
-                -- VIM stuff
-                "vim",
-                "vimdoc",
-                "query",
+    "nvim-treesitter/nvim-treesitter",
+    build = function()
+        require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+    opts_extend = { "ensure_installed" },
+    opts = {
+        -- Default parsers.
+        ensure_installed = {
+            -- VIM stuff
+            "vim",
+            "vimdoc",
+            "query",
 
-                -- Common config languages
-                "json",
-                "jsonc",
-                "yaml",
-                "toml",
-                "xml",
-                "kdl",
+            -- Common config languages
+            "json",
+            "jsonc",
+            "yaml",
+            "toml",
+            "xml",
+            "kdl",
 
-                -- misc
-                "comment",
-                "regex",
-                "re2c",
-                "xresources",
-                "sql",
-                "csv",
-                "ssh_config",
-                "printf",
-                "nginx",
-            },
-
-            auto_install = true,
-
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-
-            indent = {
-                enable = true,
-            },
+            -- misc
+            "comment",
+            "regex",
+            "re2c",
+            "xresources",
+            "sql",
+            "csv",
+            "ssh_config",
+            "printf",
+            "nginx",
         },
-        config = function(_, opts)
-            local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
-            parser_config.blade = {
-                install_info = {
-                    url = "https://github.com/EmranMR/tree-sitter-blade",
-                    branch = "main",
-                    files = { "src/parser.c" },
-                },
-                filetype = "blade",
-            }
+        auto_install = true,
 
-            parser_config.dotenv = {
-                install_info = {
-                    url = "https://github.com/pnx/tree-sitter-dotenv",
-                    branch = "main",
-                    files = { "src/parser.c", "src/scanner.c" },
-                },
-                filetype = "dotenv",
-            }
-
-            vim.filetype.add({
-                pattern = {
-                    ['.env.*'] = 'dotenv',
-                },
-            })
-
-            require("nvim-treesitter.configs").setup(opts)
-        end,
-    },
-    {
-        "windwp/nvim-ts-autotag",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
+        highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
         },
-        event = "InsertEnter",
-        opts = {}
+
+        indent = {
+            enable = true,
+        },
     },
+    config = function(_, opts)
+        local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+        parser_config.blade = {
+            install_info = {
+                url = "https://github.com/EmranMR/tree-sitter-blade",
+                branch = "main",
+                files = { "src/parser.c" },
+            },
+            filetype = "blade",
+        }
+
+        parser_config.dotenv = {
+            install_info = {
+                url = "https://github.com/pnx/tree-sitter-dotenv",
+                branch = "main",
+                files = { "src/parser.c", "src/scanner.c" },
+            },
+            filetype = "dotenv",
+        }
+
+        vim.filetype.add({
+            pattern = {
+                ['.env.*'] = 'dotenv',
+            },
+        })
+
+        require("nvim-treesitter.configs").setup(opts)
+    end,
 }

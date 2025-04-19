@@ -25,6 +25,9 @@ vim.keymap.set('n', '<S-d>', [[:m +1<CR>v=]], { silent = true, desc = 'move curr
 vim.keymap.set('v', '<S-a>', [[:m '<-2<CR>gv=gv]], { silent = true, desc = 'move current selection one line up' })
 vim.keymap.set('v', '<S-d>', [[:m '>+1<CR>gv=gv]], { silent = true, desc = 'move current selection one line down' })
 
+-- Undo tree
+vim.keymap.set('n', '<leader>u', [[:UndotreeToggle<CR>:UndotreeFocus<CR>]], { desc = 'Toggle undotree' })
+
 --
 -- Editing - formatting
 --
@@ -43,10 +46,6 @@ vim.keymap.set('x', '<leader>fha', [[:s/0x\(\x\{1\}\X\)/0x0\1/g]],
 vim.keymap.set('x', '<leader>fhn', [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]],
     { desc = "Format a comma separated hex list into 8 bytes per line." })
 
--- Case formatting
-vim.keymap.set('x', '<leader>fc', "noop", { desc = "Case" })
-vim.keymap.set("x", "<leader>fcsc", [[:s/\%V\([a-z]\+\)_\?/\u\1/g]],
-    { desc = "Convert text from snake_case to CamelCase" })
 
 --
 -- Editing - Copy / Paste
