@@ -3,18 +3,6 @@ local iconset = {
     check = "",
     close = "󰅖",
 
-
---     default = "",
---     warn = "",
---     hack = "",
--- },
--- diagnostics = {
---     error = "",
---     warn = "󰔷",
---     info = "",
---     hint = "",
--- },
-    --
     question_mark = "",
     info_circle_outline = "",
     exclamation_circle = "",
