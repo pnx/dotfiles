@@ -117,7 +117,12 @@ return {
                 capabilities = capabilities
             }, server_opts or {})
 
-            lspconfig[server].setup(server_opts)
+            if vim.fn.has('nvim-0.11') then
+                vim.lsp.config(server, server_opts)
+                vim.lsp.enable(server)
+            else
+                lspconfig[server].setup(server_opts)
+            end
         end
 
         local have_mason, mlsp = pcall(require, "mason-lspconfig")
