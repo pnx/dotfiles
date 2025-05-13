@@ -237,8 +237,6 @@ local options = {
         cmp = true,
         treesitter = true,
         neotree = true,
-        -- barbar = true,
-        -- noice = true,
         telescope = {
             enabled = true,
         },
