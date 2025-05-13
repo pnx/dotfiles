@@ -32,11 +32,11 @@ return {
         },
         code = {
             style = 'full',
+            sign = false,
             language_pad = 1,
-            min_width = 45,
             left_pad = 2,
             right_pad = 2,
-            border = 'thick',
+            border = 'thin',
         },
         overrides = {
             buftype = {
@@ -44,7 +44,8 @@ return {
                     render_modes = true,
                     padding = { highlight = 'NormalFloat' },
                     sign = { enabled = false },
-                    code = { style = "normal", border = 'none', left_pad = 0, right_pad = 0 },
+                    code = { style = "normal", border = 'hide', left_pad = 1, right_pad = 1 },
+                    paragraph = { left_margin = 1 },
                 },
             },
         },
