@@ -88,6 +88,10 @@ local custom_highlights = function(colors)
         NeoTreeModified = { fg = colors.yellow },
         NeoTreeWinSeparator = { link = "WinSeparator" },
 
+        -- NvimTree
+        NvimTreeNormal = { bg = colors.mantle },
+        NvimTreeWinSeparator = { bg = colors.mantle, fg = colors.surface0 },
+
         -- BlinkCmp
         BlinkCmpLabel = { link = 'CmpItemAbbr' },
         BlinkCmpLabelMatch = { link = 'CmpItemAbbrMatch' },
