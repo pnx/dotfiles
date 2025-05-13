@@ -6,6 +6,16 @@ return {
         }
     },
     {
+        "neovim/nvim-lspconfig",
+        opts = {
+            servers = {
+                html = {
+                    filetypes = {"html", "templ", "blade" }
+                }
+            }
+        }
+    },
+    {
         "windwp/nvim-ts-autotag",
         optional = true,
         opts = {
