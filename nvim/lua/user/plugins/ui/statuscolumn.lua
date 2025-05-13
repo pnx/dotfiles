@@ -7,7 +7,8 @@ local opts = function()
         relculright = true,
         ft_ignore = {
             'help',
-            'alpha'
+            'alpha',
+            'NvimTree',
         },
         segments = {
             {

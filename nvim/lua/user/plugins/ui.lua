@@ -11,7 +11,8 @@ return {
     { import = "user.plugins.ui.statuscolumn" },
     { import = "user.plugins.ui.gitsigns" },
     -- File explorer
-    { import = "user.plugins.ui.neotree" },
+    -- { import = "user.plugins.ui.neotree" },
+    { import = "user.plugins.ui.nvimtree" },
 
     { "folke/which-key.nvim", event = "VeryLazy" },
 

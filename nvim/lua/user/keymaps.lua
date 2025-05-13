@@ -118,7 +118,7 @@ vim.keymap.set('n', "<leader>ts", "<cmd>Neotest summary<cr>", { desc = "Toggle t
 --
 -- File explorer
 --
-vim.keymap.set('n', "<leader>.", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neotree" })
+vim.keymap.set('n', "<leader>.", "<cmd>NvimTreeFocus<cr>", { desc = "Toggle Nvimtree" })
 
 --
 -- Git
