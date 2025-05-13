@@ -21,14 +21,18 @@ return {
     },
     opts = {
         latex = { enabled = false },
+        heading = {
+            position = 'inline',
+            left_pad = 1,
+            right_pad = 1,
+        },
         code = {
-            style = 'normal',
+            style = 'full',
+            language_pad = 1,
             min_width = 45,
             left_pad = 2,
             right_pad = 2,
             border = 'thick',
-            above = ' ',
-            below = ' ',
         },
     }
 }
