@@ -21,6 +21,10 @@ return {
     },
     opts = {
         latex = { enabled = false },
+        completions = {
+            lsp = { enabled = true },
+            blink = { enabled = true }
+        },
         heading = {
             position = 'inline',
             left_pad = 1,
@@ -33,6 +37,16 @@ return {
             left_pad = 2,
             right_pad = 2,
             border = 'thick',
+        },
+        overrides = {
+            buftype = {
+                nofile = {
+                    render_modes = true,
+                    padding = { highlight = 'NormalFloat' },
+                    sign = { enabled = false },
+                    code = { style = "normal", border = 'none', left_pad = 0, right_pad = 0 },
+                },
+            },
         },
     }
 }
