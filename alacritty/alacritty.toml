@@ -9,13 +9,13 @@ normal = { family = "IosevkaCustomNerdFont" }
 bold = { style = "SemiBold" }
 size = 16.0
 
-offset = { x = 0, y = 8 }
-glyph_offset = { x = 0, y = 4 }
+offset = { x = 0, y = 4 }
+glyph_offset = { x = 0, y = 2 }
 
 [window]
 decorations_theme_variant = "Dark"
 padding = { x = 1, y = 1 }
-opacity = 0.98
+# opacity = 0.98
 
 [mouse]
 hide_when_typing = true
