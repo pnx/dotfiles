@@ -1,39 +1,37 @@
 * {
-    font:   "IosevkaCustom 16";
+    font:   "IosevkaCustom 15";
 
-    bg:        #0E1019;
-    gray:      #131521;
+    base:      #0E1019;
+    mantle:    #0D0F17;
+    crust:     #0C0D14;
+    surface0:  #1a1c2d;
+    surface1:  #343959;
     blue:      #89b4fa;
     white:     #eceef4;
     yellow:    #ebcb8b;
-    border:    #343959;
 
     background-color:   transparent;
     text-color:         @white;
     accent-color:       @blue;
-
-    margin:     0px;
-    padding:    0px;
-    spacing:    0px;
+    border-color:       @surface0;
+    margin:     0;
+    padding:    0;
+    spacing:    0;
 }
 
 window {
-    background-color:   @bg;
-    border-color:       @border;
-
-    location:   center;
-    width:      480px;
+    background-color: @crust;
+    location:   north;
+    y-offset:   20%;
+    width:      calc( 50% max 300 min 630 );
     border:     1px;
 }
 
 inputbar {
-    padding:    8px 12px;
-    spacing:    12px;
-    children:   [ prompt, entry ];
-}
-
-prompt, entry, element-text, element-icon {
-    vertical-align: 0.5;
+    background-color: @mantle;
+    padding:    0.5em;
+    spacing:    0.5em;
+    border:     0 0 1px 0;
 }
 
 prompt {
@@ -41,45 +39,36 @@ prompt {
 }
 
 listview {
-    lines:      8;
-    columns:    1;
-
-    fixed-height:   false;
+    lines: 8;
+    fixed-height: false;
+    dynamic: true;
 }
 
 element {
-    padding:    4px;
-    spacing:    2px;
+    padding: 0.2em 0.5em;
 }
 
-element normal urgent {
+element normal.urgent {
     text-color: @accent-color;
 }
 
-element normal active {
+element normal.active {
     text-color: @accent-color;
 }
 
-element selected {
-    // text-color: @bg;
+element selected.normal {
+    background-color: @surface1;
 }
 
-element selected normal {
-    background-color:   @border;
-}
-
-element selected urgent {
+element selected.urgent {
     background-color:   @yellow;
 }
 
-element selected active {
+element selected.active {
     background-color:   @accent-color;
 }
 
-element-icon {
-    size:   0.75em;
+element-text {
+    highlight: @accent-color;
 }
 
-element-text {
-    text-color: inherit;
-}
