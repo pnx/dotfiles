@@ -1,6 +1,6 @@
 configuration {
-	modi: "window,run,drun,ssh,combi";
-	combi-modi: "window,drun,ssh";
+    modi: "run,drun,ssh";
     font: "IosevkaCustom 16";
+    combi-modi: "window,drun,ssh";
 }
 @theme "./theme"
