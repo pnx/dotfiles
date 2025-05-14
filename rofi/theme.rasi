@@ -1,11 +1,12 @@
 * {
-    font:   "JetBrainsMono NF Medium 12";
+    font:   "IosevkaCustom 16";
 
     bg:        #0E1019;
     gray:      #131521;
     blue:      #89b4fa;
     white:     #eceef4;
     yellow:    #ebcb8b;
+    border:    #343959;
 
     background-color:   transparent;
     text-color:         @white;
@@ -18,7 +19,7 @@
 
 window {
     background-color:   @bg;
-    border-color:       @gray;
+    border-color:       @border;
 
     location:   center;
     width:      480px;
@@ -60,11 +61,11 @@ element normal active {
 }
 
 element selected {
-    text-color: @bg;
+    // text-color: @bg;
 }
 
 element selected normal {
-    background-color:   @accent-color;
+    background-color:   @border;
 }
 
 element selected urgent {
