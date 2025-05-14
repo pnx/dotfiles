@@ -1,13 +1,10 @@
 [general]
 ipc_socket = false
 
-[env]
-TERM = "xterm-kitty"
-
 [font]
 normal = { family = "IosevkaCustomNerdFont" }
 bold = { style = "SemiBold" }
-size = 16.0
+size = 15.0
 
 offset = { x = 0, y = 4 }
 glyph_offset = { x = 0, y = 2 }
