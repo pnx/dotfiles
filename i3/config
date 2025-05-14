@@ -27,7 +27,7 @@ set_from_resource $color_win_urgent_bg  i3wm.color1         #cc817f
 
 set_from_resource $color_border         i3wm.colorOverlay0  #1a1c2d
 
-set $terminal ghostty
+set $terminal alacritty
 set $background_image ~/.local/share/wallpapers/current
 
 set $mod    Mod4
@@ -59,11 +59,13 @@ exec --no-startup-id picom
 # Needed for gnome-keyring to start.
 exec --no-startup-id dbus-update-activation-environment --all
 exec --no-startup-id gnome-keyring-daemon --start --components=secrets
+
 exec --no-startup-id dex-autostart --autostart --environment i3
+
 exec --no-startup-id feh --bg-scale $background_image
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c $color_bg --nofork
 #exec --no-startup-id xautolock -time 1 -locker ~/.config/i3/blurlock.sh
-exec --no-startup-id xset dpms 300 # Turn of monitors after 5 min
+# exec --no-startup-id xset dpms 300 # Turn of monitors after 5 min
 exec --no-startup-id nm-applet
 exec --no-startup-id telegram
 exec --no-startup-id nextcloud
