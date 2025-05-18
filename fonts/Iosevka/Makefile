@@ -12,6 +12,7 @@ build: $(BUILD_DIR) \
 	install -m 644 $(BUILD_DIR)/dist/$(FONT_NAME)/TTF/*.ttf dist
 
 install: 
+	mkdir -p $(INSTALL_DIR)
 	install -m 644 dist/*.ttf $(INSTALL_DIR)
 
 $(BUILD_DIR) :
