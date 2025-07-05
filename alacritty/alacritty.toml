@@ -6,8 +6,8 @@ normal = { family = "IosevkaCustomNerdFont" }
 bold = { style = "SemiBold" }
 size = 15.0
 
-offset = { x = 0, y = 4 }
-glyph_offset = { x = 0, y = 2 }
+offset = { x = 0, y = 6 }
+glyph_offset = { x = 0, y = 3 }
 
 [window]
 decorations_theme_variant = "Dark"
