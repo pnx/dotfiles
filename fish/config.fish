@@ -6,10 +6,6 @@ end
 set -g fish_greeting
 
 # Path stuff
-if command -q go
-    fish_add_path (go env GOPATH)/bin
-end
-
 fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 
