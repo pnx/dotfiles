@@ -2,7 +2,7 @@
 local custom_highlights = function(colors)
     return {
         CursorLine = { bg = colors.surface0 },
-        SignColumnSep = { bg = colors.surface0, fg = colors.lavender },
+        SignColumnSep = { bg = colors.surface0, fg = colors.surface1 },
 
         Visual = { bg = colors.surface1 },
         FoldColumn = { fg = colors.surface2 },
