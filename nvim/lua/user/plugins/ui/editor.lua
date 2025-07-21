@@ -34,7 +34,15 @@ return {
         opts = {
             signs = false,
             keywords = {
-                TODO = { color = "warning" },
+                -- TODO = { color = "warning" },
+            },
+            colors = {
+                default = { "TodoCommentsDefault", "#7C3AED" },
+                error = { "TodoCommentsError", "#DC2626" },
+                warning = { "TodoCommentsWarning", "#FBBF24" },
+                info = { "TodoCommentsInfo", "#2563EB" },
+                hint = { "TodoCommentsHint", "#10B981" },
+                test = { "TodoCommentsTest", "#FF00FF" }
             },
             highlight = {
                 keyword = 'fg',
