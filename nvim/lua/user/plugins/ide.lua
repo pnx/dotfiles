@@ -3,6 +3,7 @@ return {
     { import = "user.plugins.ide.lsp" },
     { import = "user.plugins.ide.autocomplete" },
     { import = "user.plugins.ide.formatting" },
+    { import = "user.plugins.ide.test" },
     -- Linting
     {
         'mfussenegger/nvim-lint',
