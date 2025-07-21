@@ -153,6 +153,14 @@ local custom_highlights = function(colors)
         RenderMarkdownCode = { bg = colors.crust },
         RenderMarkdownCodeInline = { fg = colors.rosewater, bg = colors.crust },
 
+        -- todo comments
+        TodoCommentsDefault = { fg = colors.flamingo },
+        TodoCommentsInfo = { fg = colors.blue },
+        TodoCommentsError = { fg = colors.maroon },
+        TodoCommentsWarning = { fg = colors.peach },
+        TodoCommentsHint = { fg = colors.sapphire },
+        TodoCommentsTest = { fg = colors.pink },
+
         -- Syntax
         PreProc = { fg = colors.mauve },
         Operator = { fg = colors.flamingo },
@@ -183,6 +191,13 @@ local custom_highlights = function(colors)
         ["@module"] = { link = "@text" },
         ["@namespace"] = { link = "@keyword" },
         ["@punctuation.bracket"] = { link = "@punctuation" },
+
+        -- Comments
+        ["@punctuation.delimiter.comment"] = { link = "@Comment"},
+        ["@comment.error"] = { link = "@Comment" },
+        ["@comment.warning"] = { link = "@Comment" },
+        ["@comment.todo"] = { link = "@Comment" },
+        ["@comment.note.comment"] = { link = "@Comment" },
 
         -- LSP
         ["@lsp.type.property"] = { link = "@variable" },
