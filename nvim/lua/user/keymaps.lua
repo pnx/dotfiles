@@ -46,6 +46,10 @@ vim.keymap.set('x', '<leader>fha', [[:s/0x\(\x\{1\}\X\)/0x0\1/g]],
 vim.keymap.set('x', '<leader>fhn', [[:s/\(\(0x\x\{1,2\}, \)\{8\}\)/\1\r/g]],
     { desc = "Format a comma separated hex list into 8 bytes per line." })
 
+-- Paths
+vim.keymap.set('x', '<leader>fp', "noop", { desc = "Format path" })
+vim.keymap.set('x', '<leader>fpw', [[:s~/~\\\\~g<CR>]], { desc = "Format path from linux to windows" })
+vim.keymap.set('x', '<leader>fpl', [[:s~\\\\~/~g<CR>]], { desc = "Format path from windows to linux" })
 
 --
 -- Editing - Copy / Paste
