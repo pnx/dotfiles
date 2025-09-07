@@ -50,3 +50,12 @@ button.focused {
 #clock {
     color: @mauve;
 }
+
+#network {
+    color: @lavender;
+}
+
+#network.disabled,
+#network.disconnected {
+    color: @red;
+}
