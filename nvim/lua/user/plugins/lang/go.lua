@@ -30,7 +30,7 @@ local lspservers = {
             },
         },
         on_save = function()
-            local params = vim.lsp.util.make_range_params()
+            local params = vim.lsp.util.make_range_params(0, "utf-16")
             params.context = { only = { "source.organizeImports" } }
             local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 1000)
             for cid, res in pairs(result or {}) do
