@@ -1,6 +1,6 @@
 function tree
-    if test -f /usr/bin/eza
-        /usr/bin/eza -T $argv
+    if command -q eza
+        eza -T $argv
     else
         /bin/tree $argv
     end
