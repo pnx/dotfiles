@@ -1,3 +1,4 @@
+# vim: set ft=sh:
 # .bashrc
 
 # Source global definitions
@@ -23,4 +24,3 @@ if [ -d ~/.bashrc.d ]; then
     done
 fi
 unset rc
-. "$HOME/.cargo/env"
