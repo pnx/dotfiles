@@ -60,8 +60,8 @@ return {
         },
     },
     {
-        "williamboman/mason.nvim",
-        opttional = true,
+        "mason-org/mason.nvim",
+        optional = true,
         opts = {
             ensure_installed = { "goimports", "gofumpt", "gomodifytags", "impl" }
         },
