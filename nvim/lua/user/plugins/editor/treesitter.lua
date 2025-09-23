@@ -66,8 +66,9 @@ return {
 
         vim.filetype.add({
             pattern = {
-                ['.env.*'] = 'dotenv',
-            },
+                ['%.env'] = 'dotenv',
+                ['%.env%..+'] = 'dotenv',
+            }
         })
 
         require("nvim-treesitter.configs").setup(opts)
