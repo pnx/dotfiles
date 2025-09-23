@@ -2,12 +2,19 @@
 --- @class LSPServerOptions : LSPFeatures
 --- @field server_capabilities? lsp.ServerCapabilities
 --- @field on_save function | nil
---- @field mason boolean | nil
+--- @field mason? boolean
 
 --- @class LSPFeatures
 --- @field document_highlight? { enabled: boolean }
 --- @field codelens? { enabled: boolean }
 --- @field inlay_hints? { enabled: boolean, exclude?: table }
+
+--- @type LSPServerOptions
+local defaultServerOpts = {
+    server_capabilities = nil,
+    on_save = nil,
+    mason = true,
+}
 
 --- @class LSPOptions
 local options = {
@@ -30,7 +37,6 @@ local options = {
 
 --- @param opts LSPOptions
 local config = function(_, opts)
-    local lspconfig = require("lspconfig")
     local utils = require("user.utils.lsp")
     local augroup = vim.api.nvim_create_augroup("Lsp", {})
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -84,34 +90,37 @@ local config = function(_, opts)
             capabilities = capabilities
         }, server_opts or {})
 
-        if vim.fn.has('nvim-0.11') then
-            vim.lsp.config(server, server_opts)
-            vim.lsp.enable(server)
-        else
-            lspconfig[server].setup(server_opts)
-        end
+        vim.lsp.config(server, server_opts)
+        vim.lsp.enable(server)
     end
 
     local have_mason, mlsp = pcall(require, "mason-lspconfig")
 
     local all_mslp_servers = {}
     if have_mason then
-        all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+        -- Need to refresh the registry, otherwise mlsp does not find any servers.
+        require("mason-registry").refresh()
+        all_mslp_servers = vim.tbl_keys(require("mason-lspconfig").get_mappings().lspconfig_to_package)
     end
 
     local ensure_installed = {} ---@type string[]
     for name, server_opts in pairs(opts.servers) do
-        if server_opts.mason == false or not vim.tbl_contains(all_mslp_servers, name) then
-            setup(name)
-        else
+        setup(name)
+
+        if type(server_opts) == "function" then
+            server_opts = server_opts()
+        end
+
+        server_opts = vim.tbl_deep_extend("keep", server_opts, defaultServerOpts)
+        if server_opts.mason == true and vim.tbl_contains(all_mslp_servers, name) then
             ensure_installed[#ensure_installed + 1] = name
         end
     end
 
     if have_mason then
         mlsp.setup({
+            automatic_enable = false,
             ensure_installed = ensure_installed,
-            handlers = { setup },
         })
     end
 end
@@ -121,11 +130,11 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         {
-            "williamboman/mason.nvim",
-            version = "^1.0.0",
+            "mason-org/mason.nvim",
+            version = "^2.0.1",
             optional = true,
             dependencies = {
-                { "williamboman/mason-lspconfig.nvim", version = "^1.0.0", config = function () end }
+                { "mason-org/mason-lspconfig.nvim", version = "^2.1.0", config = function () end }
             }
         }
     },
