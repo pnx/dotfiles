@@ -186,6 +186,7 @@ local custom_highlights = function(colors)
         ["@keyword.return"] = { link = "Keyword" },
         ["@keyword.operator"] = { link = "Keyword" },
         ["@property"] = { link = "@variable" },
+        ["@type.builtin"] = { fg = colors.yellow },
         ["@tag"] = { link = "Keyword" },
         ["@tag.delimiter"] = { link = "@text" },
         ["@module"] = { link = "@text" },
