@@ -127,6 +127,13 @@ return {
             })
         end
     },
+    {
+        "mason-org/mason.nvim",
+        optional = true,
+        opts = {
+            ensure_installed = { 'phpstan' },
+        },
+    },
     -- LSP
     {
         "neovim/nvim-lspconfig",
