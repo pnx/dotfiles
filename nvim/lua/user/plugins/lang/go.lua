@@ -8,6 +8,8 @@ local lspservers = {
                 analyses = {
                     unusedvariable = true,
                     useany = true,
+                    ST1000 = false,
+                    ST1003 = false,
                 },
                 gofumpt = true,
                 staticcheck = true,
