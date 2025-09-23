@@ -1,5 +1,5 @@
 local lspservers = {
-    volar = {
+    vue_ls = {
         init_options = {
             vue = {
                 hybridMode = true,
