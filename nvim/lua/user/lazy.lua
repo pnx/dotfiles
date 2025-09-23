@@ -33,6 +33,7 @@ require("lazy").setup({
         { import = "user.plugins.lang.rust" },
         { import = "user.plugins.lang.php" },
         { import = "user.plugins.lang.css" },
+        { import = "user.plugins.lang.javascript" },
         { import = "user.plugins.lang.typescript" },
         { import = "user.plugins.lang.vue" },
         { import = "user.plugins.lang.markdown" },
