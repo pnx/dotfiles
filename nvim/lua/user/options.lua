@@ -37,6 +37,8 @@ vim.o.shortmess = "atIF"
 -- Editor
 -------------------------------------------------------
 
+vim.o.fileformats = "unix,dos"
+
 vim.o.wrap = false -- Disable line wrap
 vim.o.cursorline = true
 vim.o.scrolloff = 10
