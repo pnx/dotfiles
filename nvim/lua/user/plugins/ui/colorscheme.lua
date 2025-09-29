@@ -25,7 +25,7 @@ local custom_highlights = function(colors)
         WhichKeyFloat = { link = "Pmenu" },
 
         -- indent lines
-        IblScope = { fg = colors.surface0 },
+        IblIndent = { link = "NonText" },
 
         -- Search matches
         IncSearch = { bg = colors.yellow },
@@ -160,6 +160,10 @@ local custom_highlights = function(colors)
         TodoCommentsWarning = { fg = colors.peach },
         TodoCommentsHint = { fg = colors.sapphire },
         TodoCommentsTest = { fg = colors.pink },
+
+        -- Text
+        NonText = { fg = colors.surface0 },
+        Whitespace = { link = "NonText" },
 
         -- Syntax
         PreProc = { fg = colors.mauve },
