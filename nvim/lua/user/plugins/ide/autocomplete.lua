@@ -22,13 +22,14 @@ return {
                 selection = {
                     preselect = function(ctx) return ctx.mode ~= 'cmdline' end,
                     -- auto_insert = function(ctx) return ctx.mode ~= 'cmdline' end
-                    auto_insert = false
+                    auto_insert = true
                 }
             },
             menu = {
                 min_width = 18,
                 winblend = 10,
                 draw = {
+                    gap = 2,
                     columns = {
                         { "kind_icon" },
                         { "label", "source_name", gap = 1 },
@@ -52,7 +53,7 @@ return {
                 }
             },
             ghost_text = {
-                enabled = true,
+                enabled = false,
             }
         },
         signature = {
