@@ -155,7 +155,7 @@ return {
         optional = true,
         ft = { "php" },
         dependencies = {
-            "olimorris/neotest-phpunit",
+            "pnx/neotest-phpunit",
             'V13Axel/neotest-pest',
         },
         opts = {
