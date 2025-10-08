@@ -56,6 +56,9 @@ return {
                 enabled = false,
             }
         },
+        snippets = {
+            preset = 'luasnip'
+        },
         signature = {
             enabled = true,
             window = {
