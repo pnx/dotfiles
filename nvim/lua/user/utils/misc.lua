@@ -8,14 +8,11 @@ local M = {}
 
 ---@param opts HighlightYankConfig
 M.highlight_yank = function(opts)
-    vim.api.nvim_create_autocmd("TextYankPost", {
-        group = vim.api.nvim_create_augroup("highlight_yank", {}),
-        desc = "Hightlight selection on yank",
-        pattern = "*",
-        callback = function()
-            vim.highlight.on_yank(opts)
-        end,
-    })
+    local tbl_string = function (table)
+        return vim.inspect(table, {newline = '', indents = ''})
+    end
+    vim.cmd.autocmd { 'TextYankPost', '*', 'silent!',
+        'lua', 'vim.hl.on_yank', tbl_string(opts) }
 end
 
 local gutter_settings = {
