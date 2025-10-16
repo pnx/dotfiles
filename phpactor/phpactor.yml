@@ -7,6 +7,7 @@ language_server_psalm.enabled: false
 code_transform.class_new.variants:
   laravel-model: laravel-model
   laravel-provider: laravel-provider
+  laravel-facade: laravel-facade
   laravel-phpunit-test: laravel-phpunit-test
   phpunit-test: phpunit-test
   livewire: livewire
