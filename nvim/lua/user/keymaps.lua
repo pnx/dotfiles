@@ -1,5 +1,7 @@
 local buffers = require('user.utils.buffers')
 local telescope = require('user.utils.telescope')
+local indent_guidelines = require('user.utils.indent_guidelines')
+local whitespace = require('user.utils.whitespace')
 
 ---@diagnostic disable-next-line: inject-field
 vim.g.mapleader = ' '
@@ -10,11 +12,13 @@ vim.keymap.set('n', 'Q', '<nop>')
 --
 -- Editing
 --
-vim.keymap.set("n", "<leader>W", "<cmd>lua vim.opt.list = not vim.opt.list._value<cr>",
-    { silent = true, desc = "Toggle show whitespace" })
+vim.keymap.set("n", "<leader>Sw", whitespace.Toggle, { silent = true, desc = "Toggle show whitespace" })
+-- vim.keymap.set("n", "<leader>W", "<cmd>lua vim.opt.list = not vim.opt.list._value<cr>",
+--     { silent = true, desc = "Toggle show whitespace" })
 vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.cmd.w, { desc = 'Save current buffer' })
 
 -- Indent
+vim.keymap.set('n', '<leader>Si', indent_guidelines.toggle, { desc = 'Toggle indent guides' })
 vim.keymap.set('n', '<Tab>', '^=$')
 vim.keymap.set('x', '<Tab>', '=', { desc = 'auto indent selection' })
 vim.keymap.set('i', '<S-Tab', '<C-d>', { desc = 'delete indent' })
