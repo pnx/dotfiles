@@ -213,6 +213,13 @@ return {
         watch = "",
         unknown = iconset.circle,
     },
+    debug = {
+        breakpoint = "󰄯",
+        breakpointCondition = "󰯲",
+        logPoint = "󰰍",
+        stopped = "󰌕",
+        rejected = "",
+    },
     symbols = {
         Text = iconset.text,
         Method = iconset.code.method,
