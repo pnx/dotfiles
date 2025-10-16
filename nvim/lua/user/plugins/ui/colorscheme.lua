@@ -95,7 +95,7 @@ local custom_highlights = function(colors)
         -- BlinkCmp
         BlinkCmpLabel = { link = 'CmpItemAbbr' },
         BlinkCmpLabelMatch = { link = 'CmpItemAbbrMatch' },
-        BlinkCmpLabelDeprecated = { link = 'CmpItemAbbrDeprecated'},
+        BlinkCmpLabelDeprecated = { link = 'CmpItemAbbrDeprecated' },
         BlinkCmpLabelDetail = { link = 'CmpItemMenu' },
         BlinkCmpLabelDescription = { link = 'CmpItemMenu' },
 
@@ -127,6 +127,9 @@ local custom_highlights = function(colors)
         BlinkCmpKindOperator = { link = "CmpItemKindOperator" },
         BlinkCmpKindTypeParameter = { link = "CmpItemKindTypeParameter" },
 
+        -- DAP
+        DapStopped = { fg = colors.yellow },
+
         -- Neotest
         NeoTestWinSelect = { fg = colors.mauve },
         NeoTestIndent = { fg = colors.surface1 },
@@ -144,10 +147,10 @@ local custom_highlights = function(colors)
         NeoTestMarked = { fg = colors.orange },
 
         -- Diagnostics
-        DiagnosticUnderlineInfo = { style = {"undercurl"} },
-        DiagnosticUnderlineHint = { style = {"undercurl"} },
-        DiagnosticUnderlineWarn = { style = {"undercurl"} },
-        DiagnosticUnderlineError = { style = {"undercurl"} },
+        DiagnosticUnderlineInfo = { style = { "undercurl" } },
+        DiagnosticUnderlineHint = { style = { "undercurl" } },
+        DiagnosticUnderlineWarn = { style = { "undercurl" } },
+        DiagnosticUnderlineError = { style = { "undercurl" } },
 
         -- Markdown rendering
         RenderMarkdownCode = { bg = colors.crust },
@@ -198,11 +201,12 @@ local custom_highlights = function(colors)
         ["@punctuation.bracket"] = { link = "@punctuation" },
 
         -- Comments
-        ["@punctuation.delimiter.comment"] = { link = "@Comment"},
+        ["@punctuation.delimiter.comment"] = { link = "@Comment" },
         ["@comment.error"] = { link = "@Comment" },
         ["@comment.warning"] = { link = "@Comment" },
         ["@comment.todo"] = { link = "@Comment" },
         ["@comment.note.comment"] = { link = "@Comment" },
+        ["@number.comment"] = { fg = colors.green },
 
         -- LSP
         ["@lsp.type.property"] = { link = "@variable" },

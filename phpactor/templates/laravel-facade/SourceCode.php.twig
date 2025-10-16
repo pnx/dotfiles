@@ -1,0 +1,16 @@
+<?php
+
+namespace {{ prototype.namespace }};
+
+use Illuminate\Support\Facades\Facade;
+
+{% for class in prototype.classes %}
+class {{ class.name }} extends Facade
+{
+    protected static function getFacadeAccessor()
+    {
+        return '';
+    }
+}
+{% endfor %}
+
