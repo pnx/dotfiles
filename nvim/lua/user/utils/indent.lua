@@ -10,7 +10,7 @@ end
 ---@param width number
 ---@param isLocal boolean?
 function M.setSofttabs(width, isLocal)
-    isLocal = isLocal or false
+    isLocal = isLocal or true
     vim.cmd(string.format("set%s et ts=%s sts=0 sw=%s",
         isLocal and "local" or "", width, width))
 end
