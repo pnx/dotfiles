@@ -9,6 +9,12 @@ local opts = function()
             'help',
             'alpha',
             'NvimTree',
+            'dap-repl',
+            'dapui_breakpoints',
+            'dapui_stacks',
+            'dapui_watches',
+            'dapui_scopes',
+            'dapui_console',
         },
         segments = {
             {
