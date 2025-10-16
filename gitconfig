@@ -1,0 +1,9 @@
+[user]
+	email = henrik.hautakoski@gmail.com
+	name = Henrik Hautakoski
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
