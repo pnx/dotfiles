@@ -47,7 +47,13 @@ local options = {
             winbar = {
                 "neo-tree",
                 "NvimTree",
-                "alpha"
+                "alpha",
+                'dap-repl',
+                'dapui_breakpoints',
+                'dapui_stacks',
+                'dapui_watches',
+                'dapui_scopes',
+                'dapui_console',
             }
         },
         theme = {
