@@ -129,3 +129,5 @@ user.highlight_yank = {
     timeout = 400,
     higroup = "IncSearch"
 }
+
+user.indentGuides = true
