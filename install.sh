@@ -25,8 +25,8 @@ for target in ${DIRECTORIES[@]}; do
     ln -sfr -t $HOME/.config $BASE_PATH/$target
 done
 
-ln -sfr $BASE_PATH/bashrc $HOME/.bashrc
-ln -sfr $BASE_PATH/bashrc.d $HOME/.bashrc.d
+ln -sfr $BASE_PATH/bash/bashrc $HOME/.bashrc
+ln -sfr $BASE_PATH/bash/bashrc.d $HOME/.bashrc.d
 ln -sfr $BASE_PATH/tmux.conf $HOME/.tmux.conf
 ln -sfr $BASE_PATH/Xresources $HOME/.Xresources
 ln -sfr $BASE_PATH/picom.conf $HOME/.config/picom.conf
