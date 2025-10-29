@@ -18,7 +18,6 @@ DIRECTORIES=(
     dunst
     smartgit
     lazygit
-    tmux-plugins
 )
 
 for target in ${DIRECTORIES[@]}; do
@@ -27,7 +26,7 @@ done
 
 ln -sfr $BASE_PATH/bash/bashrc $HOME/.bashrc
 ln -sfr $BASE_PATH/bash/bashrc.d $HOME/.bashrc.d
-ln -sfr $BASE_PATH/tmux.conf $HOME/.tmux.conf
+ln -sfr $BASE_PATH/tmux/config.conf $HOME/.tmux.conf
 ln -sfr $BASE_PATH/Xresources $HOME/.Xresources
 ln -sfr $BASE_PATH/picom.conf $HOME/.config/picom.conf
 ln -sfr $BASE_PATH/fzfrc $HOME/.config/fzfrc
