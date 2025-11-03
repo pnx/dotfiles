@@ -14,7 +14,7 @@ vim.o.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.o.timeoutlen = 50
+vim.o.timeoutlen = 200
 
 vim.o.mouse = "a"
 vim.o.confirm = true
