@@ -1,6 +1,6 @@
 local iconset = {
     middle_dot = "·",
-    check = "",
+    check = "✓",
     close = "󰅖",
 
     question_mark = "",
@@ -65,6 +65,7 @@ local iconset = {
     circle_dotted = "◌",
     plus = "",
     minus = "",
+    minus_square = "",
     square = "󰝤",
     triangle_outline = "󰔷",
 
@@ -182,14 +183,15 @@ return {
         -- Change type
         added = iconset.circle,
         modified = iconset.circle,
-        deleted = iconset.minus,
+        deleted = iconset.minus_square,
         renamed = iconset.arrow.right,
         -- Status type
-        untracked = iconset.star,
-        ignored = iconset.circle_dotted,
-        unstaged = "",
-        staged = iconset.check,
+        untracked = iconset.question_mark,
+        ignored = iconset.ignored,
+        unstaged = iconset.circle,
+        staged = iconset.circle,
         conflict = iconset.git.merge,
+        unmerged = iconset.git.merge,
     },
     todo = {
         default = iconset.exclamation_circle,
