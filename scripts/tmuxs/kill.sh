@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+BASE_PATH=$(dirname $(readlink -f $BASH_SOURCE))
+source ${BASE_PATH}/helpers.sh
 
-SESSION=$(echo $@ | sed 's/: .*//g')
-CURRENT=$(tmux list-sessions -F "#{session_name}" -f "#{session_attached}" | head -n 1)
+SESSION=$(echo $@ | get_session_name)
 
 # If we are killing the current session. Move to another
-if [ "$CURRENT" == "$SESSION" ]; then
-    NEXT=$(tmux list-sessions -F "#{session_name}" -f "#{==:#{session_attached},0}" | head -n 1)
+if [ "$(current_session)" == "$SESSION" ]; then
+    NEXT=$(list_sessions | grep -v "${SESSION}" | head -n 1 | get_session_name)
     if [ ! -z "$NEXT" ]; then
         tmux switch -t "${NEXT}"
     fi
