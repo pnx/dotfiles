@@ -91,6 +91,10 @@ local custom_highlights = function(colors)
         -- NvimTree
         NvimTreeNormal = { bg = colors.mantle },
         NvimTreeWinSeparator = { bg = colors.mantle, fg = colors.surface0 },
+        NvimTreeOpenedFile = { fg = colors.lavender },
+        NvimTreeSpecialFile = { fg = colors.peach },
+        NvimTreeGitStaged = { fg = colors.green },
+        NvimTreeGitDirty = { fg = colors.yellow },
 
         -- BlinkCmp
         BlinkCmpLabel = { link = 'CmpItemAbbr' },
