@@ -1,8 +1,8 @@
 language_server_completion.trim_leading_dollar: true
-# language_server_phpstan.enabled: true
+language_server_phpstan.enabled: false
 # language_server_phpstan.mem_limit: 100000
 language_server_psalm.enabled: false
-# phpunit.enabled: true
+phpunit.enabled: true
 
 code_transform.class_new.variants:
   laravel-model: laravel-model
