@@ -97,6 +97,12 @@ vim.keymap.set('n', '<S-PageDown>', '<C-d>zz', { silent = true, desc = 'jump hal
 
 vim.keymap.set('n', '<leader><leader>', '<cmd>edit #<cr>', { silent = true, desc = "Goto alternative file" })
 
+-- Git
+vim.keymap.set('n', 'gG', "noop", { desc = 'Git navigation' })
+vim.keymap.set('n', 'gGn', '<cmd>Gitsigns nav_hunk next<CR>', { silent = true, desc = 'Goto next change' })
+vim.keymap.set('n', 'gGp', '<cmd>Gitsigns nav_hunk prev<CR>', { silent = true, desc = 'Goto previous change' })
+
+
 --
 -- Buffers
 --
@@ -162,9 +168,14 @@ vim.keymap.set('n', '<leader>s.', telescope.find_in_current_dir, { desc = 'Find 
 vim.keymap.set('n', '<leader>sw', '<cmd>Telescope grep_string<cr>', { desc = 'Search for word under cursor' })
 vim.keymap.set('n', '<leader>sa', '<cmd>Telescope live_grep<cr>', { desc = 'Search in files' })
 vim.keymap.set('n', '<leader>sb', '<cmd>Telescope buffers<cr>', { desc = 'Search Buffers' })
-vim.keymap.set('n', '<leader>sg', '<cmd>Telescope git_files<cr>', { desc = 'Search Git files' })
-vim.keymap.set('n', '<leader>sG', '<cmd>Telescope git_status<cr>', { desc = 'Search Git status' })
-vim.keymap.set('n', '<leader>sc', '<cmd>Telescope git_commits<cr>', { desc = 'Search Git commits' })
+
+-- Git
+vim.keymap.set('n', '<leader>sg', 'noop', { desc = 'Git' })
+vim.keymap.set('n', '<leader>sgf', '<cmd>Telescope git_files<cr>', { desc = 'Search Git files' })
+vim.keymap.set('n', '<leader>sgs', '<cmd>Telescope git_status<cr>', { desc = 'Search Git status' })
+vim.keymap.set('n', '<leader>sgc', '<cmd>Telescope git_commits<cr>', { desc = 'Search Git commits' })
+vim.keymap.set('n', '<leader>sgb', '<cmd>Telescope git_branches<cr>', { desc = 'Search Git branches' })
+
 vim.keymap.set('n', '<leader>so', '<cmd>Telescope oldfiles<cr>', { desc = 'Search old files' })
 vim.keymap.set('n', '<leader>sd', '<cmd>Telescope diagnostics<cr>', { desc = 'Search Diagnostics' })
 vim.keymap.set('n', '<leader>sq', '<cmd>Telescope quickfix<cr>', { desc = 'Search Quickfix' })
