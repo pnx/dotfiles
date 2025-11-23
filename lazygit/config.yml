@@ -3,6 +3,13 @@ gui:
   nerdFontsVersion: 3
   timeFormat: Jan 2 15:04:05 2006 MST
   shortTimeFormat: 15:04:05
+  showPanelJumps: false
+  showListFooter: false
+  statusPanelView: allBranchesLog
+  filterMode: fuzzy
+  branchColorPatterns:
+    main: green
+    '\d+-': yellow
   theme:
     activeBorderColor:
       - blue
@@ -25,4 +32,8 @@ gui:
     defaultFgColor:
       - default
 git:
-  branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --pretty=medium {{branchName}} --'
+  pagers:
+    - pager: delta --paging=never
+  branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline {{branchName}} --'
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline
