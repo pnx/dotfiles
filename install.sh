@@ -17,7 +17,6 @@ DIRECTORIES=(
     #i3status
     #rofi
     dunst
-    smartgit
     lazygit
 )
 
