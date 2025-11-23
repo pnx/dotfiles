@@ -6,16 +6,16 @@ DIRECTORIES=(
     nvim
     fish
     bat
-    #alacritty
+    alacritty
     #ghostty
-    kitty
-    #hypr
-    #waybar
-    #wofi
-    i3
-    polybar
+    #kitty
+    hypr
+    waybar
+    wofi
+    #i3
+    #polybar
     #i3status
-    rofi
+    #rofi
     dunst
     smartgit
     lazygit
