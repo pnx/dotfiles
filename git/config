@@ -7,3 +7,6 @@
 	defaultBranch = main
 [fetch]
 	prune = true
+
+[include]
+    path = ~/.config/git/delta.gitconfig

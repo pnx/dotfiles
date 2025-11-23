@@ -1,0 +1,26 @@
+# vim: ft=gitconfig
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    syntax-theme = "custom"
+    line-numbers = true
+    file-style = bold blue
+    file-decoration-style = none
+    hunk-header-style = line-number
+    hunk-header-decoration-style = ol gray
+    line-numbers-left-style = gray
+    plus-style = syntax "#09200D"
+    plus-emph-style = syntax "#195724"
+    minus-style = syntax "#220301"
+    minus-emph-style = syntax "#4A0702"
+    line-numbers-plus-style = "green"
+    line-numbers-minus-style = "red"
+    line-numbers-zero-style =  "#343959"
+    line-numbers-left-format = " {nm:^1} : "
+    line-numbers-right-format = "{np:^1} │ "
+    line-numbers-right-style = "#41476F"
+    line-numbers-left-style = "#343959"

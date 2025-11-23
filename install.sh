@@ -30,6 +30,8 @@ ln -sfr $BASE_PATH/tmux/config.conf $HOME/.tmux.conf
 ln -sfr $BASE_PATH/Xresources $HOME/.Xresources
 ln -sfr $BASE_PATH/picom.conf $HOME/.config/picom.conf
 ln -sfr $BASE_PATH/fzfrc $HOME/.config/fzfrc
+ln -sfr $BASE_PATH/git/config $HOME/.gitconfig
+ln -sfr $BASE_PATH/git/conf.d/ $HOME/.config/git
 
 mkdir -p $HOME/bin
 ln -sfr $BASE_PATH/scripts/tmuxs/main.sh $HOME/bin/tmuxs
