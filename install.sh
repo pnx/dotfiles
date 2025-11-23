@@ -1,5 +1,6 @@
 #!/bin/bash
 
+LN="ln -snfr"
 BASE_PATH=$(dirname $(readlink -f $BASH_SOURCE))
 
 DIRECTORIES=(
@@ -21,20 +22,20 @@ DIRECTORIES=(
 )
 
 for target in ${DIRECTORIES[@]}; do
-    ln -sfr -t $HOME/.config $BASE_PATH/$target
+    $LN -t $HOME/.config $BASE_PATH/$target
 done
 
-ln -sfr $BASE_PATH/bash/bashrc $HOME/.bashrc
-ln -sfr $BASE_PATH/bash/bashrc.d $HOME/.bashrc.d
-ln -sfr $BASE_PATH/tmux/config.conf $HOME/.tmux.conf
-ln -sfr $BASE_PATH/Xresources $HOME/.Xresources
-ln -sfr $BASE_PATH/picom.conf $HOME/.config/picom.conf
-ln -sfr $BASE_PATH/fzfrc $HOME/.config/fzfrc
-ln -sfr $BASE_PATH/git/config $HOME/.gitconfig
-ln -sfr $BASE_PATH/git/conf.d/ $HOME/.config/git
+$LN $BASE_PATH/bash/bashrc $HOME/.bashrc
+$LN $BASE_PATH/bash/bashrc.d/ $HOME/.bashrc.d
+$LN $BASE_PATH/tmux/config.conf $HOME/.tmux.conf
+$LN $BASE_PATH/Xresources $HOME/.Xresources
+$LN $BASE_PATH/picom.conf $HOME/.config/picom.conf
+$LN $BASE_PATH/fzfrc $HOME/.config/fzfrc
+$LN $BASE_PATH/git/config $HOME/.gitconfig
+$LN $BASE_PATH/git/conf.d/ $HOME/.config/git
 
 mkdir -p $HOME/bin
-ln -sfr $BASE_PATH/scripts/tmuxs/main.sh $HOME/bin/tmuxs
+$LN $BASE_PATH/scripts/tmuxs/main.sh $HOME/bin/tmuxs
 for script in $(find $BASE_PATH/scripts -maxdepth 1 -type f); do
-    ln -sfr $script $HOME/bin/$(basename $script)
+    $LN $script $HOME/bin/$(basename $script)
 done
