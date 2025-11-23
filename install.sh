@@ -5,6 +5,7 @@ BASE_PATH=$(dirname $(readlink -f $BASH_SOURCE))
 DIRECTORIES=(
     nvim
     fish
+    bat
     #alacritty
     #ghostty
     kitty
