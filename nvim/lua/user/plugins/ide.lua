@@ -4,6 +4,7 @@ return {
     { import = "user.plugins.ide.autocomplete" },
     { import = "user.plugins.ide.formatting" },
     { import = "user.plugins.ide.test" },
+    { import = "user.plugins.ide.debugger" },
     -- Linting
     {
         'mfussenegger/nvim-lint',
