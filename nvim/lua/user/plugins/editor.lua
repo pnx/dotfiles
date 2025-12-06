@@ -18,6 +18,9 @@ return {
     -- Better text objects.
     { 'echasnovski/mini.ai', version = '*', opts = {}},
 
+    -- Surround actions
+    { "kylechui/nvim-surround", version = "^3.0.0", event = "VeryLazy", opts = {} },
+
     -- I use this for crc,crs,crm (etc) binds to change between cases.
     { 'tpope/vim-abolish' },
 
