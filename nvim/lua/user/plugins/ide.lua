@@ -23,19 +23,22 @@ return {
     -- Snippets
     {
         "L3MON4D3/LuaSnip",
+        version = 'v2.*',
         lazy = true,
         build = "make install_jsregexp",
-        dependencies = {
-            {
-                "rafamadriz/friendly-snippets",
-                config = function()
-                    require("luasnip.loaders.from_vscode").lazy_load()
-                end,
-            },
-        },
+        -- dependencies = {
+        --     {
+        --         "rafamadriz/friendly-snippets",
+        --         config = function()
+        --             require("luasnip.loaders.from_vscode").lazy_load()
+        --         end,
+        --     },
+        -- },
         opts = {},
         config = function(_, opts)
-            require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" })
+            require("luasnip.loaders.from_lua").load({
+                paths = vim.fn.stdpath('config') .. vim.fs.normalize("/snippets")
+            })
             require("luasnip").setup(opts)
         end,
     },
