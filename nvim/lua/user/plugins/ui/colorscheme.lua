@@ -170,6 +170,7 @@ local custom_highlights = function(colors)
 
         -- Text
         NonText = { fg = colors.surface0 },
+        TextMute = { fg = colors.overlay2 },
         Whitespace = { link = "NonText" },
 
         -- Syntax
