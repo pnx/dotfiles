@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CMD=vendor/bin/sail
+
+if [ ! -x "${CMD}" ]; then
+    CMD=docker-compose
+fi 
+
+${CMD} $@
