@@ -3,8 +3,6 @@
 --color=hl:7,hl+:7,info:4,marker:5
 --color=spinner:2,pointer:8,header:4
 --color=border:4
---gutter=" "
---gutter-raw=" "
 --pointer=""
 --prompt="   "
 --info="inline-right"
