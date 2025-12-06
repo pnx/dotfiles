@@ -85,7 +85,6 @@ vim.o.fillchars = string.format([[eob: ,fold: ,foldopen:%s,foldsep:%s,foldclose:
 vim.o.spell = true
 vim.o.spelllang = 'en_us'
 
-
 vim.diagnostic.config({
     virtual_text = false,
     severity_sort = true,
@@ -98,11 +97,25 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.HINT] = icons.diagnostics.hint
         },
     },
+
     float = {
         ---@diagnostic disable-next-line: assign-type-mismatch
-        border = { " " },
-        header = "",
-        source = true,
+        border = 'none',
+        header = '',
+        source = false,
+
+        prefix = function (diagnostic, _, _)
+            local hl = {
+                [vim.diagnostic.severity.ERROR] = "DiagnosticError",
+                [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
+                [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+                [vim.diagnostic.severity.HINT] = "DiagnosticHint"
+            }
+            return  "▊ ", hl[diagnostic.severity]
+        end,
+        suffix = function (diagnostic, _, _)
+            return " " .. diagnostic.source .. " ", "TextMute"
+        end,
     }
 })
 
