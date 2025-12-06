@@ -3,8 +3,7 @@ local icons = require('user.icons')
 return {
     'saghen/blink.cmp',
     lazy = false,
-    version = "*",
-    build = 'cargo build --release',
+    version = "1.*",
     dependencies = {
         { "xzbdmw/colorful-menu.nvim" },
         { 'L3MON4D3/LuaSnip', version = 'v2.*' },
