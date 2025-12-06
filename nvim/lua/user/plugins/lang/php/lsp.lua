@@ -6,15 +6,7 @@ local servers = {
     },
     phpactor = require 'user.plugins.lang.php.lsp.phpactor',
     -- Use intelephense as main server.
-    intelephense = {
-        settings = {
-            intelephense = {
-                -- files = {
-                --     maxSize = 10000000
-                -- }
-            }
-        }
-    }
+    intelephense = require 'user.plugins.lang.php.lsp.intelephense',
 }
 
 return {
