@@ -1,7 +1,7 @@
 // vim: ft=jsonc
 // -*- mode: jsonc -*-
 {
-    "output": "DP-1",
+    "output": "DP-2",
     "position": "bottom",
     "height": 34,
     "spacing": 0,
