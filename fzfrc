@@ -8,6 +8,7 @@
 --info="inline-right"
 --separator=''
 --highlight-line
+--gutter=" "
 --scrollbar="▐"
 --preview-window="border-sharp"
 --header-first
