@@ -29,13 +29,16 @@ for sel in "${SELECTED[@]}"; do
             sudo dnf install -y \
                 xorg-x11-xinit \
                 i3 \
+                picom \
+                rofi \
+                dunst \
+                polybar \
                 feh \
                 lxappearance \
                 ImageMagick \
                 xautolock \
                 xrandr \
                 arandr \
-                rofi \
                 dejavu-fonts-all \
                 fontawesome-fonts
             ;;
