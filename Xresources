@@ -36,6 +36,10 @@
 *.color7: #BAC2DE
 *.color15: #A6ADC8
 
+!! i3
+
+! i3wm.second_monitor: HDMI-0
+
 !! XFT
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault

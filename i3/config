@@ -6,6 +6,8 @@
 
 # Variables
 
+set_from_resource $second_monitor       i3wm.second_monitor HDMI-0
+
 set_from_resource $color_bg             i3wm.background     #0E1019
 set_from_resource $color_fg             i3wm.foreground     #eceef4
 
@@ -43,7 +45,6 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 
-set $second_monitor HDMI-0
 
 ## Startup programs
 
