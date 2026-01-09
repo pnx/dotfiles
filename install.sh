@@ -8,16 +8,9 @@ DIRECTORIES=(
     fish
     bat
     alacritty
-    #ghostty
-    #kitty
-    hypr
-    waybar
-    wofi
-    #i3
-    #polybar
-    #i3status
-    #rofi
-    dunst
+    i3
+    polybar
+    rofi
     lazygit
 )
 
