@@ -15,8 +15,7 @@ for sel in "${SELECTED[@]}"; do
                 tmux \
                 xdg-utils \
                 xsel \
-                fzf \
-                eza
+                fzf
             ;;
         "nvim")
             sudo dnf install -y \
