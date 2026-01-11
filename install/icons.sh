@@ -1,17 +1,6 @@
 #!/bin/bash
 
-ICON=fedora
-TMPDIR=~/.qogir-icon-install
+BASE_PATH=$(dirname $(readlink -f $BASH_SOURCE))
 
-mkdir -p $TMPDIR
-git clone https://github.com/vinceliuice/Qogir-icon-theme $TMPDIR
-
-pushd $TMPDIR
-sudo ./install.sh -t default -c dark -d /usr/share/icons
-popd
-
-pushd $TMPDIR/src/cursors
-sudo cp -r dist/ /usr/share/icons/Qogir-cursors
-popd
-
-sudo rm -fr $TMPDIR
+sudo tar -C /usr/share/icons -xvf ${BASE_PATH}/../assets/qogir-icons.tar.gz
+sudo tar -C /usr/share/icons -xvf ${BASE_PATH}/../assets/qogir-cursors.tar.gz
