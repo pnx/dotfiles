@@ -158,6 +158,18 @@ vim.keymap.set('n', '<leader>r', "noop", { desc = 'Rename' })
 vim.keymap.set('n', '<leader>rs', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename symbol' })
 
 --
+-- Debugging
+--
+
+vim.keymap.set("n", "<leader>Dp", "<cmd>DapNew<cr>", { silent = true })
+vim.keymap.set("n", "<leader>Dr", "<cmd>DapRestartFrame<cr>", { silent = true })
+vim.keymap.set("n", "<leader>Dc", "<cmd>DapContinue<cr>",{ silent = true })
+vim.keymap.set("n", "<leader>Do", "<cmd>DapStepOver<cr>", { silent = true })
+vim.keymap.set("n", "<leader>Di", "<cmd>DapStepInto<cr>", { silent = true })
+vim.keymap.set("n", "<leader>Db", "<cmd>DapStepOut<cr>", { silent = true })
+vim.keymap.set("n", "<leader>Dt", "<cmd>DapToggleBreakpoint", { silent = true })
+
+--
 -- Search
 --
 

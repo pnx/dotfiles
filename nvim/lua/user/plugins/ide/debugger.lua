@@ -24,13 +24,6 @@ return {
             vim.fn.sign_define('DapLogPoint', {text=icons.debug.logPoint, texthl='DapLogPoint'})
             vim.fn.sign_define('DapStopped', {text=icons.debug.stopped, texthl='DapStopped'})
 
-            vim.keymap.set("n", "<leader>Dr", dap.run_last, { silent = true })
-            vim.keymap.set("n", "<leader>Dc", dap.continue, { silent = true })
-            vim.keymap.set("n", "<leader>Do", dap.step_over, { silent = true })
-            vim.keymap.set("n", "<leader>Di", dap.step_into, { silent = true })
-            vim.keymap.set("n", "<leader>Db", dap.step_out, { silent = true })
-            vim.keymap.set("n", "<leader>Dt", dap.toggle_breakpoint, { silent = true })
-
             dap.listeners.before.attach.dapui_config = function()
                 dapui.open()
             end
