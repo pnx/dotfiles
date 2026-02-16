@@ -2,6 +2,10 @@ local lspservers = {
     lua_ls = {
         settings = {
             Lua = {
+                hint = {
+                    arrayIndex = "Disable",
+                    paramName = "Literal",
+                },
                 runtime = {
                     version = "LuaJIT",
                 },
