@@ -2,14 +2,10 @@ return {
     {
         "mfussenegger/nvim-dap",
         dependencies = {
-            {
-                "rcarriga/nvim-dap-ui",
-                dependencies = {
-                    "nvim-neotest/nvim-nio"
-                }
-            }
+            "rcarriga/nvim-dap-ui",
         },
-        config = function ()
+        opts = {},
+        config = function (_, opts)
             local icons = require('user.icons')
             local dap = require('dap')
             local dapui = require("dapui")
@@ -37,36 +33,15 @@ return {
                 dapui.close()
             end
 
-            dap.adapters.php = {
-                type = 'executable',
-                command = 'node',
-                args = { '/home/pnx/vscode-php-debug/out/phpDebug.js' }
-            }
-
-            dap.configurations.php = {
-                {
-                    name = "PHP: Listen for Xdebug",
-                    port = 9003,
-                    request = "launch",
-                    type = "php",
-                    breakpoints = {
-                        exception = {
-                            Notice = false,
-                            Warning = false,
-                            Error = false,
-                            Exception = false,
-                            ["*"] = false,
-                        },
-                    },
-                    pathMappings = {
-                        ["/app"] = "${workspaceFolder}"
-                    }
-                },
-            }
+            for name, config in pairs(opts) do
+                dap.adapters[name] = config.adapter or {}
+                dap.configurations[name] = config.configurations or {}
+            end
         end
     },
     {
         "rcarriga/nvim-dap-ui",
+        optional = true,
         dependencies = {
             "mfussenegger/nvim-dap",
             "nvim-neotest/nvim-nio"
