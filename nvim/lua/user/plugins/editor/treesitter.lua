@@ -50,15 +50,6 @@ return {
     config = function(_, opts)
         local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
-        parser_config.blade = {
-            install_info = {
-                url = "https://github.com/EmranMR/tree-sitter-blade",
-                branch = "main",
-                files = { "src/parser.c" },
-            },
-            filetype = "blade",
-        }
-
         parser_config.dotenv = {
             install_info = {
                 url = "https://github.com/pnx/tree-sitter-dotenv",
