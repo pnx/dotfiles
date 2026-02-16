@@ -73,9 +73,11 @@ return {
         opts = {
             notification = {
                 window = {
-                    normal_hl = "Pmenu",
-                    winblend = 5,
-                    border = { " " }
+                    normal_hl = "NormalFloat",
+                    winblend = 0,
+                    border = { " " },
+                    x_padding = 1,
+                    y_padding = 1,
                 }
             },
             progress = {
