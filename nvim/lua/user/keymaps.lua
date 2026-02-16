@@ -21,7 +21,7 @@ vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.cmd.w, { desc = 'Save current buffer' 
 vim.keymap.set('n', '<leader>Si', indent_guidelines.toggle, { desc = 'Toggle indent guides' })
 vim.keymap.set('n', '<Tab>', '^=$')
 vim.keymap.set('x', '<Tab>', '=', { desc = 'auto indent selection' })
-vim.keymap.set('i', '<S-Tab', '<C-d>', { desc = 'delete indent' })
+vim.keymap.set('i', '<S-Tab>', '<C-d>', { desc = 'delete indent' })
 
 -- Move text
 vim.keymap.set('n', '<S-a>', [[:m -2<CR>v=]], { silent = true, desc = 'move current line one line up' })
