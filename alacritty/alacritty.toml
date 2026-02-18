@@ -1,13 +1,14 @@
 [general]
 ipc_socket = false
+import = [ "colorscheme.toml" ]
 
 [font]
 normal = { family = "IosevkaCustomNerdFont" }
 bold = { style = "SemiBold" }
 size = 15.0
 
-offset = { x = 0, y = 6 }
-glyph_offset = { x = 0, y = 3 }
+offset = { x = 0, y = 8 }
+glyph_offset = { x = 0, y = 4 }
 
 [window]
 decorations_theme_variant = "Dark"
@@ -20,37 +21,3 @@ hide_when_typing = false
 [selection]
 save_to_clipboard = true
 
-[colors]
-transparent_background_colors = false
-cursor = { text = "#eceef4", cursor = "#767BA0" }
-selection = { text = "CellForeground", background = "#343959" }
-footer_bar = { foreground = "#eceef4", background = "#0C0D14" }
-line_indicator = { foreground = "#eceef4", background = "#0E1019" }
-
-[colors.primary]
-foreground = "#eceef4"
-background = "#0E1019"
-
-[colors.normal]
-black = "#45475A"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#eceef4"
-
-[colors.bright]
-black = "#585B70"
-red = "#F38BA8"
-green = "#A6E3A1"
-yellow = "#F9E2AF"
-blue = "#89B4FA"
-magenta = "#F5C2E7"
-cyan = "#94E2D5"
-white = "#A6ADC8"
-
-[colors.search]
-matches = { foreground = "#0E1019", background = "#767BA0" }
-focused_match = { foreground = "#0E1019", background = "#F9E2AF" }
