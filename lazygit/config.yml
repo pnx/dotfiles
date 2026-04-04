@@ -7,30 +7,29 @@ gui:
   showListFooter: false
   statusPanelView: allBranchesLog
   filterMode: fuzzy
-  branchColorPatterns:
-    main: green
-    '\d+-': yellow
   theme:
     activeBorderColor:
-      - blue
-      - bold
+      - '#b4befe'
     inactiveBorderColor:
-      - grey
+      - '#7f849c'
     searchingActiveBorderColor:
       - cyan
       - bold
     optionsTextColor:
-      - blue
+      - '#a6adc8'
     selectedLineBgColor:
-      - blue
+      - '#343959'
     cherryPickedCommitBgColor:
-      - cyan
+      - reverse
     cherryPickedCommitFgColor:
-      - blue
+      - '#b4befe'
     unstagedChangesColor:
-      - red
+      - '#f38ba8'
     defaultFgColor:
-      - default
+      - '#eceef4'
+  branchColorPatterns:
+    main: '#a6e3a1'
+    '\d+-': '#f9e2af'
 git:
   pagers:
     - pager: delta --paging=never
