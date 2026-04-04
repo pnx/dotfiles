@@ -247,43 +247,41 @@ local custom_highlights = function(colors)
     }
 end
 
-local options = {
-    flavour = "mocha",
-    transparent_background = not vim.g.neovide,
-    color_overrides = {
-        mocha = {
-            base = "#0E1019",
-            mantle = "#0D0F17",
-            crust = "#0C0D14",
-            surface0 = "#1a1c2d",
-            surface1 = "#343959",
-            surface2 = "#41476F",
-            overlay0 = "#3F4256",
-            overlay1 = "#5B5F7C",
-            overlay2 = "#767BA0",
-
-            text = "#eceef4",
-        },
-    },
-    no_italic = true,
-    no_bold = true,
-    custom_highlights = custom_highlights,
-    integrations = {
-        cmp = true,
-        treesitter = true,
-        neotree = true,
-        telescope = {
-            enabled = true,
-        },
-    }
-}
-
 return {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
     priority = 1000,
-    opts = options,
+    opts = {
+        flavour = "mocha",
+        transparent_background = not vim.g.neovide,
+        color_overrides = {
+            mocha = {
+                base = "#0E1019",
+                mantle = "#0D0F17",
+                crust = "#0C0D14",
+                surface0 = "#1a1c2d",
+                surface1 = "#343959",
+                surface2 = "#41476F",
+                overlay0 = "#3F4256",
+                overlay1 = "#5B5F7C",
+                overlay2 = "#767BA0",
+
+                text = "#eceef4",
+            },
+        },
+        no_italic = true,
+        no_bold = true,
+        custom_highlights = custom_highlights,
+        integrations = {
+            cmp = true,
+            treesitter = true,
+            neotree = true,
+            telescope = {
+                enabled = true,
+            },
+        }
+    },
     config = function(_, opts)
         require("catppuccin").setup(opts)
         vim.cmd.colorscheme("catppuccin")
