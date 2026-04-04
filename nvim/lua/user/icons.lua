@@ -26,8 +26,8 @@ local iconset = {
 
     star = "★",
     ignored = "◌",
-    git = {
-       merge = "",
+    vcs = {
+        branch = "",
     },
 
     -- Arrows
@@ -179,6 +179,9 @@ return {
         delete = iconset.caret.right,
         untracked = iconset.box.vertical_line_thick,
     },
+    vcs = {
+        branch = iconset.vcs.branch,
+    },
     gitsigns = {
         -- Change type
         added = iconset.circle,
@@ -190,8 +193,8 @@ return {
         ignored = iconset.ignored,
         unstaged = iconset.circle,
         staged = iconset.circle,
-        conflict = iconset.git.merge,
-        unmerged = iconset.git.merge,
+        conflict = iconset.vcs.branch,
+        unmerged = iconset.vcs.branch,
     },
     todo = {
         default = iconset.exclamation_circle,
