@@ -186,6 +186,7 @@ local custom_highlights = function(colors)
         Label = { link = "String" },
         String = { fg = colors.lavender },
         Exception = { link = "Keyword" },
+        Macro = { fg = colors.pink },
 
         -- Treesitter tokens
         ["@constructor"] = { link = "Function" },
@@ -204,6 +205,7 @@ local custom_highlights = function(colors)
         ["@module"] = { link = "@text" },
         ["@namespace"] = { link = "@keyword" },
         ["@punctuation.bracket"] = { link = "@punctuation" },
+        ["@function.macro"] = { link = "Macro" },
 
         -- Comments
         ["@punctuation.delimiter.comment"] = { link = "@Comment" },
