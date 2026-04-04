@@ -84,14 +84,14 @@ local options = {
             "mode",
         },
         lualine_b = {
-            {"branch"},
+            {"branch", icon = icons.vcs.branch },
             {
                 "diagnostics",
                 symbols = {
-                    error = icons.diagnostics.error .. " ",
-                    warn = icons.diagnostics.warn .. " ",
-                    info = icons.diagnostics.info .. " ",
-                    hint = icons.diagnostics.hint .. " ",
+                    error = icons.diagnostics.error .. "  ",
+                    warn = icons.diagnostics.warn .. "  ",
+                    info = icons.diagnostics.info .. "  ",
+                    hint = icons.diagnostics.hint .. "  ",
                 },
             },
             {
@@ -102,6 +102,20 @@ local options = {
                     removed = icons.diff.removed .. " ",
                 },
             },
+            { "filetype", icon_only = true, padding = { left = 1, right = 0 } },
+            {
+                "filename",
+                cond = is_not_popup,
+                path = 1,
+                padding = { left = 0, right = 1 },
+                symbols = vim.tbl_deep_extend("force", icons.file_status, {
+                    unnamed = "",
+                })
+            },
+        },
+        lualine_c = {},
+        lualine_x = {
+            linter,
             {
                 "lsp-status",
                 disabled_filetypes = {
@@ -115,14 +129,6 @@ local options = {
                     end
                 end
             },
-            linter,
-        },
-        lualine_c = {},
-        lualine_x = {
-            {
-                "filetype",
-                cond = is_not_popup
-            },
             {
                 "fileformat",
                 symbols = {
@@ -132,38 +138,10 @@ local options = {
                 }
             },
             indent_settings,
-        },
-        lualine_y = {
             "location",
-            "progress",
         },
+        lualine_y = {},
         lualine_z = {},
-    },
-    winbar = {
-        lualine_c = {
-            { "filetype", icon_only = true },
-            {
-                "filename",
-                cond = is_not_popup,
-                path = 1,
-                symbols = vim.tbl_deep_extend("force", icons.file_status, {
-                    unnamed = "",
-                })
-            },
-        },
-    },
-    inactive_winbar = {
-        lualine_c = {
-            { "filetype", icon_only = true },
-            {
-                "filename",
-                cond = is_not_popup,
-                path = 1,
-                symbols = vim.tbl_deep_extend("force", icons.file_status, {
-                    unnamed = "",
-                })
-            },
-        },
     },
     extensions = {
         "lazy",
