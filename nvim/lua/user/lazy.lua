@@ -38,6 +38,7 @@ require("lazy").setup({
         { import = "user.plugins.lang.typescript" },
         { import = "user.plugins.lang.vue" },
         { import = "user.plugins.lang.markdown" },
+        { import = "user.plugins.lang.qml" },
     },
     install = {
         colorscheme = { "catppuccin", "habamax" },
