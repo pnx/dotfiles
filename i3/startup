@@ -1,5 +1,7 @@
 # vim: set ft=i3config:
 
+exec --no-startup-id ~/.config/xrandr.sh
+
 # bar
 exec --no-startup-id polybar
 
