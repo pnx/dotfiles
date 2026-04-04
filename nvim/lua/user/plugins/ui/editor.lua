@@ -51,12 +51,24 @@ return {
     },
     -- color highlight in documents
     {
-        'brenoprata10/nvim-highlight-colors',
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
         opts = {
-            render = 'virtual',
-            virtual_symbol_position = 'eol',
-            virtual_symbol_prefix = '',
-            virtual_symbol_suffix = '',
-        }
-    },
+            options = {
+                parsers = {
+                    hex = { enable = true },
+                    rgb = { enable = true },
+                    hsl = { enable = true },
+                    oklch = { enable = true },
+                    xterm = { enable = true },
+                    tailwind = {
+                        lsp = true,
+                    },
+                },
+                display = {
+                    mode = "virtualtext",
+                },
+            }
+        },
+    }
 }
