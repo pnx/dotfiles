@@ -8,7 +8,7 @@
   name: (name) @method (#eq? @method "insert")
   arguments: (arguments
     . (argument [
-                 (string (string_content) @injection.content(#set! injection.language "sql"))
-                 (encapsed_string . (string_content) .) @injection.content(#set! injection.language "sql")
+      (string (string_content) @injection.content(#set! injection.language "sql"))
+      (encapsed_string . (string_content) .) @injection.content(#set! injection.language "sql")
     ])
   ))
