@@ -63,15 +63,15 @@ local config = function(_, opts)
                 client.server_capabilities,
                 server_opts.server_capabilities or {})
 
-            if server_opts.inlay_hints.enabled and client.supports_method("textDocument/inlayHint") then
+            if server_opts.inlay_hints.enabled and client:supports_method("textDocument/inlayHint") then
                 vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
             end
 
-            if server_opts.codelens.enabled and client.supports_method("textDocument/codeLens") then
-                utils.codelens(augroup, bufnr)
+            if server_opts.codelens.enabled and client:supports_method("textDocument/codeLens") then
+                vim.lsp.codelens.enable(true, { bufnr = bufnr })
             end
 
-            if server_opts.document_highlight.enabled and client.supports_method("textDocument/documentHighlight") then
+            if server_opts.document_highlight.enabled and client:supports_method("textDocument/documentHighlight") then
                 utils.document_highlight(bufnr)
             end
 

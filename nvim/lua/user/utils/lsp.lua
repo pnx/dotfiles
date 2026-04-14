@@ -62,12 +62,4 @@ function M.signature_help_on_hover(bufnr)
     })
 end
 
-function M.codelens(augroup, bufnr)
-    vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-        group = augroup,
-        buffer = bufnr,
-        callback = vim.lsp.codelens.refresh,
-    })
-end
-
 return M

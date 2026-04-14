@@ -25,7 +25,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
-            ensure_installed = { "rust", "toml" }
+            install = { "rust", "toml" }
         }
     },
     {

@@ -1,5 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    commit = "4916d6592ede8c07973490d9322f187e07dfefac",
+    pin = true,
     dependencies = {
         'windwp/nvim-ts-autotag',
         'nvim-treesitter/nvim-treesitter-textobjects'
@@ -7,10 +9,10 @@ return {
     build = function()
         require("nvim-treesitter.install").update({ with_sync = true })
     end,
-    opts_extend = { "ensure_installed" },
+    opts_extend = { "install" },
     opts = {
         -- Default parsers.
-        ensure_installed = {
+        install = {
             -- VIM stuff
             "vim",
             "vimdoc",
@@ -18,7 +20,6 @@ return {
 
             -- Common config languages
             "json",
-            "jsonc",
             "yaml",
             "toml",
             "xml",
@@ -35,37 +36,47 @@ return {
             "printf",
             "nginx",
         },
-
-        auto_install = true,
-
-        highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false,
-        },
-
-        indent = {
-            enable = true,
-        },
     },
     config = function(_, opts)
-        local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
-        parser_config.dotenv = {
-            install_info = {
-                url = "https://github.com/pnx/tree-sitter-dotenv",
-                branch = "main",
-                files = { "src/parser.c", "src/scanner.c" },
-            },
-            filetype = "dotenv",
-        }
-
-        vim.filetype.add({
-            pattern = {
-                ['%.env'] = 'dotenv',
-                ['%.env%..+'] = 'dotenv',
+        local ts = require("nvim-treesitter")
+        vim.api.nvim_create_autocmd('User', { pattern = 'TSUpdate', callback = function ()
+            require("nvim-treesitter.parsers").dotenv = {
+                install_info = {
+                    url = "https://github.com/pnx/tree-sitter-dotenv",
+                    branch = "main",
+                    files = { "src/parser.c", "src/scanner.c" },
+                }
             }
+        end})
+
+        -- vim.filetype.add({
+        --     pattern = {
+        --         ['%.env'] = 'dotenv',
+        --         ['%.env%..+'] = 'dotenv',
+        --     }
+        -- })
+        vim.treesitter.language.register('dotenv', { 'env' })
+
+        for _, value in pairs(opts.install) do
+            vim.treesitter.language.register(value, value)
+        end
+
+        vim.api.nvim_create_autocmd('FileType', {
+            callback = function(ev)
+                local lang = vim.treesitter.language.get_lang(ev.match)
+                if vim.list_contains(ts.get_installed(), lang) then
+                    vim.treesitter.start(ev.buf)
+                end
+                -- local all_langs = vim.treesitter.language._complete()
+                -- local lang = vim.treesitter.language.get_lang(ev.match)
+                -- vim.print(ev.match, all_langs, vim.tbl_contains(all_langs, lang))
+                -- if vim.tbl_contains(all_langs, lang) then
+                --     vim.treesitter.start(ev.buf)
+                -- end
+            end,
         })
 
-        require("nvim-treesitter.configs").setup(opts)
-    end,
+        ts.install(opts.install)
+        ts.setup(opts)
+    end
 }
