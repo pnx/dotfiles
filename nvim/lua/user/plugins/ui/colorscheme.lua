@@ -185,6 +185,7 @@ local custom_highlights = function(colors)
         Type = { fg = colors.blue },
         Label = { link = "String" },
         String = { fg = colors.lavender },
+        Character = { link = "String" },
         Exception = { link = "Keyword" },
         Macro = { fg = colors.pink },
 
