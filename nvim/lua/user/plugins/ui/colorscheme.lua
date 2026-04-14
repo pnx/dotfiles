@@ -244,7 +244,7 @@ local custom_highlights = function(colors)
         ["@use.trait.name.php"] = { link = "@text" },
 
         -- Blade
-        ["@tag.blade"] = { fg = colors.mauve },
+        ["@directive.blade"] = { link = "PreProc" },
     }
 end
 
