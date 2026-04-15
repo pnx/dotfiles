@@ -63,6 +63,11 @@ local custom_highlights = function(colors)
         TelescopeIndicatorReadonly = { fg = colors.red },
         TelescopeIndicatorHidden = { link = "TelescopeResultsComment" },
 
+        -- Snacks picker
+        SnacksPickerInput = { link = "TelescopePromptNormal" },
+        SnacksPickerInputBorder = { link = "TelescopePromptBorder" },
+        SnacksPickerResult = {  link = "TelescopeResultsNormal" },
+
         -- Ufo
         UfoFoldedEllipsis = { link = "Comment" },
 
@@ -78,6 +83,14 @@ local custom_highlights = function(colors)
         StatusLineVisual = { fg = colors.base, bg = colors.mauve },
         StatusLineCommand = { fg = colors.base, bg = colors.yellow },
         StatusLineReplace = { fg = colors.base, bg = colors.maroon },
+
+        -- Notifications
+        Notification = { bg = colors.red },
+
+        -- Dashboard
+        SnacksDashboardIcon = { fg = colors.lavender },
+        SnacksDashboardDesc = { fg = colors.text },
+        SnacksDashboardKey = { fg = colors.lavender },
 
         -- Neotree
         NeoTreeTabActive = { bg = colors.surface2, fg = colors.lavender },
@@ -255,7 +268,7 @@ return {
     priority = 1000,
     opts = {
         flavour = "mocha",
-        transparent_background = not vim.g.neovide,
+        transparent_background = false,
         color_overrides = {
             mocha = {
                 base = "#0E1019",

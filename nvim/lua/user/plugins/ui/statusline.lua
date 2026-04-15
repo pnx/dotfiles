@@ -41,8 +41,9 @@ local options = {
         section_separators = "",
         disabled_filetypes = {
             statusline = {
-                "dashboard",
                 "alpha",
+                "dashboard",
+                "snacks_dashboard"
             },
             winbar = {
                 "neo-tree",

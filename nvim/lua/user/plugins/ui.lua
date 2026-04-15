@@ -2,8 +2,6 @@ local ui = require("user.ui.telescope")
 local icons = require('user.icons')
 
 return {
-    { import = "user.plugins.ui.dashboard" },
-
     { import = "user.plugins.ui.editor" },
 
     { import = "user.plugins.ui.colorscheme" },
@@ -41,50 +39,50 @@ return {
             }
         }
     },
-    {
-        'stevearc/dressing.nvim',
-        opts = {
-            input = {
-                border = { " " },
-                relative = "editor",
-                title_pos = "center",
-                mappings = {
-                    n = {
-                        ["<Esc>"] = "Close",
-                        ["<CR>"] = "Confirm",
-                    },
-                    i = {
-                        ["<Esc>"] = "Close",
-                        ["<CR>"] = "Confirm",
-                        ["<Up>"] = "HistoryPrev",
-                        ["<Down>"] = "HistoryNext",
-                    },
-                },
-            },
-            select = {
-                backend = { "telescope" },
-                telescope = require("telescope.themes").get_dropdown(ui.dropdown),
-            }
-        },
-    },
+    -- {
+    --     'stevearc/dressing.nvim',
+    --     opts = {
+    --         input = {
+    --             border = { " " },
+    --             relative = "editor",
+    --             title_pos = "center",
+    --             mappings = {
+    --                 n = {
+    --                     ["<Esc>"] = "Close",
+    --                     ["<CR>"] = "Confirm",
+    --                 },
+    --                 i = {
+    --                     ["<Esc>"] = "Close",
+    --                     ["<CR>"] = "Confirm",
+    --                     ["<Up>"] = "HistoryPrev",
+    --                     ["<Down>"] = "HistoryNext",
+    --                 },
+    --             },
+    --         },
+    --         select = {
+    --             backend = { "telescope" },
+    --             telescope = require("telescope.themes").get_dropdown(ui.dropdown),
+    --         }
+    --     },
+    -- },
     -- Nicer notifications
-    {
-        "j-hui/fidget.nvim",
-        opts = {
-            notification = {
-                window = {
-                    normal_hl = "NormalFloat",
-                    winblend = 0,
-                    border = { " " },
-                    x_padding = 1,
-                    y_padding = 1,
-                }
-            },
-            progress = {
-                display = {
-                    done_ttl = 2,
-                }
-            }
-        }
-    },
+    -- {
+    --     "j-hui/fidget.nvim",
+    --     opts = {
+    --         notification = {
+    --             window = {
+    --                 normal_hl = "NormalFloat",
+    --                 winblend = 0,
+    --                 border = { " " },
+    --                 x_padding = 1,
+    --                 y_padding = 1,
+    --             }
+    --         },
+    --         progress = {
+    --             display = {
+    --                 done_ttl = 2,
+    --             }
+    --         }
+    --     }
+    -- },
 }
