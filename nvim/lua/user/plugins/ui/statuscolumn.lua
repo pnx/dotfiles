@@ -7,6 +7,7 @@ local opts = function()
         relculright = true,
         ft_ignore = {
             'help',
+            'pager',
             'alpha',
             'NvimTree',
             'dap-repl',
@@ -15,6 +16,9 @@ local opts = function()
             'dapui_watches',
             'dapui_scopes',
             'dapui_console',
+        },
+        bt_ignore = {
+            "nofile"
         },
         segments = {
             {
