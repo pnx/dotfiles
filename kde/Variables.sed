@@ -1,0 +1,27 @@
+s/$rosewater/245, 224, 220/g
+s/$flamingo/242, 205, 205/g
+s/$pink/245, 194, 231/g
+s/$mauve/203, 166, 247/g
+s/$red/243, 139, 168/g
+s/$maroon/235, 160, 172/g
+s/$peach/250, 179, 135/g
+s/$yellow/249, 226, 175/g
+s/$green/166, 227, 161/g
+s/$teal/148, 226, 213/g
+s/$sky/137, 220, 235/g
+s/$sapphire/116, 199, 236/g
+s/$blue/137, 180, 250/g
+s/$lavender/180, 190, 254/g
+s/$text/236, 238, 244/g
+s/$subtext1/186, 194, 222/g
+s/$subtext0/166, 173, 200/g
+s/$overlay0/63, 66, 86/g
+s/$overlay1/91, 95m 124/g
+s/$overlay2/118, 123, 160/g
+s/$surface0/26, 28, 45/g
+s/$surface1/52, 57, 89/g
+s/$surface2/65, 71, 111/g
+s/$base/14, 16, 25/g
+s/$mantle/13, 15, 23/g
+s/$crust/12, 13, 20/g
+s/$accent/$blue/g
