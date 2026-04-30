@@ -36,3 +36,10 @@ git:
   branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline {{branchName}} --'
   allBranchesLogCmds:
     - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline
+customCommands:
+  - key: <c-n>
+    description: "AI: Commit staged changes"
+    command: opencode run --command commit
+    loadingText: 'Committing changes  ...'
+    output: log
+    context: files
