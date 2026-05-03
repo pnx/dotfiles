@@ -123,9 +123,9 @@ local options = {
                 },
                 on_click = function (_, btn, _)
                     if btn == "l" then
-                        vim.cmd(":LspInfo")
+                        vim.cmd(":checkhealth vim.lsp")
                     elseif btn == "r" then
-                        vim.cmd(":LspRestart")
+                        vim.cmd(":lsp restart")
                     end
                 end
             },
