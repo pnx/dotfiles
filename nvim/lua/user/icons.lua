@@ -209,6 +209,8 @@ return {
         warn = iconset.triangle_outline,
         info = iconset.info_circle_outline,
         hint = iconset.chat,
+        debug = iconset.bug,
+        trace = ""
     },
     test = {
         ok = iconset.check,
