@@ -28,6 +28,17 @@ for sel in "${SELECTED[@]}"; do
                 fd-find \
                 neovim
             ;;
+        "hypr")
+            sudo dnf copr enable lionheartp/Hyprland
+            sudo dnf install -y \
+                uwsm \
+                sddm \
+                hyprland \
+                hyprpaper \
+                rofi \
+                dunst \
+                waybar
+            ;;
         "i3")
             sudo dnf install -y \
                 xorg-x11-xinit \
