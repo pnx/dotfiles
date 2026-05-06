@@ -1,4 +1,4 @@
-; inherits: blade
+; extends
 
 ([
  (directive)

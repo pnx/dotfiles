@@ -1,4 +1,4 @@
-; extends: html
+; inherits: html
 
 [
     (field)

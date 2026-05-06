@@ -1,4 +1,4 @@
-; inherits: php_only
+; extends
 
 ; php tags should be tagged as preprocessor tokens
 (php_tag) @preproc

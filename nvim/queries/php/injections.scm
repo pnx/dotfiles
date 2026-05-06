@@ -1,4 +1,4 @@
-; inherits: php
+; extends
 
 (scoped_call_expression
   scope: [

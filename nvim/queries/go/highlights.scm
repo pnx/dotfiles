@@ -1,3 +1,3 @@
-; inherits: go
+; extends
 
 "package" @namespace
