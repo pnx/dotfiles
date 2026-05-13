@@ -176,6 +176,7 @@ local custom_highlights = function(colors)
         -- Syntax
         PreProc = { fg = colors.mauve },
         Operator = { fg = colors.flamingo },
+        Identifier = { fg = colors.pink },
         Function = { link = "@text" },
         Delimiter = { link = "Operator" },
         Keyword = { fg = colors.yellow },
@@ -205,6 +206,7 @@ local custom_highlights = function(colors)
         ["@tag.delimiter"] = { link = "@text" },
         ["@module"] = { link = "@text" },
         ["@namespace"] = { link = "@keyword" },
+        ["@namespace.name"] = { fg = colors.rosewater },
         ["@punctuation.bracket"] = { link = "@punctuation" },
         ["@function.macro"] = { link = "Macro" },
 
@@ -216,9 +218,10 @@ local custom_highlights = function(colors)
         ["@comment.note.comment"] = { link = "@Comment" },
         ["@number.comment"] = { fg = colors.green },
 
-        -- LSP
+        -- LSP Semantic tokens
         ["@lsp.type.property"] = { link = "@variable" },
-        ["@lsp.type.namespace.go"] = { fg = colors.rosewater },
+        ["@lsp.type.enumMember"] = { link = "@variable" },
+        ["@lsp.type.namespace"] = { link = "@namespace.name" },
 
         -- Bash
         ["@variable.parameter.bash"] = { fg = colors.rosewater },
@@ -235,13 +238,14 @@ local custom_highlights = function(colors)
         -- PHP
         ["@keyword.import.php"] = { link = "@keyword" },
         ["@function.builtin.php"] = { fg = colors.blue },
-        ["@class.name.php"] = { link = "@text" },
-        ["@class.inherit.name.php"] = { link = "@text" },
-        ["@class.implements.name.php"] = { link = "@text" },
+        ["@class.declaration.name.php"] = { link = "@text" },
+        ["@class.declaration.inherit.name.php"] = { link = "@text" },
+        ["@class.declaration.implement.name.php"] = { link = "@text" },
         ["@interface.name.php"] = { link = "@text" },
-        ["@namespace.name.php"] = { link = "@text" },
-        ["@namespace.alias.name.php"] = { link = "@text" },
+        ["@namespace.name.php"] = { fg = colors.rosewater },
+        ["@namespace.alias.name.php"] = { link = "@namespace.name" },
         ["@use.trait.name.php"] = { link = "@text" },
+        ["@class.use.base.php"] = { link = "@text" },
 
         -- Blade
         ["@directive.blade"] = { link = "PreProc" },
