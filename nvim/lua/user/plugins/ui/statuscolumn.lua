@@ -18,7 +18,8 @@ local opts = function()
             'dapui_console',
         },
         bt_ignore = {
-            "nofile"
+            "nofile",
+            "terminal"
         },
         segments = {
             {
