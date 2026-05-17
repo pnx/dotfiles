@@ -58,14 +58,6 @@ return {
             }
         end})
 
-        -- vim.filetype.add({
-        --     pattern = {
-        --         ['%.env'] = 'dotenv',
-        --         ['%.env%..+'] = 'dotenv',
-        --     }
-        -- })
-        -- vim.treesitter.language.register('dotenv', { 'env' })
-
         for _, value in pairs(opts.install) do
             vim.treesitter.language.register(value, value)
         end
