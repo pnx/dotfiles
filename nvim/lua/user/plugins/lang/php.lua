@@ -14,13 +14,5 @@ return {
                 'blade',
             }
         }
-    },
-    {
-        'ccaglak/phptools.nvim',
-        opts = {
-            ui = {
-                fzf = true
-            },
-        }
     }
 }
