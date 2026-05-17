@@ -25,6 +25,12 @@ return {
             "xml",
             "kdl",
 
+            -- git
+            "git_rebase",
+            "git_config",
+            "gitattributes",
+            "gitignore",
+
             -- misc
             "comment",
             "regex",
