@@ -37,12 +37,12 @@ return {
                 -- TODO = { color = "warning" },
             },
             colors = {
-                default = { "TodoCommentsDefault", "#7C3AED" },
-                error = { "TodoCommentsError", "#DC2626" },
-                warning = { "TodoCommentsWarning", "#FBBF24" },
-                info = { "TodoCommentsInfo", "#2563EB" },
-                hint = { "TodoCommentsHint", "#10B981" },
-                test = { "TodoCommentsTest", "#FF00FF" }
+                default = { "TodoCommentsDefault", "Identifier", "#7C3AED" },
+                error = { "TodoCommentsError", "DiagnosticError", "ErrorMsg", "#DC2626" },
+                warning = { "TodoCommentsWarning", "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+                info = { "TodoCommentsInfo", "DiagnosticInfo", "#2563EB" },
+                hint = { "TodoCommentsHint", "DiagnosticHint", "#10B981" },
+                test = { "TodoCommentsTest", "Identifier", "#FF00FF" }
             },
             highlight = {
                 keyword = 'fg',
