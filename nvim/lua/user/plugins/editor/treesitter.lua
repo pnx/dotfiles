@@ -9,7 +9,7 @@ return {
     build = function()
         require("nvim-treesitter.install").update({ with_sync = true })
     end,
-    opts_extend = { "install" },
+    opts_extend = { "install", "alias" },
     opts = {
         -- Default parsers.
         install = {
@@ -42,6 +42,9 @@ return {
             "printf",
             "nginx",
         },
+        alias = {
+            dotenv = "env"
+        }
     },
     config = function(_, opts)
         local ts = require("nvim-treesitter")
@@ -61,10 +64,14 @@ return {
         --         ['%.env%..+'] = 'dotenv',
         --     }
         -- })
-        vim.treesitter.language.register('dotenv', { 'env' })
+        -- vim.treesitter.language.register('dotenv', { 'env' })
 
         for _, value in pairs(opts.install) do
             vim.treesitter.language.register(value, value)
+        end
+
+        for k, v in pairs(opts.alias) do
+            vim.treesitter.language.register(v, k)
         end
 
         vim.api.nvim_create_autocmd('FileType', {
@@ -73,12 +80,6 @@ return {
                 if vim.list_contains(ts.get_installed(), lang) then
                     vim.treesitter.start(ev.buf)
                 end
-                -- local all_langs = vim.treesitter.language._complete()
-                -- local lang = vim.treesitter.language.get_lang(ev.match)
-                -- vim.print(ev.match, all_langs, vim.tbl_contains(all_langs, lang))
-                -- if vim.tbl_contains(all_langs, lang) then
-                --     vim.treesitter.start(ev.buf)
-                -- end
             end,
         })
 
