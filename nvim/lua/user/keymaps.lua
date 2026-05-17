@@ -148,6 +148,7 @@ vim.keymap.set('n', "<leader>gB", "<cmd>Gitsigns blame<cr>", { desc = "Blame" })
 --
 -- LSP
 --
+vim.keymap.set('n', '<leader>lr', '<cmd>lsp restart<cr>', { desc = 'Restart LSP Servers' })
 
 vim.keymap.set('n', 'go', '<cmd>Telescope lsp_type_definitions<cr>', { desc = 'Goto type definition' })
 vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', { desc = 'Goto definition' })
