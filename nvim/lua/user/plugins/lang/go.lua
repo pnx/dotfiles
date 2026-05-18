@@ -52,7 +52,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
-            install = { "go", "gomod", "gowork", "gosum" }
+            install = { "go", "gomod", "gowork", "gosum", "gotmpl" }
         }
     },
     {
