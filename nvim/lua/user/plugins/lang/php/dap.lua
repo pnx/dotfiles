@@ -5,6 +5,7 @@ return {
     {
         "mfussenegger/nvim-dap",
         optional = true,
+        ft = "php",
         opts = {
             php = {
                 adapter = {
