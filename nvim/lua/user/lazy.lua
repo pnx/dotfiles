@@ -25,7 +25,7 @@ require("lazy").setup({
         -- Language specific
         { import = "user.plugins.lang.lua" },
         { import = "user.plugins.lang.bash" },
-        { import = "user.plugins.lang.clangd" },
+        { import = "user.plugins.lang.c" },
         { import = "user.plugins.lang.cmake" },
         { import = "user.plugins.lang.ninja" },
         { import = "user.plugins.lang.docker" },
