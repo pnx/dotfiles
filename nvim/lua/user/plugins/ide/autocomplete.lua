@@ -2,7 +2,7 @@ local icons = require('user.icons')
 
 return {
     'saghen/blink.cmp',
-    lazy = false,
+    event = "InsertEnter",
     version = "1.*",
     dependencies = {
         { "xzbdmw/colorful-menu.nvim" },

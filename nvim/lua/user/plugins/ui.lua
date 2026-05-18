@@ -19,6 +19,7 @@ return {
     -- Icons
     {
         'nvim-tree/nvim-web-devicons',
+        lazy = true,
         opts = {
             override = {
                 php = {
@@ -62,8 +63,12 @@ return {
                 },
             },
             select = {
-                backend = { "telescope" },
-                telescope = require("telescope.themes").get_dropdown(ui.dropdown),
+                get_config = function(_)
+                    return {
+                        backend = 'telescope',
+                        telescope = require("telescope.themes").get_dropdown(ui.dropdown)
+                    }
+                end
             }
         },
     },

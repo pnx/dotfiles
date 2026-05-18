@@ -93,6 +93,7 @@ local options = {
 
 return {
     'nvim-tree/nvim-tree.lua',
+    cmd = "NvimTreeFocus",
     opts = options,
     config = function (_, opts)
         require('nvim-tree').setup(opts)
