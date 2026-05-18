@@ -23,7 +23,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = {
-            install = { "typescript" }
+            install = { "typescript", "tsx" }
         }
     },
     {
