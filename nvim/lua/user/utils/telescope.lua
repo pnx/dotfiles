@@ -204,4 +204,26 @@ function M.height(percentage, opts)
     end
 end
 
+local select_loader_loaded = false
+
+-- Neat hack to lazy load ui-select extension when vim.ui.select() is called.
+function M.register_ui_select_loader()
+    if select_loader_loaded then
+        return
+    end
+
+    local std_select = vim.ui.select
+    vim.ui.select = function (items, opts, choice)
+        local hasExt, _ = pcall(require, "telescope._extensions.ui-select")
+        if hasExt then
+            require('telescope').load_extension("ui-select")
+        else
+            vim.ui.select = std_select
+        end
+        vim.ui.select(items, opts, choice)
+    end
+    select_loader_loaded = true
+end
+
+
 return M

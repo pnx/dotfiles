@@ -1,12 +1,15 @@
 local icons = require("user.icons")
 local ui = require("user.ui.telescope")
 
+require('user.utils.telescope').register_ui_select_loader()
+
 return {
     "nvim-telescope/telescope.nvim",
     branch = "master",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons",
+        "nvim-telescope/telescope-ui-select.nvim",
         "sharkdp/fd",
     },
     cmd = "Telescope",
@@ -77,14 +80,19 @@ return {
                     })
                 }),
             },
+            extensions = {
+                ["ui-select"] = {
+                    require("telescope.themes").get_dropdown(ui.dropdown)
+                }
+            }
         }
     end,
     config = function(_, opts)
         local telescope = require("telescope")
 
         telescope.setup(opts)
-        for name, _ in pairs(opts.extensions or {}) do
-            telescope.load_extension(name)
-        end
+        -- for name, _ in pairs(opts.extensions or {}) do
+        --     telescope.load_extension(name)
+        -- end
     end,
 }
