@@ -42,36 +42,6 @@ return {
             }
         }
     },
-    {
-        'stevearc/dressing.nvim',
-        opts = {
-            input = {
-                border = { " " },
-                relative = "editor",
-                title_pos = "center",
-                mappings = {
-                    n = {
-                        ["<Esc>"] = "Close",
-                        ["<CR>"] = "Confirm",
-                    },
-                    i = {
-                        ["<Esc>"] = "Close",
-                        ["<CR>"] = "Confirm",
-                        ["<Up>"] = "HistoryPrev",
-                        ["<Down>"] = "HistoryNext",
-                    },
-                },
-            },
-            select = {
-                get_config = function(_)
-                    return {
-                        backend = 'telescope',
-                        telescope = require("telescope.themes").get_dropdown(ui.dropdown)
-                    }
-                end
-            }
-        },
-    },
     -- Nicer notifications
     {
         "j-hui/fidget.nvim",
