@@ -1,5 +1,6 @@
 ---
 description: Analyze git changes
+model: openai/gpt-5.4-mini
 temprature: 0.1
 ---
 
