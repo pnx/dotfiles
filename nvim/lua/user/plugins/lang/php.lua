@@ -12,5 +12,18 @@ return {
                 'blade',
             }
         }
+    },
+    -- mago - static analyzer, linter, and formatter.
+    {
+        'calvinludwig/mago.nvim',
+        ft = 'php',
+        opts = {
+            logging = {
+                notify = false,
+                write_to_log = false,
+                min_level = 'INFO',
+                log_file = nil,
+            },
+        },
     }
 }
