@@ -55,29 +55,7 @@ local options = {
                 'dapui_scopes',
                 'dapui_console',
             }
-        },
-        theme = {
-            normal = {
-                a = "StatusLineNormal",
-                b = "StatusLineLualine",
-                c = "StatusLineLualine",
-                x = "StatusLineLualine",
-                y = "StatusLineLualine",
-                z = "StatusLineLualine",
-            },
-            command = {
-                a = "StatusLineCommand",
-            },
-            insert = {
-                a = "StatusLineInsert",
-            },
-            visual = {
-                a = "StatusLineVisual",
-            },
-            replace = {
-                a = "StatusLineReplace",
-            },
-        },
+        }
     },
     sections = {
         lualine_a = {
