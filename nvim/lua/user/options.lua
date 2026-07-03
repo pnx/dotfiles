@@ -23,8 +23,8 @@ vim.o.confirm = true
 -- User interface
 -------------------------------------------------------
 
-vim.o.winblend = 10   -- how much floating windows should blend with background.
-vim.o.pumblend = 10   -- popup blend
+vim.o.winblend = 0   -- how much floating windows should blend with background.
+vim.o.pumblend = 0   -- popup blend
 vim.o.pumheight = 15 -- popup height
 
 -- Configure how new splits should be opened

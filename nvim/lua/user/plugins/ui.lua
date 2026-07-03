@@ -21,6 +21,7 @@ return {
         'nvim-tree/nvim-web-devicons',
         lazy = true,
         opts = {
+            blend = 0,
             override = {
                 php = {
                     icon = icons.filetypes.php,

@@ -26,7 +26,6 @@ return {
             },
             menu = {
                 min_width = 18,
-                winblend = 10,
                 draw = {
                     gap = 2,
                     columns = {
@@ -47,9 +46,6 @@ return {
             },
             documentation = {
                 auto_show = true,
-                window = {
-                    winblend = 10
-                }
             },
             ghost_text = {
                 enabled = false,
@@ -62,7 +58,6 @@ return {
             enabled = true,
             window = {
                 scrollbar = false,
-                winblend = 10,
             }
         }
     }
