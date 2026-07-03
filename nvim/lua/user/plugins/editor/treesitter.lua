@@ -38,6 +38,12 @@ return {
             "ssh_config",
             "printf",
             "nginx",
+            "dockerfile",
+            "javascript",
+            "javadoc",
+            "make",
+            "cmake",
+            "ninja"
         },
         languages = {
             dotenv = {
