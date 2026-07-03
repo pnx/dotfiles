@@ -1,14 +1,11 @@
+local spec = require('user.utils.lang_spec')
+
 local lspservers = {
     qmlls = {}
 }
 
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "qmljs" }
-        }
-    },
+    spec.treesitter("qmljs"),
     {
         "neovim/nvim-lspconfig",
         opts = {

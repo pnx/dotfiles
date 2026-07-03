@@ -1,27 +1,23 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    commit = "4916d6592ede8c07973490d9322f187e07dfefac",
-    pin = true,
+    "romus204/tree-sitter-manager.nvim",
     dependencies = {
         'windwp/nvim-ts-autotag',
         'nvim-treesitter/nvim-treesitter-textobjects'
     },
-    build = function()
-        require("nvim-treesitter.install").update({ with_sync = true })
-    end,
-    opts_extend = { "install", "alias" },
+    opts_extend = { "ensure_installed", "alias" },
     opts = {
         -- Default parsers.
-        install = {
+        ensure_installed = {
             -- VIM stuff
             "vim",
             "vimdoc",
             "query",
 
-            -- Common config languages
+            -- Common data formats
             "json",
             "yaml",
             "toml",
+            "dtd",
             "xml",
             "kdl",
 
@@ -37,45 +33,26 @@ return {
             "re2c",
             "xresources",
             "sql",
+            "tsv",
             "csv",
             "ssh_config",
             "printf",
             "nginx",
         },
-        alias = {
-            dotenv = "env"
-        }
-    },
-    config = function(_, opts)
-        local ts = require("nvim-treesitter")
-        vim.api.nvim_create_autocmd('User', { pattern = 'TSUpdate', callback = function ()
-            require("nvim-treesitter.parsers").dotenv = {
+        languages = {
+            dotenv = {
                 install_info = {
                     url = "https://github.com/pnx/tree-sitter-dotenv",
                     branch = "main",
-                    files = { "src/parser.c", "src/scanner.c" },
+                    files = { "src/parser.c", "src/scanner.c" }
                 }
             }
-        end})
-
-        for _, value in pairs(opts.install) do
-            vim.treesitter.language.register(value, value)
-        end
-
-        for k, v in pairs(opts.alias) do
+        },
+    },
+    config = function(_, opts)
+        for k, v in pairs(opts.alias or {}) do
             vim.treesitter.language.register(v, k)
         end
-
-        vim.api.nvim_create_autocmd('FileType', {
-            callback = function(ev)
-                local lang = vim.treesitter.language.get_lang(ev.match)
-                if vim.list_contains(ts.get_installed(), lang) then
-                    vim.treesitter.start(ev.buf)
-                end
-            end,
-        })
-
-        ts.install(opts.install)
-        ts.setup(opts)
+        require("tree-sitter-manager").setup(opts)
     end
 }

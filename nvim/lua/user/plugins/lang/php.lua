@@ -1,11 +1,8 @@
+local spec = require('user.utils.lang_spec')
+
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "php", "blade", "php_only", "phpdoc", "sql", "csv" },
-            alias = { phpx = "php_only" }
-        }
-    },
+    spec.treesitter("php", "blade", "php_only", "phpdoc", "sql", "csv"),
+    spec.treesitter_alias({ phpx = "php_only" }),
     {
         "windwp/nvim-ts-autotag",
         optional = true,

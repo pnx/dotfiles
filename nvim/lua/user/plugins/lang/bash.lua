@@ -1,10 +1,7 @@
+local spec = require('user.utils.lang_spec')
+
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "bash" }
-        }
-    },
+    spec.treesitter("bash"),
     {
         "neovim/nvim-lspconfig",
         opts = {

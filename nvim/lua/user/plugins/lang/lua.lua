@@ -1,3 +1,5 @@
+local spec = require('user.utils.lang_spec')
+
 local lspservers = {
     lua_ls = {
         settings = {
@@ -18,12 +20,7 @@ local lspservers = {
 }
 
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "lua" }
-        }
-    },
+    spec.treesitter("lua"),
     {
         "neovim/nvim-lspconfig",
         opts = {

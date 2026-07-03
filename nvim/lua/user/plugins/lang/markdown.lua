@@ -1,14 +1,11 @@
+local spec = require('user.utils.lang_spec')
+
 return {
     'MeanderingProgrammer/render-markdown.nvim',
     ft = { "markdown" },
     dependencies = {
         'nvim-tree/nvim-web-devicons',
-        {
-            "nvim-treesitter/nvim-treesitter",
-            opts = {
-                install = { "markdown" }
-            }
-        },
+        spec.treesitter("markdown"),
         {
             "windwp/nvim-ts-autotag",
             optional = true,

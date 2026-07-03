@@ -1,3 +1,5 @@
+local spec = require('user.utils.lang_spec')
+
 local lspservers = {
     gopls = {
         codelens = {
@@ -49,12 +51,7 @@ local lspservers = {
 }
 
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "go", "gomod", "gowork", "gosum", "gotmpl" }
-        }
-    },
+    spec.treesitter("go", "gomod", "gowork", "gosum", "gotmpl"),
     {
         "neovim/nvim-lspconfig",
         opts = {

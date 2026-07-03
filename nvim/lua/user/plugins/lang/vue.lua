@@ -1,3 +1,5 @@
+local spec = require('user.utils.lang_spec')
+
 local lspservers = {
     vue_ls = {
         init_options = {
@@ -10,16 +12,11 @@ local lspservers = {
 
 
 return {
+    spec.treesitter("vue"),
     -- Vue needs typescript
     { import = "user.plugins.lang.typescript" },
     -- And most likely css/scss aswell.
     { import = "user.plugins.lang.css" },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-           install = { "vue" }
-        }
-    },
     {
         "windwp/nvim-ts-autotag",
         optional = true,

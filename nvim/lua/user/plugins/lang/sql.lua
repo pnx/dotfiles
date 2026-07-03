@@ -1,14 +1,11 @@
+local spec = require('user.utils.lang_spec')
+
 local lspservers = {
     sqlls = {}
 }
 
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "sql" }
-        }
-    },
+    spec.treesitter("sql"),
     {
         "neovim/nvim-lspconfig",
         opts = {

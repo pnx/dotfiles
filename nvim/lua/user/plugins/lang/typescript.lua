@@ -1,3 +1,5 @@
+local spec = require('user.utils.lang_spec')
+
 local lspservers = {
     ts_ls = function()
         local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server'
@@ -20,12 +22,7 @@ local lspservers = {
 }
 
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "typescript", "tsx" }
-        }
-    },
+    spec.treesitter("typescript", "tsx"),
     {
         "windwp/nvim-ts-autotag",
         optional = true,

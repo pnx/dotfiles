@@ -1,3 +1,5 @@
+local spec = require('user.utils.lang_spec')
+
 local lspservers = {
     rust_analyzer = {
         -- settings = {
@@ -22,12 +24,7 @@ local lspservers = {
 }
 
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
-        opts = {
-            install = { "rust", "toml" }
-        }
-    },
+    spec.treesitter("rust", "toml"),
     {
         "neovim/nvim-lspconfig",
         opts = {
