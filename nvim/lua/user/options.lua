@@ -78,7 +78,7 @@ vim.o.foldcolumn = "auto"
 vim.o.list = false
 vim.o.listchars = [[tab:⭲  ,space:·,eol:⮠,nbsp:␣]]
 
-vim.o.fillchars = string.format([[eob: ,fold: ,foldopen:%s,foldsep:%s,foldclose:%s]],
+vim.o.fillchars = string.format([[eob: ,fold: ,foldinner: ,foldopen:%s,foldsep:%s,foldclose:%s]],
     icons.fold.open, icons.fold.sep, icons.fold.close)
 
 -- Spell stuff, because i cant English
