@@ -14,12 +14,15 @@ return {
             "query",
 
             -- Common data formats
+            "ini",
             "json",
             "yaml",
             "toml",
             "dtd",
             "xml",
             "kdl",
+            "tsv",
+            "csv",
 
             -- git
             "git_rebase",
@@ -27,23 +30,25 @@ return {
             "gitattributes",
             "gitignore",
 
+            -- build systems
+            "make",
+            "cmake",
+            "ninja",
+
+            -- configs
+            "xresources",
+            "ssh_config",
+            "nginx",
+            "dockerfile",
+
             -- misc
             "comment",
             "regex",
             "re2c",
-            "xresources",
             "sql",
-            "tsv",
-            "csv",
-            "ssh_config",
             "printf",
-            "nginx",
-            "dockerfile",
             "javascript",
             "javadoc",
-            "make",
-            "cmake",
-            "ninja"
         },
         languages = {
             dotenv = {

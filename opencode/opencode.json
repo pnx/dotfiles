@@ -1,5 +1,20 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "default_agent": "OpenCoder",
+  "agent": {
+    "build": {
+      "disable": true,
+    },
+    "plan": {
+      "disable": true,
+    },
+    "OpenCoder": {
+      "color": "primary",
+    },
+    "OpenAgent": {
+      "color": "secondary",
+    },
+  },
   "mcp": {
     "neuron-ai-doc": {
       "type": "remote",
