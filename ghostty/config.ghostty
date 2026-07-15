@@ -1,0 +1,40 @@
+# vim: set ft=ini
+shell-integration-features = ssh-env, ssh-terminfo, title, no-cursor
+
+# Fonts
+font-family = "IosevkaCustom Nerd Font"
+font-style-bold = "SemiBold"
+font-style = ""
+font-size = 15
+
+adjust-cell-width = 1
+adjust-cell-height = 8
+# adjust-icon-height = -40%
+adjust-icon-height = -16.6%
+
+
+# window
+window-padding-x = 4
+window-padding-y = 4
+
+# cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Colors
+theme = skift
+
+# Behavior
+copy-on-select=clipboard
+right-click-action=paste
+clipboard-trim-trailing-spaces=true
+desktop-notifications=false
+# app-notification=no-clipboard-copy
+
+# Keybinds
+
+keybind = "ctrl+click" = ignore
+keybind = "shift+click" = open_url
+
+# keybind = performable:ctrl+c=copy_to_clipboard
+# keybind = performable:ctrl+v=paste_from_clipboard
