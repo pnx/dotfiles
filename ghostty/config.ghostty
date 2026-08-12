@@ -6,6 +6,7 @@ font-family = "IosevkaCustom Nerd Font"
 font-style-bold = "SemiBold"
 font-style = ""
 font-size = 15
+font-feature = -dlig, -liga, -calt
 
 adjust-cell-width = 1
 adjust-cell-height = 8
@@ -25,6 +26,8 @@ cursor-style-blink = false
 theme = skift
 
 # Behavior
+working-directory = home
+window-inherit-working-directory = false
 copy-on-select=clipboard
 right-click-action=paste
 clipboard-trim-trailing-spaces=true
@@ -33,8 +36,8 @@ desktop-notifications=false
 
 # Keybinds
 
-keybind = "ctrl+click" = ignore
-keybind = "shift+click" = open_url
+# keybind = ctrl+click=ignore
+# keybind = shift+click=open_url
 
 # keybind = performable:ctrl+c=copy_to_clipboard
 # keybind = performable:ctrl+v=paste_from_clipboard
