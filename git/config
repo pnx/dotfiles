@@ -1,6 +1,8 @@
 [user]
 	email = henrik.hautakoski@gmail.com
 	name = Henrik Hautakoski
+[core]
+    excludesFile = ~/.config/git/ignore
 [pull]
 	rebase = true
 [init]
