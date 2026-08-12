@@ -16,9 +16,9 @@
     },
   },
   "mcp": {
-    "neuron-ai-doc": {
+    "linear": {
       "type": "remote",
-      "url": "https://docs.neuron-ai.dev/~gitbook/mcp",
+      "url": "https://mcp.linear.app/mcp",
       "enabled": true
     }
   }

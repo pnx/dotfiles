@@ -10,7 +10,7 @@ export const Notify: Plugin = async ({ $ }) => {
   return {
     async event(input) {
       if (input.event.type === "session.idle") {
-        await $`notify-send t 10000 "Opencode" "Your code is done!"`
+        await $`notify-send -t 10000 "Opencode" "Your code is done!" &> /dev/null`
       }
     },
   }
