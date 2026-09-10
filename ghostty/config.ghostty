@@ -24,6 +24,7 @@ cursor-style-blink = false
 
 # Colors
 theme = skift
+minimum-contrast = 1.1
 
 # Behavior
 working-directory = home
