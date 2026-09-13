@@ -15,11 +15,30 @@
       "color": "secondary",
     },
   },
-  "mcp": {
-    "linear": {
-      "type": "remote",
-      "url": "https://mcp.linear.app/mcp",
-      "enabled": true
+  "mcp": { },
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "php": "allow",
+      "php *": "allow",
+      "cat": "allow",
+      "cat *": "allow",
+      "ls": "allow",
+      "ls *": "allow",
+      "git": "allow",
+      "git *": "allow",
+      "git push": "deny",
+      "git push *": "deny"
+    },
+    "read": {
+      "*": "ask",
+      "~/.config/opencode": "allow",
+      "~/.config/opencode/**": "allow"
+    },
+    "external_directory": {
+      "*": "ask",
+      "~/.config/opencode": "allow",
+      "~/.config/opencode/**": "allow"
     }
   }
 }
