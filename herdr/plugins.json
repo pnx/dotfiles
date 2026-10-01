@@ -1,0 +1,120 @@
+[
+  {
+    "plugin_id": "simple-switcher",
+    "name": "Simple Switcher",
+    "version": "0.4.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Fuzzy switch between workspaces, tabs, agents, and projects with fzf",
+    "manifest_path": "/home/pnx/.config/herdr/plugins/github/simple-switcher-387ae32386ae/herdr-plugin.toml",
+    "plugin_root": "/home/pnx/.config/herdr/plugins/github/simple-switcher-387ae32386ae",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "startup": [
+      {
+        "command": [
+          "bash",
+          "scripts/startup-check.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open-project",
+        "title": "Open Project",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-pane.sh",
+          "open-project"
+        ]
+      },
+      {
+        "id": "switch-agent",
+        "title": "Switch Agent",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-pane.sh",
+          "switch-agent"
+        ]
+      },
+      {
+        "id": "switch-tab",
+        "title": "Switch Tab",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-pane.sh",
+          "switch-tab"
+        ]
+      },
+      {
+        "id": "switch-workspace",
+        "title": "Switch Workspace",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-pane.sh",
+          "switch-workspace"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "open-project",
+        "title": "Open Project",
+        "placement": "popup",
+        "command": [
+          "bash",
+          "scripts/open-project.sh"
+        ]
+      },
+      {
+        "id": "switch-agent",
+        "title": "Switch Agent",
+        "placement": "popup",
+        "command": [
+          "bash",
+          "scripts/switch-agent.sh"
+        ]
+      },
+      {
+        "id": "switch-tab",
+        "title": "Switch Tab",
+        "placement": "popup",
+        "command": [
+          "bash",
+          "scripts/switch-tab.sh"
+        ]
+      },
+      {
+        "id": "switch-workspace",
+        "title": "Switch Workspace",
+        "placement": "popup",
+        "command": [
+          "bash",
+          "scripts/switch-workspace.sh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "pnx",
+      "repo": "herdr-simple-switcher",
+      "resolved_commit": "01458dc2f0be9672d5a39b69293d5002f22e0f01",
+      "managed_path": "/home/pnx/.config/herdr/plugins/github/simple-switcher-387ae32386ae",
+      "installed_unix_ms": 1790804757595
+    }
+  }
+]

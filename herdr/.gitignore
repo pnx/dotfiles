@@ -1,0 +1,4 @@
+*.sock
+session.json
+session-snapshots/
+plugins/

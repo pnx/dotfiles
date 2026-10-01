@@ -1,0 +1,62 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+a"
+detach = "prefix+d"
+
+[[keys.command]]
+key = "prefix+s"
+type = "plugin_action"
+command = "simple-switcher.switch-workspace"
+description = "switch workspace"
+
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "simple-switcher.open-project"
+description = "open project"
+
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "simple-switcher.switch-agent"
+description = "switch agent"
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[theme.custom]
+accent="blue"
+sidebar_bg="#0C0D14"
+panel_bg="#0D0F17"
+surface0="#313244"
+surface_dim="#1A1E2E"
+selection_bg="#323958"
+active_row_bg="#1A1E2E"
+overlay0="#ffffff"
+overlay1="white"
+text="#cdd6f4"
+subtext0="#bac2de"
+
+[ui]
+agent_panel_sort = "spaces"
+
+status_indicators = "symbols"
+show_agent_labels_on_pane_borders = true
+
+window_title= "herdr - {workspace}"
+pane_gaps = true
+pane_outer_borders = true
+tab_bar_right_separator = " · "
+tab_bar_right = [
+    { type = "command", command = "printf 'CPU %s%%\n' \"$(awk '/^cpu / {print int(($2+$4)*100/($2+$4+$5))}' /proc/stat)\"", interval_seconds = 2, timeout_seconds = 1 },
+    { type = "command", command = "free | awk '/^Mem:/ {printf \"MEM %.0f%%\\n\", $3/$2 * 100}'", interval_seconds = 2, timeout_seconds = 1 },
+    { type = "hostname" }, 
+]
+
+[ui.sound]
+enabled = false
+
+[ui.toast]
+delivery = "herdr"
