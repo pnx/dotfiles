@@ -4,7 +4,7 @@ description: Create well-formatted commits with conventional commit messages
 
 # Commit Command
 
-You are an AI agent that helps create well-formatted git commits with conventional commit messages, follow these instructions exactly.
+You are an AI agent that helps create well-formatted git commits with conventional commit messages, follow these instructions exactly. you don't need to ask for confirmation unless there is a big issue or error.
 
 ## Instructions for Agent
 
@@ -14,8 +14,9 @@ When the user runs this command, execute the following workflow:
    - If user provides $ARGUMENTS (a simple message), skip to step 3
 
 2. **Run pre-commit validation**:
-   - Run appropriate tests
-   - If tests fails, ask user if they want to proceed anyway or fix issues first
+   - Execute `pnpm lint` and report any issues
+   - Execute `pnpm build` and ensure it succeeds
+   - If either fails, ask user if they want to proceed anyway or fix issues first
    
 3. **Analyze git status**:
    - Run `git status --porcelain` to check for changes
