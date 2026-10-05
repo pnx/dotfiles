@@ -31,8 +31,8 @@ gui:
     main: '#a6e3a1'
     '\d+-': '#f9e2af'
 git:
-  pagers:
-    - pager: delta --paging=never
+  diffRenderers:
+    - command: delta --paging=never
   branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline {{branchName}} --'
   allBranchesLogCmds:
     - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium --oneline
