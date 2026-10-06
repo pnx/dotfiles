@@ -1,5 +1,7 @@
 -- Hyprland 0.56.2 Lua configuration, migrated from hyprland.conf.
 
+require('helpers.focus-or-start')
+
 -- Variables
 -- -----------------------------------------
 
@@ -28,9 +30,6 @@ local autostart = {
     "nextcloud",
     "telegram",
 }
-
--- Scripts
-local focusOrStart = ".config/hypr/scripts/focus-or-start.sh"
 
 -- Environment
 -- -----------------------------------------
@@ -179,8 +178,12 @@ hl.layer_rule({
 hl.bind(kb_super .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(kb_super .. " + P", hl.dsp.exec_cmd(runProgram))
 hl.bind(kb_super .. " + Return", hl.dsp.exec_cmd(terminal))
-hl.bind(kb_super .. " + T", hl.dsp.exec_cmd(focusOrStart .. ' "telegram" "org.telegram"'))
-hl.bind(kb_super .. " + G", hl.dsp.exec_cmd(focusOrStart .. ' "vivaldi-stable" "vivaldi-stable"'))
+hl.bind(kb_super .. " + T", function()
+    FocusOrStart("telegram", "org.telegram")
+end)
+hl.bind(kb_super .. " + G", function()
+    FocusOrStart("vivaldi-stable", "vivaldi-stable")
+end)
 hl.bind(kb_super .. " + S", hl.dsp.exec_cmd(screenshot))
 
 hl.bind(kb_super .. " + X", hl.dsp.window.close())
