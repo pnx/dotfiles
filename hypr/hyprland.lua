@@ -24,8 +24,7 @@ local kb_super = "SUPER"
 local autostart = {
     "hypridle",
     "hyprpaper",
-    "waybar",
-    "dunst",
+    "quickshell -n",
     "nm-applet",
     "nextcloud",
     "telegram",
