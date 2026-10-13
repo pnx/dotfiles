@@ -1,3 +1,3 @@
-if [ -f "$HOME/.config/composer/vendor/bin" ]
-    fish_add_path -a $HOME/.config/composer/vendor/bin
+if [ -d "$HOME/.composer/vendor/bin" ]
+    fish_add_path -a $HOME/.composer/vendor/bin
 end
