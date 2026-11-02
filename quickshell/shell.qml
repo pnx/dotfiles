@@ -39,6 +39,7 @@ Scope {
 
       right: [
         Tray { },
+        Volume { },
         Clock { }
       ]
     }
