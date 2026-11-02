@@ -10,6 +10,8 @@ font-feature = -dlig, -liga, -calt
 
 adjust-cell-width = 1
 adjust-cell-height = 12
+adjust-cursor-height = 12
+adjust-font-baseline = -1
 # adjust-icon-height = -40%
 adjust-icon-height = -16.6%
 
