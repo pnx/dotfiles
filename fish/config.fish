@@ -5,3 +5,8 @@ end
 
 # Disable greeting
 set -g fish_greeting
+
+# UWSM
+if status is-login; and uwsm check may-start &> /dev/null
+    exec uwsm start hyprland.desktop
+end
