@@ -1,6 +1,8 @@
 -- Hyprland 0.56.2 Lua configuration, migrated from hyprland.conf.
 
 require('helpers.focus-or-start')
+require('helpers.exec')
+local terminal = require('helpers.terminal')
 
 -- Variables
 -- -----------------------------------------
@@ -10,7 +12,7 @@ local mainMonitor = "DP-2"
 local secondMonitor = "HDMI-A-1"
 
 -- Programs
-local terminal = "ghostty"
+-- local terminal = "ghostty"
 local menu = "rofi -show drun"
 local runProgram = "rofi -show run"
 local screenshot = 'grim -g "$(slurp)" - | wl-copy'
@@ -174,9 +176,9 @@ hl.layer_rule({
 -- Keybindings
 -- -----------------------------------------
 
-hl.bind(kb_super .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(kb_super .. " + P", hl.dsp.exec_cmd(runProgram))
-hl.bind(kb_super .. " + Return", hl.dsp.exec_cmd(terminal))
+hl.bind(kb_super .. " + D", dispatch(menu))
+hl.bind(kb_super .. " + P", dispatch(runProgram))
+hl.bind(kb_super .. " + Return", terminal.exec())
 hl.bind(kb_super .. " + T", function()
     FocusOrStart("telegram", "org.telegram")
 end)
@@ -217,6 +219,6 @@ hl.bind(kb_super .. " + mouse:273", hl.dsp.window.resize())
 
 hl.on("hyprland.start", function()
     for _, command in ipairs(autostart) do
-        hl.exec_cmd(command)
+        exec(command)
     end
 end)
