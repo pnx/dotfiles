@@ -1,0 +1,15 @@
+{
+  "extends": [
+      "default-local",
+      "git-ssh"
+  ],
+  "meta": {
+    "name": "devel"
+    "version": "1.0.0",
+    "description": "Generic development profile",
+    "author": "Henrik Hautakoski"
+  },
+  "network": {
+    "network_profile": "developer"
+  }
+}

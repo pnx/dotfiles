@@ -1,0 +1,61 @@
+{
+  "extends": "default",
+  "meta": {
+    "name": "git-ssh",
+    "description": "Allow Git to invoke SSH without granting the agent direct SSH access"
+  },
+  "command_policies": {
+    "commands": {
+      "git": {
+        "can_use": ["ssh"],
+        "sandbox": {
+          "fs_read": [
+            "."
+          ],
+          "fs_write": [
+            ".",
+            "@git:common-dir"
+          ],
+          "fs_read_file": [
+            "@git:config-files"
+          ],
+          "environment": {
+            "allow_vars": [
+              "PATH",
+              "HOME",
+              "USER",
+              "LOGNAME",
+              "LANG",
+              "LC_*"
+            ]
+          }
+        }
+      },
+      "ssh": {
+        "from": {
+          "git": {
+            "sandbox": {
+              "fs_read": [
+                "."
+              ],
+              "network": {
+                "tcp_connect_ports": [22]
+              },
+              "environment": {
+                "allow_vars": [
+                  "PATH",
+                  "HOME",
+                  "USER",
+                  "LOGNAME",
+                  "LANG",
+                  "LC_*"
+                ]
+              }
+            }
+          },
+          "session": "deny"
+        }
+      }
+    }
+  }
+}

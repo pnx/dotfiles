@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "devel",
+    "docker-dev",
+    "composer-dev",
+    "node-dev"
+  ],
+  "meta": {
+    "name": "laravel",
+    "version": "1.0.0",
+    "description": "Laravel development profile",
+    "author": "Henrik Hautakoski"
+  },
+}

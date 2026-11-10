@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "devel",
+  ],
+  "meta": {
+    "name": "composer-dev"
+    "version": "1.0.0",
+    "description": "Composer development profile",
+    "author": "Henrik Hautakoski"
+  },
+  "filesystem": {
+    "allow": [
+      "$HOME/.cache/composer"
+    ],
+    "read": []
+  }
+}

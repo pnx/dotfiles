@@ -1,0 +1,91 @@
+{
+  "lockfile_version": 4,
+  "registry": "https://registry.nono.sh",
+  "packages": {
+    "nolabs-ai/codex": {
+      "version": "0.2.4",
+      "installed_at": "2026-11-10T19:58:24.854321660+00:00",
+      "pinned": false,
+      "provenance": {
+        "signer_identity": "https://github.com/nolabs-ai/nono-packs/.github/workflows/publish-codex.yml@refs/tags/codex-v0.2.4",
+        "repository": "nolabs-ai/nono-packs",
+        "workflow": ".github/workflows/publish-codex.yml",
+        "ref": "refs/tags/codex-v0.2.4",
+        "rekor_log_index": 3567896267,
+        "signed_at": "2026-10-29T13:16:22.383888+00:00"
+      },
+      "artifacts": {
+        ".codex-plugin/plugin.json": {
+          "sha256": "a7f038a2ea736878b0af14f87f4e769c6ddfaf80183ea2acf540aa139e55aa4a",
+          "type": "plugin"
+        },
+        "assets/logo.png": {
+          "sha256": "53889e883b72fe028a26f83158d060034a5ae60f266fecc2e1935ed311e3418c",
+          "type": "plugin"
+        },
+        "bin/nono-draft-profile": {
+          "sha256": "5248f7c3d58a21b266947812f91fa2e22c8c3bf9c6698c4a0cc8c58566ceb76a",
+          "type": "plugin"
+        },
+        "bin/nono-hook-session.sh": {
+          "sha256": "76d4777a0f7f27239b2a812d50783c0d7a936422d7a09243f997304a8a323741",
+          "type": "plugin"
+        },
+        "bin/nono-hook.sh": {
+          "sha256": "c3ee0b84a2947bda97dad112ebe30a7efeb887241967eeae0147ce4bc757df98",
+          "type": "plugin"
+        },
+        "profiles/codex.json": {
+          "sha256": "01bd282877802ea03d9fd9cef206041fc12703c6a613fa0d4f04a2be37784e36",
+          "type": "profile"
+        },
+        "skills/nono-sandbox/SKILL.md": {
+          "sha256": "e47788490e07a847feeb285be9aafa04a54a0394f4f36057a49dec17e1075e9e",
+          "type": "plugin"
+        },
+        "wiring/codex-block.toml": {
+          "sha256": "89a7004c3536170ffe7e339de1cac11c55e51deaa8365d2e9b186a98bff8a7e5",
+          "type": "plugin"
+        },
+        "wiring/marketplace.json": {
+          "sha256": "cffa9b2d7b43ddab460d56cb75987246a189ca37aa10c4a83f954814c4327a63",
+          "type": "plugin"
+        },
+        "wiring/profile-drafts-dir-marker": {
+          "sha256": "204edad2cc9c9d9274cdd4de1d7aa1f31b9a659e329aea604a9ad2e12535aa63",
+          "type": "plugin"
+        }
+      },
+      "wiring_record": [
+        {
+          "type": "write_file",
+          "dest": "/home/pnx/.config/nono/profile-drafts/.nono-codex-pack-marker",
+          "sha256": "204edad2cc9c9d9274cdd4de1d7aa1f31b9a659e329aea604a9ad2e12535aa63"
+        },
+        {
+          "type": "write_file",
+          "dest": "/home/pnx/.codex/bin/nono-draft-profile",
+          "sha256": "5248f7c3d58a21b266947812f91fa2e22c8c3bf9c6698c4a0cc8c58566ceb76a"
+        },
+        {
+          "type": "symlink",
+          "link": "/home/pnx/.codex/plugins/marketplaces/nolabs-ai/plugins/nono"
+        },
+        {
+          "type": "write_file",
+          "dest": "/home/pnx/.codex/plugins/marketplaces/nolabs-ai/.agents/plugins/marketplace.json",
+          "sha256": "cffa9b2d7b43ddab460d56cb75987246a189ca37aa10c4a83f954814c4327a63"
+        },
+        {
+          "type": "symlink",
+          "link": "/home/pnx/.codex/plugins/cache/nolabs-ai/nono/local"
+        },
+        {
+          "type": "toml_block",
+          "file": "/home/pnx/.codex/config.toml",
+          "marker_id": "nolabs-ai-codex"
+        }
+      ]
+    }
+  }
+}

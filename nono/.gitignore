@@ -1,0 +1,3 @@
+profile-drafts/*
+packages/*
+!packages/lockfile.json
