@@ -1,5 +1,9 @@
 onboarding = false
 
+[session]
+resume_agents_on_restore = true
+startup_per_agent_delay_ms = 100
+
 [keys]
 prefix = "ctrl+a"
 detach = "prefix+d"
@@ -29,15 +33,15 @@ auto_switch = false
 [theme.custom]
 accent="blue"
 sidebar_bg="#0C0D14"
-panel_bg="#0D0F17"
-surface0="#313244"
+panel_bg="reset"
+surface0="reset"
 surface_dim="#1A1E2E"
 selection_bg="#323958"
-active_row_bg="#1A1E2E"
-overlay0="#ffffff"
+active_row_bg="#12131f"
+overlay0="white"
 overlay1="white"
-text="#cdd6f4"
-subtext0="#bac2de"
+text="blue"
+subtext0="blue"
 
 [ui]
 agent_panel_sort = "spaces"
@@ -53,6 +57,18 @@ tab_bar_right = [
     { type = "command", command = "printf 'CPU %s%%\n' \"$(awk '/^cpu / {print int(($2+$4)*100/($2+$4+$5))}' /proc/stat)\"", interval_seconds = 2, timeout_seconds = 1 },
     { type = "command", command = "free | awk '/^Mem:/ {printf \"MEM %.0f%%\\n\", $3/$2 * 100}'", interval_seconds = 2, timeout_seconds = 1 },
     { type = "hostname" }, 
+]
+
+[ui.sidebar.spaces]
+rows = [
+  ["state_icon", "workspace", "git_status"],
+  [ "branch" ],
+]
+
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "machine", "workspace", "agent" ],
+  [ "terminal_title_stripped" ],
 ]
 
 [ui.sound]
