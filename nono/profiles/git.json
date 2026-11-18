@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "name": "git"
+    "version": "1.0.0",
+    "description": "access to git",
+    "author": "Henrik Hautakoski"
+  },
+  "groups": {
+    "include": [
+      "git_config"
+    ]
+  },
+  "filesystem": {
+    "read_file": [
+      "$HOME/.config/git/delta.gitconfig"
+    ],
+  }
+}

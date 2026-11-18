@@ -1,44 +1,15 @@
 {
-  "extends": "default-local",
   "meta": {
-    "name": "docker-dev"
+    "name": "docker-dev",
     "version": "1.0.0",
     "description": "Docker development profile",
     "author": "Henrik Hautakoski"
   },
-  "linux": {
-    "af_unix_mediation": "pathname"
-  },
-  "command_policies": {
-    "commands": {
-      "docker": {
-        "from": {
-          "session": {
-            "sandbox": {
-              "fs_read": ["."],
-              "unix_socket_bind": [
-                "/run/docker.sock",
-                "/run/run/docker.sock"
-              ]
-            },
-            "invocation_policy": {
-              "default": "deny",
-              "allow": [
-                {
-                  "argv": {
-                    "exact": ["ps"]
-                  }
-                },
-                {
-                  "argv": {
-                    "exact": ["compose", "ps"]
-                  }
-                }
-              ]
-            }
-          }
-        }
-      }
-    }
+  "filesystem": {
+    "read": [
+      "$HOME/.docker/config.json",
+      "/usr/libexec/docker/cli-plugins/docker-compose",
+      "/usr/libexec/docker/cli-plugins/docker-buildx"
+    ]
   }
 }

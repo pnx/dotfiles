@@ -1,0 +1,50 @@
+{  
+  "meta": {
+    "name": "docker-dev",
+    "version": "1.0.0",
+    "description": "Lock down docker",
+    "author": "Henrik Hautakoski"
+  },
+  "filesystem": {
+    "deny": [
+      "/run/docker.sock",
+      "/var/run/docker.sock"
+    ]
+  },
+  "command_policies": {
+    "commands": {
+      "docker": {
+        "from": {
+          "session": {
+            "sandbox": {
+              "fs_read": [
+                ".",
+                "/usr/libexec/docker/cli-plugins"
+              ],
+              "unix_socket_bind": [
+                "/run/docker.sock",
+                "/var/run/docker.sock"
+              ],
+              "exec_paths": [
+                "/usr/libexec/docker/cli-plugins/docker-compose",
+                "/usr/libexec/docker/cli-plugins/docker-buildx"
+              ],
+            },
+            "invocation_policy": {
+              "default": "deny",
+              "allow": [
+                { "argv": { "exact": ["version"] } },
+                { "argv": { "exact": ["ps"] } },
+                { "argv": { "exact": ["compose"] } },
+                { "argv": { "prefix": ["info"] } },
+                { "argv": { "prefix": ["compose", "ps"] } },
+                { "argv": { "prefix": ["compose", "version"] } },
+                { "argv": { "prefix": ["compose", "exec"] } }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

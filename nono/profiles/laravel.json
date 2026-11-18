@@ -1,9 +1,7 @@
 {
   "extends": [
     "devel",
-    "docker-dev",
-    "composer-dev",
-    "node-dev"
+    "docker-dev"
   ],
   "meta": {
     "name": "laravel",
