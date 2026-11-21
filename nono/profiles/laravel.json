@@ -1,6 +1,7 @@
 {
   "extends": [
     "devel",
+    "php-dev",
     "docker-dev"
   ],
   "meta": {

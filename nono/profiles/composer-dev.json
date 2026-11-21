@@ -6,8 +6,12 @@
     "author": "Henrik Hautakoski"
   },
   "filesystem": {
+    "read": [
+      "$HOME/.composer"
+    ],
     "allow": [
-      "~/.cache/composer"
+      "$HOME/.cache/composer",
+      "/tmp"
     ]
   }
 }

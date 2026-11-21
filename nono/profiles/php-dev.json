@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "composer-dev",
+  ],
+  "meta": {
+    "name": "php"
+    "version": "1.0.0",
+    "description": "access to php",
+    "author": "Henrik Hautakoski"
+  },
+  "filesystem": {
+    "read": [
+      "/etc/php.ini",
+      "/etc/php.d"
+    ]
+  },
+  "linux": {
+    "isolate": {
+      "network": true,
+      "loopback": true
+    }
+  }
+}
