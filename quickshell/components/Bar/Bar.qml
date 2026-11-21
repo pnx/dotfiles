@@ -26,20 +26,29 @@ PanelWindow {
     right: true
   }
 
-  BarSection {
-    id: leftContainer
-    anchors.left: parent.left
-    anchors.leftMargin: root.marginLeft
-  }
+  Item {
+    anchors.fill: parent
 
-  BarSection {
-    id: centerContainer
-    anchors.horizontalCenter: parent.horizontalCenter
-  }
+    BarSection {
+      id: leftContainer
+      anchors.left: parent.left
+      anchors.leftMargin: root.marginLeft
+    }
 
-  BarSection {
-    id: rightContainer
-    anchors.right: parent.right
-    anchors.rightMargin: root.marginRight
+    BarSection {
+      id: centerContainer
+      anchors.horizontalCenter: parent.horizontalCenter
+      width: Math.min(implicitWidth, Math.max(0, 2 * Math.min(
+        parent.width / 2 - (leftContainer.x + leftContainer.width),
+        rightContainer.x - parent.width / 2
+      )))
+      clip: true
+    }
+
+    BarSection {
+      id: rightContainer
+      anchors.right: parent.right
+      anchors.rightMargin: root.marginRight
+    }
   }
 }
