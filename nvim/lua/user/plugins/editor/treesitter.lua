@@ -40,6 +40,7 @@ return {
             "ssh_config",
             "nginx",
             "dockerfile",
+            "dotenv",
 
             -- misc
             "comment",
@@ -50,12 +51,16 @@ return {
             "javascript",
             "javadoc",
         },
+        alias = {
+            env = "dotenv",
+        },
         languages = {
             dotenv = {
                 install_info = {
                     url = "https://github.com/pnx/tree-sitter-dotenv",
-                    branch = "main",
-                    files = { "src/parser.c", "src/scanner.c" }
+                    revision = "main",
+                    files = { "src/parser.c", "src/scanner.c" },
+                    queries = 'queries'
                 }
             }
         },
