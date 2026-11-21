@@ -27,9 +27,9 @@ gui:
       - '#f38ba8'
     defaultFgColor:
       - '#eceef4'
-  branchColorPatterns:
-    main: '#a6e3a1'
-    '\d+-': '#f9e2af'
+    branchColorPatterns:
+      main: '#a6e3a1'
+      '\d+-': '#f9e2af'
 git:
   diffRenderers:
     - command: delta --paging=never
